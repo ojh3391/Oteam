@@ -14,6 +14,20 @@ public class UserVO
 	private int user_check_vote;
 	
 	
+	
+	public UserVO(String user_id, String user_passwd, String user_addr, String user_area, String user_tel, int user_age,
+			String user_name, String use_email, String user_gender) {
+		super();
+		this.user_id = user_id;
+		this.user_passwd = user_passwd;
+		this.user_addr = user_addr;
+		this.user_area = user_area;
+		this.user_tel = user_tel;
+		this.user_age = user_age;
+		this.user_name = user_name;
+		this.use_email = use_email;
+		this.user_gender = user_gender;
+	}
 	public String getUser_area() {
 		return user_area;
 	}
