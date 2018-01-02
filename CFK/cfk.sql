@@ -35,3 +35,5 @@ create table cfk_reply(
 	reply_re_lev int not null,
 	reply_re_seq int not null,
 );	
+
+select * from cfk_user;

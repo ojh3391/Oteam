@@ -9,14 +9,22 @@ public class UserVO
 	private String user_tel;
 	private int user_age;
 	private String user_name;
-	private String use_email;
+	private String user_email;
 	private String user_gender;
 	private int user_check_vote;
 	
 	
 	
+	public UserVO() {
+		super();
+	}
+	public UserVO(String user_id, String user_passwd) {
+		super();
+		this.user_id = user_id;
+		this.user_passwd = user_passwd;
+	}
 	public UserVO(String user_id, String user_passwd, String user_addr, String user_area, String user_tel, int user_age,
-			String user_name, String use_email, String user_gender) {
+			String user_name, String user_email, String user_gender) {
 		super();
 		this.user_id = user_id;
 		this.user_passwd = user_passwd;
@@ -25,7 +33,7 @@ public class UserVO
 		this.user_tel = user_tel;
 		this.user_age = user_age;
 		this.user_name = user_name;
-		this.use_email = use_email;
+		this.user_email = user_email;
 		this.user_gender = user_gender;
 	}
 	public String getUser_area() {
@@ -70,11 +78,11 @@ public class UserVO
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
-	public String getUse_email() {
-		return use_email;
+	public String getUser_email() {
+		return user_email;
 	}
-	public void setUse_email(String use_email) {
-		this.use_email = use_email;
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
 	}
 	public String getUser_gender() {
 		return user_gender;

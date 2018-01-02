@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import user.vo.UserVO;
+
 
 public class UserDAO {
 	private Connection con=null;
@@ -47,6 +49,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
+	//회원가입
 	public int user_insert(String user_id, String user_passwd, String user_addr, String user_area, String user_tel, int user_age, String user_name, String user_email, String user_gender) {
 		int result=0;
 		Connection con=getConnection();
@@ -71,5 +74,30 @@ public class UserDAO {
 			close(con,pstmt);
 		}
 		return result;
+	}
+	//아이디 비번 확인
+	public UserVO isLogin(String user_id,String user_passwd) {
+		UserVO vo=null;
+		ResultSet rs=null;
+		Connection con=getConnection();
+		PreparedStatement pstmt=null;
+		String sql="select user_id,user_name from cfk_user where user_id=? and user_passwd=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, user_passwd);
+			rs=pstmt.executeQuery(); 
+			if(rs.next()) {
+				vo=new UserVO();
+				vo.setUser_id(rs.getString("user_id"));
+				vo.setUser_name(rs.getString("user_name"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt,rs);
+		}
+	
+		return vo;
 	}
 }
