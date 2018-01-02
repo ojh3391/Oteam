@@ -6,9 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 
 public class UserDAO {
 	private Connection con=null;
@@ -16,16 +13,18 @@ public class UserDAO {
 	private ResultSet rs=null;
 	
 	
-	//connection ?–»ê¸?
+	//connection => dbcp
 	public Connection getConnection() {
-		Context ctx;
-		try {
-			ctx=new InitialContext();
-			DataSource ds=(DataSource) ctx.lookup("java:comp/env/jdbc/MySQL");
-			con=ds.getConnection();
-		}catch(Exception e) {
-			System.out.println("DB ì»¤ë„¥?…˜ ?‹¤?Œ¨"+e);
-		}
+		Connection con=null;
+		try
+	    {
+	         Class.forName("com.mysql.jdbc.Driver");
+	         String url="jdbc:mysql://localhost:3306/javadb?useSSL=true";
+	         con=DriverManager.getConnection(url,"root","12345");
+	    }catch(Exception e)
+	    {
+	         e.printStackTrace();
+	    }
 		return con;
 		
 	}
@@ -52,7 +51,7 @@ public class UserDAO {
 		int result=0;
 		Connection con=getConnection();
 		PreparedStatement pstmt=null;
-		String sql="insert into cfk_user values(?,?,?,?,?,?,?,?,?)";
+		String sql="insert into cfk_user values(?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
@@ -64,6 +63,7 @@ public class UserDAO {
 			pstmt.setString(7, user_name);
 			pstmt.setString(8, user_email);
 			pstmt.setString(9, user_gender);
+			pstmt.setInt(10, 0);
 			result=pstmt.executeUpdate();		
 		}catch(SQLException e) {
 			e.printStackTrace();
