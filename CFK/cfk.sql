@@ -5,7 +5,7 @@ create table cfk_user(
 	user_area varchar(12) not null,
 	user_tel varchar(30) not null,
 	user_age int not null,
-	user_name varchar(12) not null
+	user_name varchar(12) not null,
 	user_email varchar(30) not null,
 	user_gender char(1) not null,
 	user_check_vote int
