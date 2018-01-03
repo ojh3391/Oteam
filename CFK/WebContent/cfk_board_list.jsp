@@ -81,63 +81,29 @@
                 </div>
             </div>
         </div>
-        <!-- Start home section -->
-        <div id="home">
-            <!-- Start cSlider -->
-            <div id="da-slider" class="da-slider">
-                <div class="triangle"></div>
-                <!-- mask elemet use for masking background image -->
-                <div class="mask"></div>
-                <!-- All slides centred in container element -->
-                <div class="container">
-                    <!-- Start first slide -->
-                    <div class="da-slide">
-                        <h2 class="fittext2">오팀장과 형님들</h2>
-                        <h4>Clean & responsive</h4>
-                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img src="./Resources/images/Slider01.png" alt="image01" width="320">
+        <!-- Newsletter section start -->
+        <div class="section third-section">
+            <div class="container newsletter">
+                <div class="sub-section">
+                    <div class="title clearfix">
+                        <div class="pull-left">
+                            <h3>공지 사항</h3>
                         </div>
                     </div>
-                    <!-- End first slide -->
-                    <!-- Start second slide -->
-                    <div class="da-slide">
-                        <h2>최고의 멘토 군단</h2>
-                        <h4>Easy to use</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img src="./Resources/images/Slider02.png" width="320" alt="image02">
-                        </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>가라가라 갇혀 확갇혀 내안에 갇혀 확갇혀 가라가라 갇혀 확갇혀 사랑안에 갇혀 확갇혀 소리없이 보내리~라 말이없이 보내리~라 그리워지리라 니~가 소리없이 보내리~라 말이없이 보내리~라 그리워지리라 니~가 악해지지마 헤어져도 우린 이대로 갈 수 없어 커져가는 응어리를 버려야해 떠나가려 해~</p>
                     </div>
-                    <!-- End second slide -->
-                    <!-- Start third slide -->
-                    <div class="da-slide">
-                        <h2>Challenge Fashion King!!</h2>
-                        <h4>Customizable</h4>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img src="./Resources/images/Slider03.jpg" width="320" alt="image03">
-                        </div>
-                    </div>
-                    <!-- Start third slide -->
-                    <!-- Start cSlide navigation arrows -->
-                    <div class="da-arrows">
-                        <span class="da-arrows-prev"></span>
-                        <span class="da-arrows-next"></span>
-                    </div>
-                    <!-- End cSlide navigation arrows -->
                 </div>
             </div>
         </div>
-        <!-- End home section -->
+        <!-- Newsletter section end -->
         <div class="section secondary-section" id="portfolio">
             <div class="container">
            
                 <div class="title">
-                    <!-- <font size="10" color="black" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font> -->
+         
                     <h1><font size="10" face="휴먼둥근헤드라인">전쟁이 시작된다! 투표하시라!</font></h1>
                     <p>매주 금요일 저녁 7시!!</p>
                 </div>
@@ -145,23 +111,22 @@
                 
                 <%
 			
-			//페이지 하단 페이지 나오기
-			for(int i=startPage;i<=endPage;i++){
-				if(i==current_page){
-					%><li class="filter" >
+				//페이지 상단 페이지 나오기
+				for(int i=startPage;i<=endPage;i++){
+					if(i==current_page){
+					%><li class="filter">
                         <a href="qList.do?page=<%=i %>"><%=i %></a>
                     </li><%
 					
 				}else{
-					%><li class="filter" >
+					%><li class="filter">
                         <a href="qList.do?page=<%=i %>"><%=i %></a>
                     </li><%
 				}
-			}
+				}
 			
 			
-		%>
-                    
+				%>    
                 </ul>
                 <ul id="portfolio-grid" class="thumbnails row">
 <%
@@ -173,13 +138,13 @@
                      <li class="span12 mix web">
                          <div class="thumbnail">
                               <img src="./Resources/images/Portfolio01.png">
-                              <a href="qHitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>"><%=vo.getBoard_subject()%></a>
-                                  <i class="icon-plus"></i>
-                              </a>
+                                    
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
                               <div class="mask">
                               <h2><%=vo.getBoard_writer()%></h2>
+                              <a href="qHitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>">
+                              <h2><i class="icon-plus"></i></h2></a>
                               </div>
                         </div>
                       </li>
