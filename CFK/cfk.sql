@@ -27,6 +27,7 @@ create table cfk_board(
 	board_date date	
 	
 );	
+drop table cfk_board;
 
 create table cfk_reply(
 	reply_num int not null,

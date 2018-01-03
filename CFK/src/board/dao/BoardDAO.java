@@ -1,10 +1,12 @@
 package board.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 import board.vo.BoardVO;
 import user.vo.UserVO;
@@ -96,5 +98,59 @@ public class BoardDAO {
 		
 		return result;
 	}
+	//전체 게시글
+	public int total_rows() {
+		String sql="select count(*) from cfk_board";
+		
+		int total_rows=0;
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				total_rows=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+		}
+		return total_rows;
+	}
+	public Vector<BoardVO> getList(int page,int limit){
+		//page 값에 의해 몇번째 레코드부터 돌릴지 결정
+		int start=(page-1)*10;
+		
+		Vector<BoardVO> list=new Vector<BoardVO>();
+		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
 	
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+		
+		try {
+			pstmt=con.prepareStatement("select * from cfk_board order by asc limit ?,?");
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, limit);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				int board_num=rs.getInt(1);
+				String board_subject=rs.getString(2);
+				String board_thumbnail=rs.getString(6);
+				String board_writer=rs.getString(7);
+				int board_vote=rs.getInt(8);
+				int board_readcount=rs.getInt(9);
+				Date board_date=rs.getDate(10);
+				
+				BoardVO vo=new BoardVO(board_num, board_subject,board_thumbnail, board_writer, board_vote, board_readcount, board_date);
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+		}
+		return list;
+	}
 }
