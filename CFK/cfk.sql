@@ -25,9 +25,11 @@ create table cfk_board(
 	board_vote int default 0,
 	board_readcount int default 0,
 	board_date date	
-	
 );	
 drop table cfk_board;
+select * from cfk_board;
+
+insert into cfk_board values(12,'12','12','12',NULL,NULL,'12',0,0,now());
 
 create table cfk_reply(
 	reply_num int not null,
