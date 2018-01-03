@@ -181,7 +181,7 @@
                    		 </div>
                		 <div class="control-group">
                 			<div class="controls">
-                   		 	<button class="message-btn" onclick="location.href=''">정보 수정</button>
+                   		 	<button class="message-btn" onclick="location.href='cfk_user_modify.jsp'">정보 수정</button>
                    		 	<button class="message-btn" onclick="location.href='logout.do'">로그 아웃</button>
                    		 </div>
                		 </div>
