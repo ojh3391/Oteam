@@ -137,7 +137,7 @@
 				</tr>
 				<tr>
 					<td><p><font color="black">지역</font></p></td>
-					<td><select name="user_area">
+					<td><select name="user_area" class="span5">
 						<option >서울.경기</option>
 						<option >강원도</option>
 						<option >충청권</option>
@@ -156,7 +156,7 @@
 				</tr>
 				<tr>
 					<td><p><font color="black">나이</font></p></td>
-					<td><input type="text" name="user_age" required></td>
+					<td><input class="span5" type="text" name="user_age" required></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">이메일</font></p></td>
@@ -171,9 +171,9 @@
 				</tr>
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
-						<input class="message-btn" type="submit" value="가입하기" onclick="register_check(this.form)">
+						<input class="message-btn" type="submit" value="가입하기">
 						<input class="message-btn" type="reset" value="새로입력">
-						<input class="message-btn" type="button" value="취소">
+						<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 					</td>
 				</tr>
 			</table>
