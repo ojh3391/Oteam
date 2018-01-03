@@ -28,6 +28,8 @@ public class ActionFactory {
 			action=new UpdateAction("index.jsp");
 		}else if(cmd.equals("/login.do")) {
 			action=new LoginAction("index.jsp");
+		}else if(cmd.equals("/logout.do")) {
+			action=new LogoutAction("index.jsp");
 		}
 		return action;
 	}

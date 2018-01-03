@@ -22,8 +22,7 @@ public class LoginAction implements Action {
 		//id,pwd가져오기
 		String id=req.getParameter("user_id");
 		String passwd=req.getParameter("user_passwd");
-		System.out.println(id);
-		System.out.println(passwd);
+		
 		//userstable 에 id,pwd 있는지 메소드 호출
 		UserDAO dao=new UserDAO();
 		UserVO vo=dao.isLogin(id, passwd);

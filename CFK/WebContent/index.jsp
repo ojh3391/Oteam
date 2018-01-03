@@ -176,17 +176,18 @@
         			<%
 					}else{ %> 
 					<div class="span4">
-            			<h3>로그인 되셨습니다.</h3>
+						<img src="./Resources/images/logo.png" width="120" height="40" alt="Logo" />
+            			<h3><font color="red">▶로그인 되셨습니다◀</font></h3>
                       		<div class="control-group">
                     			<div class="controls">
-                        			<h3>웰컴이다. <%=vo.getUser_name()%> (이)여~.</h3>
+                        			<h3>웰컴이다. <font color="white"><%=vo.getUser_name()%></font> (이)여~.</h3>
                         			<h3>패션의 메카에 온걸 환영한다.</h3>
                            		 </div>
                    		 </div>
                		 <div class="control-group">
                 			<div class="controls">
-                   		 	<button class="message-btn" onclick="location.href='/login.do'">정보 수정</button>
-                   		 	<button class="message-btn" onclick="location.href='register.html'">로그 아웃</button>
+                   		 	<button class="message-btn" onclick="location.href=''">정보 수정</button>
+                   		 	<button class="message-btn" onclick="location.href='logout.do'">로그 아웃</button>
                    		 </div>
                		 </div>
                 		
