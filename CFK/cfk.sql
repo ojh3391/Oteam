@@ -29,7 +29,7 @@ create table cfk_board(
 drop table cfk_board;
 select * from cfk_board;
 
-insert into cfk_board values(12,'12','12','12',NULL,NULL,'12',0,0,now());
+insert into cfk_board values(11,'11','11','11',NULL,NULL,'11',0,0,now());
 
 create table cfk_reply(
 	reply_num int not null,

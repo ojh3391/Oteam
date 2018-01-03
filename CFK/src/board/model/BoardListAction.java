@@ -69,7 +69,6 @@ public class BoardListAction implements Action
 			req.setAttribute("info", info);
 		}
 		
-		//path+="&page="+id;
 		return new ActionForward(path, false);
 	}
 

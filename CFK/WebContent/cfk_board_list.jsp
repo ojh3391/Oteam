@@ -44,8 +44,7 @@
 	int totalRows=info.getTotoalRows();
 %> 
 <script>
-
-	function index(){
+	<%-- function index(){
 		location.href="board/qna_board_write.jsp?page=<%=current_page%>";
 	}
 	function register(){
@@ -53,7 +52,7 @@
 	}
 	function search(){
 		searchform.submit();
-	}
+	} --%>
 </script>
         <div class="navbar">
             <div class="navbar-inner">
@@ -69,9 +68,9 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="#home">Challenge Fashion King!!</a></li>
-                            <li><a href="#service">함께하기</a></li>
-                            <li><a href="#portfolio">투표하기</a></li>
+                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="index.jsp#service">함께하기</a></li>
+                            <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="#about">참가신청</a></li>
                             <li><a href="#clients">방청시청</a></li>
                             <li><a href="#price">응원하기</a></li>

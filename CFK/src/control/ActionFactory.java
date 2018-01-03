@@ -32,7 +32,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/logout.do")) {
 			action=new LogoutAction("index.jsp");
 		}else if(cmd.equals("/qList.do")) {
-			action=new BoardListAction("board.jsp");
+			action=new BoardListAction("cfk_board_list.jsp");
 		}	
 		return action;
 	}

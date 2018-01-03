@@ -130,7 +130,7 @@ public class BoardDAO {
 		rs=null;
 		
 		try {
-			pstmt=con.prepareStatement("select * from cfk_board order by asc limit ?,?");
+			pstmt=con.prepareStatement("select * from cfk_board order by board_num asc limit ?,?");
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, limit);
 			rs=pstmt.executeQuery();
