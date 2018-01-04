@@ -153,4 +153,56 @@ public class BoardDAO {
 		}
 		return list;
 	}
+	//조회수 없데이트
+	public int hitUpdate(int board_num) {
+		int result=0;
+		//board_num이 일치하면 readcount 하나 증가
+	
+		String sql="update cfk_board set board_readcount=board_readcount+1 where board_num=?";
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt);
+				
+				
+		}	
+		return result;
+	}
+	public BoardVO getRow(int board_num) {
+		BoardVO vo=null;
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+		
+		try {
+			pstmt=con.prepareStatement("select * from cfk_board where board_num=?");
+			pstmt.setInt(1, board_num);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				vo= new BoardVO();
+				vo.setBoard_num(rs.getInt("board_num"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_file(rs.getString("board_file"));			
+				vo.setBoard_real_file(rs.getString("board_real_file"));
+				vo.setBoard_writer(rs.getString("board_writer"));
+				vo.setBoard_vote(rs.getInt("board_vote"));
+				vo.setBoard_date(rs.getDate("board_date"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+			
+			
+		}
+		return vo;
+	}
+	
 }

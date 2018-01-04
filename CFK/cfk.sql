@@ -35,7 +35,6 @@ create table cfk_reply(
 	reply_num int primary key,
 	reply_content varchar(2000) not null,
 	reply_writer varchar(20) not null,
-	reply_readcount int default 0,
 	reply_date date,
 	reply_board_num int not null,	
 	reply_re_ref int not null,		

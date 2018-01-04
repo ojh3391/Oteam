@@ -1,9 +1,10 @@
 package control;
 
 import action.Action;
-
+import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
 import board.model.PartiAction;
+import reply.model.ReplyViewAction;
 import user.model.*;
 
 
@@ -37,6 +38,10 @@ public class ActionFactory {
 			action=new PartiAction("index.jsp");
 		}else if(cmd.equals("/qList.do")) {
 			action=new BoardListAction("cfk_board_list.jsp");
+		}else if(cmd.equals("/qHitUpdate.do")) {
+			action=new BoardHitUpdateAction("qView.do");
+		}else if(cmd.equals("/qView.do")) {
+			action= new ReplyViewAction("cfk_user_voteview.jsp");
 		}
 		return action;
 	}

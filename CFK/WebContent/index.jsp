@@ -148,14 +148,14 @@
                 		<form action="login.do" method="post">
                 			<div class="control-group">
                     			<div class="controls">
-                        			<input class="span12" type="text" name="user_id" placeholder="* 당신의 아이디..." />
-                           		 <div class="error left-align" id="err-name">Please enter id.</div>
+                        			<input class="span12" type="text" name="user_id" placeholder="* 당신의 아이디..." required/>
+                           		 
                        		 </div>
                    		 </div>
                 		<div class="control-group">
                 			<div class="controls">
-                   		 	<input class="span12" type="password" name="user_passwd" placeholder="* 당신의 비밀번호..." />
-                   		 	<div class="error left-align" id="err-email">Please enter valid password.</div>
+                   		 	<input class="span12" type="password" name="user_passwd" placeholder="* 당신의 비밀번호..." required/>
+                   		 	
                 			</div>
                		 </div>    
                		 
