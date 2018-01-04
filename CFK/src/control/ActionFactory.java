@@ -2,6 +2,7 @@ package control;
 
 import action.Action;
 import board.model.BoardListAction;
+import board.model.PartiAction;
 import user.model.*;
 
 
@@ -31,6 +32,8 @@ public class ActionFactory {
 			action=new LoginAction("index.jsp");
 		}else if(cmd.equals("/logout.do")) {
 			action=new LogoutAction("index.jsp");
+		}else if(cmd.equals("/parti.do")) {
+			action=new PartiAction("index.jsp");
 		}else if(cmd.equals("/qList.do")) {
 			action=new BoardListAction("cfk_board_list.jsp");
 		}	

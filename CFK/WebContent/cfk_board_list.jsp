@@ -137,7 +137,7 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-                              <img src="./Resources/images/Portfolio01.png">
+                              <img src="C:/pmedia/thumb/suji.png">
                                     
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
