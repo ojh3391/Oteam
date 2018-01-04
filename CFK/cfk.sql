@@ -26,7 +26,7 @@ create table cfk_board(
 	board_readcount int default 0,
 	board_date date	
 );	
-drop table cfk_board;
+drop table cfk_reply;
 select * from cfk_board;
 
 insert into cfk_board values(11,'11','11','11',NULL,NULL,'11',0,0,now());
@@ -35,12 +35,17 @@ create table cfk_reply(
 	reply_num int primary key,
 	reply_content varchar(2000) not null,
 	reply_writer varchar(20) not null,
-	reply_readcount int default 0;
+	reply_readcount int default 0,
 	reply_date date,
-	reply_board_num int not null,	--원글 번호
-	reply_re_ref int not null,		--답변글 작성시 참조
-	reply_re_lev int not null,		--답변글의 길이
-	reply_re_seq int not null,		--답변 글의 순서
+	reply_board_num int not null,	
+	reply_re_ref int not null,		
+	reply_re_lev int not null,		
+	reply_re_seq int not null		
 );	
+
+--원글 번호
+--답변글 작성시 참조
+--답변글의 길이
+--답변 글의 순서
 
 select * from cfk_user;
