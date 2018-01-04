@@ -37,10 +37,10 @@ create table cfk_reply(
 	reply_writer varchar(20) not null,
 	reply_readcount int default 0;
 	reply_date date,
-	reply_who varchar(12) not null,
-	reply_re_ref int not null,
-	reply_re_lev int not null,
-	reply_re_seq int not null,
+	reply_board_num int not null,	--원글 번호
+	reply_re_ref int not null,		--답변글 작성시 참조
+	reply_re_lev int not null,		--답변글의 길이
+	reply_re_seq int not null,		--답변 글의 순서
 );	
 
 select * from cfk_user;
