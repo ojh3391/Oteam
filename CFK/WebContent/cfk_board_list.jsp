@@ -71,7 +71,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
-                            <li><a href="#about">참가신청</a></li>
+                            <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="#clients">방청시청</a></li>
                             <li><a href="#price">응원하기</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -137,9 +137,7 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-                              <img src="C:\Users\admin\Desktop\suji.png">
-
-                                    
+                              <img src="/project/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
                               <div class="mask">
