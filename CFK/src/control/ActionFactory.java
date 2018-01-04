@@ -1,6 +1,7 @@
 package control;
 
 import action.Action;
+
 import board.model.BoardListAction;
 import user.model.*;
 
@@ -33,7 +34,7 @@ public class ActionFactory {
 			action=new LogoutAction("index.jsp");
 		}else if(cmd.equals("/qList.do")) {
 			action=new BoardListAction("cfk_board_list.jsp");
-		}	
+		}
 		return action;
 	}
 }
