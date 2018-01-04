@@ -60,9 +60,10 @@ public class PartiAction implements Action
 			vo.setBoard_real_file(multi.getFilesystemName((String) multi.getFileNames().nextElement()));
 			vo.setBoard_writer(multi.getParameter("user_id"));
 			
-			//동영상 썸네일 추출
-			Enumeration<String> names=multi.getFileNames();
-			String fileName=multi.getOriginalFileName(names.nextElement());
+			//동영상 썸네일 이미지 추출
+			//Enumeration<String> names=multi.getFileNames();
+			//String fileName=multi.getOriginalFileName(names.nextElement());
+			String fileName=multi.getFilesystemName((String) multi.getFileNames().nextElement());
 			int idx=fileName.lastIndexOf(".");
 			String _fileName=fileName.substring(0, idx);
 			System.out.println(uploadPath+"\\"+fileName);
@@ -73,7 +74,7 @@ public class PartiAction implements Action
 			vo.setBoard_thumbnail(thumb);
 			
 			
-			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:01","-vframes","1","-an","-s","300*200",filePath2};
+			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
 			
 			try
 			{
