@@ -13,7 +13,6 @@ import action.Action;
 import action.ActionForward;
 import board.dao.BoardDAO;
 import board.vo.BoardVO;
-import sun.security.x509.NetscapeCertTypeExtension;
 
 public class PartiAction implements Action
 {
@@ -74,7 +73,7 @@ public class PartiAction implements Action
 			vo.setBoard_thumbnail(thumb);
 			
 			
-			String[] cmd=new String[] {"C:\\pmedia\\ffmpeg.exe","-i",filePath,"-ss","00:00:01","-vframes","1","-an","-s","300*200",filePath2};
+			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:01","-vframes","1","-an","-s","300*200",filePath2};
 			
 			try
 			{

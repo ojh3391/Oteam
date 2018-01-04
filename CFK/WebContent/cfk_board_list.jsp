@@ -137,11 +137,8 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-<<<<<<< HEAD
                               <img src="C:\Users\admin\Desktop\suji.png">
-=======
-                              <img src="C:/pmedia/thumb/suji.png">
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
+
                                     
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
