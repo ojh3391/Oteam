@@ -44,15 +44,7 @@ public class PartiAction implements Action
 		{
 			multi=new MultipartRequest(req, uploadPath, size, "UTF-8", new DefaultFileRenamePolicy());
 			
-			/*videoFile=multi.getFilesystemName("videoFile");
-			String tmp=videoFile.substring(videoFile.lastIndexOf(".")+1);
-			if(tmp.equalsIgnoreCase("mp4"))
-			{
-				
-			}else
-			{
-				
-			}*/
+			
 			BoardVO vo=new BoardVO();
 			vo.setBoard_subject(multi.getParameter("board_subject"));
 			vo.setBoard_content(multi.getParameter("board_content"));
