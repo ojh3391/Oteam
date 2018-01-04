@@ -137,7 +137,7 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-                              <img src="/project/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
+                              <img src="/Oteam/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
                               <div class="mask">
