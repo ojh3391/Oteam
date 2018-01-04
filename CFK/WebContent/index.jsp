@@ -47,7 +47,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
-                            <li><a href="#about">참가신청</a></li>
+                            <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="#clients">방청시청</a></li>
                             <li><a href="#price">응원하기</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -59,7 +59,7 @@
         </div>
         <!-- Start home section -->
         <div id="home">
-            <!-- Start cSlider -->
+            <!-- Start cSlider s-->
             <div id="da-slider" class="da-slider">
                 <div class="triangle"></div>
                 <!-- mask elemet use for masking background image -->
