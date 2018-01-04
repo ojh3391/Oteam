@@ -36,7 +36,7 @@ public class PartiAction implements Action
 		
 		
 		
-		int size=5*1024*1024;
+		int size=50*1024*1024;
 		MultipartRequest multi;
 		//String videoFile=null, videoFileSize=null;
 		
@@ -73,7 +73,7 @@ public class PartiAction implements Action
 			vo.setBoard_thumbnail(thumb);
 			
 			
-			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:01","-vframes","1","-an","-s","300*200",filePath2};
+			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
 			
 			try
 			{
