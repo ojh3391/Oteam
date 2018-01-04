@@ -1,6 +1,7 @@
 package board.model;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import action.Action;
 import action.ActionForward;
 import board.dao.BoardDAO;
 import board.vo.BoardVO;
+import sun.security.x509.NetscapeCertTypeExtension;
 
 public class PartiAction implements Action
 {
@@ -29,8 +31,11 @@ public class PartiAction implements Action
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
 	{
-		String saveDir="/upload";
+		
+		String saveDir="/boardUpload";
 		String uploadPath=req.getServletContext().getRealPath(saveDir);
+		
+		
 		
 		int size=5*1024*1024;
 		MultipartRequest multi;
@@ -38,7 +43,8 @@ public class PartiAction implements Action
 		
 		try
 		{
-			multi=new MultipartRequest(req, uploadPath, size, "UTF-8",new DefaultFileRenamePolicy());
+			multi=new MultipartRequest(req, uploadPath, size, "UTF-8", new DefaultFileRenamePolicy());
+			
 			/*videoFile=multi.getFilesystemName("videoFile");
 			String tmp=videoFile.substring(videoFile.lastIndexOf(".")+1);
 			if(tmp.equalsIgnoreCase("mp4"))
@@ -48,14 +54,39 @@ public class PartiAction implements Action
 			{
 				
 			}*/
-			
-			
 			BoardVO vo=new BoardVO();
 			vo.setBoard_subject(multi.getParameter("board_subject"));
 			vo.setBoard_content(multi.getParameter("board_content"));
 			vo.setBoard_file(multi.getOriginalFileName((String) multi.getFileNames().nextElement()));
 			vo.setBoard_real_file(multi.getFilesystemName((String) multi.getFileNames().nextElement()));
 			vo.setBoard_writer(multi.getParameter("user_id"));
+			
+			//동영상 썸네일 추출
+			Enumeration<String> names=multi.getFileNames();
+			String fileName=multi.getOriginalFileName(names.nextElement());
+			int idx=fileName.lastIndexOf(".");
+			String _fileName=fileName.substring(0, idx);
+			System.out.println(uploadPath+"\\"+fileName);
+			String filePath=uploadPath+"\\"+fileName;
+			String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
+			System.out.println(filePath2);
+			String thumb=_fileName+".png";
+			vo.setBoard_thumbnail(thumb);
+			
+			
+			String[] cmd=new String[] {"C:\\pmedia\\ffmpeg.exe","-i",filePath,"-ss","00:00:01","-vframes","1","-an","-s","300*200",filePath2};
+			
+			try
+			{
+				Process p=new ProcessBuilder(cmd).start();
+				p.waitFor();
+				
+			}catch(Exception e)
+			{
+				
+				e.printStackTrace();
+			}
+			
 			BoardDAO dao=new BoardDAO();
 			int result=dao.board_parti(vo);
 			
