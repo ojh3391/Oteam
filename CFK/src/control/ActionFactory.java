@@ -42,7 +42,10 @@ public class ActionFactory {
 			action=new BoardHitUpdateAction("qView.do");
 		}else if(cmd.equals("/qView.do")) {
 			action= new ReplyViewAction("cfk_user_voteview.jsp");
+		}else if(cmd.equals("/aDate.do")) {
+			action=new AttendAction("cfk_attend_confirm.jsp");
 		}
+		
 		return action;
 	}
 }
