@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	UserVO vo=(UserVO)session.getAttribute("vo");
+	UserVO vo=(UserVO)request.getAttribute("vo");
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@
 <title>방청 신청 날짜 확인</title>
 </head>
 <body>
-	<b><%=vo.getUser_name() %></b>님,
+	<b><%=vo.getUser_id() %></b>님,
 	<table><tr><td></td></tr></table>
 	<%=vo.getUser_attend_date() %>
 	<table><tr><td></td></tr></table>

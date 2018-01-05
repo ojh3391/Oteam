@@ -52,7 +52,7 @@ UserVO vo=(UserVO)session.getAttribute("vo");
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
-                            <li><a href="#clients">방청시청</a></li>
+                            <li><a href="cfk_attend.jsp">방청시청</a></li>
                             <li><a href="#price">응원하기</a></li>
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>

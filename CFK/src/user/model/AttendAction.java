@@ -31,9 +31,6 @@ public class AttendAction implements Action {
 		
 		req.setAttribute("vo", vo);
 		
-		System.out.println("AttendAction에서" +vo.getUser_id());
-		System.out.println(vo.getUser_attend_date());
-		
 		return new ActionForward(path, false);
 	}
 
