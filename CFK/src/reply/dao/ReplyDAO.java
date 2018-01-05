@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
+import board.vo.BoardVO;
 import reply.vo.ReplyVO;
 
 
@@ -91,34 +92,38 @@ public class ReplyDAO {
 		return result;
 	}
 	
-	public Vector<ReplyVO> reply_all(int board_num){
-		Vector<ReplyVO> reply_list=new Vector<ReplyVO>();
+	public Vector<ReplyVO> getList(int page,int limit,int board_num){
+		//page 값에 의해 몇번째 레코드부터 돌릴지 결정
+		int start=(page-1)*10;
 		
-		Connection con=getConnection();
-		PreparedStatement pstmt=null;
-		ResultSet rs=null;
+		Vector<ReplyVO> list=new Vector<ReplyVO>();
+		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
 		
 		try {
-			pstmt=con.prepareStatement("select * from cfk_reply where reply_board_num=?");
+			pstmt=con.prepareStatement("select * from cfk_reply where reply_board_num=? order by reply_re_ref desc, reply_re_seq asc limit ?,?");
 			pstmt.setInt(1, board_num);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, limit);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				String reply_content=rs.getString(2);
 				String reply_writer=rs.getString(3);
-				Date board_date=rs.getDate(4);
+				Date reply_date=rs.getDate(4);
 				int reply_re_ref=rs.getInt(6);
 				int reply_re_lev=rs.getInt(7);
 				int reply_re_seq=rs.getInt(8);
-				
-				ReplyVO vo=new ReplyVO(reply_content);
-				reply_list.add(vo);
-				
+				ReplyVO vo=new ReplyVO(reply_content,reply_writer,reply_date,reply_re_ref,reply_re_lev,reply_re_seq);
+				list.add(vo);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close(con,pstmt,rs);
 		}
-		return reply_list;
+		return list;
 	}
 }

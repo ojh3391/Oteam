@@ -5,12 +5,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	BoardVO vo=(BoardVO)request.getAttribute("vo");
-	Vector<ReplyVO> reply_list=(Vector<ReplyVO>)request.getAttribute("reply_list");
+	BoardVO vo1=(BoardVO)request.getAttribute("vo");
+	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
 	
 	String agent=request.getHeader("User-Agent");
-	String fileName=vo.getBoard_real_file();
-	System.out.println(fileName);
+	String fileName=vo1.getBoard_real_file();
+	System.out.println(vo1);
+	System.out.println(list);
+	
 	
 	boolean ieBrowser=(agent.indexOf("Trident")>-1);
 	
@@ -145,20 +147,20 @@
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">
-                                    <h3><%=vo.getBoard_subject() %></h3>
+                                    <h3><%=vo1.getBoard_subject() %></h3>
                                     <span class="show_hide close">
                                         <i class="icon-cancel"></i>
                                     </span>
                                 </div>
                                 <div class="project-info">
                                     <div>
-                                        <span>Name</span><%=vo.getBoard_writer() %></div>
+                                        <span>Name</span><%=vo1.getBoard_writer() %></div>
                                     <div>
-                                        <span>Date</span><%=vo.getBoard_date() %></div>
+                                        <span>Date</span><%=vo1.getBoard_date() %></div>
                                     <div>
-                                        <span>Link</span><%=vo.getBoard_file() %></div>
+                                        <span>Link</span><%=vo1.getBoard_file() %></div>
                                 </div>
-                                <p><%=vo.getBoard_content() %></p>
+                                <p><%=vo1.getBoard_content() %></p>
                             </div>
                         </div>
                     	</div>
@@ -166,8 +168,8 @@
                         	<ul class="skills">
             					
                             	<li>
-                                	<span class="bar" data-width="<%=vo.getBoard_vote()%>%"></span>
-                                	<h3>득표수 <%=vo.getBoard_vote()%>%</h3>
+                                	<span class="bar" data-width="<%=vo1.getBoard_vote()%>%"></span>
+                                	<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
                             	</li>
                         	</ul>
                     	</div>
@@ -188,22 +190,24 @@
                     </div>
                     
                     <div class="container">
+                    
                     <%
-					//for(ReplyVO vo1:reply_list){
+					for(ReplyVO vo:list){
 					%>                	
-                    <div class="span10">
+                    	<div class="span10">
                             <div class="testimonial">
-                                <p><%//=vo1.getReply_content() %></p>
+                                <p><%=vo.getReply_content() %></p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <strong><//%=vo1.getReply_writer() %>
-                                        <small><%//=vo1.getReply_date() %></small>
+                                    <strong><%=vo.getReply_writer() %>
+                                        <small><%=vo.getReply_date() %></small>
                                     </strong>
                                 </div>
                             </div>
                     </div>
-                    <%//}%>
+                    
                     </div>
+                    <%}%>
                 
             </div>             
         <!-- 댓글 폼 끝 -->  

@@ -27,7 +27,7 @@ create table cfk_board(
 	board_date date	
 );	
 drop table cfk_board;
-select * from cfk_board;
+select * from cfk_reply;
 update cfk_board set board_vote="30" where board_num="3";
 
 insert into cfk_board values(11,'11','11','11',NULL,NULL,'11',0,0,now());
@@ -43,6 +43,7 @@ create table cfk_reply(
 	reply_re_seq int not null		
 );	
 
+insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 --원글 번호
 --답변글 작성시 참조
 --답변글의 길이
