@@ -26,8 +26,9 @@ create table cfk_board(
 	board_readcount int default 0,
 	board_date date	
 );	
-drop table cfk_reply;
+drop table cfk_board;
 select * from cfk_board;
+update cfk_board set board_vote="30" where board_num="3";
 
 insert into cfk_board values(11,'11','11','11',NULL,NULL,'11',0,0,now());
 

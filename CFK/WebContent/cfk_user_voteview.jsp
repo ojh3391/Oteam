@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="board.vo.BoardVO"%>
 <%@page import="reply.vo.ReplyVO"%>
 <%@page import="java.util.Vector"%>
@@ -6,7 +7,18 @@
 <%
 	BoardVO vo=(BoardVO)request.getAttribute("vo");
 	Vector<ReplyVO> reply_list=(Vector<ReplyVO>)request.getAttribute("reply_list");
-
+	
+	String agent=request.getHeader("User-Agent");
+	String fileName=vo.getBoard_real_file();
+	System.out.println(fileName);
+	
+	boolean ieBrowser=(agent.indexOf("Trident")>-1);
+	
+	if(ieBrowser) {
+		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
+	}else{
+		fileName=new String(fileName.getBytes("UTF-8"),"iso-8859-1");
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -127,7 +139,7 @@
                   		<div id="slidingDiv4" class="single-project">
                         <div class="span6">
                             <video width="600" height="400" controls autoplay>
-                            	<source src="/CFK/boardUpload/<%=vo.getBoard_real_file()%>">
+                            	<source src="/project/boardUpload/<%=fileName%>">
                             </video>
                         </div>
                         <div class="span6">
