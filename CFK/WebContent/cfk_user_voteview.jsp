@@ -26,7 +26,7 @@
 <html>
 <style>
 .scrolltable {
-    width: 700px; height:200px;
+    width: 700px; height:120px;
     display: block;
     overflow: auto;
 }
