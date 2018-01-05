@@ -26,6 +26,13 @@
 %>
 <!DOCTYPE html>
 <html>
+<style>
+.scrolltable {
+    width: 700px; height:120px;
+    display: block;
+    overflow: auto;
+}
+</style>
 <head>
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -141,18 +148,16 @@
                     <div id="single-project">
                   	<td>
                   		<div id="slidingDiv4" class="single-project">
-                        <div class="span6">
+                        <div class="span6" style="margin: 15px;">
                             <video width="600" height="400" controls autoplay>
                             	<source src="/project/boardUpload/<%=fileName%>">
                             </video>
                         </div>
+                        
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">
                                     <h3><%=vo1.getBoard_subject() %></h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
                                 </div>
                                 <div class="project-info">
                                     <div>
@@ -162,7 +167,7 @@
                                     <div>
                                         <span>Link</span><%=vo1.getBoard_file() %></div>
                                 </div>
-                                <p><%=vo1.getBoard_content() %></p>
+                                <table class='scrolltable'><tr><td><p><%=vo1.getBoard_content() %></p></td></tr></table>
                             </div>
                         </div>
                     	</div>
@@ -178,10 +183,10 @@
                     </td>
                     </div>
                     </ul>                       
-                    </div>                 	
                     	<div align="center">
-                    	<button class="message-btn" style="margin: 50px">수정</button>
-                    	<button class="message-btn">삭제</button>
+                    		<button class="message-btn" style="margin: 50px">수정</button>
+                    		<button class="message-btn">삭제</button>
+                    	</div>
                     </div>
                   	<form action="cfk_reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
                		<div class="title">

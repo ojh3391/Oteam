@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>참가신청</title>
 <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
@@ -132,11 +132,11 @@
 				
 				<tr>
 					<td><p><font color="black">제목</font></p></td>
-					<td><input class="span5" type="text" name="board_subject" required></td>
+					<td><input class="span5" type="text" name="board_subject" maxlength="50" required></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">내용</font></p></td>
-					<td><textarea class="span5" name="board_content" cols='60' rows='15' required></textarea></td>
+					<td><textarea class="span5" name="board_content" cols='60' rows='15' maxlength="2000" required></textarea></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">파일첨부</font></p></td>

@@ -122,8 +122,6 @@
 			<table align="center">
 				<tr>
 					<td>
-						<%=vo.getUser_id() %>
-						<%=vo.getUser_attend_date() %>
 						<iframe src="cfk_calendar.jsp" frameborder="0" width="590" height="700" id="iframeTicket" title="방청권 신청 프레임"></iframe>
 					</td>
 				</tr>
@@ -158,6 +156,7 @@
         <!--[if lt IE 9]>
             <script src="./Resources/js/respond.min.js"></script>
         <![endif]-->
+        
         <script type="text/javascript" src="./Resources/js/app.js"></script>
         
           
