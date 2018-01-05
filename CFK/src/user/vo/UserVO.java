@@ -11,9 +11,8 @@ public class UserVO
 	private String user_name;
 	private String user_email;
 	private String user_gender;
+	private String user_attend_date;
 	private int user_check_vote;
-	
-	
 	
 	public UserVO() {
 		super();
@@ -89,6 +88,12 @@ public class UserVO
 	}
 	public void setUser_gender(String user_gender) {
 		this.user_gender = user_gender;
+	}
+	public String getUser_attend_date() {
+		return user_attend_date;
+	}
+	public void setUser_attend_date(String user_attend_date) {
+		this.user_attend_date = user_attend_date;
 	}
 	public int getUser_check_vote() {
 		return user_check_vote;

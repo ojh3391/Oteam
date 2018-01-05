@@ -8,14 +8,10 @@ import java.sql.SQLException;
 
 import user.vo.UserVO;
 
-
-
-
 public class UserDAO {
 	private Connection con=null;
 	private PreparedStatement pstmt=null;
 	private ResultSet rs=null;
-	
 	
 	//connection => dbcp
 	public Connection getConnection() {
@@ -157,7 +153,34 @@ public class UserDAO {
 			close(con,pstmt);
 		}
 		return result;
+	}
+	
+	public UserVO user_attend(String user_attend_date, String user_id) {
+		UserVO vo = null;
+		con=getConnection();
 		
+		try {
+			pstmt=con.prepareStatement("update cfk_user set user_attend_date=? where user_id=?");
+			pstmt.setString(1, user_attend_date);
+			pstmt.setString(2, user_id);
+			pstmt.executeUpdate();
+			
+			String sql="select user_id,user_attend_date from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				vo = new UserVO();
+				vo.setUser_id(rs.getString("user_id"));
+				vo.setUser_attend_date(rs.getString("user_attend_date"));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt,rs);
+		}
+		return vo;
 	}
 	
 }
