@@ -245,7 +245,7 @@ p {
     overflow: hidden;
     position: relative;
     border:0;
-    border-radius:0;
+    border-radius:30;
     box-shadow:none;
     text-align:center;
     background: #191a1c;

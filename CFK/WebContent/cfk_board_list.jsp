@@ -4,7 +4,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
+<%
+	
+	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	//페이지나누기를 위한 정보
+	PageVO info=(PageVO)request.getAttribute("info");
+	int total_page=info.getTotalPage();
+	int current_page=info.getPage();
+	int endPage=info.getEndPage();
+	int startPage=info.getStartPage();
+	int totalRows=info.getTotoalRows();
+%> 
 <html>  
     <head>
         <meta charset=utf-8>
@@ -32,28 +42,9 @@
     </head>
     
     <body>
-<%
-	
-	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
-	//페이지나누기를 위한 정보
-	PageVO info=(PageVO)request.getAttribute("info");
-	int total_page=info.getTotalPage();
-	int current_page=info.getPage();
-	int endPage=info.getEndPage();
-	int startPage=info.getStartPage();
-	int totalRows=info.getTotoalRows();
-%> 
-<script>
-	<%-- function index(){
-		location.href="board/qna_board_write.jsp?page=<%=current_page%>";
-	}
-	function register(){
-		location.href="index.jsp";
-	}
-	function search(){
-		searchform.submit();
-	} --%>
-</script>
+
+
+
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -137,7 +128,7 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-                              <img src="/Oteam/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
+                              <img src="/CFK/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
                               <div class="mask">
