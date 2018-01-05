@@ -1,15 +1,14 @@
-
 <%@page import="user.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 int board_num=Integer.parseInt(request.getParameter("board_num"));
 String content=request.getParameter("reply_content");
+content= new String(content.getBytes("8859_1"), "UTF-8");
 System.out.println(board_num);
 System.out.println(content);
 
 UserVO vo=(UserVO)session.getAttribute("vo");
-
 
 %>
 <!DOCTYPE html>

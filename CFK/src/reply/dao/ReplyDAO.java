@@ -95,7 +95,7 @@ public class ReplyDAO {
 	public Vector<ReplyVO> getList(int page,int limit,int board_num){
 		//page 값에 의해 몇번째 레코드부터 돌릴지 결정
 		int start=(page-1)*10;
-		
+		//System.out.println(board_num);
 		Vector<ReplyVO> list=new Vector<ReplyVO>();
 		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
 		
@@ -109,6 +109,7 @@ public class ReplyDAO {
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, limit);
 			rs=pstmt.executeQuery();
+			System.out.println(rs);
 			while(rs.next()) {
 				String reply_content=rs.getString(2);
 				String reply_writer=rs.getString(3);
@@ -127,7 +128,7 @@ public class ReplyDAO {
 		return list;
 	}
 	
-	public int insert(ReplyVO vo) {
+	public int insert(ReplyVO vo1) {
 		int insertCount=0;
 		
 		int num=0;
@@ -147,9 +148,9 @@ public class ReplyDAO {
 			String sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?)";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, num);
-			pstmt.setString(2, vo.getReply_content());
-			pstmt.setString(3, vo.getReply_writer());
-			pstmt.setInt(4, vo.getReply_board_num());
+			pstmt.setString(2, vo1.getReply_content());
+			pstmt.setString(3, vo1.getReply_writer());
+			pstmt.setInt(4, vo1.getReply_board_num());
 			pstmt.setInt(5, num);
 			pstmt.setInt(6, 0);
 			pstmt.setInt(7, 0); 
@@ -171,4 +172,5 @@ public class ReplyDAO {
 		}
 		return insertCount;
 	}
+	
 }

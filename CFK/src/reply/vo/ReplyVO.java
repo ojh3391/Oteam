@@ -15,6 +15,7 @@ public class ReplyVO {
 	private int board_num;
 	
 	
+	
 
 
 	public ReplyVO(String reply_content, String reply_writer, Date reply_date, int reply_re_ref, int reply_re_lev,

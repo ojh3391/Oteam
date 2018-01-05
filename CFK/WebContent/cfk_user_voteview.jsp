@@ -20,19 +20,10 @@
 	
 	if(ieBrowser) {
 		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
-	}else{
-		fileName=new String(fileName.getBytes("UTF-8"),"iso-8859-1");
 	}
 %>
 <!DOCTYPE html>
 <html>
-<style>
-.scrolltable {
-    width: 700px; height:120px;
-    display: block;
-    overflow: auto;
-}
-</style>
 <head>
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -150,7 +141,7 @@
                   		<div id="slidingDiv4" class="single-project">
                         <div class="span6" style="margin: 15px;">
                             <video width="600" height="400" controls autoplay>
-                            	<source src="/project/boardUpload/<%=fileName%>">
+                            	<source src="/CFK/boardUpload/<%=fileName%>">
                             </video>
                         </div>
                         
@@ -188,14 +179,16 @@
                     		<button class="message-btn">삭제</button>
                     	</div>
                     </div>
-                  	<form action="cfk_reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
+                  	
                		<div class="title">
                         <h1>응원 메시지를 This</h1>
+                    <form action="cfk_reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
                         <p>응원댓글    
                         <input class="span9" type="text" name="reply_content" required>
-                        <button class="message-btn">등록</button>
-                    </div>
+                        <button class="message-btn">등록</button></p>
                     </form>
+                    </div>
+                    
                     
                     <div class="container">
                     
@@ -213,9 +206,9 @@
                                 </div>
                             </div>
                     </div>
-                    
-                    </div>
                     <%}%>
+                    </div>
+                    
                 
             </div>             
         <!-- 댓글 폼 끝 -->  
