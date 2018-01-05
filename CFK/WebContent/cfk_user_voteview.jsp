@@ -144,9 +144,9 @@
                             	<source src="/project/boardUpload/<%=fileName%>">
                             </video>
                         </div>
+                        
                         <div><table><tr><td></td></tr></table></div>
-                        <div><table><tr><td></td></tr></table></div>
-                        <div><table><tr><td></td></tr></table></div>
+                        
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">

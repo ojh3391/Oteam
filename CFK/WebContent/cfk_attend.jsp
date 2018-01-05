@@ -156,6 +156,7 @@
         <!--[if lt IE 9]>
             <script src="./Resources/js/respond.min.js"></script>
         <![endif]-->
+        
         <script type="text/javascript" src="./Resources/js/app.js"></script>
         
           
