@@ -24,6 +24,13 @@
 %>
 <!DOCTYPE html>
 <html>
+<style>
+.scrolltable {
+    width: 700px; height:200px;
+    display: block;
+    overflow: auto;
+}
+</style>
 <head>
 <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,13 +146,11 @@
                     <div id="single-project">
                   	<td>
                   		<div id="slidingDiv4" class="single-project">
-                        <div class="span6">
+                        <div class="span6" style="margin: 15px;">
                             <video width="600" height="400" controls autoplay>
                             	<source src="/project/boardUpload/<%=fileName%>">
                             </video>
                         </div>
-                        
-                        <div><table><tr><td></td></tr></table></div>
                         
                         <div class="span6">
                             <div class="project-description">
@@ -160,7 +165,7 @@
                                     <div>
                                         <span>Link</span><%=vo1.getBoard_file() %></div>
                                 </div>
-                                <p><%=vo1.getBoard_content() %></p>
+                                <table class='scrolltable'><tr><td><p><%=vo1.getBoard_content() %></p></td></tr></table>
                             </div>
                         </div>
                     	</div>
@@ -176,10 +181,10 @@
                     </td>
                     </div>
                     </ul>                       
-                    </div>                 	
                     	<div align="center">
-                    	<button class="message-btn" style="margin: 50px">수정</button>
-                    	<button class="message-btn">삭제</button>
+                    		<button class="message-btn" style="margin: 50px">수정</button>
+                    		<button class="message-btn">삭제</button>
+                    	</div>
                     </div>
                   
                		<div class="title">
