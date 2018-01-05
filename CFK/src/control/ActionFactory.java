@@ -4,6 +4,8 @@ import action.Action;
 import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
 import board.model.PartiAction;
+import reply.model.ReplyInsertAction;
+import reply.model.ReplyPwdCheckAtion;
 import reply.model.ReplyViewAction;
 import user.model.*;
 
@@ -44,6 +46,10 @@ public class ActionFactory {
 			action= new ReplyViewAction("cfk_user_voteview.jsp");
 		}else if(cmd.equals("/aDate.do")) {
 			action=new AttendAction("cfk_attend_confirm.jsp");
+		}else if(cmd.equals("/reply_pwd.do")) {
+			action=new ReplyPwdCheckAtion("qReplyInsert.do");
+		}else if(cmd.equals("/qReplyInsert.do")) {
+			action=new ReplyInsertAction("qView.do");
 		}
 		
 		return action;

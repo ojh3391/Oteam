@@ -1,34 +1,22 @@
+
 <%@page import="user.vo.UserVO"%>
-<%@page import="java.net.URLEncoder"%>
-<%@page import="board.vo.BoardVO"%>
-<%@page import="reply.vo.ReplyVO"%>
-<%@page import="java.util.Vector"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	
-	BoardVO vo1=(BoardVO)request.getAttribute("vo");
-	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
-	
-	String agent=request.getHeader("User-Agent");
-	String fileName=vo1.getBoard_real_file();
-	System.out.println(vo1);
-	System.out.println(list);
-	
-	
-	boolean ieBrowser=(agent.indexOf("Trident")>-1);
-	
-	if(ieBrowser) {
-		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
-	}else{
-		fileName=new String(fileName.getBytes("UTF-8"),"iso-8859-1");
-	}
+int board_num=Integer.parseInt(request.getParameter("board_num"));
+String content=request.getParameter("reply_content");
+System.out.println(board_num);
+System.out.println(content);
+
+UserVO vo=(UserVO)session.getAttribute("vo");
+
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -50,8 +38,8 @@
         <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
     </head>
-    
-    <body>
+     
+        <body>
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -133,88 +121,41 @@
         <!-- End home section -->
         
         
-        <!-- 댓글 폼 시작 -->
-     	
-     		<div class="section primary-section" id="about">
-            	<div class="container">
-                    <ul id="" class="thumbnails row">
-                    <div id="single-project">
-                  	<td>
-                  		<div id="slidingDiv4" class="single-project">
-                        <div class="span6">
-                            <video width="600" height="400" controls autoplay>
-                            	<source src="/project/boardUpload/<%=fileName%>">
-                            </video>
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3><%=vo1.getBoard_subject() %></h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Name</span><%=vo1.getBoard_writer() %></div>
-                                    <div>
-                                        <span>Date</span><%=vo1.getBoard_date() %></div>
-                                    <div>
-                                        <span>Link</span><%=vo1.getBoard_file() %></div>
-                                </div>
-                                <p><%=vo1.getBoard_content() %></p>
-                            </div>
-                        </div>
-                    	</div>
-               			<div class="span5">
-                        	<ul class="skills">
-            					
-                            	<li>
-                                	<span class="bar" data-width="<%=vo1.getBoard_vote()%>%"></span>
-                                	<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
-                            	</li>
-                        	</ul>
-                    	</div>
-                    </td>
-                    </div>
-                    </ul>                       
-                    </div>                 	
-                    	<div align="center">
-                    	<button class="message-btn" style="margin: 50px">수정</button>
-                    	<button class="message-btn">삭제</button>
-                    </div>
-                  	<form action="cfk_reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
-               		<div class="title">
-                        <h1>응원 메시지를 This</h1>
-                        <p>응원댓글    
-                        <input class="span9" type="text" name="reply_content" required>
-                        <button class="message-btn">등록</button>
-                    </div>
-                    </form>
-                    
-                    <div class="container">
-                    
-                    <%
-					for(ReplyVO vo:list){
-					%>                	
-                    	<div class="span10">
-                            <div class="testimonial">
-                                <p><%=vo.getReply_content() %></p>
-                                <div class="whopic">
-                                    <div class="arrow"></div>
-                                    <strong><%=vo.getReply_writer() %>
-                                        <small><%=vo.getReply_date() %></small>
-                                    </strong>
-                                </div>
-                            </div>
-                    </div>
-                    
-                    </div>
-                    <%}%>
-                
-            </div>             
-        <!-- 댓글 폼 끝 -->  
- 		<!-- Footer section start -->
+        
+            <div class="section secondary-section" id="service">
+            <div class="container">
+      
+        <div class="title">
+        	<h1>비밀번호 확인</h1>
+            	<!-- Section's title goes here -->
+                <p>비밀번호를 정확히 입력하시오.</p>
+                <!--Simple description for section goes here. -->
+        </div>
+        <form action="reply_pwd.do" method="post">
+			<table align="center">
+				<tr>
+					<td><p><font color="black">아이디</font></p></td>
+					<td><input class="span2" type="text" name="user_id" value="<%=vo.getUser_id() %>" readonly></td>
+				</tr>
+				<tr>
+					<td><p><font color="black">비밀번호</font></p></td>
+					<td><input class="span2" type="password" name="user_passwd" required></td>
+				</tr>
+	
+				<tr>
+					<td align="center" colspan="2" class="btn_align">
+						<input class="message-btn" type="submit" value="댓글 등록" >
+						
+						<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="board_num" value="<%=board_num%>">
+			<input type="hidden" name="content" value="<%=content%>">
+		</form>
+        </div>
+        </div>
+        
         <div class="footer">
             <p>&copy; 2017 Theme by <a href="http://www.graphberry.com">Oh!Bro~ Corp.</a></p>
         </div>
@@ -243,9 +184,7 @@
         <![endif]-->
         <script type="text/javascript" src="./Resources/js/app.js"></script>
         
-        
- 
-         
-    </body>
- 
+          
+
+</body>
 </html>

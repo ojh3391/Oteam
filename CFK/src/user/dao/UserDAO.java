@@ -146,7 +146,7 @@ public class UserDAO {
 			pstmt.setString(5, user_email);
 			pstmt.setString(6, user_id);
 			result=pstmt.executeUpdate();
-			System.out.println(user_passwd);
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
