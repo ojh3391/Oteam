@@ -144,13 +144,13 @@
                             	<source src="/project/boardUpload/<%=fileName%>">
                             </video>
                         </div>
+                        <div><table><tr><td></td></tr></table></div>
+                        <div><table><tr><td></td></tr></table></div>
+                        <div><table><tr><td></td></tr></table></div>
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">
                                     <h3><%=vo1.getBoard_subject() %></h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
                                 </div>
                                 <div class="project-info">
                                     <div>
