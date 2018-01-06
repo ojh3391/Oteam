@@ -17,6 +17,7 @@
 	int endPage=info.getEndPage();
 	int startPage=info.getStartPage();
 	int totalRows=info.getTotoalRows();
+	int hap=0;
 	
 	
 	String agent=request.getHeader("User-Agent");
@@ -142,9 +143,9 @@
      		<div class="section primary-section" id="about">
             	<div class="container">
                     <ul id="" class="thumbnails row">
-                    <div id="single-project">
+                    <div >
                   	<td>
-                  		<div id="slidingDiv4" class="single-project">
+                  		<div  class="single-project">
                         <div class="span6" style="margin: 15px;">
                             <video width="600" height="400" controls autoplay>
                             	<source src="/CFK/boardUpload/<%=fileName%>">
@@ -208,14 +209,30 @@
                     </div>
                   </div> 
                    
-                    <div class="container">
+                    <div style="margin-top:-80px;" class="container">
                     <%
 					for(ReplyVO vo:list){
-					%>   
-						<div class="container">             	
-                    	<div class="span7">
-                            <div class="testimonial">
-                                <p><%=vo.getReply_content() %></p>
+					%>
+					  	<div class="container">
+					  		<div class="span9">
+						<%
+						if(vo.getReply_re_lev()!=0){
+							for(int j=0;j<=vo.getReply_re_lev()*1;j++){
+								hap=30+(j*20);
+							}
+						%><div style="margin-top:-50px; margin-left:<%=hap%>px;" class="testimonial">
+						  <p>RE : <%=vo.getReply_content() %></p>
+						<% 	
+						}else{ %>
+						  <div style="margin-top:-30px;" class="testimonial">
+                          <p><%=vo.getReply_content() %></p>
+						<%	
+						}
+					
+						%> 
+						             	
+                    	
+                          
                                 <div class="whopic">
                                     <div class="arrow"></div>
                                     <strong><%=vo.getReply_writer() %>
