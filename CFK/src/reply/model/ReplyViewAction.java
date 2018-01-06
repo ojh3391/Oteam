@@ -62,8 +62,7 @@ public class ReplyViewAction implements Action {
 		BoardVO vo=dao.getRow(board_num);
 		Vector<ReplyVO> list=dao1.getList(page,limit,board_num);
 		//가져온 내용 담고 페이지 이동
-		System.out.println(vo);
-		System.out.println(list);
+		
 		req.setAttribute("vo", vo);
 		req.setAttribute("list", list);
 		req.setAttribute("page", current_page);

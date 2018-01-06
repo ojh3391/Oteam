@@ -1,11 +1,13 @@
 package control;
 
 import action.Action;
+import board.model.BoardDeleteAction;
 import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
+import board.model.BoardPwdCheckAction;
 import board.model.PartiAction;
 import reply.model.ReplyInsertAction;
-import reply.model.ReplyPwdCheckAtion;
+import reply.model.ReplyPwdCheckAction;
 import reply.model.ReplyViewAction;
 import user.model.*;
 
@@ -47,9 +49,13 @@ public class ActionFactory {
 		}else if(cmd.equals("/aDate.do")) {
 			action=new AttendAction("cfk_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {
-			action=new ReplyPwdCheckAtion("qReplyInsert.do");
+			action=new ReplyPwdCheckAction("qReplyInsert.do");
 		}else if(cmd.equals("/qReplyInsert.do")) {
-			action=new ReplyInsertAction("qView.do");
+			action=new ReplyInsertAction("qView.do");		
+		}else if(cmd.equals("/board_pwd.do")) {
+			action=new BoardPwdCheckAction("qBoardDelete.do");
+		}else if(cmd.equals("/qBoardDelete.do")) {
+			action=new BoardDeleteAction("qList.do");
 		}
 		
 		return action;

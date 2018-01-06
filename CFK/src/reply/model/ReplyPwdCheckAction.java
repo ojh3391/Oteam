@@ -11,27 +11,23 @@ import action.ActionForward;
 import user.dao.UserDAO;
 import user.vo.UserVO;
 
-public class ReplyPwdCheckAtion implements Action {
+public class ReplyPwdCheckAction implements Action {
 	
 	private String path;
 	
-	public ReplyPwdCheckAtion(String path) {
+	public ReplyPwdCheckAction(String path) {
 		super();
 		this.path = path;
 	}
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String current_page=req.getParameter("page");
-		// qna_board_pwdCheck.jsp에서 넘긴값 가져오기
+		
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		String content=req.getParameter("content");
 		String user_id=req.getParameter("user_id");
 		String user_passwd=req.getParameter("user_passwd");
-		System.out.println(board_num);
-		System.out.println(user_id);
-		System.out.println(content);
-		
-		
+	
 		// 비밀번호 맞는지 확인하기
 		UserDAO dao=new UserDAO();
 		UserVO result=dao.isLogin(user_id, user_passwd);

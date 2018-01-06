@@ -204,5 +204,27 @@ public class BoardDAO {
 		}
 		return vo;
 	}
-	
+	public int board_delete(int board_num) {
+		int result=0;
+		con=getConnection();
+		pstmt=null;
+		
+		try {
+			String sql="delete from cfk_board where board_num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
+			result=pstmt.executeUpdate();
+			sql="delete from cfk_reply where reply_board_num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
+			result=pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt);
+		}
+		return result;
+	}
 }

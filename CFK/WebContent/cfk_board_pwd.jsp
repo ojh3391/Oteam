@@ -3,8 +3,6 @@
     pageEncoding="UTF-8"%>
 <%
 int board_num=Integer.parseInt(request.getParameter("board_num"));
-String content=request.getParameter("reply_content");
-content= new String(content.getBytes("8859_1"), "UTF-8");
 
 UserVO vo=(UserVO)session.getAttribute("vo");
 
@@ -128,7 +126,7 @@ UserVO vo=(UserVO)session.getAttribute("vo");
                 <p>비밀번호를 정확히 입력하시오.</p>
                 <!--Simple description for section goes here. -->
         </div>
-        <form action="reply_pwd.do" method="post">
+        <form action="board_pwd.do" method="post">
 			<table align="center">
 				<tr>
 					<td><p><font color="black">아이디</font></p></td>
@@ -141,14 +139,13 @@ UserVO vo=(UserVO)session.getAttribute("vo");
 	
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
-						<input class="message-btn" type="submit" value="댓글 등록" >
+						<input class="message-btn" type="submit" value="삭제" >
 						
 						<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 					</td>
 				</tr>
 			</table>
 			<input type="hidden" name="board_num" value="<%=board_num%>">
-			<input type="hidden" name="content" value="<%=content%>">
 		</form>
         </div>
         </div>

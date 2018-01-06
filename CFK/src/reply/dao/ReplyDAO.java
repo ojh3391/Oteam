@@ -109,7 +109,7 @@ public class ReplyDAO {
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, limit);
 			rs=pstmt.executeQuery();
-			System.out.println(rs);
+			
 			while(rs.next()) {
 				String reply_content=rs.getString(2);
 				String reply_writer=rs.getString(3);

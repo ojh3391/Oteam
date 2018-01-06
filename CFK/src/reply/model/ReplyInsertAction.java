@@ -35,12 +35,7 @@ public class ReplyInsertAction implements Action {
 		String user_id=(String) req.getAttribute("user_id");
 		
 		String content=req.getParameter("content");
-		
-		
-		System.out.println(board_num);
-		System.out.println(user_id);
-		System.out.println(content);
-		
+	
 		vo1.setReply_content(content);
 		vo1.setReply_board_num(board_num);
 		vo1.setReply_writer(user_id);

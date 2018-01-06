@@ -8,13 +8,12 @@
 <%
 	
 	BoardVO vo1=(BoardVO)request.getAttribute("vo");
+	UserVO vo2=(UserVO)session.getAttribute("vo");
 	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
-	
+
 	String agent=request.getHeader("User-Agent");
 	String fileName=vo1.getBoard_real_file();
-	System.out.println(vo1);
-	System.out.println(list);
-	
+
 	
 	boolean ieBrowser=(agent.indexOf("Trident")>-1);
 	
@@ -170,13 +169,24 @@
                                 	<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
                             	</li>
                         	</ul>
+                        	<ul align="center">
+                        		<button class="button button-sp">투표</button>	
+                        	</ul>
+                    	</div>
+                    	<div>
+                    		
                     	</div>
                     </td>
                     </div>
                     </ul>                       
                     	<div align="center">
-                    		<button class="message-btn" style="margin: 50px">수정</button>
-                    		<button class="message-btn">삭제</button>
+                    		<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
+                    		<button class="message-btn">수정</button>
+                    		<button class="message-btn" onclick="location.href='cfk_board_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
+                    		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
+                    		<%}else{%>
+                    		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
+                    		<%} %>
                     	</div>
                     </div>
                   	
