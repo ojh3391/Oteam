@@ -1,11 +1,14 @@
 package board.model;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
 import board.dao.BoardDAO;
+import board.vo.BoardVO;
 
 public class BoardDeleteAction implements Action {
 	private String path;
@@ -22,7 +25,24 @@ public class BoardDeleteAction implements Action {
 		
 		//해당 일치하는 레코드 삭제하기
 		BoardDAO dao=new BoardDAO();
+		BoardVO vo=dao.getRow(board_num);
 		
+		String fileName =vo.getBoard_file();
+		String saveDir="/boardUpload";
+		String uploadPath=req.getServletContext().getRealPath(saveDir);
+		int idx=fileName.lastIndexOf(".");
+		String _fileName=fileName.substring(0, idx);
+		String filePath=uploadPath+"\\"+fileName;
+		String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
+		System.out.println(filePath);
+		System.out.println(filePath2);
+        File uploadfile=new File(filePath);
+        File uploadfile2=new File(filePath2);
+        
+        uploadfile.delete();
+        uploadfile2.delete(); // 파일 삭제
+        
+
 		dao.board_delete(board_num);
 		
 		//삭제후 리스트 이동
