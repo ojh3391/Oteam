@@ -27,9 +27,16 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
         <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
+        
+        <script type="text/javascript">
+			function Popupopen() {
+		   		window. open("popup.html", "Calendar", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+			}
+</script>
+        
     </head>
     
-    <body>
+    <body onload="Popupopen();">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
