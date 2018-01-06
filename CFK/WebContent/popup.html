@@ -1,29 +1,28 @@
 <html>
 <head>
-<title>2018 Notice</title>
+<title>CFK Notice</title>
 <meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
 <SCRIPT language=JavaScript src="/js/common.js"></SCRIPT>
 <link href="/css/style.css" rel="stylesheet" type="text/css">
-<SCRIPT language="JavaScript">
+
+<script type="text/javascript">
 	function setCookie(name, value, expiredays){
 		var todayDate = new Date();
 		todayDate.setDate(todayDate.getDate()+ expiredays);
-		todayDate.setYear(todayDate.getFullYear());
-		todayDate.setMonth(todayDate.getMonth());
-		todayDate.setDate(todayDate.getDate());
-		todayDate.setHours(0);
-		todayDate.setMinutes(0);
-		todayDate.setSeconds(0);
-		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+		document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
 	}
-	function popupCloseWin() { 	
-		setCookie( "popName1028", "done" , 1); 
+	function popupCloseWin() { 
+		if(document.checkClose.notice.checked) {
+			setCookie( "notice", "1" , 1); 
+		}
 		window.close(); 
 	}
 
-</SCRIPT>
+
+	</SCRIPT>
 </head>
 <body>
+<form name="checkClose">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td style="padding : 5 5 5 5">
@@ -36,13 +35,15 @@
       <table width="100%"  border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td height="20" align="left" bgcolor="F2F2F2">&nbsp;
-		  <input type="checkbox" onclick="popupCloseWin()"><span class="small" style="font-size:10pt;">오늘 이 창 띄우지 않기.</span></td>
+		  
+		  <input type="checkbox" name="notice"><span class="small" style="font-size:10pt;">오늘 이 창 띄우지 않기.</span></td>
           <td align="right"  bgcolor="F2F2F2">
-		  <a href="" onclick="window.close();return false;"><img src="./Resources/images/popup/close.gif"  border=0></a>&nbsp;&nbsp;</td>
+		  <a href="" onclick="popupCloseWin();return false;"><img src="./Resources/images/popup/close.gif" border=0></a>&nbsp;&nbsp;</td>
         </tr>
       </table>
 	  </td>
   </tr>
 </table>
+</form>
 </body>
 </html>

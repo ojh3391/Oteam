@@ -29,10 +29,22 @@
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
         
         <script type="text/javascript">
+        	function cookieVal(cookieName) {
+        		thisCookie = document.cookie.split("; ");
+        		for(i=0; i<thisCookie.length; i++) {
+        			if(cookieName == thisCookie[i].split("=")[0]){
+        				return thisCookie[i].split("=")[1];
+        			}
+        		}
+        		return "x";
+        	}
+        
 			function Popupopen() {
-		   		window. open("popup.html", "Calendar", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+				if(cookieVal("notice")!="1") {
+		   			window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+				}
 			}
-</script>
+		</script>
         
     </head>
     
