@@ -34,8 +34,7 @@ public class BoardDeleteAction implements Action {
 		String _fileName=fileName.substring(0, idx);
 		String filePath=uploadPath+"\\"+fileName;
 		String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
-		System.out.println(filePath);
-		System.out.println(filePath2);
+		
         File uploadfile=new File(filePath);
         File uploadfile2=new File(filePath2);
         

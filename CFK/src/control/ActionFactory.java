@@ -6,6 +6,7 @@ import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
 import board.model.BoardPwdCheckAction;
 import board.model.PartiAction;
+import reply.model.ReplyDeleteAction;
 import reply.model.ReplyInsertAction;
 import reply.model.ReplyPwdCheckAction;
 import reply.model.ReplyViewAction;
@@ -56,6 +57,10 @@ public class ActionFactory {
 			action=new BoardPwdCheckAction("qBoardDelete.do");
 		}else if(cmd.equals("/qBoardDelete.do")) {
 			action=new BoardDeleteAction("qList.do");
+		}else if(cmd.equals("/reply_delete.do")) {
+			action=new BoardPwdCheckAction("qReplyDelete.do");
+		}else if(cmd.equals("/qReplyDelete.do")) {
+			action=new ReplyDeleteAction("qList.do");
 		}
 		
 		return action;

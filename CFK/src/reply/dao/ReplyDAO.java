@@ -53,44 +53,6 @@ public class ReplyDAO {
 		}
 	}
 
-	public int reply_insert(ReplyVO vo) {
-		int result=0;
-		int num=0;
-		
-		
-		
-		try {
-			con=getConnection();
-			//글을 하나 등록하기 전에 글 번호를 알기 위해 값 가져오기
-			pstmt=con.prepareStatement("select max(reply_num)from cfk_reply");
-			con.setAutoCommit(false);
-			rs=pstmt.executeQuery();
-			if(rs.next())
-				num=rs.getInt(1)+1;
-			else
-				num=1;
-			
-			String sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?)";
-			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, num);
-			pstmt.setString(2, vo.getReply_content());
-			pstmt.setString(3, vo.getReply_writer());
-			pstmt.setInt(4,vo.getReply_board_num());
-			pstmt.setInt(5, num);
-			pstmt.setInt(6, 0);
-			pstmt.setInt(7, 0);
-			
-			
-			result=pstmt.executeUpdate();
-			if(result>0)
-				con.commit();
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			close(con,pstmt,rs);
-		}
-		return result;
-	}
 	
 	public Vector<ReplyVO> getList(int page,int limit,int board_num){
 		//page 값에 의해 몇번째 레코드부터 돌릴지 결정
@@ -173,4 +135,44 @@ public class ReplyDAO {
 		return insertCount;
 	}
 	
+	public int total_rows(int board_num) {
+		String sql="select count(*) from cfk_reply where reply_board_num=?";
+		
+		int total_rows=0;
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				total_rows=rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+		}
+		return total_rows;
+	}
+	
+	public int reply_delete(int reply_num) {
+		int result=0;
+		con=getConnection();
+		pstmt=null;
+		String sql="delete from cfk_reply where reply_num=?";
+		
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, reply_num);
+			result=pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt);
+		}
+		return result;
+	}
 }

@@ -26,7 +26,7 @@ public class ReplyViewAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String current_page=req.getParameter("page");
+		//String current_page=req.getParameter("page");
 		//qna_board_list.jsp 넘어오는 값 가져오기
 		//board_num 가져오기
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
@@ -40,7 +40,7 @@ public class ReplyViewAction implements Action {
 		ReplyDAO dao1=new ReplyDAO();
 		
 		// 2.전체 게시물 수 가져오기
-		int total_rows=dao.total_rows();
+		int total_rows=dao1.total_rows(board_num);
 		// 3.한페이지에 보여줄 갯수 정하기
 		int limit=10;
 		// 4.화면 리스트페이지 하단에 total_page 결정
@@ -65,8 +65,8 @@ public class ReplyViewAction implements Action {
 		
 		req.setAttribute("vo", vo);
 		req.setAttribute("list", list);
-		req.setAttribute("page", current_page);
-		
+		//req.setAttribute("page", current_page);
+		req.setAttribute("info", info);
 		
 		return new ActionForward(path,false);
 	}
