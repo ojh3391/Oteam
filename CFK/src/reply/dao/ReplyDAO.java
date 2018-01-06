@@ -73,13 +73,14 @@ public class ReplyDAO {
 			rs=pstmt.executeQuery();
 			
 			while(rs.next()) {
+				int reply_num=rs.getInt(1);
 				String reply_content=rs.getString(2);
 				String reply_writer=rs.getString(3);
 				Date reply_date=rs.getDate(4);
 				int reply_re_ref=rs.getInt(6);
 				int reply_re_lev=rs.getInt(7);
 				int reply_re_seq=rs.getInt(8);
-				ReplyVO vo=new ReplyVO(reply_content,reply_writer,reply_date,reply_re_ref,reply_re_lev,reply_re_seq);
+				ReplyVO vo=new ReplyVO(reply_num,reply_content,reply_writer,reply_date,reply_re_ref,reply_re_lev,reply_re_seq);
 				list.add(vo);
 			}
 		}catch(Exception e) {
@@ -173,6 +174,67 @@ public class ReplyDAO {
 		}finally {
 			close(con,pstmt);
 		}
+		return result;
+	}
+	public int board_reply(ReplyVO vo) {
+		int result=0;
+		
+		//원본글에 값들 가져오기
+		int re_ref=vo.getReply_re_ref();
+		int re_lev=vo.getReply_re_lev();
+		int re_seq=vo.getReply_re_seq();
+		//답변글에 대한 새로운 번호 부여받기
+		
+		//업데이트 문 수행
+		int num=0;
+		
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement("select max(reply_num) from cfk_reply");
+			con.setAutoCommit(false);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				num=rs.getInt(1)+1;
+			}else {
+				num=1;
+			}
+			String sql="update cfk_reply set reply_re_seq=reply_re_seq+1 where reply_re_ref=? and reply_re_seq>?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, re_ref);
+			pstmt.setInt(2, re_seq);
+			result=pstmt.executeUpdate();
+			
+			//insert를 하기전에 원본글의 re_ref와 re_seq 값을 +1 실행후 답변글 사용
+			re_seq+=1;
+			re_lev+=1;
+			//insert하기
+			sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?)";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setString(2, vo.getReply_content());
+			pstmt.setString(3, vo.getReply_writer());
+			pstmt.setInt(4, vo.getReply_board_num());		
+			pstmt.setInt(5, re_ref); //re_ref
+			pstmt.setInt(6, re_lev);	//re_lev
+			pstmt.setInt(7, re_seq);	//re_seq
+			
+			result=pstmt.executeUpdate();
+			if(result>0) {
+				con.commit();
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.print(e);
+			try {
+				con.rollback();
+			}catch(SQLException e1) {
+				e1.printStackTrace();
+			}
+		}finally {
+			close(con, pstmt, rs);
+		}		
 		return result;
 	}
 }
