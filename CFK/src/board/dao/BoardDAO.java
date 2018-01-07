@@ -227,4 +227,36 @@ public class BoardDAO {
 		}
 		return result;
 	}
+	public int board_update(BoardVO vo)
+	{
+		int result=0;
+		con=getConnection();
+		pstmt=null;
+		
+		try
+		{
+			String sql="update cfk_board set board_subject=?, board_content=?, board_file=?,board_real_file=?,board_thumbnail=? where board_num=?";
+			pstmt=con.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getBoard_subject());
+			pstmt.setString(2, vo.getBoard_content());
+			pstmt.setString(3, vo.getBoard_file());
+			pstmt.setString(4, vo.getBoard_real_file());
+			pstmt.setString(5, vo.getBoard_thumbnail());
+			pstmt.setInt(6, vo.getBoard_num());
+			
+			
+			result=pstmt.executeUpdate();
+				
+		}catch(Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}finally
+		{
+			close(con, pstmt);
+		}
+		
+		return result;
+	}
 }

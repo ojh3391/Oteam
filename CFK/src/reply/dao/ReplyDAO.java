@@ -157,25 +157,28 @@ public class ReplyDAO {
 		return total_rows;
 	}
 	
-	public int reply_delete(int reply_num) {
+	public int reply_delete(int reply_num,int reply_re_ref,int reply_re_lev,int reply_re_seq) {
 		int result=0;
 		con=getConnection();
 		pstmt=null;
+		
 		String sql="delete from cfk_reply where reply_num=?";
 		
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, reply_num);
 			result=pstmt.executeUpdate();
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			close(con,pstmt);
 		}
-		return result;
+		return result;	
+		
 	}
+	
+	
 	public int board_reply(ReplyVO vo) {
 		int result=0;
 		

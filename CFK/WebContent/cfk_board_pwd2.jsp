@@ -2,13 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-int reply_num=Integer.parseInt(request.getParameter("reply_num"));
+int board_num=Integer.parseInt(request.getParameter("board_num"));
 
 UserVO vo=(UserVO)session.getAttribute("vo");
 
-int reply_re_ref=Integer.parseInt(request.getParameter("reply_re_ref"));
-int reply_re_lev=Integer.parseInt(request.getParameter("reply_re_lev"));
-int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
 %>
 <!DOCTYPE html>
 <html>
@@ -129,7 +126,7 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
                 <p>비밀번호를 정확히 입력하시오.</p>
                 <!--Simple description for section goes here. -->
         </div>
-        <form action="reply_delete.do" method="post">
+        <form action="boardView.do" method="post">
 			<table align="center">
 				<tr>
 					<td><p><font color="black">아이디</font></p></td>
@@ -142,16 +139,13 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
 	
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
-						<input class="message-btn" type="submit" value="삭제" >
+						<input class="message-btn" type="submit" value="수정" >
 						
 						<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 					</td>
 				</tr>
 			</table>
-			<input type="hidden" name="reply_num" value="<%=reply_num%>">
-			<input type="hidden" name="reply_re_ref" value="<%=reply_re_ref%>">
-			<input type="hidden" name="reply_re_lev" value="<%=reply_re_lev%>">
-			<input type="hidden" name="reply_re_seq" value="<%=reply_re_seq%>"> 
+			<input type="hidden" name="board_num" value="<%=board_num%>">
 		</form>
         </div>
         </div>

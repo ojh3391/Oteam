@@ -1,8 +1,6 @@
 package board.model;
 
 import java.io.IOException;
-import java.util.Enumeration;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -58,10 +56,10 @@ public class PartiAction implements Action
 			String fileName=multi.getFilesystemName((String) multi.getFileNames().nextElement());
 			int idx=fileName.lastIndexOf(".");
 			String _fileName=fileName.substring(0, idx);
-			System.out.println(uploadPath+"\\"+fileName);
+			
 			String filePath=uploadPath+"\\"+fileName;
 			String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
-			System.out.println(filePath2);
+			
 			String thumb=_fileName+".png";
 			vo.setBoard_thumbnail(thumb);
 			

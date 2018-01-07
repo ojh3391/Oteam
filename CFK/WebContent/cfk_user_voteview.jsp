@@ -143,7 +143,7 @@
      		<div class="section primary-section" id="about">
             	<div class="container">
                     <ul id="" class="thumbnails row">
-                    <div >
+                    <div>
                   	<td>
                   		<div  class="single-project">
                         <div class="span6" style="margin: 15px;">
@@ -190,7 +190,7 @@
                     </ul>                       
                     	<div align="center">
                     		<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
-                    		<button class="message-btn">수정</button>
+                    		<button class="message-btn" onclick="location.href='cfk_board_pwd2.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
                     		<button class="message-btn" onclick="location.href='cfk_board_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
                     		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
                     		<%}else{%>
@@ -206,6 +206,7 @@
                         <input class="span9" type="text" name="reply_content" required>
                         <button class="message-btn">등록</button></p>
                     </form>
+                    <h3 align="left">총 댓글 수 : <%=totalRows %> 개</h3>
                     </div>
                   </div> 
                    
@@ -214,7 +215,7 @@
 					for(ReplyVO vo:list){
 					%>
 					  	<div class="container">
-					  		<div class="span9">
+					  		<div class="span11">
 						<%
 						if(vo.getReply_re_lev()!=0){
 							for(int j=0;j<=vo.getReply_re_lev()*1;j++){
@@ -240,10 +241,10 @@
                                     </strong>
                                     <div>
                                     <a href="" class="more show_hide" rel="#slidingDiv<%=vo.getReply_num()%>">
-                                        <font color="white"><span class="icon-linkedin-circled">답글 쓰기</span></font>
+                                        <font color="white"><span class="icon-plus">답글 쓰기</span></font>
                                     </a>
                                     <%if(vo.getReply_writer().equals(vo2.getUser_id())) {%>
-                                    <a href="cfk_reply_delete.jsp?reply_num=<%=vo.getReply_num()%>" >
+                                    <a href="cfk_reply_delete.jsp?reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
                                         <font color="white"><span class="icon-cancel">댓글 삭제</span></font>
                                     </a>
                                     <%}%>                                    
@@ -294,7 +295,9 @@
 					}
 					%>
 					</div>     
-            </div>             
+            </div> 
+       
+                       
         <!-- 댓글 폼 끝 --> 
          
  		<!-- Footer section start -->

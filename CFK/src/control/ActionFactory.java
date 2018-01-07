@@ -5,12 +5,15 @@ import board.model.BoardDeleteAction;
 import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
 import board.model.BoardPwdCheckAction;
+import board.model.BoardUpdateAction;
+import board.model.BoardViewAction;
 import board.model.PartiAction;
 import reply.model.ReplyDeleteAction;
 import reply.model.ReplyInsertAction;
 import reply.model.ReplyInsertAction2;
 import reply.model.ReplyPwdCheckAction;
 import reply.model.ReplyPwdCheckAction2;
+import reply.model.ReplyPwdCheckAction3;
 import reply.model.ReplyViewAction;
 import user.model.*;
 
@@ -60,13 +63,17 @@ public class ActionFactory {
 		}else if(cmd.equals("/BoardDelete.do")) {
 			action=new BoardDeleteAction("qList.do");
 		}else if(cmd.equals("/reply_delete.do")) {
-			action=new BoardPwdCheckAction("ReplyDelete.do");
+			action=new ReplyPwdCheckAction3("ReplyDelete.do");
 		}else if(cmd.equals("/ReplyDelete.do")) {
 			action=new ReplyDeleteAction("qList.do");
 		}else if(cmd.equals("/reply_pwd2.do")) {
 			action=new ReplyPwdCheckAction2("qReplyInsert.do");
 		}else if(cmd.equals("/qReplyInsert.do")) {
 			action=new ReplyInsertAction2("qView.do");
+		}else if(cmd.equals("/boardView.do")) {
+			action=new BoardViewAction("board_update.jsp");
+		}else if(cmd.equals("/board_update.do")) {
+			action=new BoardUpdateAction("qView.do");
 		}
 		
 		return action;

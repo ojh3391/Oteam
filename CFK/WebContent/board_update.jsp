@@ -1,20 +1,17 @@
-<%@page import="user.vo.UserVO"%>
+<%@page import="board.vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-int reply_num=Integer.parseInt(request.getParameter("reply_num"));
+	BoardVO vo=(BoardVO)request.getAttribute("vo");
 
-UserVO vo=(UserVO)session.getAttribute("vo");
-
-int reply_re_ref=Integer.parseInt(request.getParameter("reply_re_ref"));
-int reply_re_lev=Integer.parseInt(request.getParameter("reply_re_lev"));
-int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>참가신청</title>
+<meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -35,9 +32,8 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
         <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
-    </head>
-     
-        <body>
+</head>
+<body>
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -120,42 +116,58 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
         
         
         
-            <div class="section secondary-section" id="service">
+        
+        <div class="section secondary-section" id="service">
             <div class="container">
       
         <div class="title">
-        	<h1>비밀번호 확인</h1>
+        	<h1>수정하기</h1>
             	<!-- Section's title goes here -->
-                <p>비밀번호를 정확히 입력하시오.</p>
+                <p>패션킹에 도전해 보세요!!</p>
                 <!--Simple description for section goes here. -->
         </div>
-        <form action="reply_delete.do" method="post">
+        <form action="board_update.do" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="user_id" value="<%=vo.getBoard_writer() %>">
+        <input type="hidden" name="board_file" value="<%=vo.getBoard_file() %>">
+        <input type="hidden" name="board_real_file" value="<%=vo.getBoard_real_file() %>">
+        <input type="hidden" name="board_thumbnail" value="<%=vo.getBoard_thumbnail() %>">
+        <input type="hidden" name="board_num" value="<%=vo.getBoard_num()%>">
 			<table align="center">
+				
 				<tr>
-					<td><p><font color="black">아이디</font></p></td>
-					<td><input class="span2" type="text" name="user_id" value="<%=vo.getUser_id() %>" readonly></td>
+					<td><p><font color="black">제목</font></p></td>
+					<td><input class="span5" type="text" name="board_subject" maxlength="50" value="<%=vo.getBoard_subject()%>" required></td>
 				</tr>
 				<tr>
-					<td><p><font color="black">비밀번호</font></p></td>
-					<td><input class="span2" type="password" name="user_passwd" required></td>
+					<td><p><font color="black">내용</font></p></td>
+					<td><textarea class="span5" name="board_content" cols='60' rows='15' maxlength="2000" required><%=vo.getBoard_content()%></textarea></td>
 				</tr>
-	
+				<tr>
+					<td><p><font color="black">파일첨부</font></p></td>
+					<td><input type="file" name="board_file"></td>
+				</tr>
+				<tr>
+					<p><font color="black">※기존 영상 파일 변경 원하시면 파일 첨부 해주세요~</font></p>
+				</tr>
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
-						<input class="message-btn" type="submit" value="삭제" >
+						<input class="message-btn" type="submit" value="수정하기" >
 						
 						<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 					</td>
 				</tr>
+				
 			</table>
-			<input type="hidden" name="reply_num" value="<%=reply_num%>">
-			<input type="hidden" name="reply_re_ref" value="<%=reply_re_ref%>">
-			<input type="hidden" name="reply_re_lev" value="<%=reply_re_lev%>">
-			<input type="hidden" name="reply_re_seq" value="<%=reply_re_seq%>"> 
 		</form>
         </div>
         </div>
         
+        
+        
+        
+        
+        
+        <!-- Footer section start -->
         <div class="footer">
             <p>&copy; 2017 Theme by <a href="http://www.graphberry.com">Oh!Bro~ Corp.</a></p>
         </div>
@@ -183,8 +195,5 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
             <script src="./Resources/js/respond.min.js"></script>
         <![endif]-->
         <script type="text/javascript" src="./Resources/js/app.js"></script>
-        
-          
-
 </body>
 </html>
