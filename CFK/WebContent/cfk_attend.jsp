@@ -2,6 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+if((UserVO)session.getAttribute("vo")==null) {
+	out.println("<script>");
+	out.println("alert('회입가입 후 이용할 수 있네! 어서 가입하게!');");
+	out.println("history.back();");
+	out.println("</script>");
+	out.close();
+}
 	UserVO vo=(UserVO)session.getAttribute("vo");
 %>
 <!DOCTYPE html>

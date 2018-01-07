@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="board.vo.PageVO"%>
 <%@page import="user.vo.UserVO"%>
 <%@page import="java.net.URLEncoder"%>
@@ -7,7 +8,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+if((UserVO)session.getAttribute("vo")==null) {
+	out.println("<script>");
+	out.println("alert('회입가입 후 이용할 수 있네! 어서 가입하게!');");
+	out.println("history.back();");
+	out.println("</script>");
+	out.close();
+}
 	
+
 	BoardVO vo1=(BoardVO)request.getAttribute("vo");
 	UserVO vo2=(UserVO)session.getAttribute("vo");
 	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");

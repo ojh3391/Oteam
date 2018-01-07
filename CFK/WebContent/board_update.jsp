@@ -161,12 +161,7 @@
 		</form>
         </div>
         </div>
-        
-        
-        
-        
-        
-        
+
         <!-- Footer section start -->
         <div class="footer">
             <p>&copy; 2017 Theme by <a href="http://www.graphberry.com">Oh!Bro~ Corp.</a></p>
