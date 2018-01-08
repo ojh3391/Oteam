@@ -29,15 +29,9 @@ public class BoardVoteAction implements Action {
 		//투표수 1씩 증가 담당
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
-		String agent=req.getHeader("User-Agent");
 		String user_id=req.getParameter("user_id");
-		
-		
 		System.out.println(user_id);
-		
-		
-		
-		
+
 		UserDAO dao1=new UserDAO();
 		UserVO rs=dao1.voteLimit(user_id);
 		
@@ -49,7 +43,6 @@ public class BoardVoteAction implements Action {
 			out.println("<script>");
 			out.println("alert('투표를 3회이상 하셨습니다.');");
 			out.println("history.back();");
-			
 			out.println("</script>");
 			out.close();
 			
