@@ -1,5 +1,6 @@
 package user.dao;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -64,7 +65,7 @@ public class UserDAO {
 			pstmt.setString(8, user_email);
 			pstmt.setString(9, user_gender);
 			pstmt.setString(10, null);
-			pstmt.setInt(11, 0);
+			pstmt.setInt(11, 3);
 			result=pstmt.executeUpdate();		
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -181,6 +182,64 @@ public class UserDAO {
 			close(con,pstmt,rs);
 		}
 		return vo;
+	}
+	public UserVO voteLimit(String user_id) {
+		//int result=0;
+		UserVO vo=null;
+		Connection con=getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		//board_num이 일치하면 board_vote 하나 증가
+		String sql="select user_check_vote from cfk_user where user_id=?";
+
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				vo=new UserVO();
+				vo.setUser_check_vote(rs.getInt("user_check_vote"));
+				
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		
+		}finally {
+			close(con,pstmt,rs);
+					
+		}	
+		return vo;
+		
+	}
+	
+	public int voteMinus(String user_id) {
+		int result=0;
+		//board_num이 일치하면 board_vote 하나 증가
+	
+		String sql="update cfk_user set user_check_vote=user_check_vote-1 where user_id=?";
+		
+		
+		
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(sql);
+			
+			
+			
+			pstmt.setString(1, user_id);
+			
+			result=pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt);
+				
+				
+		}	
+		return result;
 	}
 	
 }

@@ -76,7 +76,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/board_update.do")) {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
-			action=new BoardVoteAction("qList.do");
+			action=new BoardVoteAction("qView.do");
 		}
 		
 		return action;

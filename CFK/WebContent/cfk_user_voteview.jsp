@@ -187,7 +187,7 @@ if((UserVO)session.getAttribute("vo")==null) {
                             	</li>
                         	</ul>
                         	<div align="center">
-                        		<button class="button button-sp" onclick="location.href='qVote.do?board_num=<%=vo1.getBoard_num()%>&page=<%=current_page%>'">투표</button>
+                        		<button class="button button-sp" onclick="location.href='qVote.do?board_num=<%=vo1.getBoard_num()%>&user_id=<%=vo2.getUser_id() %>&page=<%=current_page%>'">투표</button>
                         	</div>		
                         	
                     	</div>
