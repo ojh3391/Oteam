@@ -1,5 +1,7 @@
 package user.model;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -32,7 +34,13 @@ public class LoginAction implements Action {
 			session.setAttribute("vo", vo);
 					
 		}else {
-			path="login_error.jsp";
+			res.setContentType("text/html;charset=UTF-8");
+			PrintWriter out=res.getWriter();
+			out.println("<script>");
+			out.println("alert('아이디 또는 비밀번호를 다시 확인하세요.');");
+			out.println("history.back();");
+			out.println("</script>");
+			out.close();
 		}		
 		return new ActionForward(path, false);
 	}
