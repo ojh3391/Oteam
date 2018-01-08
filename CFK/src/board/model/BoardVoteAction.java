@@ -30,7 +30,6 @@ public class BoardVoteAction implements Action {
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
 		String user_id=req.getParameter("user_id");
-		System.out.println(user_id);
 
 		UserDAO dao1=new UserDAO();
 		UserVO rs=dao1.voteLimit(user_id);
