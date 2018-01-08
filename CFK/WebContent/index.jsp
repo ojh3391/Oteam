@@ -179,8 +179,8 @@
                		 </div>    
                		 
                    		 	<button class="message-btn" type="submit">로그인</button>
-                   	</form>
                    		 	<button class="message-btn" onclick="location.href='register.html'">회원 가입</button>
+                   	</form>
                    		 </div>
                		 </div>
                 		
