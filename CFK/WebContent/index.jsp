@@ -490,48 +490,48 @@
                 <div class="container">
                     <div class="title">
                         <h1>Best 응원 메시지</h1>
-                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        <p>CHALLENGE FASHION KING의 방영을 축하하기 위한 유명 연예인들의 축하메시지</p>
                     </div>
                     <div class="row">
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"I've worked too hard and too long to let anything stand in the way of my goals. I will not let my teammates down and I will not let myself down."</p>
+                                <p>"CFK의 방영을 진심으로 축하드립니다. 아직은 저에게 안되겠지만 그래도 저의 후배, 새로운 패션리더의 출현을 지켜보겠습니다. "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client1.png" class="centered" alt="client 1">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/차승원.jpg" class="centered" alt="client 1">
+                                    <strong>차승원
+                                        <small>차줌마</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"In motivating people, you've got to engage their minds and their hearts. I motivate people, I hope, by example - and perhaps by excitement, by having productive ideas to make others feel involved."</p>
+                                <p>"하하하!! 저와 같은 패션스타가 탄생되는 건가요? 진심으로 축하드리고 다음 회차 MC는 제가 맡겠습니다! "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client2.png" class="centered" alt="client 2">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/유재석.jpg" class="centered" alt="client 2">
+                                    <strong>유 재 석
+                                        <small>메뚜기</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much may be done if we are always doing."</p>
+                                <p>"CHALLENGE FASHION KING 방영을 진심으로 축하드려요~!! 새로운 패션스타와 함께 런웨이 무대에 함께 서고 싶네요~~"</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client3.png" class="centered" alt="client 3">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/한혜진.jpg" class="centered" alt="client 3">
+                                    <strong>한혜진
+                                        <small>달심</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <p class="testimonial-text">
-                        "Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away"
+                      "옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"  COCO CHANEL
                     </p>
                 </div>
             </div>
