@@ -7,6 +7,7 @@ import board.model.BoardListAction;
 import board.model.BoardPwdCheckAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardViewAction;
+import board.model.BoardVoteAction;
 import board.model.PartiAction;
 import reply.model.ReplyDeleteAction;
 import reply.model.ReplyInsertAction;
@@ -74,6 +75,8 @@ public class ActionFactory {
 			action=new BoardViewAction("board_update.jsp");
 		}else if(cmd.equals("/board_update.do")) {
 			action=new BoardUpdateAction("qView.do");
+		}else if(cmd.equals("/qVote.do")) {
+			action=new BoardVoteAction("qList.do");
 		}
 		
 		return action;

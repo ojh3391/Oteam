@@ -259,4 +259,33 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	public int voteUpdate(int board_num) {
+		int result=0;
+		//board_num이 일치하면 board_vote 하나 증가
+	
+		String sql="update cfk_board set board_vote=board_vote+1 where board_num=?";
+		
+		
+		
+		try {
+			con=getConnection();
+			pstmt=con.prepareStatement(sql);
+			
+			
+			
+			pstmt.setInt(1, board_num);
+			
+			result=pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			close(con,pstmt);
+				
+				
+		}	
+		return result;
+	}
 }
