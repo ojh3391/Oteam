@@ -253,7 +253,7 @@ if((UserVO)session.getAttribute("vo")==null) {
                                         <font color="white"><span class="icon-plus">답글 쓰기</span></font>
                                     </a>
                                     <%if(vo.getReply_writer().equals(vo2.getUser_id())) {%>
-                                    <a href="cfk_reply_delete.jsp?reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
+                                    <a href="cfk_reply_delete.jsp?board_num=<%=vo1.getBoard_num() %>&reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
                                         <font color="white"><span class="icon-cancel">댓글 삭제</span></font>
                                     </a>
                                     <%}%>                                    

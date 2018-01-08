@@ -66,7 +66,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/reply_delete.do")) {
 			action=new ReplyPwdCheckAction3("ReplyDelete.do");
 		}else if(cmd.equals("/ReplyDelete.do")) {
-			action=new ReplyDeleteAction("qList.do");
+			action=new ReplyDeleteAction("qView.do");
 		}else if(cmd.equals("/reply_pwd2.do")) {
 			action=new ReplyPwdCheckAction2("qReplyInsert.do");
 		}else if(cmd.equals("/qReplyInsert.do")) {

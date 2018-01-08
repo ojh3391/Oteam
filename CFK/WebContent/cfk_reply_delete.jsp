@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 int reply_num=Integer.parseInt(request.getParameter("reply_num"));
+int board_num=Integer.parseInt(request.getParameter("board_num"));
 
 UserVO vo=(UserVO)session.getAttribute("vo");
 
@@ -148,6 +149,7 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
 					</td>
 				</tr>
 			</table>
+			<input type="hidden" name="board_num" value="<%=board_num%>">
 			<input type="hidden" name="reply_num" value="<%=reply_num%>">
 			<input type="hidden" name="reply_re_ref" value="<%=reply_re_ref%>">
 			<input type="hidden" name="reply_re_lev" value="<%=reply_re_lev%>">

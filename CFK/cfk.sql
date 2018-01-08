@@ -43,10 +43,5 @@ create table cfk_reply(
 	reply_re_seq int not null		
 );	
 
-insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
---원글 번호
---답변글 작성시 참조
---답변글의 길이
---답변 글의 순서
-
+drop table cfk_reply;
 select * from cfk_user;
