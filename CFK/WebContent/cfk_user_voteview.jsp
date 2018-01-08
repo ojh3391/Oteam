@@ -31,11 +31,20 @@ if((UserVO)session.getAttribute("vo")==null) {
 	
 	String agent=request.getHeader("User-Agent");
 	String fileName=vo1.getBoard_real_file();
+	
+	String user_id=vo2.getUser_id();
+	
 	boolean ieBrowser=(agent.indexOf("Trident")>-1);
+	
+	
+	
 	
 	if(ieBrowser) {
 		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
+		
+		user_id=URLEncoder.encode(user_id,"UTF-8").replaceAll("\\+", "%20");
 	}
+	
 	
 %>
 <!DOCTYPE html>
