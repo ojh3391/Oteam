@@ -108,7 +108,7 @@ public class ReplyDAO {
 			}else {
 				num=1;
 			}
-			String sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?)";
+			String sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?,?)";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.setString(2, vo1.getReply_content());
@@ -117,6 +117,7 @@ public class ReplyDAO {
 			pstmt.setInt(5, num);
 			pstmt.setInt(6, 0);
 			pstmt.setInt(7, 0); 
+			pstmt.setInt(8, 0); 
 			
 			insertCount=pstmt.executeUpdate();
 			if(insertCount>0) {
@@ -162,17 +163,31 @@ public class ReplyDAO {
 		con=getConnection();
 		pstmt=null;
 		
-		String sql="delete from cfk_reply where reply_num=?";
-		
 		try {
-			pstmt=con.prepareStatement(sql);
-			pstmt.setInt(1, reply_num);
-			result=pstmt.executeUpdate();
+			pstmt=con.prepareStatement("select count(*) from cfk_reply where reply_re_ref=? and reply_re_del=0");
+			pstmt.setInt(1, reply_re_ref);
+			rs=pstmt.executeQuery();
+			int total=0;
+			if(rs.next()) {
+				total=rs.getInt(1);
+				if(total==1) {
+					String sql="delete from cfk_reply where reply_re_ref=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, reply_re_ref);
+					result=pstmt.executeUpdate();
+				}else {
+					String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_num=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, reply_num);
+					result=pstmt.executeUpdate();
+				}
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			close(con,pstmt,rs);
 		}
 		return result;	
 		
@@ -212,7 +227,7 @@ public class ReplyDAO {
 			re_seq+=1;
 			re_lev+=1;
 			//insert하기
-			sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?)";
+			sql="insert into cfk_reply values(?,?,?,now(),?,?,?,?,?)";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.setString(2, vo.getReply_content());
@@ -221,6 +236,7 @@ public class ReplyDAO {
 			pstmt.setInt(5, re_ref); //re_ref
 			pstmt.setInt(6, re_lev);	//re_lev
 			pstmt.setInt(7, re_seq);	//re_seq
+			pstmt.setInt(8, 0);	
 			
 			result=pstmt.executeUpdate();
 			if(result>0) {
