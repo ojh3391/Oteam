@@ -29,26 +29,59 @@
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
         
         <script type="text/javascript">
-        	function cookieVal(cookieName) {
-        		thisCookie = document.cookie.split("; ");
-        		for(i=0; i<thisCookie.length; i++) {
-        			if(cookieName == thisCookie[i].split("=")[0]){
-        				return thisCookie[i].split("=")[1];
-        			}
-        		}
-        		return "x";
-        	}
         
-			function Popupopen() {
-				if(cookieVal("notice")!="1") {
-		   			window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
-				}
+        // 팝업 function
+        function cookieVal(cookieName) {
+        	thisCookie = document.cookie.split("; ");
+        	for(i=0; i<thisCookie.length; i++) {
+        		if(cookieName == thisCookie[i].split("=")[0]){
+        			return thisCookie[i].split("=")[1];
+        		}
+        	}
+        	return "x";
+        }
+        
+		function Popupopen() {
+			if(cookieVal("notice")!="1") {
+		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
+		}
+		//
+			
+		// 디데이 function
+		var countDown = new Date("Jan 18, 2018 23:59:59").getTime();
+
+		function msg_time() {	
+			var now = new Date().getTime();		//현재 날짜
+			var distance = countDown - now;		//d-day와 현재날짜 차이
+			
+			// 남은 시간 계산
+			days = Math.floor(distance / (1000*60*60*24))+"일 ";
+			hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60))+"시 ";
+			minutes = Math.floor((distance % (1000*60*60)) / (1000*60))+"분 ";	
+			seconds = Math.floor((distance % (1000*60)) / (1000))+"초";
+			
+			var msg = "<font color='black' size='5px'>D-DAY </font><font color='red' size='5px' text-align:center>"+days+hours+minutes+seconds+"</font>";
+			
+			// div 영역에 보여줌 
+			document.getElementById("ViewTimer").innerHTML = msg;
+			
+			//distance--;					// 기간을 현재 날짜로 안가져올 경우의 1초씩 감소
+			
+			if (distance < 0) {			// 시간이 종료 되었으면..
+				clearInterval(tid);		// 타이머 해제
+				//alert("종료");
+			} 
+			
+		}
+
+		function TimerStart(){ tid=setInterval('msg_time()', 1000) };
+		//
 		</script>
         
     </head>
     
-    <body onload="Popupopen();">
+    <body onload="Popupopen(); TimerStart();">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -207,8 +240,6 @@
           		 	</div>
           		 	<%} %>       
                 </div>
-            </div>
-        </div>
         <!-- Service section end -->     
         <!-- Portfolio section start -->
         <div class="section secondary-section " id="portfolio">
@@ -217,7 +248,9 @@
                 <div class="title">
                     <!-- <font size="10" color="black" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font> -->
                     <h1><font size="10" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font></h1>
+                    <div id="ViewTimer"></div>
                     <p>매주 금요일 저녁 7시!!</p>
+                     
                 </div>
                 <ul class="nav nav-pills">
                     <li class="filter" data-filter="all">
