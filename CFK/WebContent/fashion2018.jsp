@@ -64,7 +64,7 @@
 						<li><a href="parti.jsp">참가신청</a></li>
 						<li><a href="cfk_attend.jsp">방청시청</a></li>
 						<li><a href="fashion2018.jsp">패션트렌드</a></li>
-						<li><a href="#contact">패션쇼</a></li>
+						<li><a href="index.jsp#contact">패션쇼</a></li>
 					</ul>
 				</div>
 				<!-- End main navigation -->
