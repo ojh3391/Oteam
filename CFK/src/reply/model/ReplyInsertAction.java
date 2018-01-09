@@ -43,7 +43,7 @@ public class ReplyInsertAction implements Action {
 		ReplyDAO dao=new ReplyDAO();
 		int result=dao.insert(vo1);
 		if(result==0) {
-			path="board/qna_board_write_error.jsp";
+			
 		}
 		path+="?board_num="+board_num;
 		return new ActionForward(path, true);
