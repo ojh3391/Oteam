@@ -21,6 +21,7 @@ public class ReplyViewAction implements Action {
 	
 	public ReplyViewAction(String path) {
 		super();
+		
 		this.path = path;
 	}
 
