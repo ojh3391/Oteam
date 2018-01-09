@@ -275,12 +275,13 @@
                     <div id="ViewTimer"></div>
                     <p>매주 금요일 저녁 7시!!</p>
                     <p></p>
-                    <h1><font size="7" color="black" face="휴먼둥근헤드라인">현재 득표 순위 <font size="7" color="blue"><br><br>투표</font>하세요!!!</font></h1>
+                    
+                    <img src="./Resources/images/순위1.PNG" class="centered" alt="rank">
                 </div>
                 <ul class="nav nav-pills">
-                    <li class="filter" data-filter="all">
+                    <!-- <li class="filter" data-filter="all">
                         <a href="#noAction">All</a>
-                    </li>
+                    </li> -->
                     <li class="filter" data-filter="web">
                         <a href="#noAction">전체</a>
                     </li>

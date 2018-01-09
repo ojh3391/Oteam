@@ -41,7 +41,7 @@
 					listClass : '',
 					gridClass : '',
 					transitionSpeed : 600,
-					showOnLoad : 'all',
+					showOnLoad : 'web',
 					sortOnLoad : false,
 					multiFilter : false,
 					filterLogic : 'or',

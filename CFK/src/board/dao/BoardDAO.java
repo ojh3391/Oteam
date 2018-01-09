@@ -299,7 +299,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_age,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_age,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -340,7 +340,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='남' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='남' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -381,7 +381,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='여' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='여' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -421,7 +421,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='서울.경기' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='서울.경기' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -462,7 +462,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='강원도' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='강원도' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -503,7 +503,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='충청권' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='충청권' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -543,7 +543,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='호남.제주' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='호남.제주' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
@@ -583,7 +583,7 @@ public class BoardDAO {
 				
 		try 
 		{	
-			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='영남권' order by board_vote desc limit 5";
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='영남권' order by board_vote desc limit 4";
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			while(rs.next())
