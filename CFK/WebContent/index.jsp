@@ -306,147 +306,6 @@
                         <a href="#noAction">영남</a>
                     </li>
                 </ul>
-                <!-- Start details for portfolio project 1 -->
-                <div id="single-project">
-                    <div id="slidingDiv" class="toggleDiv row-fluid single-project">
-                        <div class="span6">
-                            <img src="./Resources/images/Portfolio01.png" alt="project 1" />
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3>Webste for Some Client</h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
-                                        <span>Date</span>July 2013</div>
-                                    <div>
-                                        <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
-                                </div>
-                                <p>Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End details for portfolio project 1 -->
-                    <!-- Start details for portfolio project 2 -->
-                    <div id="slidingDiv1" class="toggleDiv row-fluid single-project">
-                        <div class="span6">
-                            <img src="./Resources/images/Portfolio02.png" alt="project 2">
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3>Webste for Some Client</h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
-                                        <span>Date</span>July 2013</div>
-                                    <div>
-                                        <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
-                                </div>
-                                <p>Life is a song - sing it. Life is a game - play it. Life is a challenge - meet it. Life is a dream - realize it. Life is a sacrifice - offer it. Life is love - enjoy it.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End details for portfolio project 2 -->
-                    <!-- Start details for portfolio project 3 -->
-                    <div id="slidingDiv2" class="toggleDiv row-fluid single-project">
-                        <div class="span6">
-                            <img src="./Resources/images/Portfolio03.png" alt="project 3">
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3>Webste for Some Client</h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
-                                        <span>Date</span>July 2013</div>
-                                    <div>
-                                        <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
-                                </div>
-                                <p>How far you go in life depends on your being tender with the young, compassionate with the aged, sympathetic with the striving and tolerant of the weak and strong. Because someday in your life you will have been all of these.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End details for portfolio project 3 -->
-                    <!-- Start details for portfolio project 4 -->
-                    <div id="slidingDiv3" class="toggleDiv row-fluid single-project">
-                        <div class="span6">
-                            <img src="./Resources/images/Portfolio04.png" alt="project 4">
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3>Project for Some Client</h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
-                                        <span>Date</span>July 2013</div>
-                                    <div>
-                                        <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
-                                </div>
-                                <p>Life's but a walking shadow, a poor player, that struts and frets his hour upon the stage, and then is heard no more; it is a tale told by an idiot, full of sound and fury, signifying nothing.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End details for portfolio project 4 -->
-                    <!-- Start details for portfolio project 5 -->
-                    <div id="slidingDiv4" class="toggleDiv row-fluid single-project">
-                        <div class="span6">
-                            <img src="./Resources/images/Portfolio05.png" alt="project 5">
-                        </div>
-                        <div class="span6">
-                            <div class="project-description">
-                                <div class="project-title clearfix">
-                                    <h3>Webste for Some Client</h3>
-                                    <span class="show_hide close">
-                                        <i class="icon-cancel"></i>
-                                    </span>
-                                </div>
-                                <div class="project-info">
-                                    <div>
-                                        <span>Client</span>Some Client Name</div>
-                                    <div>
-                                        <span>Date</span>July 2013</div>
-                                    <div>
-                                        <span>Skills</span>HTML5, CSS3, JavaScript</div>
-                                    <div>
-                                        <span>Link</span>http://examplecomp.com</div>
-                                </div>
-                                <p>We need to give each other the space to grow, to be ourselves, to exercise our diversity. We need to give each other space so that we may both give and receive such beautiful things as ideas, openness, dignity, joy, healing, and inclusion.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End details for portfolio project 5 -->
 			
                     <ul id="portfolio-grid" class="thumbnails row">
                     <%
@@ -454,7 +313,7 @@
            			 %>
                         <li class="span3 mix web">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 1">
+                                <img src="/CFK/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 1">
                                 <h3><%=bo.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -474,7 +333,7 @@
            			 %>    
                         <li class="span3 mix photo">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo1.getBoard_thumbnail() %>" alt="project 2">
+                                <img src="/CFK/thumb/<%=bo1.getBoard_thumbnail() %>" alt="project 2">
                                 <h3><%=bo1.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -491,7 +350,7 @@
                     
                         <li class="span3 mix identity">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo2.getBoard_thumbnail() %>" alt="project 3">
+                                <img src="/CFK/thumb/<%=bo2.getBoard_thumbnail() %>" alt="project 3">
                                 <h3><%=bo2.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -508,7 +367,7 @@
                     
                         <li class="span3 mix seokyoung">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo3.getBoard_thumbnail() %>" alt="project 4">
+                                <img src="/CFK/thumb/<%=bo3.getBoard_thumbnail() %>" alt="project 4">
                                 <h3><%=bo3.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -526,7 +385,7 @@
                     
                         <li class="span3 mix kangwon">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo4.getBoard_thumbnail() %>" alt="project 5">
+                                <img src="/CFK/thumb/<%=bo4.getBoard_thumbnail() %>" alt="project 5">
                                 <h3><%=bo4.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -544,7 +403,7 @@
                     
                         <li class="span3 mix chungcheong">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo5.getBoard_thumbnail() %>" alt="project 6">
+                                <img src="/CFK/thumb/<%=bo5.getBoard_thumbnail() %>" alt="project 6">
                                 <h3><%=bo5.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -562,7 +421,7 @@
                     
                         <li class="span3 mix honam">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo6.getBoard_thumbnail() %>" alt="project 7">
+                                <img src="/CFK/thumb/<%=bo6.getBoard_thumbnail() %>" alt="project 7">
                                 <h3><%=bo6.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
@@ -580,7 +439,7 @@
                     
                         <li class="span3 mix youngnam">
                             <div class="thumbnail">
-                                <img src="/CFK/boardUpload/thumb/<%=bo7.getBoard_thumbnail() %>" alt="project 8">
+                                <img src="/CFK/thumb/<%=bo7.getBoard_thumbnail() %>" alt="project 8">
                                 <h3><%=bo7.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
