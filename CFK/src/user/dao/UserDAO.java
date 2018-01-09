@@ -14,7 +14,7 @@ public class UserDAO {
 	private PreparedStatement pstmt=null;
 	private ResultSet rs=null;
 	
-	//connection => dbcp
+	
 	public Connection getConnection() {
 		Connection con=null;
 		try

@@ -32,17 +32,11 @@ public class LoginAction implements Action {
 		if(vo!=null) {
 			HttpSession session=req.getSession();
 			session.setAttribute("vo", vo);
-					
+				
 		}else {
-			res.setContentType("text/html;charset=UTF-8");
-			PrintWriter out=res.getWriter();
-			out.println("<script>");
-			out.println("alert('아이디 또는 비밀번호를 다시 확인하세요.');");
-			out.println("history.back();");
-			out.println("</script>");
-			out.close();
+			path="login_error.jsp";
 		}		
-		return new ActionForward(path, false);
+		return new ActionForward(path, false);	
 	}
 
 }
