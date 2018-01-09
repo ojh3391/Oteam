@@ -500,8 +500,8 @@
                     </div>
                 </div>
                 <div class="about-text centered">
-                    <h3>About Us</h3>
-                    <p>어느새 길어진 그림자를 따라서 땅거미 진 어둠속을 그대와 걷고 있네요 손을 마주 잡고 그 언제까지라도 함께 있는것만으로 눈물이 나는 걸요 </p>
+                    <h3>"옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"</h3>
+                    <p>COCO CHANEL</p>
                 </div>
                 
            
@@ -549,9 +549,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                      "옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"  COCO CHANEL
-                    </p>
                 </div>
             </div>
         </div>
@@ -560,6 +557,7 @@
         <!-- Contact section start -->
         <div id="contact" class="contact">
             <div class="section secondary-section">
+            <div class="triangle"></div>
                 <div class="container">
                     <div class="title">
                         <h1>Contact Us</h1>
