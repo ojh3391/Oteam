@@ -501,11 +501,11 @@
                 </div>
                 <div class="about-text centered">
                     <h3>About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <p>어느새 길어진 그림자를 따라서 땅거미 진 어둠속을 그대와 걷고 있네요 손을 마주 잡고 그 언제까지라도 함께 있는것만으로 눈물이 나는 걸요 </p>
                 </div>
                 
            
-                <div class="triangle"></div>
+                
                 <div class="container">
                     <div class="title">
                         <h1>Best 응원 메시지</h1>
@@ -574,7 +574,7 @@
                 <div class="container">
                     <div class="span9 center contact-info">
                         <p>123 Fifth Avenue, 노원</p>
-                        <p class="info-mail">CFK@somemail.com</p>
+                        <p class="info-mail">CFK@OJIMA.com</p>
                         <p>+11 234 567 890</p>
                         <p>+11 286 543 850</p>
                     </div>
