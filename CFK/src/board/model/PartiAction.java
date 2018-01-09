@@ -29,9 +29,8 @@ public class PartiAction implements Action
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
 	{
 		
-		String saveDir="/boardUpload";
-		String uploadPath=req.getServletContext().getRealPath(saveDir);
-		
+		String uploadPath=req.getServletContext().getRealPath("/boardUpload");
+		String uploadPath2=req.getServletContext().getRealPath("/thumb");
 		
 		
 		int size=50*1024*1024;
@@ -58,13 +57,13 @@ public class PartiAction implements Action
 			String _fileName=fileName.substring(0, idx);
 			
 			String filePath=uploadPath+"\\"+fileName;
-			String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
+			String filePath2=uploadPath2+"\\"+_fileName+".jpg";
 			
-			String thumb=_fileName+".png";
+			String thumb=_fileName+".jpg";
 			vo.setBoard_thumbnail(thumb);
 			
 			
-			String[] cmd=new String[] {"C:\\ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
+			String[] cmd=new String[] {"/ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
 			
 			try
 			{

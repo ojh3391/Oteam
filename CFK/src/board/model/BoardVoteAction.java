@@ -30,7 +30,25 @@ public class BoardVoteAction implements Action {
 		//투표수 1씩 증가 담당
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
+		String agent=req.getHeader("User-Agent");
 		String user_id=req.getParameter("user_id");
+		
+		
+		
+		boolean ieBrowser=(agent.indexOf("Trident")>-1);
+		
+		
+		
+		
+		if(ieBrowser) {
+			
+			
+			user_id=URLEncoder.encode(user_id,"UTF-8").replaceAll("\\+", "%20");
+		}
+		
+		
+		
+		
 		
 
 		UserDAO dao1=new UserDAO();
@@ -42,16 +60,6 @@ public class BoardVoteAction implements Action {
 			path="vote_error.jsp";
 			
 			
-			/*res.setContentType("text/html;charset=UTF-8");
-			
-			
-			
-			PrintWriter out=res.getWriter();
-			out.println("<script>");
-			out.println("alert('투표를 3회이상 하셨습니다.');");
-			out.println("history.back();");
-			out.println("</script>");
-			out.close();*/
 			
 		}else {
 			BoardDAO dao=new BoardDAO();

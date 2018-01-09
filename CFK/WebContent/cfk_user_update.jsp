@@ -48,8 +48,8 @@ UserVO vo=(UserVO)request.getAttribute("rs");
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="test.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="test.jsp">함께하기</a></li>
+                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="index.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="#clients">방청시청</a></li>
@@ -215,6 +215,7 @@ UserVO vo=(UserVO)request.getAttribute("rs");
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
 						<input class="message-btn" type="submit" value="수정하기">
+						<button class="message-btn" onclick="location.href='leave.do?user_id=<%=vo.getUser_id() %>'">탈퇴하기</button>
 						<input class="message-btn" type="button" value="취소" onclick="location.href='index.jsp'">
 					</td>
 				</tr>

@@ -59,8 +59,8 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="test.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="test.jsp">함께하기</a></li>
+                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="index.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청시청</a></li>
@@ -128,7 +128,7 @@
                  
                      <li class="span12 mix web">
                          <div class="thumbnail">
-                              <img src="/CFK/boardUpload/thumb/<%=vo.getBoard_thumbnail() %>">
+                              <img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>">
                               <h3><%=vo.getBoard_readcount()%></h3>
                               <p><%=vo.getBoard_date()%></p>
                               <div class="mask">

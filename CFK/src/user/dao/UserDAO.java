@@ -241,5 +241,24 @@ public class UserDAO {
 		}	
 		return result;
 	}
-	
+	public int user_leave(String user_id) {
+		int result=0;
+		Connection con=getConnection();
+		PreparedStatement pstmt=null;
+		
+		try {
+			String sql="delete from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			
+			
+			result=pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt);
+		}
+		return result;
+	}
 }
