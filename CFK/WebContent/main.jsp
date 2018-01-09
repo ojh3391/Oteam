@@ -122,7 +122,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
-                            <li><a href="parti.jsp">참가신청</a></li>
+                            <li><a href="parti.jsp#service">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="fashion2018.jsp">패션트렌드</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -278,9 +278,7 @@
                     <h1><font size="7" color="black" face="휴먼둥근헤드라인">현재 득표 순위 <font size="7" color="blue"><br><br>투표</font>하세요!!!</font></h1>
                 </div>
                 <ul class="nav nav-pills">
-                    <li class="filter" data-filter="all">
-                        <a href="#noAction">All</a>
-                    </li>
+                    
                     <li class="filter" data-filter="web">
                         <a href="#noAction">전체</a>
                     </li>
