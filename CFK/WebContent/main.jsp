@@ -159,14 +159,14 @@
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider02.png" width="320" alt="image02">
+                            <img style="border-radius:50px;" src="./Resources/images/Slider02.png" width="700" alt="image02">
                         </div>
                     </div>
                     <!-- End second slide -->
                     <!-- Start third slide -->
                     <div class="da-slide">
                         <h2>Challenge Fashion King!!</h2>
-                        <h4>Customizable</h4>
+                        <h4>Season 2</h4>
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
@@ -469,7 +469,7 @@
                 <div class="row-fluid team">
                     <div class="span4" id="first-person">
                         <div class="thumbnail">
-                            <img src="./Resources/images/min.jpg" alt="team 1">
+                            <img src="./Resources/images/Team1.jpg" alt="team 1">
                             <h3>Min</h3>
                             
                             <div class="mask">
@@ -480,7 +480,7 @@
                     </div>
                     <div class="span4" id="second-person">
                         <div class="thumbnail">
-                            <img src="./Resources/images/Team2.png" alt="team 1">
+                            <img src="./Resources/images/Team2.jpg" alt="team 1">
                             <h3>Gong</h3>
                             
                             <div class="mask">
@@ -491,11 +491,11 @@
                     </div>
                     <div class="span4" id="third-person">
                         <div class="thumbnail">
-                            <img src="./Resources/images/Team3.png" alt="team 1">
-                            <h3>Oh</h3>
+                            <img src="./Resources/images/Team3.jpg" alt="team 1">
+                            <h3>Park</h3>
                             
                             <div class="mask">
-                                <h2>대표이사</h2>
+                                <h2>마스터 심사위원</h2>
                                 <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
                             </div>
                         </div>
