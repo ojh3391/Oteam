@@ -38,7 +38,7 @@ public class LeaveAction implements Action {
 			PrintWriter out=res.getWriter();
 			out.println("<script>");
 			out.println("alert('탈퇴가 완료되었습니다.이용해주셔서 감사합니다');");
-			out.println("location.href='test.jsp'");
+			out.println("location.href='index.jsp'");
 			out.println("</script>");
 			out.close();
 			
