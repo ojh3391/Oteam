@@ -77,13 +77,9 @@ public class ActionFactory {
 		}else if(cmd.equals("/board_update.do")) {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
-<<<<<<< HEAD
 			action=new BoardVoteAction("qList.do");
 		}else if(cmd.equals("/rank.do")){
 			action=new RankAction("index.jsp");
-=======
-			action=new BoardVoteAction("qView.do");
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 		}
 		
 		return action;
