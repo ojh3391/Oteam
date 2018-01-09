@@ -195,10 +195,14 @@ if((UserVO)session.getAttribute("vo")==null) {
                                 	<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
                             	</li>
                         	</ul>
+                        	<form action="qVote.do" method="post">
                         	<div align="center">
-                        		<button class="button button-sp" onclick="location.href='qVote.do?board_num=<%=vo1.getBoard_num()%>&user_id=<%=vo2.getUser_id() %>&page=<%=current_page%>'">투표</button>
-                        	</div>		
-                        	
+                        		<button class="button button-sp" >투표</button>
+                        	</div>
+                        	<input type="hidden" name="user_id" value="<%=vo2.getUser_id() %>">	
+                        	<input type="hidden" name="board_num" value="<%=vo1.getBoard_num() %>">	
+                        	<input type="hidden" name="page" value="<%=current_page %>">		
+                        	</form>
                     	</div>
                     	<div>
                     		

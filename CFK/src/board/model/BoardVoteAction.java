@@ -1,7 +1,7 @@
 package board.model;
 
-import java.io.PrintWriter;
-import java.net.URLEncoder;
+
+import java.net.URLDecoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,26 +30,15 @@ public class BoardVoteAction implements Action {
 		//투표수 1씩 증가 담당
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
-		String agent=req.getHeader("User-Agent");
-		String user_id=req.getParameter("user_id");
 		
+		String user_id1=req.getParameter("user_id");
+		System.out.println(user_id1);
 		
+		String user_id=URLDecoder.decode((URLDecoder.decode(user_id1, "8859_1")), "UTF-8");
 		
-		boolean ieBrowser=(agent.indexOf("Trident")>-1);
+		System.out.println(user_id);
 		
-		
-		
-		
-		if(ieBrowser) {
-			
-			
-			user_id=URLEncoder.encode(user_id,"UTF-8").replaceAll("\\+", "%20");
-		}
-		
-		
-		
-		
-		
+
 
 		UserDAO dao1=new UserDAO();
 		UserVO rs=dao1.voteLimit(user_id);
