@@ -288,4 +288,331 @@ public class BoardDAO {
 		}	
 		return result;
 	}
+	
+	public Vector<BoardVO> getRank()
+	{
+		Vector<BoardVO> rank=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_age,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo=new BoardVO();
+								
+				bo.setBoard_writer(rs.getString(1));
+				bo.setBoard_subject(rs.getString(2));
+				bo.setBoard_content(rs.getString(3));
+				bo.setBoard_real_file(rs.getString(4));
+				bo.setBoard_date(rs.getDate(5));
+				bo.setBoard_vote(rs.getInt(6));
+				bo.setBoard_thumbnail(rs.getString(7));
+				bo.setUser_age(rs.getInt(8));
+				bo.setBoard_num(rs.getInt(9));
+				
+				rank.add(bo);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank;
+	}
+	
+	public Vector<BoardVO> getMaleRank()
+	{
+		Vector<BoardVO> rank1=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='남' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo1=new BoardVO();
+								
+				bo1.setBoard_writer(rs.getString(1));
+				bo1.setBoard_subject(rs.getString(2));
+				bo1.setBoard_content(rs.getString(3));
+				bo1.setBoard_real_file(rs.getString(4));
+				bo1.setBoard_date(rs.getDate(5));
+				bo1.setBoard_vote(rs.getInt(6));
+				bo1.setBoard_thumbnail(rs.getString(7));
+				bo1.setUser_gender(rs.getString(8));
+				bo1.setBoard_num(rs.getInt(9));
+				
+				rank1.add(bo1);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank1;
+	}
+	
+	public Vector<BoardVO> getFemaleRank()
+	{
+		Vector<BoardVO> rank2=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_gender='여' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo2=new BoardVO();
+								
+				bo2.setBoard_writer(rs.getString(1));
+				bo2.setBoard_subject(rs.getString(2));
+				bo2.setBoard_content(rs.getString(3));
+				bo2.setBoard_real_file(rs.getString(4));
+				bo2.setBoard_date(rs.getDate(5));
+				bo2.setBoard_vote(rs.getInt(6));
+				bo2.setBoard_thumbnail(rs.getString(7));
+				bo2.setUser_gender(rs.getString(8));
+				bo2.setBoard_num(rs.getInt(9));
+				
+				rank2.add(bo2);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank2;
+	}
+	public Vector<BoardVO> getSeokyoungRank()
+	{
+		Vector<BoardVO> rank3=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='서울.경기' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo3=new BoardVO();
+								
+				bo3.setBoard_writer(rs.getString(1));
+				bo3.setBoard_subject(rs.getString(2));
+				bo3.setBoard_content(rs.getString(3));
+				bo3.setBoard_real_file(rs.getString(4));
+				bo3.setBoard_date(rs.getDate(5));
+				bo3.setBoard_vote(rs.getInt(6));
+				bo3.setBoard_thumbnail(rs.getString(7));
+				bo3.setUser_gender(rs.getString(8));
+				bo3.setBoard_num(rs.getInt(9));
+				
+				rank3.add(bo3);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank3;
+	}
+	
+	public Vector<BoardVO> getKangwonRank()
+	{
+		Vector<BoardVO> rank4=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='강원도' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo4=new BoardVO();
+								
+				bo4.setBoard_writer(rs.getString(1));
+				bo4.setBoard_subject(rs.getString(2));
+				bo4.setBoard_content(rs.getString(3));
+				bo4.setBoard_real_file(rs.getString(4));
+				bo4.setBoard_date(rs.getDate(5));
+				bo4.setBoard_vote(rs.getInt(6));
+				bo4.setBoard_thumbnail(rs.getString(7));
+				bo4.setUser_gender(rs.getString(8));
+				bo4.setBoard_num(rs.getInt(9));
+				
+				rank4.add(bo4);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank4;
+	}
+	
+	public Vector<BoardVO> getChungcheongRank()
+	{
+		Vector<BoardVO> rank5=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='충청도' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo5=new BoardVO();
+								
+				bo5.setBoard_writer(rs.getString(1));
+				bo5.setBoard_subject(rs.getString(2));
+				bo5.setBoard_content(rs.getString(3));
+				bo5.setBoard_real_file(rs.getString(4));
+				bo5.setBoard_date(rs.getDate(5));
+				bo5.setBoard_vote(rs.getInt(6));
+				bo5.setBoard_thumbnail(rs.getString(7));
+				bo5.setUser_gender(rs.getString(8));
+				bo5.setBoard_num(rs.getInt(9));
+				
+				rank5.add(bo5);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank5;
+	}
+	public Vector<BoardVO> getHonamRank()
+	{
+		Vector<BoardVO> rank6=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='호남.제주' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo6=new BoardVO();
+								
+				bo6.setBoard_writer(rs.getString(1));
+				bo6.setBoard_subject(rs.getString(2));
+				bo6.setBoard_content(rs.getString(3));
+				bo6.setBoard_real_file(rs.getString(4));
+				bo6.setBoard_date(rs.getDate(5));
+				bo6.setBoard_vote(rs.getInt(6));
+				bo6.setBoard_thumbnail(rs.getString(7));
+				bo6.setUser_gender(rs.getString(8));
+				bo6.setBoard_num(rs.getInt(9));
+				
+				rank6.add(bo6);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank6;
+	}
+	public Vector<BoardVO> getYoungnamRank()
+	{
+		Vector<BoardVO> rank7=new Vector<BoardVO>();
+		
+		con=getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select board_writer,board_subject,board_content,board_real_file,board_date,board_vote,board_thumbnail,user_gender,board_num from cfk_board,cfk_user where cfk_board.board_writer=cfk_user.user_id and cfk_user.user_area='영남권' order by board_vote desc limit 5";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO bo7=new BoardVO();
+								
+				bo7.setBoard_writer(rs.getString(1));
+				bo7.setBoard_subject(rs.getString(2));
+				bo7.setBoard_content(rs.getString(3));
+				bo7.setBoard_real_file(rs.getString(4));
+				bo7.setBoard_date(rs.getDate(5));
+				bo7.setBoard_vote(rs.getInt(6));
+				bo7.setBoard_thumbnail(rs.getString(7));
+				bo7.setUser_gender(rs.getString(8));
+				bo7.setBoard_num(rs.getInt(9));
+				
+				rank7.add(bo7);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			close(con, pstmt, rs);
+		}
+		return rank7;
+	}
+	
+	
 }

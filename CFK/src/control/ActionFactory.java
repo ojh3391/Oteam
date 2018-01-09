@@ -9,6 +9,7 @@ import board.model.BoardUpdateAction;
 import board.model.BoardViewAction;
 import board.model.BoardVoteAction;
 import board.model.PartiAction;
+import board.model.RankAction;
 import reply.model.ReplyDeleteAction;
 import reply.model.ReplyInsertAction;
 import reply.model.ReplyInsertAction2;
@@ -36,17 +37,17 @@ public class ActionFactory {
 		
 	public Action action(String cmd) {
 		if(cmd.equals("/insert.do")) {
-			action=new InsertAction("index.jsp");
+			action=new InsertAction("test.jsp");
 		}else if(cmd.equals("/modify.do")) {
 			action=new ModifyAction("cfk_user_update.jsp");
 		}else if(cmd.equals("/update.do")) {
-			action=new UpdateAction("index.jsp");
+			action=new UpdateAction("test.jsp");
 		}else if(cmd.equals("/login.do")) {
-			action=new LoginAction("index.jsp");
+			action=new LoginAction("test.jsp");
 		}else if(cmd.equals("/logout.do")) {
-			action=new LogoutAction("index.jsp");
+			action=new LogoutAction("test.jsp");
 		}else if(cmd.equals("/parti.do")) {
-			action=new PartiAction("index.jsp");
+			action=new PartiAction("test.jsp");
 		}else if(cmd.equals("/qList.do")) {
 			action=new BoardListAction("cfk_board_list.jsp");
 		}else if(cmd.equals("/qHitUpdate.do")) {
@@ -77,6 +78,8 @@ public class ActionFactory {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
 			action=new BoardVoteAction("qList.do");
+		}else if(cmd.equals("/rank.do")){
+			action=new RankAction("index.jsp");
 		}
 		
 		return action;

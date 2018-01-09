@@ -50,3 +50,4 @@ insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 --답변 글의 순서
 
 select * from cfk_user;
+select * from cfk_reply;

@@ -14,6 +14,8 @@ public class BoardVO
 	private int board_vote;
 	private int board_readcount;
 	private Date board_date;
+	private int user_age;
+	private String user_gender;
 	
 	
 	
@@ -120,6 +122,25 @@ public class BoardVO
 		this.board_date = board_date;
 	}
 	
-	
+	public int getUser_age()
+	{
+		return user_age;
+	}
+	public void setUser_age(int user_age)
+	{
+		this.user_age = user_age;
+	}
+
+
+	public String getUser_gender()
+	{
+		return user_gender;
+	}
+
+
+	public void setUser_gender(String user_gender)
+	{
+		this.user_gender = user_gender;
+	}
 	
 }

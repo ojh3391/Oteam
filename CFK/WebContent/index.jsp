@@ -1,6 +1,29 @@
+
+<%@page import="board.vo.PageVO"%>
+<%@page import="board.vo.BoardVO"%>
+<%@page import="java.util.Vector"%>
 <%@page import="user.vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	Vector<BoardVO> rank=(Vector<BoardVO>)request.getAttribute("rank");
+	Vector<BoardVO> rank1=(Vector<BoardVO>)request.getAttribute("rank1");
+	Vector<BoardVO> rank2=(Vector<BoardVO>)request.getAttribute("rank2");
+	Vector<BoardVO> rank3=(Vector<BoardVO>)request.getAttribute("rank3");
+	Vector<BoardVO> rank4=(Vector<BoardVO>)request.getAttribute("rank4");
+	Vector<BoardVO> rank5=(Vector<BoardVO>)request.getAttribute("rank5");
+	Vector<BoardVO> rank6=(Vector<BoardVO>)request.getAttribute("rank6");
+	Vector<BoardVO> rank7=(Vector<BoardVO>)request.getAttribute("rank7");
+	
+	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	//페이지나누기를 위한 정보
+	PageVO info=(PageVO)request.getAttribute("info");
+	int total_page=info.getTotalPage();
+	int current_page=info.getPage();
+	int endPage=info.getEndPage();
+	int startPage=info.getStartPage();
+	int totalRows=info.getTotoalRows();
+%>
 <!DOCTYPE html>
 <html>
     
@@ -63,11 +86,11 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="index.jsp#service">함께하기</a></li>
+                            <li class="active"><a href="test.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="test.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
-                            <li><a href="cfk_attend.jsp">방청시청</a></li>
+                            <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="#price">응원하기</a></li>
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>
@@ -224,13 +247,28 @@
                         <a href="#noAction">All</a>
                     </li>
                     <li class="filter" data-filter="web">
-                        <a href="#noAction">Web</a>
+                        <a href="#noAction">투표수</a>
                     </li>
                     <li class="filter" data-filter="photo">
-                        <a href="#noAction">Photo</a>
+                        <a href="#noAction">남성</a>
                     </li>
                     <li class="filter" data-filter="identity">
-                        <a href="#noAction">Identity</a>
+                        <a href="#noAction">여성</a>
+                    </li>
+                    <li class="filter" data-filter="seokyoung">
+                        <a href="#noAction">서울경기</a>
+                    </li>
+                    <li class="filter" data-filter="kangwon">
+                        <a href="#noAction">강원</a>
+                    </li>
+                    <li class="filter" data-filter="chungcheong">
+                        <a href="#noAction">충청</a>
+                    </li>
+                    <li class="filter" data-filter="honam">
+                        <a href="#noAction">호남 제주</a>
+                    </li>
+                    <li class="filter" data-filter="youngnam">
+                        <a href="#noAction">영남</a>
                     </li>
                 </ul>
                 <!-- Start details for portfolio project 1 -->
@@ -374,65 +412,177 @@
                         </div>
                     </div>
                     <!-- End details for portfolio project 5 -->
-                    
+			
                     <ul id="portfolio-grid" class="thumbnails row">
-                        <li class="span6 mix web">
-                            <div class="thumbnail">
-                                <img src="./Resources/images/Portfolio01.png" alt="project 1">
-                                <a href="#single-project" class="more show_hide" rel="#slidingDiv">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span3 mix photo">
-                            <div class="thumbnail">
-                                <img src="./Resources/images/Portfolio02.png" alt="project 2">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv1">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
-                        <li class="span3 mix identity">
-                            <div class="thumbnail">
-                                <img src="./Resources/images/Portfolio03.png" alt="project 3">
-                                <a href="#single-project" class="more show_hide" rel="#slidingDiv2">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
-                                <p>Thumbnail caption...</p>
-                                <div class="mask"></div>
-                            </div>
-                        </li>
+                    <%
+            			for(BoardVO bo:rank){ 
+           			 %>
                         <li class="span3 mix web">
                             <div class="thumbnail">
-                                <img src="./Resources/images/Portfolio04.png" alt="project 4">
-                                <a href="#single-project" class="show_hide more" rel="#slidingDiv3">
-                                    <i class="icon-plus"></i>
-                                </a>
-                                <h3>Thumbnail label</h3>
+                                <img src="/CFK/boardUpload/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 1">
+                                <h3><%=bo.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                             </div>
+                        </li>
+                       <%} %>        
+                                
+                                
+                        
+                       
+                    <%
+            			for(BoardVO bo1:rank1){ 
+           			 %>    
+                        <li class="span3 mix photo">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo1.getBoard_thumbnail() %>" alt="project 2">
+                                <h3><%=bo1.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo1.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo1.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                         </li>   
+                            <%} %>
+                      <%
+            			for(BoardVO bo2:rank2){ 
+           			 %>
+                    
+                        <li class="span3 mix identity">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo2.getBoard_thumbnail() %>" alt="project 3">
+                                <h3><%=bo2.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo2.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo2.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>
+                	<%
+            			for(BoardVO bo3:rank3){ 
+           			 %>
+                    
+                        <li class="span3 mix seokyoung">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo3.getBoard_thumbnail() %>" alt="project 4">
+                                <h3><%=bo3.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo3.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo3.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>
+                		
+                		<%
+            			for(BoardVO bo4:rank4){ 
+           			 %>
+                    
+                        <li class="span3 mix kangwon">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo4.getBoard_thumbnail() %>" alt="project 5">
+                                <h3><%=bo4.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo4.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo4.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>
+                		
+                		<%
+            			for(BoardVO bo5:rank5){ 
+           			 %>
+                    
+                        <li class="span3 mix chungcheong">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo5.getBoard_thumbnail() %>" alt="project 6">
+                                <h3><%=bo5.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo5.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo5.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>	
+                		
+                		<%
+            			for(BoardVO bo6:rank6){ 
+           			 %>
+                    
+                        <li class="span3 mix honam">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo6.getBoard_thumbnail() %>" alt="project 7">
+                                <h3><%=bo6.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo6.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo6.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>
+                		
+                		<%
+            			for(BoardVO bo7:rank7){ 
+           			 %>
+                    
+                        <li class="span3 mix youngnam">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo7.getBoard_thumbnail() %>" alt="project 8">
+                                <h3><%=bo7.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <div class="mask">
+                                <h2><%=bo7.getBoard_writer() %></h2>
+                                <a href="qHitUpdate.do?board_num=<%=bo7.getBoard_num()%>&page=<%=current_page%>">
+                              	<h2><i class="icon-plus"></i></h2></a>
+                                </div>
+                            </div>
+                    	</li>
+                		<%} %>	
+                <%--     <li class="span3 mix web">
+                            <div class="thumbnail">
+                                <img src="/CFK/boardUpload/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 4">
+                                <a href="#single-project" class="show_hide more" rel="#slidingDiv3">
+                                    <i class="icon-plus"></i>	
+                                </a>
+                                <h3><%=bo.getBoard_vote() %></h3>
+                                <p>Thumbnail caption...</p>
+                                <h2><%=bo.getBoard_writer() %></h2>
                                 <div class="mask"></div>
                             </div>
                         </li>
                         <li class="span3 mix photo">
                             <div class="thumbnail">
-                                <img src="./Resources/images/Portfolio05.png" alt="project 5">
+                                <img src="/CFK/boardUpload/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 5">
                                 <a href="#single-project" class="show_hide more" rel="#slidingDiv4">
                                     <i class="icon-plus"></i>
                                 </a>
-                                <h3>Thumbnail label</h3>
+                                <h3><%=bo.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
+                                <h2><%=bo.getBoard_writer() %></h2>
                                 <div class="mask"></div>
                             </div>
-                        </li>
-                        
+                        </li> --%>
+                         
                     </ul>
+                    
                 </div>
             </div>
         </div>
