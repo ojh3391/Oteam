@@ -50,7 +50,6 @@ public class RankAction implements Action
 		info.setPage(page);
 		info.setEndPage(endPage);
 		info.setStartPage(startPage);
-		System.out.println("RankAction 페이지 셋팅"+total_page);
 		info.setTotalPage(total_page);
 		info.setTotoalRows(total_rows);
 		
