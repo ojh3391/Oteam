@@ -274,14 +274,15 @@
                     <h1><font size="10" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font></h1>
                     <div id="ViewTimer"></div>
                     <p>매주 금요일 저녁 7시!!</p>
-                     
+                    <p></p>
+                    <h1><font size="7" color="black" face="휴먼둥근헤드라인">현재 득표 순위 <font size="7" color="blue"><br><br>투표</font>하세요!!!</font></h1>
                 </div>
                 <ul class="nav nav-pills">
                     <li class="filter" data-filter="all">
                         <a href="#noAction">All</a>
                     </li>
                     <li class="filter" data-filter="web">
-                        <a href="#noAction">투표수</a>
+                        <a href="#noAction">전체</a>
                     </li>
                     <li class="filter" data-filter="photo">
                         <a href="#noAction">남성</a>
