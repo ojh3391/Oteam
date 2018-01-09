@@ -123,13 +123,10 @@
                             <li><a href="test.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
-<<<<<<< HEAD
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="#price">응원하기</a></li>
-=======
                             <li><a href="cfk_attend.jsp">방청시청</a></li>
                             <li><a href="fashion2018.jsp">패션트렌드</a></li>
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>
                     </div>
@@ -737,7 +734,7 @@
                 </div>
                 <div class="container">
                 <div class="map-wrapper">
-                    <div class="map-canvas" id="map-canvas">Loading map...</div>
+                     <p align="center"><iframe src="map.html" frameborder="0" width="1000px" height="700px" id="" title="방청권 신청 프레임"></iframe></p>
                 </div>    
                 </div>
                 <div class="container">

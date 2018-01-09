@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 800px;
+        background-color: grey;
+       }
+    </style>
+  </head>
+  <body>
+    <div style=margin:auto id="map"></div>
+    <script>
+      function initMap() {
+        var CFK = {lat: 37.639639, lng: 127.065943};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: CFK
+        });
+        var marker = new google.maps.Marker({
+          position: CFK,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvbUVEf1sqAca2X0sDxsBjnqVs8jDJKF0&callback=initMap">
+    </script>
+  </body>
+</html>
