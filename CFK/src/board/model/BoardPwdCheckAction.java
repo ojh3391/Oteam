@@ -34,13 +34,7 @@ public class BoardPwdCheckAction implements Action {
 			path+="?board_num="+board_num+"&page="+current_page;
 			
 		}else {
-			res.setContentType("text/html;charset=UTF-8");
-			PrintWriter out=res.getWriter();
-			out.println("<script>");
-			out.println("alert('비빌번호가 튿렸습니다.');");
-			out.println("history.back();");
-			out.println("</script>");
-			out.close();
+			path="passwd_error.jsp";
 		}
 		//비밀번호가 맞다면 삭제하고 액션으로 페이지 이동
 		

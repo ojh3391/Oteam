@@ -32,11 +32,11 @@ public class BoardVoteAction implements Action {
 		
 		
 		String user_id1=req.getParameter("user_id");
-		System.out.println(user_id1);
+		
 		
 		String user_id=URLDecoder.decode((URLDecoder.decode(user_id1, "8859_1")), "UTF-8");
 		
-		System.out.println(user_id);
+		
 		
 
 
