@@ -119,8 +119,8 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="test.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="test.jsp">함께하기</a></li>
+                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="index.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
@@ -237,8 +237,8 @@
                    		 	<button class="message-btn" type="submit">로그인</button>
                    		 	<button class="message-btn" onclick="location.href='register.html'">회원 가입</button>
                    	</form>
-                   		 </div>
-               		 </div>
+                   	</div>
+               		</div>
                 		
           		 	</div>
         			<!-- 로그인 섹션 종료 -->
@@ -257,10 +257,11 @@
                 			<div class="controls">
                    		 	<button class="message-btn" onclick="location.href='cfk_user_modify.jsp'">정보 수정</button>
                    		 	<button class="message-btn" onclick="location.href='logout.do'">로그 아웃</button>
-                   		 </div>
+                   		</div>
                		 </div>
-                		
-          		 	</div>
+                	</div>
+                	</div>	
+          		 	
           		 	<%} %>       
                 </div>
         <!-- Service section end -->     
