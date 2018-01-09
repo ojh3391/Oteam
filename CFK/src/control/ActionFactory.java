@@ -37,17 +37,17 @@ public class ActionFactory {
 		
 	public Action action(String cmd) {
 		if(cmd.equals("/insert.do")) {
-			action=new InsertAction("test.jsp");
+			action=new InsertAction("index.jsp");
 		}else if(cmd.equals("/modify.do")) {
 			action=new ModifyAction("cfk_user_update.jsp");
 		}else if(cmd.equals("/update.do")) {
-			action=new UpdateAction("test.jsp");
+			action=new UpdateAction("index.jsp");
 		}else if(cmd.equals("/login.do")) {
-			action=new LoginAction("test.jsp");
+			action=new LoginAction("index.jsp");
 		}else if(cmd.equals("/logout.do")) {
-			action=new LogoutAction("test.jsp");
+			action=new LogoutAction("index.jsp");
 		}else if(cmd.equals("/parti.do")) {
-			action=new PartiAction("test.jsp");
+			action=new PartiAction("index.jsp");
 		}else if(cmd.equals("/qList.do")) {
 			action=new BoardListAction("cfk_board_list.jsp");
 		}else if(cmd.equals("/qHitUpdate.do")) {
@@ -79,9 +79,9 @@ public class ActionFactory {
 		}else if(cmd.equals("/qVote.do")) {
 			action=new BoardVoteAction("qList.do");
 		}else if(cmd.equals("/rank.do")){
-			action=new RankAction("index.jsp");
+			action=new RankAction("main.jsp");
 		}else if(cmd.equals("/leave.do")) {
-			action=new LeaveAction("test.jsp");
+			action=new LeaveAction("index.jsp");
 		}
 		
 		return action;
