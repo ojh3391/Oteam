@@ -24,7 +24,7 @@ public class BoardDAO {
 		try
 	    {
 	         Class.forName("com.mysql.jdbc.Driver");
-	         String url="jdbc:mysql://localhost:3306/javadb?useSSL=true";
+	         String url="jdbc:mysql://localhost:3306/javadb";
 	         con=DriverManager.getConnection(url,"root","12345");
 	    }catch(Exception e)
 	    {

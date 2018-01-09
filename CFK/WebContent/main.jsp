@@ -122,7 +122,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
-                            <li><a href="parti.jsp">참가신청</a></li>
+                            <li><a href="parti.jsp#service">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="fashion2018.jsp">패션트렌드</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -279,9 +279,8 @@
                     <img src="./Resources/images/순위1.PNG" class="centered" alt="rank">
                 </div>
                 <ul class="nav nav-pills">
-                    <!-- <li class="filter" data-filter="all">
-                        <a href="#noAction">All</a>
-                    </li> -->
+
+
                     <li class="filter" data-filter="web">
                         <a href="#noAction">전체</a>
                     </li>
@@ -503,12 +502,12 @@
                     </div>
                 </div>
                 <div class="about-text centered">
-                    <h3>About Us</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <h3>"옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"</h3>
+                    <p>COCO CHANEL</p>
                 </div>
                 
            
-                <div class="triangle"></div>
+                
                 <div class="container">
                     <div class="title">
                         <h1>Best 응원 메시지</h1>
@@ -552,9 +551,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="testimonial-text">
-                      "옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"  COCO CHANEL
-                    </p>
                 </div>
             </div>
         </div>
@@ -563,6 +559,7 @@
         <!-- Contact section start -->
         <div id="contact" class="contact">
             <div class="section secondary-section">
+            <div class="triangle"></div>
                 <div class="container">
                     <div class="title">
                         <h1>Contact Us</h1>
@@ -577,7 +574,7 @@
                 <div class="container">
                     <div class="span9 center contact-info">
                         <p>123 Fifth Avenue, 노원</p>
-                        <p class="info-mail">CFK@somemail.com</p>
+                        <p class="info-mail">CFK@OJIMA.com</p>
                         <p>+11 234 567 890</p>
                         <p>+11 286 543 850</p>
                     </div>
