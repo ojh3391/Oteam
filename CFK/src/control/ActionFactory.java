@@ -80,6 +80,8 @@ public class ActionFactory {
 			action=new BoardVoteAction("qList.do");
 		}else if(cmd.equals("/rank.do")){
 			action=new RankAction("index.jsp");
+		}else if(cmd.equals("/leave.do")) {
+			action=new LeaveAction("test.jsp");
 		}
 		
 		return action;

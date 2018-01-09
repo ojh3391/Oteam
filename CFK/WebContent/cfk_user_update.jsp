@@ -215,6 +215,7 @@ UserVO vo=(UserVO)request.getAttribute("rs");
 				<tr>
 					<td align="center" colspan="2" class="btn_align">
 						<input class="message-btn" type="submit" value="수정하기">
+						<button class="message-btn" onclick="location.href='leave.do?user_id=<%=vo.getUser_id() %>'">탈퇴하기</button>
 						<input class="message-btn" type="button" value="취소" onclick="location.href='index.jsp'">
 					</td>
 				</tr>
