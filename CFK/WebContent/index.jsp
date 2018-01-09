@@ -52,26 +52,59 @@
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
         
         <script type="text/javascript">
-        	function cookieVal(cookieName) {
-        		thisCookie = document.cookie.split("; ");
-        		for(i=0; i<thisCookie.length; i++) {
-        			if(cookieName == thisCookie[i].split("=")[0]){
-        				return thisCookie[i].split("=")[1];
-        			}
-        		}
-        		return "x";
-        	}
         
-			function Popupopen() {
-				if(cookieVal("notice")!="1") {
-		   			window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
-				}
+        // 팝업 function
+        function cookieVal(cookieName) {
+        	thisCookie = document.cookie.split("; ");
+        	for(i=0; i<thisCookie.length; i++) {
+        		if(cookieName == thisCookie[i].split("=")[0]){
+        			return thisCookie[i].split("=")[1];
+        		}
+        	}
+        	return "x";
+        }
+        
+		function Popupopen() {
+			if(cookieVal("notice")!="1") {
+		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
+		}
+		//
+			
+		// 디데이 function
+		var countDown = new Date("Jan 18, 2018 23:59:59").getTime();
+
+		function msg_time() {	
+			var now = new Date().getTime();		//현재 날짜
+			var distance = countDown - now;		//d-day와 현재날짜 차이
+			
+			// 남은 시간 계산
+			days = Math.floor(distance / (1000*60*60*24))+"일 ";
+			hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60))+"시 ";
+			minutes = Math.floor((distance % (1000*60*60)) / (1000*60))+"분 ";	
+			seconds = Math.floor((distance % (1000*60)) / (1000))+"초";
+			
+			var msg = "<font color='black' size='5px'>D-DAY </font><font color='red' size='5px' text-align:center>"+days+hours+minutes+seconds+"</font>";
+			
+			// div 영역에 보여줌 
+			document.getElementById("ViewTimer").innerHTML = msg;
+			
+			//distance--;					// 기간을 현재 날짜로 안가져올 경우의 1초씩 감소
+			
+			if (distance < 0) {			// 시간이 종료 되었으면..
+				clearInterval(tid);		// 타이머 해제
+				//alert("종료");
+			} 
+			
+		}
+
+		function TimerStart(){ tid=setInterval('msg_time()', 1000) };
+		//
 		</script>
         
     </head>
     
-    <body onload="Popupopen();">
+    <body onload="Popupopen(); TimerStart();">
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
@@ -90,8 +123,13 @@
                             <li><a href="test.jsp">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
+<<<<<<< HEAD
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="#price">응원하기</a></li>
+=======
+                            <li><a href="cfk_attend.jsp">방청시청</a></li>
+                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
+>>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>
                     </div>
@@ -202,8 +240,8 @@
                		 </div>    
                		 
                    		 	<button class="message-btn" type="submit">로그인</button>
-                   	</form>
                    		 	<button class="message-btn" onclick="location.href='register.html'">회원 가입</button>
+                   	</form>
                    		 </div>
                		 </div>
                 		
@@ -230,8 +268,6 @@
           		 	</div>
           		 	<%} %>       
                 </div>
-            </div>
-        </div>
         <!-- Service section end -->     
         <!-- Portfolio section start -->
         <div class="section secondary-section " id="portfolio">
@@ -240,7 +276,9 @@
                 <div class="title">
                     <!-- <font size="10" color="black" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font> -->
                     <h1><font size="10" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font></h1>
+                    <div id="ViewTimer"></div>
                     <p>매주 금요일 저녁 7시!!</p>
+                     
                 </div>
                 <ul class="nav nav-pills">
                     <li class="filter" data-filter="all">
@@ -640,48 +678,48 @@
                 <div class="container">
                     <div class="title">
                         <h1>Best 응원 메시지</h1>
-                        <p>Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.</p>
+                        <p>CHALLENGE FASHION KING의 방영을 축하하기 위한 유명 연예인들의 축하메시지</p>
                     </div>
                     <div class="row">
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"I've worked too hard and too long to let anything stand in the way of my goals. I will not let my teammates down and I will not let myself down."</p>
+                                <p>"CFK의 방영을 진심으로 축하드립니다. 아직은 저에게 안되겠지만 그래도 저의 후배, 새로운 패션리더의 출현을 지켜보겠습니다. "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client1.png" class="centered" alt="client 1">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/차승원.jpg" class="centered" alt="client 1">
+                                    <strong>차승원
+                                        <small>차줌마</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"In motivating people, you've got to engage their minds and their hearts. I motivate people, I hope, by example - and perhaps by excitement, by having productive ideas to make others feel involved."</p>
+                                <p>"하하하!! 저와 같은 패션스타가 탄생되는 건가요? 진심으로 축하드리고 다음 회차 MC는 제가 맡겠습니다! "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client2.png" class="centered" alt="client 2">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/유재석.jpg" class="centered" alt="client 2">
+                                    <strong>유 재 석
+                                        <small>메뚜기</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                         <div class="span4">
                             <div class="testimonial">
-                                <p>"Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much may be done if we are always doing."</p>
+                                <p>"CHALLENGE FASHION KING 방영을 진심으로 축하드려요~!! 새로운 패션스타와 함께 런웨이 무대에 함께 서고 싶네요~~"</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/Client3.png" class="centered" alt="client 3">
-                                    <strong>John Doe
-                                        <small>Client</small>
+                                    <img src="./Resources/images/한혜진.jpg" class="centered" alt="client 3">
+                                    <strong>한혜진
+                                        <small>달심</small>
                                     </strong>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <p class="testimonial-text">
-                        "Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away"
+                      "옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"  COCO CHANEL
                     </p>
                 </div>
             </div>

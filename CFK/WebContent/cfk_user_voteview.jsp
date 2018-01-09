@@ -31,11 +31,20 @@ if((UserVO)session.getAttribute("vo")==null) {
 	
 	String agent=request.getHeader("User-Agent");
 	String fileName=vo1.getBoard_real_file();
+	
+	String user_id=vo2.getUser_id();
+	
 	boolean ieBrowser=(agent.indexOf("Trident")>-1);
+	
+	
+	
 	
 	if(ieBrowser) {
 		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
+		
+		user_id=URLEncoder.encode(user_id,"UTF-8").replaceAll("\\+", "%20");
 	}
+	
 	
 %>
 <!DOCTYPE html>
@@ -85,8 +94,8 @@ if((UserVO)session.getAttribute("vo")==null) {
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청시청</a></li>
-                            <li><a href="#price">응원하기</a></li>
-                            <li><a href="#contact">패션쇼</a></li>
+                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
+                            <li><a href="index.jsp#contact">패션쇼</a></li>
                         </ul>
                     </div>
                     <!-- End main navigation -->
@@ -187,7 +196,7 @@ if((UserVO)session.getAttribute("vo")==null) {
                             	</li>
                         	</ul>
                         	<div align="center">
-                        		<button class="button button-sp" onclick="location.href='qVote.do?board_num=<%=vo1.getBoard_num()%>&page=<%=current_page%>'">투표</button>
+                        		<button class="button button-sp" onclick="location.href='qVote.do?board_num=<%=vo1.getBoard_num()%>&user_id=<%=vo2.getUser_id() %>&page=<%=current_page%>'">투표</button>
                         	</div>		
                         	
                     	</div>
@@ -253,7 +262,7 @@ if((UserVO)session.getAttribute("vo")==null) {
                                         <font color="white"><span class="icon-plus">답글 쓰기</span></font>
                                     </a>
                                     <%if(vo.getReply_writer().equals(vo2.getUser_id())) {%>
-                                    <a href="cfk_reply_delete.jsp?reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
+                                    <a href="cfk_reply_delete.jsp?board_num=<%=vo1.getBoard_num() %>&reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
                                         <font color="white"><span class="icon-cancel">댓글 삭제</span></font>
                                     </a>
                                     <%}%>                                    

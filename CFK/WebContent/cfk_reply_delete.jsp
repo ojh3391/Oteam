@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 int reply_num=Integer.parseInt(request.getParameter("reply_num"));
+int board_num=Integer.parseInt(request.getParameter("board_num"));
 
 UserVO vo=(UserVO)session.getAttribute("vo");
 
@@ -57,8 +58,8 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청시청</a></li>
-                            <li><a href="#price">응원하기</a></li>
-                            <li><a href="#contact">패션쇼</a></li>
+                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
+                            <li><a href="index.jsp#contact">패션쇼</a></li>
                         </ul>
                     </div>
                     <!-- End main navigation -->
@@ -148,6 +149,7 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
 					</td>
 				</tr>
 			</table>
+			<input type="hidden" name="board_num" value="<%=board_num%>">
 			<input type="hidden" name="reply_num" value="<%=reply_num%>">
 			<input type="hidden" name="reply_re_ref" value="<%=reply_re_ref%>">
 			<input type="hidden" name="reply_re_lev" value="<%=reply_re_lev%>">

@@ -1,5 +1,8 @@
 package board.model;
 
+import java.io.PrintWriter;
+import java.net.URLEncoder;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,21 +25,46 @@ public class BoardVoteAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
+		
 		String current_page=req.getParameter("page");
 		//투표수 1씩 증가 담당
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
+		String user_id=req.getParameter("user_id");
 		
-		BoardDAO dao=new BoardDAO();
-		int result=dao.voteUpdate(board_num);
+
+		UserDAO dao1=new UserDAO();
+		UserVO rs=dao1.voteLimit(user_id);
 		
+		int vote=rs.getUser_check_vote();
 		
-		if(result>0) {
-			path+="?board_num="+board_num+"&page="+current_page;
+		if(vote<=0) {
+			path="vote_error.jsp";
+			
+			
+			/*res.setContentType("text/html;charset=UTF-8");
+			
+			
+			
+			PrintWriter out=res.getWriter();
+			out.println("<script>");
+			out.println("alert('투표를 3회이상 하셨습니다.');");
+			out.println("history.back();");
+			out.println("</script>");
+			out.close();*/
+			
+		}else {
+			BoardDAO dao=new BoardDAO();
+			dao.voteUpdate(board_num);
+			dao1.voteMinus(user_id);
+			
 		}
 		
 		
-		return new ActionForward(path, true);
+		path+="?board_num="+board_num+"&page="+current_page;
+		
+		
+		return new ActionForward(path, false);
 	}
 
 }

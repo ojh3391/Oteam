@@ -67,7 +67,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/reply_delete.do")) {
 			action=new ReplyPwdCheckAction3("ReplyDelete.do");
 		}else if(cmd.equals("/ReplyDelete.do")) {
-			action=new ReplyDeleteAction("qList.do");
+			action=new ReplyDeleteAction("qView.do");
 		}else if(cmd.equals("/reply_pwd2.do")) {
 			action=new ReplyPwdCheckAction2("qReplyInsert.do");
 		}else if(cmd.equals("/qReplyInsert.do")) {
@@ -77,9 +77,13 @@ public class ActionFactory {
 		}else if(cmd.equals("/board_update.do")) {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
+<<<<<<< HEAD
 			action=new BoardVoteAction("qList.do");
 		}else if(cmd.equals("/rank.do")){
 			action=new RankAction("index.jsp");
+=======
+			action=new BoardVoteAction("qView.do");
+>>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 		}
 		
 		return action;
