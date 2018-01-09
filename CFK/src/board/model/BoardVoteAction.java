@@ -1,6 +1,8 @@
 package board.model;
 
 
+import java.net.URLDecoder;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -29,10 +31,12 @@ public class BoardVoteAction implements Action {
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
 		
-		String user_id=req.getParameter("user_id");
+		String user_id1=req.getParameter("user_id");
+		System.out.println(user_id1);
+		
+		String user_id=URLDecoder.decode((URLDecoder.decode(user_id1, "8859_1")), "UTF-8");
+		
 		System.out.println(user_id);
-		
-		
 		
 
 
