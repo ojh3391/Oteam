@@ -54,7 +54,7 @@ int reply_re_seq=Integer.parseInt(request.getParameter("reply_re_seq"));
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="index.jsp">함께하기</a></li>
+                            <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청시청</a></li>
