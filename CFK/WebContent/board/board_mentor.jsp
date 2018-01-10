@@ -187,7 +187,7 @@
                     <div class="span4" id="second-person">
                         <div class="thumbnail">
                             <img src="../Resources/images/Team2.jpg" alt="team 1">
-                            <h3>Mr.Gong</h3>
+                            <h3>Mr.Suck</h3>
                             
                             <div class="mask">
                                 <h2>2017년 준우승자</h2>

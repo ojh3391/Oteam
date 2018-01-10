@@ -34,24 +34,24 @@
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
         <!-- popvideo -->
         <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
         <!--[if IE 7]>
             <link rel="stylesheet" type="text/css" href="./Resources/css/pluton-ie7.css" />
         <![endif]-->
-        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../Resources/images/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../Resources/images/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../Resources/images/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="../Resources/images/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="../Resources/images/logo1.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./Resources/images/ico/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./Resources/images/ico/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
+        <link rel="shortcut icon" href="./Resources/images/logo1.png">
         
         <script type="text/javascript">
         
@@ -111,7 +111,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a href="#" class="brand">
-                        <img src="../Resources/images/logo.png" width="120" height="40" alt="Logo" />
+                        <img src="./Resources/images/logo.png" width="120" height="40" alt="Logo" />
                         <!-- This is website logo -->
                     </a>
                     <!-- Navigation button, visible on small resolution -->
@@ -151,18 +151,18 @@
                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="../Resources/images/Slider01.jpg" alt="image01" width="320" >
+                            <img style="border-radius:25px;" src="./Resources/images/Slider01.jpg" alt="image01" width="320" >
                         </div>
                     </div>
                     <!-- End first slide -->
                     <!-- Start second slide -->
                     <div class="da-slide">
                         <h2>최고의 멘토 군단</h2>
-                        <h4>Easy to use</h4>
-                        <p>더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
+                        <h4>사랑이야~♥</h4>
+                        <p>2017 Season 1 우승과 준우승으로 환장의 캐미를 보여준 두사람이 이번엔 최강의 멘토가 되어 돌아 왔다. 이들에 대한 더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
                         <font color="yellow"><a href="board/board_mentor.jsp" class="da-link button">▶Click◀</a></font>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider02.png" width="700" alt="image02">
+                            <img style="border-radius:25px;" src="./Resources/images/Slider02.jpg" width="320" alt="image02">
                         </div>
                     </div>
                     <!-- End second slide -->
@@ -173,7 +173,7 @@
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider03.jpg" width="320" alt="image03">
+                            <img style="border-radius:25px;" src="./Resources/images/Slider03.jpg" width="320" alt="image03">
                         </div>
                     </div>
                     <!-- Start third slide -->
