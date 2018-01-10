@@ -135,8 +135,8 @@
 	<!-- End home section -->
 
 
-
-	<div class="page-wrap">
+<div class="section secondary-section" id=protfolio">
+	<!-- <div class="page-wrap"> -->
 
 
 
@@ -156,7 +156,7 @@
 					<header>
 						<body1>
 						<h1>
-							<font size="40" face="휴먼둥근헤드라인">2018년을 뒤흔들 Fashion Trend!!! </font>
+							<font color="red" face="휴먼둥근헤드라인">2018년을 뒤흔들 Fashion Trend!!! </font>
 						</h1>
 						</body1>
 
