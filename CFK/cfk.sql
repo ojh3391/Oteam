@@ -9,7 +9,8 @@ create table cfk_user(
 	user_email varchar(30) not null,
 	user_gender char(1) not null,
 	user_attend_date varchar(10),
-	user_check_vote int
+	user_check_vote int,
+	user_check_parti int
 );
 
 drop table cfk_user;
@@ -24,7 +25,8 @@ create table cfk_board(
 	board_writer varchar(20),
 	board_vote int default 0,
 	board_readcount int default 0,
-	board_date date	
+	board_date date
+	
 );	
 drop table cfk_board;
 select * from cfk_board;
@@ -44,7 +46,7 @@ create table cfk_reply(
 	reply_re_seq int not null,
 	reply_re_del int
 );	
-<<<<<<< HEAD
+
 
 insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 --원글 번호
@@ -55,7 +57,7 @@ insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 select * from cfk_user;
 select * from cfk_reply;
 
-=======
+
 select count(reply_re_del=0) from cfk_reply where reply_re_ref=1;
 drop table cfk_reply;
 drop table cfk_board;
@@ -63,4 +65,4 @@ drop table cfk_user;
 select * from cfk_reply;
 select count(*) from cfk_reply where reply_re_ref=1 and reply_re_del=0;
 update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_num=1;
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
+

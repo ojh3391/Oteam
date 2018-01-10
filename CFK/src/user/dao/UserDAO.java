@@ -52,7 +52,7 @@ public class UserDAO {
 		int result=0;
 		Connection con=getConnection();
 		PreparedStatement pstmt=null;
-		String sql="insert into cfk_user values(?,?,?,?,?,?,?,?,?,?,?)";
+		String sql="insert into cfk_user values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
@@ -66,6 +66,7 @@ public class UserDAO {
 			pstmt.setString(9, user_gender);
 			pstmt.setString(10, null);
 			pstmt.setInt(11, 3);
+			pstmt.setInt(12, 1);
 			result=pstmt.executeUpdate();		
 		}catch(SQLException e) {
 			e.printStackTrace();

@@ -13,6 +13,7 @@ public class UserVO
 	private String user_gender;
 	private String user_attend_date;
 	private int user_check_vote;
+	private int user_check_parti;
 	
 	public UserVO() {
 		super();
@@ -100,6 +101,14 @@ public class UserVO
 	}
 	public void setUser_check_vote(int user_check_vote) {
 		this.user_check_vote = user_check_vote;
+	}
+	public int getUser_check_parti()
+	{
+		return user_check_parti;
+	}
+	public void setUser_check_parti(int user_check_parti)
+	{
+		this.user_check_parti = user_check_parti;
 	}
 	
 	

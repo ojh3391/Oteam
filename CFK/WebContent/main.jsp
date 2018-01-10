@@ -86,7 +86,7 @@
 			minutes = Math.floor((distance % (1000*60*60)) / (1000*60))+"분 ";	
 			seconds = Math.floor((distance % (1000*60)) / (1000))+"초";
 			
-			var msg = "<font color='black' size='5px'>D-DAY </font><font color='red' size='5px' text-align:center>"+days+hours+minutes+seconds+"</font>";
+			var msg = "<p><font color='white' size='3px'>D-DAY </font><font color='red' size='3px' text-align:center>"+days+hours+minutes+seconds+"</font></p>";
 			
 			// div 영역에 보여줌 
 			document.getElementById("ViewTimer").innerHTML = msg;
@@ -121,6 +121,7 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
+                        	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
@@ -469,8 +470,10 @@
             <div class="triangle"></div>
                 <div class="container">
                     <div class="title">
-                        <h1>Contact Us</h1>
+                        <h1>THE FIRST SHOW</h1><br>
+                        <font size="10" color="black" face="휴먼둥근헤드라인">2018년 1월 19일 금요일 저녁 8시<br><br>지상 최강의<font size="11" color="red">패션쇼</font>가 열린다!</font>
                         <p>오라~ 패션의 메카로~ !</p>
+                        <img src="./Resources/images/show.PNG" class="centered" alt="show">
                     </div>
                 </div>
                 <div class="container">
