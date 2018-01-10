@@ -235,7 +235,7 @@
                		 </div>    
                		 
                    		 	<button class="message-btn" type="submit">로그인</button>
-                   		 	<button class="message-btn" onclick="location.href='register.html'">회원 가입</button>
+                   		 	<button class="message-btn" onclick="location.href='register.jsp'">회원 가입</button>
                    	</form>
                    	</div>
                		</div>
