@@ -10,24 +10,24 @@
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/pluton.css" />
         <!-- popvideo -->
-        <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
+        <link rel="stylesheet" href="../Resources/css/jquery.popVideo.css"/>
         <!--[if IE 7]>
-            <link rel="stylesheet" type="text/css" href="./Resources/css/pluton-ie7.css" />
+            <link rel="stylesheet" type="text/css" href="../Resources/css/pluton-ie7.css" />
         <![endif]-->
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="../Resources/css/animate.css" />
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./Resources/images/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./Resources/images/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="./Resources/images/logo1.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../Resources/images/ico/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../Resources/images/ico/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../Resources/images/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon-precomposed" href="../Resources/images/ico/apple-touch-icon-57.png">
+        <link rel="shortcut icon" href="../Resources/images/logo1.png">
         
         <script type="text/javascript">
         
@@ -87,7 +87,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a href="#" class="brand">
-                        <img src="./Resources/images/logo.png" width="120" height="40" alt="Logo" />
+                        <img src="../Resources/images/logo.png" width="120" height="40" alt="Logo" />
                         <!-- This is website logo -->
                     </a>
                     <!-- Navigation button, visible on small resolution -->
@@ -126,7 +126,7 @@
                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider01.jpg" alt="image01" width="320" >
+                            <img style="border-radius:50px;" src="../Resources/images/Slider01.jpg" alt="image01" width="320" >
                         </div>
                     </div>
                     <!-- End first slide -->
@@ -137,7 +137,7 @@
                         <p>더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
                         <font color="yellow"><a href="board_mentor.jsp" class="da-link button">▶Click◀</a></font>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider02.png" width="700" alt="image02">
+                            <img style="border-radius:50px;" src="../Resources/images/Slider02.png" width="700" alt="image02">
                         </div>
                     </div>
                     <!-- End second slide -->
@@ -148,7 +148,7 @@
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider03.jpg" width="320" alt="image03">
+                            <img style="border-radius:50px;" src="../Resources/images/Slider03.jpg" width="320" alt="image03">
                         </div>
                     </div>
                     <!-- Start third slide -->
@@ -173,35 +173,32 @@
                 </div>
                 <div class="row-fluid team">
                     <div class="span4" id="first-person">
-                    	<h2>2017년 우승자</h2>
-                        <div class="thumbnail">
-                        <div class="jquery-script-ads" style="margin:50px auto;">
-						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-								</script></div>
+                    	<div class="thumbnail">
+                    	<img src="../Resources/images/Team1.jpg" alt="team 1">
+                            <h3>Mr.Min</h3>
                             
-                            
-                            <video src="/CFK/boardUpload/mama.mp4" webkit-playsinline playsinline data-video="/CFK/boardUpload/mama.mp4" loop muted autoplay id="video" class="video" style="width: 300px">
-							</video>
-                            <h3>Min</h3>
-                                
+                            <div class="mask">
+                                <h2>2017년 우승자</h2>
+                                <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
                             </div>
                         </div>
                     </div>
+                            
                     <div class="span4" id="second-person">
                         <div class="thumbnail">
-                            <img src="./Resources/images/Team2.jpg" alt="team 1">
-                            <h3>Gong</h3>
+                            <img src="../Resources/images/Team2.jpg" alt="team 1">
+                            <h3>Mr.Gong</h3>
                             
                             <div class="mask">
-                                <h2>2017년 준우승</h2>
+                                <h2>2017년 준우승자</h2>
                                 <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
                             </div>
                         </div>
                     </div>
                     <div class="span4" id="third-person">
                         <div class="thumbnail">
-                            <img src="./Resources/images/Team3.jpg" alt="team 1">
-                            <h3>Park</h3>
+                            <img src="../Resources/images/Team3.jpg" alt="team 1">
+                            <h3>Ms.Park</h3>
                             
                             <div class="mask">
                                 <h2>마스터 심사위원</h2>
@@ -212,7 +209,7 @@
                 </div>
                 <div class="about-text centered">
                     <h3>"옷만으로 패션이 완성되는 것은 아니다 옷을 입은 사람의 가치가 살아나야 한다"</h3>
-                    <p>COCO CHANEL</p>
+                    <p>-COCO CHANEL-</p>
                 </div>
                 
            
@@ -228,7 +225,7 @@
                                 <p>"CFK의 방영을 진심으로 축하드립니다. 아직은 저에게 안되겠지만 그래도 저의 후배, 새로운 패션리더의 출현을 지켜보겠습니다. "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/차승원.jpg" class="centered" alt="client 1">
+                                    <img src="../Resources/images/차승원.jpg" class="centered" alt="client 1">
                                     <strong>차승원
                                         <small>차줌마</small>
                                     </strong>
@@ -240,7 +237,7 @@
                                 <p>"하하하!! 저와 같은 패션스타가 탄생되는 건가요? 진심으로 축하드리고 다음 회차 MC는 제가 맡겠습니다! "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/유재석.jpg" class="centered" alt="client 2">
+                                    <img src="../Resources/images/유재석.jpg" class="centered" alt="client 2">
                                     <strong>유 재 석
                                         <small>메뚜기</small>
                                     </strong>
@@ -252,7 +249,7 @@
                                 <p>"CHALLENGE FASHION KING 방영을 진심으로 축하드려요~!! 새로운 패션스타와 함께 런웨이 무대에 함께 서고 싶네요~~"</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="./Resources/images/한혜진.jpg" class="centered" alt="client 3">
+                                    <img src="../Resources/images/한혜진.jpg" class="centered" alt="client 3">
                                     <strong>한혜진
                                         <small>달심</small>
                                     </strong>
@@ -278,17 +275,17 @@
         <!-- ScrollUp button end -->
         <!-- Include javascript -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js" ></script>
-		<script type="text/javascript" src="./js/video-hover.js"></script>
-        <script src="./Resources/js/jquery.js"></script>
-        <script src="./Resources/js/jquery.popVideo.js"></script>
-        <script type="text/javascript" src="./Resources/js/jquery.mixitup.js"></script>
-        <script type="text/javascript" src="./Resources/js/bootstrap.js"></script>
-        <script type="text/javascript" src="./Resources/js/modernizr.custom.js"></script>
-        <script type="text/javascript" src="./Resources/js/jquery.bxslider.js"></script>
-        <script type="text/javascript" src="./Resources/js/jquery.cslider.js"></script>
-        <script type="text/javascript" src="./Resources/js/jquery.placeholder.js"></script>
-        <script type="text/javascript" src="./Resources/js/jquery.inview.js"></script>
-        <script type="text/javascript" src="./Resources/js/app.js"></script>
+		<script type="text/javascript" src="../js/video-hover.js"></script>
+        <script src="../Resources/js/jquery.js"></script>
+        <script src="../Resources/js/jquery.popVideo.js"></script>
+        <script type="text/javascript" src="../Resources/js/jquery.mixitup.js"></script>
+        <script type="text/javascript" src="../Resources/js/bootstrap.js"></script>
+        <script type="text/javascript" src="../Resources/js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="../Resources/js/jquery.bxslider.js"></script>
+        <script type="text/javascript" src="../Resources/js/jquery.cslider.js"></script>
+        <script type="text/javascript" src="../Resources/js/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="../Resources/js/jquery.inview.js"></script>
+        <script type="text/javascript" src="../Resources/js/app.js"></script>
         <script>
    			 $('#video').on('mouseenter',function() {
         $('#video').popVideo({
