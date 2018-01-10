@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
         <!-- Load Roboto font -->
@@ -25,6 +25,21 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
         <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
         <link rel="shortcut icon" href="./Resources/images/logo1.png">
+   
+   		<script type="text/javascript">
+   			//입력받은 값 체크
+	    	function checkValue()
+	        {
+	            var form = document.userInfo;
+				//user_age는 int로 선언됐기에 에러막아야함
+	            if(isNaN(form.user_age.value)){
+	                alert("나이는 숫자만 입력가능합니다.");
+	                return false;
+	            }
+
+	        }
+    	</script>
+   
     </head>
     
     <body>
@@ -116,11 +131,11 @@
                 <p>회원가입 하시면 많은 혜택을 누리실 수 있습니다.</p>
                 <!--Simple description for section goes here. -->
         </div>
-        <form action="insert.do" method="post">
+        <form action="insert.do" method="post" name="userInfo" onsubmit="return checkValue()">
 			<table align="center">
 				<tr>
 				<td><p><font color="black">아이디</font></p></td>
-				<td><input class="span5" type="text" name="user_id"  required></td>
+				<td><input class="span5" type="text" name="user_id" required></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">비밀번호</font></p></td>
