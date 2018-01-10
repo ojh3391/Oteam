@@ -9,6 +9,7 @@
     	out.println("</script>");
     	out.close();
     }
+    
     	UserVO vo=(UserVO)session.getAttribute("vo");
     	
     %>    

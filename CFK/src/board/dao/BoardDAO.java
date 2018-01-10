@@ -24,7 +24,7 @@ public class BoardDAO {
 		try
 	    {
 	         Class.forName("com.mysql.jdbc.Driver");
-	         String url="jdbc:mysql://localhost:3306/javadb";
+	         String url="jdbc:mysql://localhost:3306/javadb?useSSL=true";
 	         con=DriverManager.getConnection(url,"root","12345");
 	    }catch(Exception e)
 	    {
@@ -51,6 +51,54 @@ public class BoardDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public UserVO check_parti(String user_id)
+	{
+		UserVO vo=new UserVO();
+		try 
+		{
+			con=getConnection();
+			String sql="select user_check_parti from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs=pstmt.executeQuery();
+			if(rs.next())
+			{
+				vo.setUser_check_parti(rs.getInt(1));
+				
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally
+		{
+			close(con,pstmt,rs);
+		}
+		
+		return vo;
+	}
+	
+	public int parti_minus(String user_id)
+	{
+		int result=0;
+		try 
+		{
+			con=getConnection();
+			String sql="update cfk_user set user_check_parti=0 where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally
+		{
+			close(con,pstmt,rs);
+		}
+		
+		return result;
 	}
 	
 	
@@ -90,7 +138,7 @@ public class BoardDAO {
 			
 		}catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}finally
 		{
 			close(con, pstmt, rs);
