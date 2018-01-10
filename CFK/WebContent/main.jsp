@@ -84,7 +84,7 @@
 			minutes = Math.floor((distance % (1000*60*60)) / (1000*60))+"분 ";	
 			seconds = Math.floor((distance % (1000*60)) / (1000))+"초";
 			
-			var msg = "<font color='black' size='5px'>D-DAY </font><font color='red' size='5px' text-align:center>"+days+hours+minutes+seconds+"</font>";
+			var msg = "<p><font color='white' size='3px'>D-DAY </font><font color='red' size='3px' text-align:center>"+days+hours+minutes+seconds+"</font></p>";
 			
 			// div 영역에 보여줌 
 			document.getElementById("ViewTimer").innerHTML = msg;
@@ -119,6 +119,7 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
+                        	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
@@ -235,7 +236,7 @@
                		 </div>    
                		 
                    		 	<button class="message-btn" type="submit">로그인</button>
-                   		 	<button class="message-btn" onclick="location.href='register.html'">회원 가입</button>
+                   		 	<button class="message-btn" onclick="location.href='register.jsp'">회원 가입</button>
                    	</form>
                    	</div>
                		</div>
