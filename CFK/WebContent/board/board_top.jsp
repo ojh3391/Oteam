@@ -2,25 +2,27 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=utf-8>
+
+	<head>
+    	<meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
+        
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
         <!-- Load css styles -->
         <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
         <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
         <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
-        <!-- popvideo -->
-        <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
-        <!--[if IE 7]>
-            <link rel="stylesheet" type="text/css" href="../Resources/css/pluton-ie7.css" />
-        <![endif]-->
         <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
         <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
         <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
+        
+        <!-- popvideo -->
+        <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
+
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/slider/ico/apple-touch-icon-144.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/slider/ico/apple-touch-icon-114.png">
@@ -46,7 +48,6 @@
 		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
 		}
-		//
 			
 		// 디데이 function
 		var countDown = new Date("Jan 18, 2018 23:59:59").getTime();
@@ -76,7 +77,6 @@
 		}
 
 		function TimerStart(){ tid=setInterval('msg_time()', 1000) };
-		
 		</script>
     </head>
     
@@ -84,14 +84,17 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <div class="container">
+                
+                     <!-- This is website logo -->
                     <a href="#" class="brand">
-                        <img src="./images/background/logo.png" width="120" height="40" alt="Logo" />
-                        <!-- This is website logo -->
+                        <img src="./images/background/logo.png" width="120" height="40" alt="Logo" />   
                     </a>
+                    
                     <!-- Navigation button, visible on small resolution -->
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <i class="icon-menu"></i>
                     </button>
+                    
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
@@ -105,19 +108,22 @@
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>
                     </div>
-                    <!-- End main navigation -->
+                  
                 </div>
             </div>
         </div>
+        
         <!-- Start home section -->
         <div id="home">
+        
             <!-- Start cSlider s-->
             <div id="da-slider" class="da-slider">
-                <div class="triangle"></div>
-                <!-- mask elemet use for masking background image -->
-                <div class="mask"></div>
-                <!-- All slides centred in container element -->
+                <div class="triangle">
+                </div>
+                <div class="mask">
+                </div>
                 <div class="container">
+                
                     <!-- Start first slide -->
                     <div class="da-slide">
                         <h2 class="fittext2">오팀장과 형님들</h2>
@@ -128,7 +134,7 @@
                             <img style="border-radius:25px;" src="./images/slider/Slider01.jpg" width="320">
                         </div>
                     </div>
-                    <!-- End first slide -->
+                    
                     <!-- Start second slide -->
                     <div class="da-slide">
                         <h2>최고의 멘토 군단</h2>
@@ -139,7 +145,7 @@
                             <img style="border-radius:25px;" src="./images/slider/Slider02.jpg" width="320">
                         </div>
                     </div>
-                    <!-- End second slide -->
+                   
                     <!-- Start third slide -->
                     <div class="da-slide">
                         <h2>Challenge Fashion King!!</h2>
@@ -150,16 +156,16 @@
                             <img style="border-radius:25px;" src="./images/slider/Slider03.jpg" width="320" alt="image03">
                         </div>
                     </div>
-                    <!-- Start third slide -->
+                    
                     <!-- Start cSlide navigation arrows -->
                     <div class="da-arrows">
                         <span class="da-arrows-prev"></span>
                         <span class="da-arrows-next"></span>
                     </div>
-                    <!-- End cSlide navigation arrows -->
+                    
                 </div>
             </div>
         </div>
         <!-- End home section -->
-</body>
+	</body>
 </html>
