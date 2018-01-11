@@ -220,7 +220,7 @@
 				<tr>
 					<td><p><font color="black">성별</font></p></td>
 					<td align="center">
-						<input type="radio" name="user_gender" value="남"><font color="black">남</font>
+						<input type="radio" name="user_gender" value="남" checked><font color="black">남</font>
 						<input type="radio" name="user_gender" value="여"><font color="black">여</font>
 					</td>
 				</tr>
