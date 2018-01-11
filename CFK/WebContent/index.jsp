@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="rank.do"></jsp:forward>
+<!-- 여기서 시작 -->
+<% response.sendRedirect("rank.do"); %>
 </body>
 </html>	

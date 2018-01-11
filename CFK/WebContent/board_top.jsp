@@ -12,23 +12,23 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="Resources/css/animate.css" />
         
         <!-- popvideo -->
-        <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
+        <link rel="stylesheet" href="Resources/css/jquery.popVideo.css"/>
 
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/slider/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/slider/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/slider/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="./images/slider/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="./images/slider/logo1.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/slider/ico/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/slider/ico/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/slider/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon-precomposed" href="images/slider/ico/apple-touch-icon-57.png">
+        <link rel="shortcut icon" href="images/slider/logo1.png">
         
         <script type="text/javascript">
         
@@ -102,7 +102,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="List.do#portfolio">투표하기</a></li>
-                            <li><a href="board_enter.jsp#service">참가신청</a></li>
+                            <li><a href="board/board_enter.jsp#service">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="fashion2018.jsp">패션트렌드</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -131,7 +131,7 @@
                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider01.jpg" width="320">
+                            <img style="border-radius:25px;" src="images/slider/Slider01.jpg" width="320">
                         </div>
                     </div>
                     
@@ -142,7 +142,7 @@
                         <p>2017 Season 1 우승과 준우승으로 환장의 캐미를 보여준 두사람이 이번엔 최강의 멘토가 되어 돌아 왔다. 이들에 대한 더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
                         <font color="yellow"><a href="board/board_mentor.jsp" class="da-link button">▶Click◀</a></font>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider02.jpg" width="320">
+                            <img style="border-radius:25px;" src="images/slider/Slider02.jpg" width="320">
                         </div>
                     </div>
                    
@@ -153,7 +153,7 @@
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider03.jpg" width="320" alt="image03">
+                            <img style="border-radius:25px;" src="images/slider/Slider03.jpg" width="320" alt="image03">
                         </div>
                     </div>
                     

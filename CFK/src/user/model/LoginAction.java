@@ -1,7 +1,5 @@
 package user.model;
 
-import java.io.PrintWriter;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -28,13 +26,14 @@ public class LoginAction implements Action {
 		//userstable 에 id,pwd 있는지 메소드 호출
 		UserDAO dao=new UserDAO();
 		UserVO vo=dao.isLogin(id, passwd);
+		
 		//존재하는 사용자라면 session에 담기 
 		if(vo!=null) {
 			HttpSession session=req.getSession();
 			session.setAttribute("vo", vo);
 				
 		}else {
-			path="login_error.jsp";
+			path="error/login_error.jsp";
 		}		
 		return new ActionForward(path, false);	
 	}

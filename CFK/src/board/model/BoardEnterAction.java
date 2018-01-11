@@ -13,18 +13,15 @@ import board.dao.BoardDAO;
 import board.vo.BoardVO;
 import user.vo.UserVO;
 
-public class PartiAction implements Action
+public class BoardEnterAction implements Action
 {
 	private String path;
 	
-
-	public PartiAction(String path)
+	public BoardEnterAction(String path)
 	{
 		super();
 		this.path=path;
-		
 	}
-
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
@@ -33,10 +30,8 @@ public class PartiAction implements Action
 		String uploadPath=req.getServletContext().getRealPath("/boardUpload");
 		String uploadPath2=req.getServletContext().getRealPath("/thumb");
 		
-		
 		int size=50*1024*1024;
 		MultipartRequest multi;
-		//String videoFile=null, videoFileSize=null;
 		
 		try
 		{
@@ -49,11 +44,10 @@ public class PartiAction implements Action
 			int check=uo.getUser_check_parti();
 			if(check==0)
 			{
-				path="parti_error.jsp";
+				path="error/enter_error.jsp";
 			}else
 			{	
 				
-			
 				BoardVO vo=new BoardVO();
 				vo.setBoard_subject(multi.getParameter("board_subject"));
 				vo.setBoard_content(multi.getParameter("board_content"));
@@ -62,8 +56,6 @@ public class PartiAction implements Action
 				vo.setBoard_writer(multi.getParameter("user_id"));
 			
 				//동영상 썸네일 이미지 추출
-				//Enumeration<String> names=multi.getFileNames();
-				//String fileName=multi.getOriginalFileName(names.nextElement());
 				String fileName=multi.getFilesystemName((String) multi.getFileNames().nextElement());
 				int idx=fileName.lastIndexOf(".");
 				String _fileName=fileName.substring(0, idx);
@@ -82,24 +74,16 @@ public class PartiAction implements Action
 				{
 					Process p=new ProcessBuilder(cmd).start();
 					p.waitFor();
-				
 				}catch(Exception e)
 				{
-				
 					e.printStackTrace();
 				}
-			
-			
-				int result=dao.board_parti(vo);
+				dao.board_parti(vo);
 			}
-						
-			
 		}catch(IOException e)
 		{
 			e.printStackTrace();
 		}
-			
 		return new ActionForward(path, false);
-	}
-		
+	}	
 }

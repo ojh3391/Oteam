@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 
-                <!-- 로그인 섹션 스타트 -->
+                <!-- 로그인 체크 -->
                 <%
 					UserVO vo=(UserVO)session.getAttribute("vo");
                     		
@@ -86,7 +86,7 @@
 					}else{ 
 				%> 
 				<div class="span4">
-					<img src="./Resources/images/logo.png" width="120" height="40" alt="Logo" />
+					<img src="./images/background/logo.png" width="120" height="40" alt="Logo" />
             		<h3><font color="red">▶로그인 되셨습니다◀</font></h3>
                    		<div class="control-group">
                    			<div class="controls">
@@ -327,25 +327,25 @@
                     </div>
                     <ul class="row client-slider" id="clint-slider">
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo07.png" alt="client logo 1">                           
+                            <img src="./images/clients/ClientLogo07.png" alt="client logo 1">                           
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo01.png" alt="client logo 2">                            
+                            <img src="./images/clients/ClientLogo01.png" alt="client logo 2">                            
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo02.png" alt="client logo 3">                            
+                            <img src="./images/clients/ClientLogo02.png" alt="client logo 3">                            
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo03.png" alt="client logo 4">                            
+                            <img src="./images/clients/ClientLogo03.png" alt="client logo 4">                            
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo04.png" alt="client logo 5">                            
+                            <img src="./images/clients/ClientLogo04.png" alt="client logo 5">                            
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo05.png" alt="client logo 6">                          
+                            <img src="./images/clients/ClientLogo05.png" alt="client logo 6">                          
                         </li>
                         <li>                            
-                            <img src="./Resources/images/clients/ClientLogo06.png" alt="client logo 7">                            
+                            <img src="./images/clients/ClientLogo06.png" alt="client logo 7">                            
                         </li>
                     </ul>
                 </div>
