@@ -3,8 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
 UserVO vo=(UserVO)request.getAttribute("rs");
-UserVO vo1=(UserVO)session.getAttribute("vo");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -120,109 +121,109 @@ UserVO vo1=(UserVO)session.getAttribute("vo");
             <div class="container">
       
         <div class="title">
-        	<h1>정보수정</h1>
+        	<h1>MY PAGE</h1>
             	<!-- Section's title goes here -->
-                <p>업데이트 된 정보를 입력하시오.</p>
+                
                 <!--Simple description for section goes here. -->
         </div>
-        <form action="update.do" method="post">
-			<table align="center">
+        <form action="mypage.do" method="post">
+			<table align="center" border="2" bordercolor="#FECE1A" >
 			
-						
-				<tr>
-				<td><p><font color="black">아이디</font></p></td>
-				<td><input class="span5" type="text" name="user_id" value="<%=vo.getUser_id() %>" readonly></td>
+				<tr >
+					<td valign="middle" align="center" colspan="2" bgcolor="beige" height="50"><font size="5" color="black"><strong>기 본 정 보</strong> </font> </td>
 				</tr>
-				<tr>
-					<td><p><font color="black">비밀번호</font></p></td>
-					<td><input class="span5" type="password" name="user_passwd" required></td>
+				<tr align="center" >
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>아이디</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_id() %></font></td>
 				</tr>
-				<tr>
-					<td><p><font color="black">이름</font></p></td>
-					<td><input class="span5" type="text" name="user_name" value="<%=vo.getUser_name() %>" readonly></td>
+				
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>이름</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"><%=vo.getUser_name() %></font></td>
 				</tr>
-				<tr>
-					<td><p><font color="black">지역</font></p></td>
-					<td align="center"><select name="user_area" class="span5">
-					<%if(vo.getUser_area().equals("서울.경기")){ %>
-						<option selected="selected">서울.경기</option>
-						<option >강원도</option>
-						<option >충청권</option>
-						<option >호남.제주</option>
-						<option >영남권</option>			
-						
-						
-					<%}else if(vo.getUser_area().equals("강원도")){ %>
-					
-						<option >서울.경기</option>
-						<option selected="selected">강원도</option>
-						<option >충청권</option>
-						<option >호남.제주</option>
-						<option >영남권</option>			
-						
-					
-						
-					<%}else if(vo.getUser_area().equals("충청권")){ %>
-					
-						<option >서울.경기</option>
-						<option >강원도</option>
-						<option selected="selected">충청권</option>
-						<option >호남.제주</option>
-						<option >영남권</option>			
-						
-						
-					<%}else if(vo.getUser_area().equals("호남.제주")){ %>
-					
-						<option >서울.경기</option>
-						<option >강원도</option>
-						<option >충청권</option>
-						<option selected="selected">호남.제주</option>
-						<option >영남권</option>			
-						
-						
-					<%}else if(vo.getUser_area().equals("영남권")){ %>
-					
-						<option >서울.경기</option>
-						<option >강원도</option>
-						<option >충청권</option>
-						<option >호남.제주</option>
-						<option selected="selected">영남권</option>			
-						
-					<%} %>
-						</select></td>
-					
+				
+				
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>전화번호</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_tel() %></font></td>
 				</tr>
-				<tr>
-					<td><p><font color="black">주소</font></p></td>
-					<td><input class="span5" type="text" name="user_addr" value="<%=vo.getUser_addr() %>"></td>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>주소</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"><%=vo.getUser_addr() %></font></td>
 				</tr>
-				<tr>
-					<td><p><font color="black">전화번호</font></p></td>
-					<td><input class="span5" type="text" name="user_tel" value="<%=vo.getUser_tel() %>"></td>
+				
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0" ><font size="5" color="black"><strong>이메일</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_email() %></font></td>
 				</tr>
+				
 				<tr>
-					<td><p><font color="black">나이</font></p></td>
-					<td><input class="span5" type="text" name="user_age" value="<%=vo.getUser_age() %>" readonly></td>
-				</tr>
-				<tr>
-					<td><p><font color="black">이메일</font></p></td>
-					<td><input class="span5" type="email" name="user_email" value="<%=vo.getUser_email() %>" ></td>
-				</tr>
-				<tr>
-					<td><p><font color="black">성별</font></p></td>
-					<td><input class="span5" type="text" name="user_gender" value="<%=vo.getUser_gender() %>" readonly></td>
-				</tr>
-				<tr>
-					<td align="center" colspan="2" class="btn_align">
-						<input class="message-btn" type="submit" value="수정하기">
-						<button class="message-btn" onclick="location.href='leave.do?user_id=<%=vo.getUser_id() %>'">탈퇴하기</button>
-						<input class="message-btn" type="button" value="취소" onclick="location.href='index.jsp'">
+					<td bgcolor="beige" align="center" colspan="2" class="btn_align">
+						<input class="message-btn" type="submit" value="수정하기" >
+						
+						
 					</td>
 				</tr>
 				
 				
 			</table>
+				<input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">
+				<input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd()%>">
 		</form>
+		
+		<table align="center" border="2" bordercolor="#FECE1A" >
+			
+				<tr align="center">
+					<td valign="middle" align="center" colspan="2" bgcolor="beige" height="50"><font size="5" color="black"><strong>추 가 정 보</strong> </font> </td>
+				</tr>
+				<%if(vo.getUser_attend_date()==null){ %>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>방청날짜</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue">신청 내역이 없습니다 --> <a href="cfk_attend.jsp">신청하러가기</a></font></td>
+				</tr>
+				<%}else{%>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>방청날짜</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_attend_date() %>----> <a href="cfk_attend.jsp" >신청변경하기</a></font></td>
+				</tr>
+				<%} %>
+				<%if(!(vo.getUser_check_vote()==0)){ %>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>남은 투표수</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"><%=vo.getUser_check_vote() %>번  ----> <a href="qList.do">투표하기</a></font></td>
+				</tr>
+				<%}else{%>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>남은 투표수</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue">투표권을 모두 소진하셨습니다</font></td>
+				</tr>
+				<%} %>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>전화번호</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
+				</tr>
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>주소</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"></font></td>
+				</tr>
+				
+				<tr align="center">
+					<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>이메일</strong></font></td>
+					<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
+				</tr>
+				<tr>
+					<td bgcolor="beige" align="center" colspan="2" class="btn_align">
+						<input class="message-btn" type="button" value="메인으로" onclick="location.href='index.jsp'">
+						
+						
+					</td>
+				</tr>
+				
+				
+				
+				
+			</table>
+		
         </div>
         </div>
         

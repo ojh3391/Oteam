@@ -262,4 +262,39 @@ public class UserDAO {
 		}
 		return result;
 	}
+	public UserVO myUser(String user_id) {
+		UserVO vo=null;
+		Connection con=getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from cfk_user where user_id=?";
+		try {
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				vo=new UserVO();
+				vo.setUser_id(rs.getString("user_id"));
+				vo.setUser_passwd(rs.getString("user_passwd"));
+				vo.setUser_addr(rs.getString("user_addr"));
+				vo.setUser_area(rs.getString("user_area"));
+				vo.setUser_tel(rs.getString("user_tel"));
+				vo.setUser_age(rs.getInt("user_age"));
+				vo.setUser_name(rs.getString("user_name"));
+				vo.setUser_email(rs.getString("user_email"));
+				vo.setUser_gender(rs.getString("user_gender"));
+				vo.setUser_attend_date(rs.getString("user_attend_date"));
+				vo.setUser_check_vote(rs.getInt("user_check_vote"));
+				vo.setUser_check_parti(rs.getInt("user_check_parti"));
+				
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(con, pstmt, rs);
+		}
+		return vo;
+		
+		
+	}
 }
