@@ -134,17 +134,13 @@
 	</div>
 	<!-- End home section -->
 
-
 <div class="section secondary-section" id=protfolio">
 	<!-- <div class="page-wrap"> -->
-
-
 
 		<!-- Main -->
 		<section id="main">
 
 			<!-- Header -->
-
 
 			<!-- Gallery -->
 			<section id="galleries">
@@ -313,20 +309,10 @@
 								<h3 align="center"><font face="휴먼둥근헤드라인">Wide Pants</font></h3>
 								</body2></a>
 						</div>
-
 					</div>
-
-
 				</div>
 			</section>
-
-
-
-
-
 		</section>
-
-
 		</section>
 	</div>
 
@@ -338,37 +324,6 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<!-- Footer section start -->
-	<div class="footer">
-		<p>
-			&copy; 2017 Theme by <a href="http://www.graphberry.com">Oh!Bro~
-				Corp.</a>
-		</p>
-	</div>
-	<!-- Footer section end -->
-	<!-- ScrollUp button start -->
-	<div class="scrollup">
-		<a href="#"> <i class="icon-up-open"></i>
-		</a>
-	</div>
-	<!-- ScrollUp button end -->
-	<!-- Include javascript -->
-	<script src="./Resources/js/jquery.js"></script>
-	<script type="text/javascript" src="./Resources/js/jquery.mixitup.js"></script>
-	<script type="text/javascript" src="./Resources/js/bootstrap.js"></script>
-	<script type="text/javascript" src="./Resources/js/modernizr.custom.js"></script>
-	<script type="text/javascript" src="./Resources/js/jquery.bxslider.js"></script>
-	<script type="text/javascript" src="./Resources/js/jquery.cslider.js"></script>
-	<script type="text/javascript"
-		src="./Resources/js/jquery.placeholder.js"></script>
-	<script type="text/javascript" src="./Resources/js/jquery.inview.js"></script>
-	<!-- Load google maps api and call initializeMap function defined in app.js -->
-	<script async="" defer="" type="text/javascript"
-		src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap"></script>
-	<!-- css3-mediaqueries.js for IE8 or older -->
-	<!--[if lt IE 9]>
-            <script src="./Resources/js/respond.min.js"></script>
-        <![endif]-->
-	<script type="text/javascript" src="./Resources/js/app.js"></script>
-</body>
+	<jsp:include page="board_bottom.jsp"></jsp:include>
+    </body>
 </html>

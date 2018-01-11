@@ -15,7 +15,7 @@
     
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
     </head>
     <body>
     	<jsp:include page="board_top.jsp"></jsp:include>

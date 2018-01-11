@@ -115,7 +115,7 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="List.do#portfolio">투표하기</a></li>
-                            <li><a href="board/board_enter.jsp#service">참가신청</a></li>
+                            <li><a href="board_enter.jsp#service">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>
                             <li><a href="fashion2018.jsp">패션트렌드</a></li>
                             <li><a href="#contact">패션쇼</a></li>
@@ -182,7 +182,7 @@
                               	<p><%=vo.getBoard_date()%></p>
                              	<div class="mask">
                              	<h2><%=vo.getBoard_writer()%></h2>
-                              	<a href="qHitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>">
+                              	<a href="HitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>">
                              	<h2><i class="icon-plus"></i></h2></a>
                              	</div>
                         	</div>

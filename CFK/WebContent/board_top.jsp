@@ -102,9 +102,9 @@
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="List.do#portfolio">투표하기</a></li>
-                            <li><a href="board/board_enter.jsp#service">참가신청</a></li>
-                            <li><a href="cfk_attend.jsp">방청신청</a></li>
-                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
+                            <li><a href="board_enter.jsp#service">참가신청</a></li>
+                            <li><a href="board_attend.jsp">방청신청</a></li>
+                            <li><a href="board_fashion.jsp">패션트렌드</a></li>
                             <li><a href="#contact">패션쇼</a></li>
                         </ul>
                     </div>

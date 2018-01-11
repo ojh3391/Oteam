@@ -51,17 +51,17 @@ public class ActionFactory {
 		}else if(cmd.equals("/enter.do")) {							//참가신청 액션
 			action=new BoardEnterAction("index.jsp");
 		}else if(cmd.equals("/List.do")) {							//리스트 가기전 체크
-			action=new BoardListAction("/board/board_list.jsp");
-		}else if(cmd.equals("/qHitUpdate.do")) {
-			action=new BoardHitUpdateAction("qView.do");
-		}else if(cmd.equals("/qView.do")) {
-			action= new ReplyViewAction("cfk_user_voteview.jsp");
+			action=new BoardListAction("/board_list.jsp");
+		}else if(cmd.equals("/HitUpdate.do")) {
+			action=new BoardHitUpdateAction("View.do");
+		}else if(cmd.equals("/View.do")) {
+			action= new ReplyViewAction("board_view.jsp");
 		}else if(cmd.equals("/aDate.do")) {
-			action=new AttendAction("cfk_attend_confirm.jsp");
+			action=new AttendAction("board_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {
 			action=new ReplyPwdCheckAction("ReplyInsert.do");
 		}else if(cmd.equals("/ReplyInsert.do")) {
-			action=new ReplyInsertAction("qView.do");		
+			action=new ReplyInsertAction("View.do");		
 		}else if(cmd.equals("/board_pwd.do")) {
 			action=new BoardPwdCheckAction("BoardDelete.do");
 		}else if(cmd.equals("/BoardDelete.do")) {
@@ -69,17 +69,17 @@ public class ActionFactory {
 		}else if(cmd.equals("/reply_delete.do")) {
 			action=new ReplyPwdCheckAction3("ReplyDelete.do");
 		}else if(cmd.equals("/ReplyDelete.do")) {
-			action=new ReplyDeleteAction("qView.do");
+			action=new ReplyDeleteAction("View.do");
 		}else if(cmd.equals("/reply_pwd2.do")) {
 			action=new ReplyPwdCheckAction2("qReplyInsert.do");
 		}else if(cmd.equals("/qReplyInsert.do")) {
-			action=new ReplyInsertAction2("qView.do");
+			action=new ReplyInsertAction2("View.do");
 		}else if(cmd.equals("/boardView.do")) {
 			action=new BoardViewAction("board_update.jsp");
 		}else if(cmd.equals("/board_update.do")) {
-			action=new BoardUpdateAction("qView.do");
+			action=new BoardUpdateAction("View.do");
 		}else if(cmd.equals("/qVote.do")) {
-			action=new BoardVoteAction("qView.do");
+			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/rank.do")){							//메인으로 가기 전 랭크체크
 			action=new BoardRankAction("board_main.jsp");
 		}else if(cmd.equals("/leave.do")) {
