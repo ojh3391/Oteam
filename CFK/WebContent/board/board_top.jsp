@@ -9,24 +9,24 @@
         <!-- Load Roboto font -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
         <!-- popvideo -->
-        <link rel="stylesheet" href="../Resources/css/jquery.popVideo.css"/>
+        <link rel="stylesheet" href="./Resources/css/jquery.popVideo.css"/>
         <!--[if IE 7]>
             <link rel="stylesheet" type="text/css" href="../Resources/css/pluton-ie7.css" />
         <![endif]-->
-        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="../Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/slider/ico/apple-touch-icon-144.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/slider/ico/apple-touch-icon-114.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/slider/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="../images/slider/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="../images/slider/logo1.png">
+        <link rel="apple-touch-icon-precomposed" href="./images/slider/ico/apple-touch-icon-57.png">
+        <link rel="shortcut icon" href="./images/slider/logo1.png">
         
         <script type="text/javascript">
         
