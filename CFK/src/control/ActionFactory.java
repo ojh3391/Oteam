@@ -19,9 +19,6 @@ import reply.model.ReplyDeletePwdAction;
 import reply.model.ReplyViewAction;
 import user.model.*;
 
-
-
-
 public class ActionFactory {
 	// 서블릿의 의뢰를 받아 각각의 cmd에 따라 액션 생성후 넘기기
 	private static ActionFactory baf=null;
@@ -38,12 +35,12 @@ public class ActionFactory {
 	public Action action(String cmd) {
 		if(cmd.equals("/insert.do")) {								//회원가입 액션
 			action=new InsertAction("index.jsp");
-		}else if(cmd.equals("/modify.do")) {
-			action=new ModifyAction("cfk_user_mypage.jsp");
-		}else if(cmd.equals("/mypage.do")) {
-			action=new MypageAction("cfk_user_update.jsp");
-		}else if(cmd.equals("/update.do")) {
-			action=new UpdateAction("cfk_user_modify.jsp");
+		}else if(cmd.equals("/Mypage.do")) {						//회원페이지 비번체크 및 액션
+			action=new MypageAction("user_mypage.jsp");
+		}else if(cmd.equals("/update_page.do")) {					//회원수정 페이지 액션
+			action=new UpdatePageAction("user_update.jsp");		
+		}else if(cmd.equals("/update.do")) {						//회원수정 액션
+			action=new UpdateAction("user_mypage.jsp");
 		}else if(cmd.equals("/login.do")) {							//로그인 액션
 			action=new LoginAction("index.jsp");
 		}else if(cmd.equals("/logout.do")) {						//로그아웃 액션
@@ -56,7 +53,7 @@ public class ActionFactory {
 			action=new BoardHitUpdateAction("View.do");
 		}else if(cmd.equals("/View.do")) {							//뷰 가기전 체크
 			action= new ReplyViewAction("board_view.jsp");
-		}else if(cmd.equals("/aDate.do")) {							//방청신청 액션
+		}else if(cmd.equals("/Attend.do")) {						//방청신청 액션
 			action=new AttendAction("board_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크
 			action=new ReplyPwdAction("ReplyInsert.do");
@@ -82,7 +79,7 @@ public class ActionFactory {
 			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/Rank.do")){							//메인으로 가기 전 랭크체크
 			action=new BoardRankAction("board_main.jsp");
-		}else if(cmd.equals("/leave.do")) {
+		}else if(cmd.equals("/leave.do")) {							//탈퇴 액션
 			action=new LeaveAction("index.jsp");
 		}
 		

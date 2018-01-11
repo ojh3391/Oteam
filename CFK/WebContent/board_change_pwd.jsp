@@ -5,7 +5,6 @@
 int board_num=Integer.parseInt(request.getParameter("board_num"));
 
 UserVO vo=(UserVO)session.getAttribute("vo");
-
 %>
 <!DOCTYPE html>
 <html>

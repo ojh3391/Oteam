@@ -64,7 +64,7 @@
     <body>
     	
         <center>
-        	<form action="aDate.do" method="post" name="select">
+        	<form action="Attend.do" method="post" name="select">
         	<input type="hidden" name="select_year" value="<%=year%>">
         	<input type="hidden" name="select_month" value="<%=month%>">
         	<input type="hidden" name="select_day" value=""> <!-- 자바스크립트와 같이 사용해야 값을 넘길 수 있음 -->

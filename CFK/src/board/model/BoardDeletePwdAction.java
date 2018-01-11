@@ -34,7 +34,7 @@ public class BoardDeletePwdAction implements Action {
 			path+="?board_num="+board_num+"&page="+current_page;
 			
 		}else {
-			path="passwd_error.jsp";
+			path="error/passwd_error.jsp";
 		}
 		//비밀번호가 맞다면 삭제하고 액션으로 페이지 이동
 		
