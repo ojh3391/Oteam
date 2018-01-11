@@ -81,7 +81,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/qVote.do")) {
 			action=new BoardVoteAction("qView.do");
 		}else if(cmd.equals("/rank.do")){
-			action=new RankAction("main.jsp");
+			action=new RankAction("/board/main.jsp");
 		}else if(cmd.equals("/leave.do")) {
 			action=new LeaveAction("index.jsp");
 		}

@@ -211,6 +211,12 @@
                     <p>-COCO CHANEL-</p>
                 </div>
                 
+                <div class="container">
+                    <div class="title">
+                        <h1>작년 우승자와의 만남</h1>
+                        
+                        <p>인터뷰</p>
+                    </div>
            
                 
                 <div class="container">
