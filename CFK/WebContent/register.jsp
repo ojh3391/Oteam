@@ -215,7 +215,7 @@
 				</tr>
 				<tr>
 					<td><p><font color="black">이메일</font></p></td>
-					<td><input class="span5" type="email" name="user_email" placeholder="username@beststartupever.com" maxlength="30"></td>
+					<td><input class="span5" type="email" name="user_email" placeholder="username@example.com" maxlength="30"></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">성별</font></p></td>
