@@ -1,12 +1,11 @@
 package user.dao;
 
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import control.JDBCUtil;
 import user.vo.UserVO;
 
 public class UserDAO {
@@ -15,42 +14,10 @@ public class UserDAO {
 	private ResultSet rs=null;
 	
 	
-	public Connection getConnection() {
-		Connection con=null;
-		try
-	    {
-	         Class.forName("com.mysql.jdbc.Driver");
-	         String url="jdbc:mysql://localhost:3306/javadb?useSSL=true";
-	         con=DriverManager.getConnection(url,"root","12345");
-	    }catch(Exception e)
-	    {
-	         e.printStackTrace();
-	    }
-		return con;
-		
-	}
 	
-	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
-		try {
-			if(rs!=null)rs.close();
-			if(pstmt!=null)pstmt.close();
-			if(con!=null)con.close();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	public void close(Connection con, PreparedStatement pstmt) {
-		try {
-			
-			if(pstmt!=null)pstmt.close();
-			if(con!=null)con.close();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
 	public int user_insert(String user_id, String user_passwd, String user_addr, String user_area, String user_tel, int user_age, String user_name, String user_email, String user_gender) {
 		int result=0;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		String sql="insert into cfk_user values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
@@ -71,7 +38,7 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 		}
 		return result;
 	}
@@ -79,7 +46,7 @@ public class UserDAO {
 	public UserVO isLogin(String user_id,String user_passwd) {
 		UserVO vo=null;
 		ResultSet rs=null;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		String sql="select user_id,user_name from cfk_user where user_id=? and user_passwd=?";
 		try {
@@ -95,7 +62,7 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt,rs);
+			JDBCUtil.close(con,pstmt,rs);
 		}
 		
 		return vo;
@@ -104,7 +71,7 @@ public class UserDAO {
 	
 	public UserVO getUser(String user_id) {
 		UserVO vo=null;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String sql="select user_id, user_passwd, user_addr, user_area, user_tel, user_age, user_name, user_email, user_gender from cfk_user where user_id=?";
@@ -127,7 +94,7 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return vo;
 		
@@ -136,7 +103,7 @@ public class UserDAO {
 	
 	public int user_Update(String user_id, String user_passwd, String user_addr, String user_area, String user_tel, String user_email){
 		int result=0;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		try {
 			String sql="update cfk_user set user_passwd=?, user_addr=?, user_area=?, user_tel=?, user_email=? where user_id=?";
@@ -152,14 +119,14 @@ public class UserDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 		}
 		return result;
 	}
 	
 	public UserVO user_attend(String user_attend_date, String user_id) {
 		UserVO vo = null;
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		
 		try {
 			pstmt=con.prepareStatement("update cfk_user set user_attend_date=? where user_id=?");
@@ -180,14 +147,14 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt,rs);
+			JDBCUtil.close(con,pstmt,rs);
 		}
 		return vo;
 	}
 	public UserVO voteLimit(String user_id) {
 		//int result=0;
 		UserVO vo=null;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		//board_num이 일치하면 board_vote 하나 증가
@@ -207,7 +174,7 @@ public class UserDAO {
 			e1.printStackTrace();
 		
 		}finally {
-			close(con,pstmt,rs);
+			JDBCUtil.close(con,pstmt,rs);
 					
 		}	
 		return vo;
@@ -223,7 +190,7 @@ public class UserDAO {
 		
 		
 		try {
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			pstmt=con.prepareStatement(sql);
 			
 			
@@ -236,7 +203,7 @@ public class UserDAO {
 			
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 				
 				
 		}	
@@ -244,7 +211,7 @@ public class UserDAO {
 	}
 	public int user_leave(String user_id) {
 		int result=0;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		
 		try {
@@ -258,7 +225,7 @@ public class UserDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt);
+			JDBCUtil.close(con, pstmt);
 		}
 		return result;
 	}

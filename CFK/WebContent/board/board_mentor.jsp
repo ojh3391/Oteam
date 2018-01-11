@@ -44,10 +44,9 @@
         
 		function Popupopen() {
 			if(cookieVal("notice")!="1") {
-		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+		   		window.open("../popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
 		}
-		//
 			
 		// 디데이 function
 		var countDown = new Date("Jan 18, 2018 23:59:59").getTime();

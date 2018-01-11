@@ -1,4 +1,3 @@
-
 <%@page import="board.vo.PageVO"%>
 <%@page import="board.vo.BoardVO"%>
 <%@page import="java.util.Vector"%>
@@ -6,6 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
+	//rank 정보 가져오기
 	Vector<BoardVO> rank=(Vector<BoardVO>)request.getAttribute("rank");
 	Vector<BoardVO> rank1=(Vector<BoardVO>)request.getAttribute("rank1");
 	Vector<BoardVO> rank2=(Vector<BoardVO>)request.getAttribute("rank2");
@@ -14,8 +14,8 @@
 	Vector<BoardVO> rank5=(Vector<BoardVO>)request.getAttribute("rank5");
 	Vector<BoardVO> rank6=(Vector<BoardVO>)request.getAttribute("rank6");
 	Vector<BoardVO> rank7=(Vector<BoardVO>)request.getAttribute("rank7");
-	
 	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	
 	//페이지나누기를 위한 정보
 	PageVO info=(PageVO)request.getAttribute("info");
 	int total_page=info.getTotalPage();
@@ -26,7 +26,6 @@
 %>
 <!DOCTYPE html>
 <html>
-    
     <head>
         <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
