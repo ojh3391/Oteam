@@ -206,15 +206,15 @@ p {
 **********/
  .button,  .button:visited, .button:focus {
     display:inline-block;
-    border:1px solid #181A1C;
-    color:#181A1C;
+    border:1px solid #ffff00;
+    color:#ffff00;
     background-color:transparent;
     padding:15px 30px;
     font-size:17px;
     line-height:auto;
 }
 .button:hover, .button:active{
-    background-color:#181A1C;
+    background-color:#ff0000;
     color:#fff;
 }
 .button-sp, .button-sp:visited, .button-sp:focus {

@@ -2,13 +2,13 @@ package board.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
 import board.vo.BoardVO;
+import control.JDBCUtil;
 import user.vo.UserVO;
 
 
@@ -17,48 +17,13 @@ public class BoardDAO {
 	private PreparedStatement pstmt=null;
 	private ResultSet rs=null;
 	
-	
-	//connection => dbcp
-	public Connection getConnection() {
-		Connection con=null;
-		try
-	    {
-	         Class.forName("com.mysql.jdbc.Driver");
-	         String url="jdbc:mysql://localhost:3306/javadb?useSSL=true";
-	         con=DriverManager.getConnection(url,"root","12345");
-	    }catch(Exception e)
-	    {
-	         e.printStackTrace();
-	    }
-		return con;
-		
-	}
-	
-	public void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
-		try {
-			if(rs!=null)rs.close();
-			if(pstmt!=null)pstmt.close();
-			if(con!=null)con.close();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	public void close(Connection con, PreparedStatement pstmt) {
-		try {
-			
-			if(pstmt!=null)pstmt.close();
-			if(con!=null)con.close();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
+	//참가신청
 	public UserVO check_parti(String user_id)
 	{
 		UserVO vo=new UserVO();
 		try 
 		{
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			String sql="select user_check_parti from cfk_user where user_id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
@@ -66,25 +31,23 @@ public class BoardDAO {
 			if(rs.next())
 			{
 				vo.setUser_check_parti(rs.getInt(1));
-				
 			}
 		}catch(Exception e)
 		{
 			e.printStackTrace();
 		}finally
 		{
-			close(con,pstmt,rs);
-		}
-		
+			JDBCUtil.close(con,pstmt,rs);
+		}	
 		return vo;
 	}
-	
+	//신청 내용 삭제시 참가신청 가능
 	public int parti_minus(String user_id)
 	{
 		int result=0;
 		try 
 		{
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			String sql="update cfk_user set user_check_parti=0 where user_id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
@@ -95,12 +58,10 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally
 		{
-			close(con,pstmt,rs);
+			JDBCUtil.close(con,pstmt,rs);
 		}
-		
 		return result;
 	}
-	
 	
 	public int board_parti(BoardVO vo)
 	{
@@ -108,7 +69,7 @@ public class BoardDAO {
 		
 		try
 		{
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			pstmt=con.prepareStatement("select max(board_num) from cfk_board");
 			con.setAutoCommit(false);
 			rs=pstmt.executeQuery();
@@ -141,7 +102,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		
 		return result;
@@ -152,7 +113,7 @@ public class BoardDAO {
 		
 		int total_rows=0;
 		try {
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			pstmt=con.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
@@ -162,7 +123,7 @@ public class BoardDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return total_rows;
 	}
@@ -173,7 +134,7 @@ public class BoardDAO {
 		Vector<BoardVO> list=new Vector<BoardVO>();
 		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
 	
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 		
@@ -197,7 +158,7 @@ public class BoardDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return list;
 	}
@@ -208,15 +169,15 @@ public class BoardDAO {
 	
 		String sql="update cfk_board set board_readcount=board_readcount+1 where board_num=?";
 		try {
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
 			result=pstmt.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 				
 				
 		}	
@@ -224,7 +185,7 @@ public class BoardDAO {
 	}
 	public BoardVO getRow(int board_num) {
 		BoardVO vo=null;
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 		
@@ -246,7 +207,7 @@ public class BoardDAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 			
 			
 		}
@@ -254,7 +215,7 @@ public class BoardDAO {
 	}
 	public int board_delete(int board_num) {
 		int result=0;
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		
 		try {
@@ -268,17 +229,17 @@ public class BoardDAO {
 			result=pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 		}
 		return result;
 	}
 	public int board_update(BoardVO vo)
 	{
 		int result=0;
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		
 		try
@@ -297,12 +258,12 @@ public class BoardDAO {
 			result=pstmt.executeUpdate();
 				
 		}catch(Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 			
 		}finally
 		{
-			close(con, pstmt);
+			JDBCUtil.close(con, pstmt);
 		}
 		
 		return result;
@@ -317,7 +278,7 @@ public class BoardDAO {
 		
 		
 		try {
-			con=getConnection();
+			con=JDBCUtil.getConnection();
 			pstmt=con.prepareStatement(sql);
 			
 			
@@ -330,7 +291,7 @@ public class BoardDAO {
 			
 			e.printStackTrace();
 		}finally {
-			close(con,pstmt);
+			JDBCUtil.close(con,pstmt);
 				
 				
 		}	
@@ -341,7 +302,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -373,7 +334,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank;
 	}
@@ -382,7 +343,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank1=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -414,7 +375,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank1;
 	}
@@ -423,7 +384,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank2=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -455,7 +416,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank2;
 	}
@@ -463,7 +424,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank3=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -495,7 +456,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank3;
 	}
@@ -504,7 +465,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank4=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -536,7 +497,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank4;
 	}
@@ -545,7 +506,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank5=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -577,7 +538,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank5;
 	}
@@ -585,7 +546,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank6=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -617,7 +578,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank6;
 	}
@@ -625,7 +586,7 @@ public class BoardDAO {
 	{
 		Vector<BoardVO> rank7=new Vector<BoardVO>();
 		
-		con=getConnection();
+		con=JDBCUtil.getConnection();
 		pstmt=null;
 		rs=null;
 				
@@ -657,7 +618,7 @@ public class BoardDAO {
 			e.printStackTrace();
 		}finally 
 		{
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return rank7;
 	}

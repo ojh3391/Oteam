@@ -39,9 +39,11 @@ public class ActionFactory {
 		if(cmd.equals("/insert.do")) {
 			action=new InsertAction("index.jsp");
 		}else if(cmd.equals("/modify.do")) {
-			action=new ModifyAction("cfk_user_update.jsp");
+			action=new ModifyAction("cfk_user_mypage.jsp");
+		}else if(cmd.equals("/mypage.do")) {
+			action=new MypageAction("cfk_user_update.jsp");
 		}else if(cmd.equals("/update.do")) {
-			action=new UpdateAction("index.jsp");
+			action=new UpdateAction("cfk_user_modify.jsp");
 		}else if(cmd.equals("/login.do")) {
 			action=new LoginAction("index.jsp");
 		}else if(cmd.equals("/logout.do")) {
