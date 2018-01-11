@@ -9,4 +9,4 @@
 <body>
 <jsp:forward page="rank.do"></jsp:forward>
 </body>
-</html>
+</html>	
