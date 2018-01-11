@@ -40,6 +40,8 @@
 	    	//비어있는 값이 있는지 체크
 	    	function checkValue() {
 		    	var form = document.userInfo;
+		    	//이메일 패턴 지정
+		    	var email=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;   
 		    	if(!form.user_id.value) {
 		    		alert("아이디를 입력하세요.");
 		    		return false;
@@ -67,6 +69,8 @@
 	    		} else if(isNaN(form.user_age.value)){
 				    alert("나이는 숫자만 입력가능합니다.");
 				    return false;
+		    	} else if(email.test(form.user_email.value) === false){
+		    		alert("잘못된 이메일 형식입니다.")
 		    	} else {
 		    		form.submit();
 		    	}
@@ -211,7 +215,7 @@
 				</tr>
 				<tr>
 					<td><p><font color="black">이메일</font></p></td>
-					<td><input class="span5" type="email" name="user_email" maxlength="30"></td>
+					<td><input class="span5" type="email" name="user_email" placeholder="username@beststartupever.com" maxlength="30"></td>
 				</tr>
 				<tr>
 					<td><p><font color="black">성별</font></p></td>
