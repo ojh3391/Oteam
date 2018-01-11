@@ -83,7 +83,7 @@
                                		<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
                            		</li>
                        		</ul>
-                       		<form action="qVote.do" method="post">
+                       		<form action="Vote.do" method="post">
                        		<input type="hidden" name="user_id" value="<%=vo2.getUser_id() %>">	
                        		<input type="hidden" name="board_num" value="<%=vo1.getBoard_num() %>">	
                        		<input type="hidden" name="page" value="<%=current_page %>">
@@ -98,7 +98,7 @@
             <div align="center">
             	<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
              		<button class="message-btn" onclick="location.href='cfk_board_pwd2.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
-               		<button class="message-btn" onclick="location.href='cfk_board_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
+               		<button class="message-btn" onclick="location.href='board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
               		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
             	<%}else{%>
                		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>

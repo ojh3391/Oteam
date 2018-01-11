@@ -5,7 +5,7 @@ import board.model.BoardDeleteAction;
 import board.model.BoardEnterAction;
 import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
-import board.model.BoardPwdCheckAction;
+import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardViewAction;
 import board.model.BoardVoteAction;
@@ -62,8 +62,8 @@ public class ActionFactory {
 			action=new ReplyPwdCheckAction("ReplyInsert.do");
 		}else if(cmd.equals("/ReplyInsert.do")) {
 			action=new ReplyInsertAction("View.do");		
-		}else if(cmd.equals("/board_pwd.do")) {
-			action=new BoardPwdCheckAction("BoardDelete.do");
+		}else if(cmd.equals("/board_delete_pwd.do")) {
+			action=new BoardDeletePwdAction("BoardDelete.do");
 		}else if(cmd.equals("/BoardDelete.do")) {
 			action=new BoardDeleteAction("List.do");
 		}else if(cmd.equals("/reply_delete.do")) {
@@ -78,7 +78,7 @@ public class ActionFactory {
 			action=new BoardViewAction("board_update.jsp");
 		}else if(cmd.equals("/board_update.do")) {
 			action=new BoardUpdateAction("View.do");
-		}else if(cmd.equals("/qVote.do")) {
+		}else if(cmd.equals("/Vote.do")) {
 			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/rank.do")){							//메인으로 가기 전 랭크체크
 			action=new BoardRankAction("board_main.jsp");
