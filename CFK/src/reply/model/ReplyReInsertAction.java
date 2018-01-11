@@ -10,10 +10,10 @@ import reply.vo.ReplyVO;
 
 
 
-public class ReplyInsertAction2 implements Action {
+public class ReplyReInsertAction implements Action {
 	private String path;
 	
-	public ReplyInsertAction2(String path) {
+	public ReplyReInsertAction(String path) {
 		super();
 		this.path = path;
 	}

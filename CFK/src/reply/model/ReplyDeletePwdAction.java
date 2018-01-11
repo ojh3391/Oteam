@@ -11,11 +11,11 @@ import action.ActionForward;
 import user.dao.UserDAO;
 import user.vo.UserVO;
 
-public class ReplyPwdCheckAction3 implements Action {
+public class ReplyDeletePwdAction implements Action {
 	
 	private String path;
 	
-	public ReplyPwdCheckAction3(String path) {
+	public ReplyDeletePwdAction(String path) {
 		super();
 		this.path = path;
 	}

@@ -97,7 +97,7 @@
 			</ul>                       
             <div align="center">
             	<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
-             		<button class="message-btn" onclick="location.href='cfk_board_pwd2.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
+             		<button class="message-btn" onclick="location.href='board_change_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
                		<button class="message-btn" onclick="location.href='board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
               		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
             	<%}else{%>
@@ -108,7 +108,7 @@
         <div class="container">
         	<div class="title">
             	<h1>응원 메시지를 남겨주세요</h1>
-                <form action="cfk_reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
+                <form action="reply_pwd.jsp?board_num=<%=vo1.getBoard_num() %>" method="post">
                     <p>응원댓글    
                     <input class="span9" type="text" name="reply_content" required>
                     <button class="message-btn">등록</button></p>
@@ -144,10 +144,10 @@
                                 	</strong>
                             	<div>
                                		<a href="" class="more show_hide" rel="#slidingDiv<%=vo.getReply_num()%>">
-                                	<font color="white"><span class="icon-plus">답글 쓰기</span></font>
+                                	<font color="white"><span class="icon-plus">댓글 쓰기</span></font>
                                 	</a>
                                 	<%if(vo.getReply_writer().equals(vo2.getUser_id())) {%>
-                                    	<a href="cfk_reply_delete.jsp?board_num=<%=vo1.getBoard_num() %>&reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
+                                    	<a href="reply_delete.jsp?board_num=<%=vo1.getBoard_num() %>&reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
                                         	<font color="white"><span class="icon-cancel">댓글 삭제</span></font>
                                     	</a>
                                 	<%}%>                                    
@@ -160,7 +160,7 @@
                     	
                    		<div class="container">	
                     		<div id="slidingDiv<%=vo.getReply_num()%>" class="toggleDiv row-fluid single-project" align="right">
-                    			<form action="cfk_reply_pwd2.jsp?reply_num=<%=vo.getReply_num()%>" method="post">
+                    			<form action="reply_re_pwd.jsp?reply_num=<%=vo.getReply_num()%>" method="post">
                     			<input type="hidden" name="reply_re_ref" value="<%=vo.getReply_re_ref()%>">
 								<input type="hidden" name="reply_re_lev" value="<%=vo.getReply_re_lev()%>">
 								<input type="hidden" name="reply_re_seq" value="<%=vo.getReply_re_seq()%>">
@@ -184,7 +184,7 @@
 						%>
 							<font color="red">[<%=i %>]</font>
 						<%}else{%>	
-							<a href="qView.do?page=<%=i %>&board_num=<%=vo1.getBoard_num()%>"><font color="yellow"><%=i %></font></a>
+							<a href="View.do?page=<%=i %>&board_num=<%=vo1.getBoard_num()%>"><font color="yellow"><%=i %></font></a>
 							
 						<%}
 					}

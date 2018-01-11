@@ -8,6 +8,6 @@
 </head>
 <body>
 <!-- 여기서 시작 -->
-<% response.sendRedirect("rank.do"); %>
+<% response.sendRedirect("Rank.do"); %>
 </body>
 </html>	

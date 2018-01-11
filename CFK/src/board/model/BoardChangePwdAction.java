@@ -16,25 +16,22 @@ import board.vo.PageVO;
 import reply.dao.ReplyDAO;
 import reply.vo.ReplyVO;
 
-public class BoardViewAction implements Action {
+public class BoardChangePwdAction implements Action {
 	private String path;
 	
-	public BoardViewAction(String path) {
+	public BoardChangePwdAction(String path) {
 		super();
 		this.path = path;
 	}
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		//String current_page=req.getParameter("page");
-		//qna_board_list.jsp 넘어오는 값 가져오기
-		//board_num 가져오기
+	
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
 		
 		BoardDAO dao=new BoardDAO();
 			
 		BoardVO vo=dao.getRow(board_num);
-		//가져온 내용 담고 페이지 이동
 		
 		req.setAttribute("vo", vo);
 			
