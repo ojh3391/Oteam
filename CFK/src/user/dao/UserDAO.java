@@ -261,7 +261,28 @@ public class UserDAO {
 			JDBCUtil.close(con, pstmt, rs);
 		}
 		return vo;
-		
-		
 	}
+	
+	//아이디 중복 체크
+	public boolean user_check_reduplication(String user_id) {
+		boolean result=false;
+		con = JDBCUtil.getConnection();
+		try {
+			String sql="select user_id from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				result=true;	//해당 아이디 존재하면 true 리턴
+			}
+			return result;
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+		}	
+			
+		return result;
+	}	
+	
 }

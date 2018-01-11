@@ -32,7 +32,10 @@ public class InsertAction implements Action {
 		String user_gender=req.getParameter("user_gender");
 		
 		UserDAO dao=new UserDAO();
-		int result=dao.user_insert(user_id, user_passwd, user_addr, user_area, user_tel, user_age, user_name,user_email,user_gender);
+		//중복체크
+		dao.user_check_reduplication(user_id);
+		//회원정보 삽입
+		dao.user_insert(user_id, user_passwd, user_addr, user_area, user_tel, user_age, user_name,user_email,user_gender);
 		
 		return new ActionForward(path, true);
 	}
