@@ -9,7 +9,7 @@ import board.model.BoardUpdateAction;
 import board.model.BoardViewAction;
 import board.model.BoardVoteAction;
 import board.model.PartiAction;
-import board.model.RankAction;
+import board.model.BoardRankAction;
 import reply.model.ReplyDeleteAction;
 import reply.model.ReplyInsertAction;
 import reply.model.ReplyInsertAction2;
@@ -50,8 +50,8 @@ public class ActionFactory {
 			action=new LogoutAction("index.jsp");
 		}else if(cmd.equals("/parti.do")) {
 			action=new PartiAction("index.jsp");
-		}else if(cmd.equals("/qList.do")) {
-			action=new BoardListAction("cfk_board_list.jsp");
+		}else if(cmd.equals("/List.do")) {							//리스트 가기전 체크
+			action=new BoardListAction("/board/board_list.jsp");
 		}else if(cmd.equals("/qHitUpdate.do")) {
 			action=new BoardHitUpdateAction("qView.do");
 		}else if(cmd.equals("/qView.do")) {
@@ -65,7 +65,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/board_pwd.do")) {
 			action=new BoardPwdCheckAction("BoardDelete.do");
 		}else if(cmd.equals("/BoardDelete.do")) {
-			action=new BoardDeleteAction("qList.do");
+			action=new BoardDeleteAction("List.do");
 		}else if(cmd.equals("/reply_delete.do")) {
 			action=new ReplyPwdCheckAction3("ReplyDelete.do");
 		}else if(cmd.equals("/ReplyDelete.do")) {
@@ -80,8 +80,8 @@ public class ActionFactory {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
 			action=new BoardVoteAction("qView.do");
-		}else if(cmd.equals("/rank.do")){	//메인으로 가기 전 랭크체크
-			action=new RankAction("/board/board_main.jsp");
+		}else if(cmd.equals("/rank.do")){								//메인으로 가기 전 랭크체크
+			action=new BoardRankAction("/board/board_main.jsp");
 		}else if(cmd.equals("/leave.do")) {
 			action=new LeaveAction("index.jsp");
 		}

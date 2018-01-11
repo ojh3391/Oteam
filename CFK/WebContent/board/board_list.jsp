@@ -1,9 +1,22 @@
+<%@page import="board.vo.PageVO"%>
+<%@page import="board.vo.BoardVO"%>
+<%@page import="java.util.Vector"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-
-	<head>
+<%
+	//리스트 정보 
+	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	//페이지나누기를 위한 정보
+	PageVO info=(PageVO)request.getAttribute("info");
+	int total_page=info.getTotalPage();
+	int current_page=info.getPage();
+	int endPage=info.getEndPage();
+	int startPage=info.getStartPage();
+	int totalRows=info.getTotoalRows();
+%> 
+<html>  
+    <head>
     	<meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
@@ -112,60 +125,72 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Start home section -->
-        <div id="home">
-        
-            <!-- Start cSlider s-->
-            <div id="da-slider" class="da-slider">
-                <div class="triangle">
+
+        <!-- 공지 사항 -->
+        <div class="section third-section">
+            <div class="container newsletter">
+                <div class="sub-section">
+                    <div class="title clearfix">
+                        <div class="pull-left">
+                            <h3>공지 사항</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="mask">
-                </div>
-                <div class="container">
-                
-                    <!-- Start first slide -->
-                    <div class="da-slide">
-                        <h2 class="fittext2">오팀장과 형님들</h2>
-                        <h4>Clean & responsive</h4>
-                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider01.jpg" width="320">
-                        </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>1.영상을 올리실때는 MP4 50MB 미만으로 가능합니다.</p>
+                        <p>2.</p>
                     </div>
-                    
-                    <!-- Start second slide -->
-                    <div class="da-slide">
-                        <h2>최고의 멘토 군단</h2>
-                        <h4>사랑이야~♥</h4>
-                        <p>2017 Season 1 우승과 준우승으로 환장의 캐미를 보여준 두사람이 이번엔 최강의 멘토가 되어 돌아 왔다. 이들에 대한 더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
-                        <font color="yellow"><a href="board/board_mentor.jsp" class="da-link button">▶Click◀</a></font>
-                        <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider02.jpg" width="320">
-                        </div>
-                    </div>
-                   
-                    <!-- Start third slide -->
-                    <div class="da-slide">
-                        <h2>Challenge Fashion King!!</h2>
-                        <h4>Season 2</h4>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img style="border-radius:25px;" src="./images/slider/Slider03.jpg" width="320" alt="image03">
-                        </div>
-                    </div>
-                    
-                    <!-- Start cSlide navigation arrows -->
-                    <div class="da-arrows">
-                        <span class="da-arrows-prev"></span>
-                        <span class="da-arrows-next"></span>
-                    </div>
-                    
                 </div>
             </div>
         </div>
-        <!-- End home section -->
+        
+        <!-- 게시판 -->
+        <div class="section secondary-section" id="portfolio">
+            <div class="container">
+ 				<div class="title">
+                    <h1><font size="10" face="휴먼둥근헤드라인">전쟁이다! 투표하시라!</font></h1>
+                    <p>매주 금요일 저녁 7시!!</p>
+                </div>
+                	<ul class="nav nav-pills">
+                
+                	<%
+					//페이지 상단 페이지 나오기
+					for(int i=startPage;i<=endPage;i++){
+						if(i==current_page){
+						%><li class="filter">
+              	          <a href="qList.do?page=<%=i %>"><%=i %></a>
+             	 	      </li><%
+						}else{
+						%><li class="filter">
+          	              <a href="qList.do?page=<%=i %>"><%=i %></a>
+           		          </li><%
+						}
+					}
+					%>    
+         	        </ul>
+         	        
+             	    <ul id="portfolio-grid" class="thumbnails row">
+					<%
+					//글번호 다시매기기
+					for(BoardVO vo:list){
+					%>                	
+                    	<li class="span12 mix web">
+                        	<div class="thumbnail">
+                             	<img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>">
+                             	<h3><%=vo.getBoard_readcount()%></h3>
+                              	<p><%=vo.getBoard_date()%></p>
+                             	<div class="mask">
+                             	<h2><%=vo.getBoard_writer()%></h2>
+                              	<a href="qHitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>">
+                             	<h2><i class="icon-plus"></i></h2></a>
+                             	</div>
+                        	</div>
+                     	</li>
+                    <%}%>
+                    </ul>
+            </div>
+        </div>
+        <jsp:include page="board_bottom.jsp"></jsp:include>
 	</body>
 </html>

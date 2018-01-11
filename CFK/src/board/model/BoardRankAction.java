@@ -11,12 +11,12 @@ import board.dao.BoardDAO;
 import board.vo.BoardVO;
 import board.vo.PageVO;
 
-public class RankAction implements Action
+public class BoardRankAction implements Action
 {
 	private String path;
 	
 
-	public RankAction(String path)
+	public BoardRankAction(String path)
 	{
 		super();
 		this.path = path;
