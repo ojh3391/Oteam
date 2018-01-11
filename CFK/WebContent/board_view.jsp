@@ -8,19 +8,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-if((UserVO)session.getAttribute("vo")==null) {
-	out.println("<script>");
-	out.println("alert('회입가입 후 이용할 수 있네! 어서 가입하게!');");
-	out.println("history.back();");
-	out.println("</script>");
-	out.close();
-}
+	if((UserVO)session.getAttribute("vo")==null) {
+		out.println("<script>");
+		out.println("alert('회입가입 후 이용할 수 있네! 어서 가입하게!');");
+		out.println("history.back();");
+		out.println("</script>");
+		out.close();
+	}
 	
-
 	BoardVO vo1=(BoardVO)request.getAttribute("vo");
 	UserVO vo2=(UserVO)session.getAttribute("vo");
 	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
 	PageVO info=(PageVO)request.getAttribute("info");
+	
+	//댓글 페이지 정보
 	int total_page=info.getTotalPage();
 	int current_page=info.getPage();
 	int endPage=info.getEndPage();
@@ -28,148 +29,36 @@ if((UserVO)session.getAttribute("vo")==null) {
 	int totalRows=info.getTotoalRows();
 	int hap=0;
 	
-	
+	//익스 한글 깨짐 처리
 	String agent=request.getHeader("User-Agent");
 	String fileName=vo1.getBoard_real_file();
-	
 	String user_id=vo2.getUser_id();
 	
 	boolean ieBrowser=(agent.indexOf("Trident")>-1);
-	
-	
-	
-	
 	if(ieBrowser) {
 		fileName=URLEncoder.encode(fileName,"UTF-8").replaceAll("\\+","%20");
-		
 		user_id=URLEncoder.encode(user_id,"UTF-8").replaceAll("\\+", "%20");
 	}
-	
-	
 %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>오팀장과 형님들</title>
-        <!-- Load Roboto font -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/pluton.css" />
-        <!--[if IE 7]>
-            <link rel="stylesheet" type="text/css" href="./Resources/css/pluton-ie7.css" />
-        <![endif]-->
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="./Resources/css/animate.css" />
-        <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./Resources/images/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./Resources/images/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./Resources/images/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="./Resources/images/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="./Resources/images/logo1.png">
+	<head>
     </head>
-    
     <body>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a href="#" class="brand">
-                        <img src="./Resources/images/logo.png" width="120" height="40" alt="Logo" />
-                        <!-- This is website logo -->
-                    </a>
-                    <!-- Navigation button, visible on small resolution -->
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <i class="icon-menu"></i>
-                    </button>
-                    <!-- Main navigation -->
-                    <div class="nav-collapse collapse pull-right">
-                        <ul class="nav" id="top-navigation">
-                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="index.jsp#service">함께하기</a></li>
-                            <li><a href="qList.do#portfolio">투표하기</a></li>
-                            <li><a href="parti.jsp">참가신청</a></li>
-                            <li><a href="cfk_attend.jsp">방청신청</a></li>
-                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
-                            <li><a href="index.jsp#contact">패션쇼</a></li>
-                        </ul>
-                    </div>
-                    <!-- End main navigation -->
-                </div>
-            </div>
-        </div>
-        <!-- Start home section -->
-        <div id="home">
-            <!-- Start cSlider s-->
-            <div id="da-slider" class="da-slider">
-                <div class="triangle"></div>
-                <!-- mask elemet use for masking background image -->
-                <div class="mask"></div>
-                <!-- All slides centred in container element -->
-                <div class="container">
-                    <!-- Start first slide -->
-                    <div class="da-slide">
-                        <h2 class="fittext2">오팀장과 형님들</h2>
-                        <h4>Clean & responsive</h4>
-                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider01.jpg" alt="image01" width="320" >
-                        </div>
-                    </div>
-                    <!-- End first slide -->
-                    <!-- Start second slide -->
-                    <div class="da-slide">
-                        <h2>최고의 멘토 군단</h2>
-                        <h4>Easy to use</h4>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider02.png" width="320" alt="image02">
-                        </div>
-                    </div>
-                    <!-- End second slide -->
-                    <!-- Start third slide -->
-                    <div class="da-slide">
-                        <h2>Challenge Fashion King!!</h2>
-                        <h4>Customizable</h4>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <a href="#" class="da-link button">Read more</a>
-                        <div class="da-img">
-                            <img style="border-radius:50px;" src="./Resources/images/Slider03.jpg" width="320" alt="image03">
-                        </div>
-                    </div>
-                    <!-- Start third slide -->
-                    <!-- Start cSlide navigation arrows -->
-                    <div class="da-arrows">
-                        <span class="da-arrows-prev"></span>
-                        <span class="da-arrows-next"></span>
-                    </div>
-                    <!-- End cSlide navigation arrows -->
-                </div>
-            </div>
-        </div>
-        <!-- End home section -->
-        
+    	<jsp:include page="board_top.jsp"></jsp:include>
         
         <!-- 댓글 폼 시작 -->
-     	
-     		<div class="section primary-section" id="about">
-            	<div class="container">
-                    <ul id="" class="thumbnails row">
-                    <div>
-                  	<td>
-                  		<div  class="single-project">
-                        <div class="span6" style="margin: 15px;">
+     	<div class="section primary-section" id="about">
+           	<div class="container">
+            	<ul class="thumbnails row">
+            <div>
+            	<td>
+                	<div  class="single-project">
+                    	<div class="span6" style="margin: 15px;">
                             <video width="600" height="400" controls autoplay>
                             	<source src="/CFK/boardUpload/<%=fileName%>">
                             </video>
                         </div>
-                        
                         <div class="span6">
                             <div class="project-description">
                                 <div class="project-title clearfix">
@@ -186,28 +75,24 @@ if((UserVO)session.getAttribute("vo")==null) {
                                 <table class='scrolltable'><tr><td><p><%=vo1.getBoard_content() %></p></td></tr></table>
                             </div>
                         </div>
-                    	</div>
-               			<div class="span5">
+                    </div>
+               		<div class="span5">
                         	<ul class="skills">
-            					
                             	<li>
                                 	<span class="bar" data-width="<%=vo1.getBoard_vote()%>%"></span>
                                 	<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
                             	</li>
                         	</ul>
                         	<form action="qVote.do" method="post">
-                        	<div align="center">
-                        		<button class="button button-sp" >투표</button>
-                        	</div>
                         	<input type="hidden" name="user_id" value="<%=vo2.getUser_id() %>">	
                         	<input type="hidden" name="board_num" value="<%=vo1.getBoard_num() %>">	
-                        	<input type="hidden" name="page" value="<%=current_page %>">		
+                        	<input type="hidden" name="page" value="<%=current_page %>">
+                        		<div align="center">
+                        			<button class="button button-sp" >투표</button>
+                        		</div>		
                         	</form>
                     	</div>
-                    	<div>
-                    		
-                    	</div>
-                    </td>
+                </td>
                     </div>
                     </ul>                       
                     	<div align="center">
