@@ -100,7 +100,7 @@
                         <ul class="nav" id="top-navigation">
                         	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="#service">함께하기</a></li>
+                            <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="qList.do#portfolio">투표하기</a></li>
                             <li><a href="parti.jsp#service">참가신청</a></li>
                             <li><a href="cfk_attend.jsp">방청신청</a></li>

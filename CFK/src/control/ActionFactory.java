@@ -80,8 +80,8 @@ public class ActionFactory {
 			action=new BoardUpdateAction("qView.do");
 		}else if(cmd.equals("/qVote.do")) {
 			action=new BoardVoteAction("qView.do");
-		}else if(cmd.equals("/rank.do")){
-			action=new RankAction("/board/main.jsp");
+		}else if(cmd.equals("/rank.do")){	//메인으로 가기 전 랭크체크
+			action=new RankAction("/board/board_main.jsp");
 		}else if(cmd.equals("/leave.do")) {
 			action=new LeaveAction("index.jsp");
 		}
