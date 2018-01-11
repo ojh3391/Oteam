@@ -76,9 +76,9 @@
                 			<div class="controls">
                    		 		<input class="span12" type="password" name="user_passwd" placeholder="* 당신의 비밀번호..." required/>
                 			</div>
-               		 </div>     
+               		 	</div>     
                    		 <button class="message-btn" type="submit">로그인</button>
-                   		 <button class="message-btn" onclick="location.href='register.jsp'">회원 가입</button>
+                   		 <button class="message-btn" type="button" onclick="location.href='register.jsp'">회원 가입</button>
                    	</form>
                 </div>
         
