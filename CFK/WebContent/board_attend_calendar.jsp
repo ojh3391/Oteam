@@ -1,5 +1,5 @@
 <%@page import="java.util.Calendar"%>
-<%@page import="user.vo.UserVO"%>
+<%@page import="vo.UserVO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
     request.setCharacterEncoding("utf-8");

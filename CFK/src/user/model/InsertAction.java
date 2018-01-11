@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import user.dao.UserDAO;
+import dao.UserDAO;
 
 
 public class InsertAction implements Action {

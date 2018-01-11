@@ -2,14 +2,12 @@ package board.model;
 
 import java.util.*;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.*;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.*;
-import board.vo.*;
-import user.vo.UserVO;
+import dao.*;
+import vo.*;
 
 
 

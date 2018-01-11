@@ -1,4 +1,4 @@
-package reply.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 import control.JDBCUtil;
-import reply.vo.ReplyVO;
+import vo.ReplyVO;
 
 
 public class ReplyDAO {

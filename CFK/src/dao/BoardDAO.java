@@ -1,4 +1,4 @@
-package board.dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import board.vo.BoardVO;
 import control.JDBCUtil;
-import user.vo.UserVO;
+import vo.UserVO;
+import vo.BoardVO;
 
 
 public class BoardDAO {

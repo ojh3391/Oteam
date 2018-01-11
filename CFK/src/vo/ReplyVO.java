@@ -1,4 +1,4 @@
-package reply.vo;
+package vo;
 
 import java.sql.Date;
 

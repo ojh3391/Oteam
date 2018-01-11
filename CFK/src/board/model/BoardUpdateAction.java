@@ -12,8 +12,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import board.vo.BoardVO;
+import dao.BoardDAO;
+import vo.BoardVO;
 
 
 public class BoardUpdateAction implements Action {

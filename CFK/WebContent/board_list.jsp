@@ -1,5 +1,5 @@
-<%@page import="board.vo.PageVO"%>
-<%@page import="board.vo.BoardVO"%>
+<%@page import="vo.PageVO"%>
+<%@page import="vo.BoardVO"%>
 <%@page import="java.util.Vector"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

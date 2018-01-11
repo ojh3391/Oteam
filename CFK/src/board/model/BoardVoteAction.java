@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import user.dao.UserDAO;
-import user.vo.UserVO;
+import dao.BoardDAO;
+import dao.UserDAO;
+import vo.UserVO;
 
 public class BoardVoteAction implements Action {
 	

@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import action.Action;
 import action.ActionForward;
-import user.dao.UserDAO;
-import user.vo.UserVO;
+import dao.UserDAO;
+import vo.UserVO;
 
 public class LoginAction implements Action {
 	private String path;

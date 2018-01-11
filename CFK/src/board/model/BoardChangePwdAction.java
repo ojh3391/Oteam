@@ -1,20 +1,12 @@
 package board.model;
 
-import java.util.Vector;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import board.vo.BoardVO;
-import board.vo.PageVO;
-import reply.dao.ReplyDAO;
-import reply.vo.ReplyVO;
+import dao.BoardDAO;
+import vo.BoardVO;
 
 public class BoardChangePwdAction implements Action {
 	private String path;

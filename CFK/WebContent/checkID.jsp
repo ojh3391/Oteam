@@ -1,7 +1,6 @@
-
 <%@page import="java.net.URLDecoder"%>
 <%@page import="java.net.URLEncoder"%>
-<%@page import="user.dao.UserDAO"%>
+<%@page import="dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%

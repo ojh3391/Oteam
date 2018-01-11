@@ -8,7 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import action.Action;
 import action.ActionForward;
-import user.dao.UserDAO;
+import dao.UserDAO;
 
 public class LeaveAction implements Action {
 	
@@ -29,7 +29,7 @@ public class LeaveAction implements Action {
 		//String user_passwd=req.getParameter("user_passwd");
 		
 		UserDAO dao=new UserDAO();
-		int result=dao.user_leave(user_id);
+		dao.user_leave(user_id);
 	
 		HttpSession session=req.getSession(false);
 		if(session.getAttribute("vo")!=null) {

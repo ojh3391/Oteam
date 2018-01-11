@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import board.vo.BoardVO;
-import board.vo.PageVO;
+import dao.BoardDAO;
+import vo.BoardVO;
+import vo.PageVO;
 
 public class BoardRankAction implements Action
 {

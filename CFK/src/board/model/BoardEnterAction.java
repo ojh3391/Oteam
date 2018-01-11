@@ -9,9 +9,9 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import board.vo.BoardVO;
-import user.vo.UserVO;
+import dao.BoardDAO;
+import vo.UserVO;
+import vo.BoardVO;
 
 public class BoardEnterAction implements Action
 {

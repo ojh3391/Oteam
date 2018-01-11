@@ -5,9 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import reply.dao.ReplyDAO;
-import reply.vo.ReplyVO;
-import user.vo.UserVO;
+import dao.ReplyDAO;
+import vo.ReplyVO;
 
 
 

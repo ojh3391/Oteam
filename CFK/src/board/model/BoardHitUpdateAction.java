@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
+import dao.BoardDAO;
 
 public class BoardHitUpdateAction implements Action {
 	

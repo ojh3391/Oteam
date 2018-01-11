@@ -1,9 +1,9 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="board.vo.PageVO"%>
-<%@page import="user.vo.UserVO"%>
+<%@page import="vo.PageVO"%>
+<%@page import="vo.UserVO"%>
 <%@page import="java.net.URLEncoder"%>
-<%@page import="board.vo.BoardVO"%>
-<%@page import="reply.vo.ReplyVO"%>
+<%@page import="vo.BoardVO"%>
+<%@page import="vo.ReplyVO"%>
 <%@page import="java.util.Vector"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

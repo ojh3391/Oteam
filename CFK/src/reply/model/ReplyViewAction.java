@@ -5,16 +5,13 @@ import java.util.Vector;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 import action.Action;
 import action.ActionForward;
-import board.dao.BoardDAO;
-import board.vo.BoardVO;
-import board.vo.PageVO;
-import reply.dao.ReplyDAO;
-import reply.vo.ReplyVO;
+import dao.BoardDAO;
+import dao.ReplyDAO;
+import vo.ReplyVO;
+import vo.BoardVO;
+import vo.PageVO;
 
 public class ReplyViewAction implements Action {
 	private String path;

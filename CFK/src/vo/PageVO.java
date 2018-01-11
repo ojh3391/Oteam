@@ -1,4 +1,4 @@
-package board.vo;
+package vo;
 
 public class PageVO {
 	private int page;

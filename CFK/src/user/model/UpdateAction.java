@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import user.dao.UserDAO;
+import dao.UserDAO;
 
 
 public class UpdateAction implements Action {
@@ -33,7 +33,7 @@ public class UpdateAction implements Action {
 		
 		UserDAO dao=new UserDAO();
 		
-		int result=dao.user_Update(user_id, user_passwd, user_addr,user_area, user_tel, user_email);
+		dao.user_Update(user_id, user_passwd, user_addr,user_area, user_tel, user_email);
 		
 		
 		return new ActionForward(path, true);

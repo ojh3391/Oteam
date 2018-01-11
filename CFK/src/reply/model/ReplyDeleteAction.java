@@ -1,13 +1,11 @@
 package reply.model;
 
-import java.io.File;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-import reply.dao.ReplyDAO;
+import dao.ReplyDAO;
 
 
 public class ReplyDeleteAction implements Action {
