@@ -78,7 +78,6 @@
 		function TimerStart(){ tid=setInterval('msg_time()', 1000) };
 		
 		</script>
-        
     </head>
     
     <body onload="Popupopen(); TimerStart();">
