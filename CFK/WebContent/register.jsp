@@ -69,7 +69,7 @@
 	    		} else if(isNaN(form.user_age.value)){
 				    alert("나이는 숫자만 입력가능합니다.");
 				    return false;
-		    	} else if(email.test(form.user_email.value) === false){
+		    	} else if(email.test(form.user_email.value) == false){
 		    		alert("잘못된 이메일 형식입니다.")
 		    	} else {
 		    		form.submit();
