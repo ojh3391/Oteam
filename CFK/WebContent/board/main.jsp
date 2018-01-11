@@ -315,12 +315,14 @@
                         <h1>THE FIRST SHOW</h1><br>
                         <font size="10" color="black" face="휴먼둥근헤드라인">2018년 1월 19일 금요일 저녁 8시<br><br>지상 최강의<font size="11" color="red">패션쇼</font>가 열린다!</font>
                         <p>오라~ 패션의 메카로~ !</p>
-                        <img src="./Resources/images/show.PNG" class="centered" alt="show">
                     </div>
                 </div>
                 <div class="container">
                 <div class="map-wrapper">
-                     <p align="center"><iframe src="map.html" frameborder="0" width="1000px" height="700px" id="" title="방청권 신청 프레임"></iframe></p>
+                	<div style="width:50%;float:left;"><img src="./images/background/show.PNG" width="500" alt="show"></div>
+                     <div style="width:50%;float:left;">
+                      <iframe src="map.html" frameborder="0" width="585px" height="604px" id="" title="방청권 신청 프레임"></iframe>
+                     </div> 
                 </div>    
                 </div>
                 <div class="container">
