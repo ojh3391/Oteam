@@ -231,7 +231,7 @@ public class UserDAO {
 	}
 	public UserVO myUser(String user_id) {
 		UserVO vo=null;
-		Connection con=getConnection();
+		Connection con=JDBCUtil.getConnection();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		String sql="select * from cfk_user where user_id=?";
@@ -258,7 +258,7 @@ public class UserDAO {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			close(con, pstmt, rs);
+			JDBCUtil.close(con, pstmt, rs);
 		}
 		return vo;
 		
