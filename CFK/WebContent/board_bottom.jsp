@@ -10,7 +10,7 @@
 	
 	<!-- Footer section start -->
         <div class="footer">
-            <p>&copy; 2017 Theme by <a href="http://www.graphberry.com">Oh!Bro~ Corp.</a></p>
+            <p>&copy; 2017 Theme by <a href="index.jsp">Oh!Bro~ Corp.</a></p>
         </div>
         
         <!-- ScrollUp button start -->
@@ -22,7 +22,7 @@
         
         <!-- Include javascript -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js" ></script>
-		<script type="text/javascript" src="js/video-hover.js"></script>
+		<script type="text/javascript" src="/CFK/Resources/js/video-hover.js"></script>
         <script src="/CFK/Resources/js/jquery.js"></script>
         <script src="/CFK/Resources/js/jquery.popVideo.js"></script>
         <script type="text/javascript" src="/CFK/Resources/js/jquery.mixitup.js"></script>

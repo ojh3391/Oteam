@@ -5,7 +5,7 @@
 	<head>
     </head>
     <body>
-    	<jsp:include page="board_top.jsp"></jsp:include>
+    	<jsp:include page="../board_top.jsp"></jsp:include>
         
         <!-- About us section start -->
         <div class="section primary-section" id="about">
@@ -18,7 +18,7 @@
                 <div class="row-fluid team">
                     <div class="span4" id="first-person">
                     	<div class="thumbnail">
-                    	<img src="images/person/Team1.jpg" alt="team 1">
+                    	<img src="/CFK/images/person/Team1.jpg" alt="team 1">
                             <h3>Mr.Min</h3>
                             
                             <div class="mask">
@@ -30,7 +30,7 @@
                             
                     <div class="span4" id="second-person">
                         <div class="thumbnail">
-                            <img src="images/person/Team2.jpg" alt="team 1">
+                            <img src="/CFK/images/person/Team2.jpg" alt="team 1">
                             <h3>Mr.Suck</h3>
                             
                             <div class="mask">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="span4" id="third-person">
                         <div class="thumbnail">
-                            <img src="images/person/Team3.jpg" alt="team 1">
+                            <img src="/CFK/images/person/Team3.jpg" alt="team 1">
                             <h3>Ms.Park</h3>
                             
                             <div class="mask">
@@ -75,7 +75,7 @@
                                 <p>"CFK의 방영을 진심으로 축하드립니다. 아직은 저에게 안되겠지만 그래도 저의 후배, 새로운 패션리더의 출현을 지켜보겠습니다. "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="images/person/차승원.jpg" class="centered" alt="client 1">
+                                    <img src="/CFK/images/person/차승원.jpg" class="centered" alt="client 1">
                                     <strong>차승원
                                         <small>차줌마</small>
                                     </strong>
@@ -87,7 +87,7 @@
                                 <p>"하하하!! 저와 같은 패션스타가 탄생되는 건가요? 진심으로 축하드리고 다음 회차 MC는 제가 맡겠습니다! "</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="images/person/유재석.jpg" class="centered" alt="client 2">
+                                    <img src="/CFK/images/person/유재석.jpg" class="centered" alt="client 2">
                                     <strong>유 재 석
                                         <small>메뚜기</small>
                                     </strong>
@@ -99,7 +99,7 @@
                                 <p>"CHALLENGE FASHION KING 방영을 진심으로 축하드려요~!! 새로운 패션스타와 함께 런웨이 무대에 함께 서고 싶네요~~"</p>
                                 <div class="whopic">
                                     <div class="arrow"></div>
-                                    <img src="images/person/한혜진.jpg" class="centered" alt="client 3">
+                                    <img src="/CFK/images/person/한혜진.jpg" class="centered" alt="client 3">
                                     <strong>한혜진
                                         <small>달심</small>
                                     </strong>
@@ -111,6 +111,6 @@
             </div>
         </div>
 
-		<jsp:include page="board_bottom.jsp"></jsp:include>
+		<jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>

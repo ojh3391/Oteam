@@ -45,7 +45,7 @@
 	<head>
     </head>
     <body>
-    	<jsp:include page="board_top.jsp"></jsp:include>
+    	<jsp:include page="../board_top.jsp"></jsp:include>
         
         <!-- 댓글 폼 시작 -->
      	<div class="section primary-section" id="about">
@@ -193,6 +193,6 @@
 			</div>
 			     
         </div> 
- 		<jsp:include page="board_bottom.jsp"></jsp:include>
+ 		<jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>

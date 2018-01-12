@@ -15,8 +15,9 @@
 	int startPage=info.getStartPage();
 	int totalRows=info.getTotoalRows();
 %> 
-<html>  
-    <head>
+<html>
+
+	<head>
     	<meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>오팀장과 형님들</title>
@@ -25,16 +26,16 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/pluton.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/animate.css" />
         
         <!-- popvideo -->
-        <link rel="stylesheet" href="Resources/css/jquery.popVideo.css"/>
+        <link rel="stylesheet" href="/CFK/Resources/css/jquery.popVideo.css"/>
 
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/slider/ico/apple-touch-icon-144.png">
@@ -100,7 +101,7 @@
                 
                      <!-- This is website logo -->
                     <a href="#" class="brand">
-                        <img src="images/background/logo.png" width="120" height="40" alt="Logo" />   
+                        <img src="./images/background/logo.png" width="120" height="40" alt="Logo" />   
                     </a>
                     
                     <!-- Navigation button, visible on small resolution -->
@@ -116,9 +117,9 @@
                             <li><a href="index.jsp#service">함께하기</a></li>
                             <li><a href="List.do#portfolio">투표하기</a></li>
                             <li><a href="board_enter.jsp#service">참가신청</a></li>
-                            <li><a href="cfk_attend.jsp">방청신청</a></li>
-                            <li><a href="fashion2018.jsp">패션트렌드</a></li>
-                            <li><a href="#contact">패션쇼</a></li>
+                            <li><a href="board_attend.jsp">방청신청</a></li>
+                            <li><a href="board_fashion.jsp">패션트렌드</a></li>
+                            <li><a href="index.jsp#contact">패션쇼</a></li>
                         </ul>
                     </div>
                   
@@ -191,6 +192,6 @@
                     </ul>
             </div>
         </div>
-        <jsp:include page="board_bottom.jsp"></jsp:include>
+        <jsp:include page="../board_bottom.jsp"></jsp:include>
 	</body>
 </html>

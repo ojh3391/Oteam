@@ -48,7 +48,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/enter.do")) {							//참가신청 액션
 			action=new BoardEnterAction("index.jsp");
 		}else if(cmd.equals("/List.do")) {							//리스트 가기전 체크
-			action=new BoardListAction("/board_list.jsp");
+			action=new BoardListAction("board/board_list.jsp");
 		}else if(cmd.equals("/HitUpdate.do")) {						//게시글 조회수 증가
 			action=new BoardHitUpdateAction("View.do");
 		}else if(cmd.equals("/View.do")) {							//뷰 가기전 체크
@@ -78,7 +78,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/Vote.do")) {							//투표 액션
 			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/Rank.do")){							//메인으로 가기 전 랭크체크
-			action=new BoardRankAction("board_main.jsp");
+			action=new BoardRankAction("board/board_main.jsp");
 		}else if(cmd.equals("/leave.do")) {							//탈퇴 액션
 			action=new LeaveAction("index.jsp");
 		}

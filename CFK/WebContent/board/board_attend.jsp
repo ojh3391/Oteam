@@ -16,7 +16,7 @@
 	<head>
     </head>
     <body>
-    	<jsp:include page="board_top.jsp"></jsp:include>
+    	<jsp:include page="../board_top.jsp"></jsp:include>
         <div class="section secondary-section" id="service">
         	<div class="container">
       			<div class="title">
@@ -34,6 +34,6 @@
       	  	</div>
         </div>
         
-        <jsp:include page="board_bottom.jsp"></jsp:include>
+        <jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>

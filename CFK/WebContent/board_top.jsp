@@ -24,11 +24,7 @@
         <link rel="stylesheet" href="/CFK/Resources/css/jquery.popVideo.css"/>
 
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/slider/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/slider/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/slider/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="images/slider/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="images/slider/logo1.png">
+        <link rel="shortcut icon" href="/CFK/images/slider/logo1.png">
         
         <script type="text/javascript">
         
@@ -45,7 +41,7 @@
         
 		function Popupopen() {
 			if(cookieVal("notice")!="1") {
-		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+		   		window.open("/CFK/popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
 		}
 			
@@ -87,7 +83,7 @@
                 
                      <!-- This is website logo -->
                     <a href="#" class="brand">
-                        <img src="./images/background/logo.png" width="120" height="40" alt="Logo" />   
+                        <img src="/CFK/images/background/logo.png" width="120" height="40" alt="Logo" />   
                     </a>
                     
                     <!-- Navigation button, visible on small resolution -->
@@ -99,13 +95,13 @@
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
                         	<li><div id="ViewTimer"></div></li>
-                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="index.jsp#service">함께하기</a></li>
+                            <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="/CFK/index.jsp#service">함께하기</a></li>
                             <li><a href="List.do#portfolio">투표하기</a></li>
-                            <li><a href="board_enter.jsp#service">참가신청</a></li>
-                            <li><a href="board_attend.jsp">방청신청</a></li>
-                            <li><a href="board_fashion.jsp">패션트렌드</a></li>
-                            <li><a href="index.jsp#contact">패션쇼</a></li>
+                            <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
+                            <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
+                            <li><a href="/CFK/board/board_fashion.jsp">패션트렌드</a></li>
+                            <li><a href="/CFK/index.jsp#contact">패션쇼</a></li>
                         </ul>
                     </div>
                   
@@ -142,7 +138,7 @@
                         <p>2017 Season 1 우승과 준우승으로 환장의 캐미를 보여준 두사람이 이번엔 최강의 멘토가 되어 돌아 왔다. 이들에 대한 더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
                         <font color="yellow"><a href="board_mentor.jsp" class="da-link button">▶Click◀</a></font>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="images/slider/Slider02.jpg" width="320">
+                            <img style="border-radius:25px;" src="/CFK/images/slider/Slider02.jpg" width="320">
                         </div>
                     </div>
                    
@@ -153,7 +149,7 @@
                         <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="images/slider/Slider03.jpg" width="320" alt="image03">
+                            <img style="border-radius:25px;" src="/CFK/images/slider/Slider03.jpg" width="320" alt="image03">
                         </div>
                     </div>
                     

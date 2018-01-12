@@ -29,7 +29,7 @@
 	<head>
     </head>
     <body>
-    	<jsp:include page="board_top.jsp"></jsp:include>
+    	<jsp:include page="../board_top.jsp"></jsp:include>
         <div class="section primary-section" id="service">
 		<div class="container">
         	<!-- Start title section -->
@@ -41,7 +41,7 @@
             	<div class="span4">
                     <div class="centered service">
                         <div class="circle-border zoom-in">
-                            <img class="img-circle" src="./images/background/Service1.png">
+                            <img class="img-circle" src="/CFK/images/background/Service1.png">
                         </div>
                         <h3>투표하세요!</h3>
                         <p>We Create Modern And Clean Theme For Your Business Company.</p>
@@ -50,7 +50,7 @@
                 <div class="span4">
                     <div class="centered service">
 	                    <div class="circle-border zoom-in">
-                        	<img class="img-circle" src="./images/background/Service2.png">
+                        	<img class="img-circle" src="/CFK/images/background/Service2.png">
                         </div>
                         <h3>참가하세요!</h3>
                             <p>We Create Modern And Powerful Theme With Lots Animation And Features</p>
@@ -85,7 +85,7 @@
 					}else{ 
 				%> 
 				<div class="span4">
-					<img src="./images/background/logo.png" width="120" height="40" alt="Logo" />
+					<img src="/CFK/images/background/logo.png" width="120" height="40" alt="Logo" />
             		<h3><font color="red">▶로그인 되셨습니다◀</font></h3>
                    		<div class="control-group">
                    			<div class="controls">
@@ -114,7 +114,7 @@
                     <div id="ViewTimer"></div>
                     <p>매주 금요일 저녁 7시!!</p>
                     <p></p>                    
-                    <img src="./Resources/images/순위1.PNG" class="centered" alt="rank">
+                    <img src="/CFK/Resources/images/순위1.PNG" class="centered" alt="rank">
                 </div>
                 	<ul class="nav nav-pills">
                     	<li class="filter" data-filter="web">
@@ -294,7 +294,7 @@
                 </div>
                 <div class="container">
                 	<div class="map-wrapper">
-                		<div style="width:50%;float:left;"><img src="./images/background/show.PNG" width="500" alt="show"></div>
+                		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show"></div>
                     	<div style="width:50%;float:left;">
                     	<iframe src="map.html" frameborder="0" width="585px" height="604px" id="" title="방청권 신청 프레임"></iframe>
                     	</div> 
@@ -328,27 +328,27 @@
                             <img src="/CFK/images/clients/ClientLogo07.png" alt="client logo 1">                           
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo01.png" alt="client logo 2">                            
+                            <img src="/CFK/images/clients/ClientLogo01.png" alt="client logo 2">                            
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo02.png" alt="client logo 3">                            
+                            <img src="/CFK/images/clients/ClientLogo02.png" alt="client logo 3">                            
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo03.png" alt="client logo 4">                            
+                            <img src="/CFK/images/clients/ClientLogo03.png" alt="client logo 4">                            
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo04.png" alt="client logo 5">                            
+                            <img src="/CFK/images/clients/ClientLogo04.png" alt="client logo 5">                            
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo05.png" alt="client logo 6">                          
+                            <img src="/CFK/images/clients/ClientLogo05.png" alt="client logo 6">                          
                         </li>
                         <li>                            
-                            <img src="./images/clients/ClientLogo06.png" alt="client logo 7">                            
+                            <img src="/CFK/images/clients/ClientLogo06.png" alt="client logo 7">                            
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-		<jsp:include page="board_bottom.jsp"></jsp:include>
+		<jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>
