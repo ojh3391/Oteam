@@ -101,7 +101,7 @@
                		<button class="message-btn" onclick="location.href='board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
               		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
             	<%}else{%>
-               		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
+               		<button class="message-btn"  onclick="location.href='List.do'">목록</button>
             	<%} %>
             </div>
 		</div>
