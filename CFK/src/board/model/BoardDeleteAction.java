@@ -28,12 +28,12 @@ public class BoardDeleteAction implements Action {
 		BoardVO vo=dao.getRow(board_num);
 		
 		String fileName =vo.getBoard_file();
-		String saveDir="/boardUpload";
-		String uploadPath=req.getServletContext().getRealPath(saveDir);
+		String uploadPath=req.getServletContext().getRealPath("/boardUpload");
+		String uploadPath1=req.getServletContext().getRealPath("/thumb");
 		int idx=fileName.lastIndexOf(".");
 		String _fileName=fileName.substring(0, idx);
 		String filePath=uploadPath+"\\"+fileName;
-		String filePath2=uploadPath+"\\thumb\\"+_fileName+".png";
+		String filePath2=uploadPath1+"\\"+_fileName+".jpg";
 		
         File uploadfile=new File(filePath);
         File uploadfile2=new File(filePath2);
@@ -42,7 +42,7 @@ public class BoardDeleteAction implements Action {
         uploadfile2.delete(); // 파일 삭제
         
         String board_writer=vo.getBoard_writer();
-        System.out.println(board_writer);
+        
 		dao.board_delete(board_num, board_writer);
 		
 		//삭제후 리스트 이동

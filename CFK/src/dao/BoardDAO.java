@@ -216,18 +216,18 @@ public class BoardDAO {
 	public int board_delete(int board_num, String board_writer) {
 		int result=0;
 		con=JDBCUtil.getConnection();
-		pstmt=null;
-		System.out.println(board_writer);
 		
 		try {
 			String sql="delete from cfk_board where board_num=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
 			result=pstmt.executeUpdate();
+			
 			sql="delete from cfk_reply where reply_board_num=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
 			result=pstmt.executeUpdate();
+			
 			sql="update cfk_user set user_check_parti=1 where user_id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, board_writer);
@@ -628,5 +628,27 @@ public class BoardDAO {
 		return rank7;
 	}
 	
+	public BoardVO getBoardnum(String board_writer) {
+		BoardVO vo=null;
+		con=JDBCUtil.getConnection();
+		
+		try {
+			pstmt=con.prepareStatement("select board_num, board_file from cfk_board where board_writer=?");
+			pstmt.setString(1, board_writer);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				vo= new BoardVO();
+				vo.setBoard_num(rs.getInt("board_num"));
+				vo.setBoard_file(rs.getString("board_file"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+			
+			
+		}
+		return vo;
+	}
 	
 }

@@ -209,17 +209,29 @@ public class UserDAO {
 		}	
 		return result;
 	}
-	public int user_leave(String user_id) {
+	public int user_leave(String user_id,int board_num) {
 		int result=0;
-		Connection con=JDBCUtil.getConnection();
-		PreparedStatement pstmt=null;
+		con=JDBCUtil.getConnection();
 		
 		try {
 			String sql="delete from cfk_user where user_id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
 			
+			sql="delete from cfk_reply where reply_board_num=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, board_num);
+			result=pstmt.executeUpdate();
 			
+			sql="delete from cfk_board where board_writer=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
+			sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
 			
 		}catch(Exception e) {

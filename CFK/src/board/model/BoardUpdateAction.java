@@ -45,15 +45,12 @@ public class BoardUpdateAction implements Action {
 		if(multi.getOriginalFileName((String) multi.getFileNames().nextElement())!=null) {
 			
 			String fileName1 =multi.getParameter("board_file");
-			String saveDir1="/boardUpload";
-			String uploadPath1=req.getServletContext().getRealPath(saveDir1);
+			
 			int idx1=fileName1.lastIndexOf(".");
 			String _sfileName=fileName1.substring(0, idx1);
-			String filePath3=uploadPath1+"\\"+fileName1;
+			String filePath3=uploadPath+"\\"+fileName1;
 			String filePath4=uploadPath2+"\\"+_sfileName+".jpg";
-
 		
-			
 	        File uploadfile=new File(filePath3);
 	        File uploadfile2=new File(filePath4);
 	        

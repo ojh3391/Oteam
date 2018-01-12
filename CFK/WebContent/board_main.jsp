@@ -32,7 +32,6 @@
     	<jsp:include page="board_top.jsp"></jsp:include>
         <div class="section primary-section" id="service">
 		<div class="container">
-		
         	<!-- Start title section -->
             <div class="title">
             	<h1>Join Us!</h1>
@@ -104,11 +103,11 @@
           		<%} %>  
         	</div>  		 	     
         </div>
+        </div>
         
         <!-- Portfolio section start -->
         <div class="section secondary-section " id="portfolio">
-            <div class="triangle">
-            </div>
+        	<div class="triangle"></div>
             <div class="container">
                 <div class="title">
                     <h1><font size="10" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font></h1>
@@ -279,10 +278,9 @@
                     	</li>
                 	<%} %>	                         
                     </ul>  
-                </div>
-            </div>
+             </div>
         </div>
-        
+
         <!-- Contact section start -->
         <div id="contact" class="contact">
             <div class="section primary-section">
