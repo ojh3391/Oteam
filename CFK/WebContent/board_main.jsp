@@ -155,7 +155,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                              	</div>
                             </div>
@@ -172,7 +172,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo1.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo1.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo1.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                             	</div>
                             </div>
@@ -188,7 +188,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo2.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo2.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo2.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo3.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo3.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo3.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo4.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo4.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo4.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
@@ -238,7 +238,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo5.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo5.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo5.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo6.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo6.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo6.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo7.getBoard_writer() %></h2>
-                                <a href="qHitUpdate.do?board_num=<%=bo7.getBoard_num()%>&page=<%=current_page%>">
+                                <a href="HitUpdate.do?board_num=<%=bo7.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
                             </div>
