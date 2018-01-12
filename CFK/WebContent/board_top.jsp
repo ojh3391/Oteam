@@ -12,16 +12,16 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/pluton.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.cslider.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/jquery.bxslider.css" />
-        <link rel="stylesheet" type="text/css" href="Resources/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="/CFK/Resources/css/animate.css" />
         
         <!-- popvideo -->
-        <link rel="stylesheet" href="Resources/css/jquery.popVideo.css"/>
+        <link rel="stylesheet" href="/CFK/Resources/css/jquery.popVideo.css"/>
 
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/slider/ico/apple-touch-icon-144.png">

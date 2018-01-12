@@ -327,7 +327,7 @@
                     </div>
                     <ul class="row client-slider" id="clint-slider">
                         <li>                            
-                            <img src="./images/clients/ClientLogo07.png" alt="client logo 1">                           
+                            <img src="/CFK/images/clients/ClientLogo07.png" alt="client logo 1">                           
                         </li>
                         <li>                            
                             <img src="./images/clients/ClientLogo01.png" alt="client logo 2">                            

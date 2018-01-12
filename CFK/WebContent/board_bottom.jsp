@@ -23,16 +23,16 @@
         <!-- Include javascript -->
         <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.0.min.js" ></script>
 		<script type="text/javascript" src="js/video-hover.js"></script>
-        <script src="Resources/js/jquery.js"></script>
-        <script src="Resources/js/jquery.popVideo.js"></script>
-        <script type="text/javascript" src="Resources/js/jquery.mixitup.js"></script>
-        <script type="text/javascript" src="Resources/js/bootstrap.js"></script>
-        <script type="text/javascript" src="Resources/js/modernizr.custom.js"></script>
-        <script type="text/javascript" src="Resources/js/jquery.bxslider.js"></script>
-        <script type="text/javascript" src="Resources/js/jquery.cslider.js"></script>
-        <script type="text/javascript" src="Resources/js/jquery.placeholder.js"></script>
-        <script type="text/javascript" src="Resources/js/jquery.inview.js"></script>
-        <script type="text/javascript" src="Resources/js/app.js"></script>
+        <script src="/CFK/Resources/js/jquery.js"></script>
+        <script src="/CFK/Resources/js/jquery.popVideo.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/jquery.mixitup.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/jquery.bxslider.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/jquery.cslider.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/jquery.inview.js"></script>
+        <script type="text/javascript" src="/CFK/Resources/js/app.js"></script>
         <script>
    			$('#video').on('mouseenter',function() {
         		$('#video').popVideo({
