@@ -34,24 +34,35 @@ public class LeaveAction implements Action {
 		
 		BoardVO vo=new BoardVO();
 		vo=dao1.getBoardnum(user_id);
+		int board_num=0;
+		if(vo==null) {
+			board_num=0;
+		}else {
+			board_num=vo.getBoard_num();
+			String fileName =vo.getBoard_file();
+		}
 		
-		int board_num=vo.getBoard_num();
 		
-		String fileName =vo.getBoard_file();
+		System.out.println(user_id);
+		System.out.println(board_num);
 		
 		
-		String uploadPath=req.getServletContext().getRealPath("/boardUpload");
-		String uploadPath1=req.getServletContext().getRealPath("/thumb");
-		int idx=fileName.lastIndexOf(".");
-		String _fileName=fileName.substring(0, idx);
-		String filePath=uploadPath+"\\"+fileName;
-		String filePath2=uploadPath1+"\\"+_fileName+".jpg";
 		
-        File uploadfile=new File(filePath);
-        File uploadfile2=new File(filePath2);
-        
-        uploadfile.delete();
-        uploadfile2.delete(); // 파일 삭제
+		
+		if(fileName!=null) {
+			String uploadPath=req.getServletContext().getRealPath("/boardUpload");
+			String uploadPath1=req.getServletContext().getRealPath("/thumb");
+			int idx=fileName.lastIndexOf(".");
+			String _fileName=fileName.substring(0, idx);
+			String filePath=uploadPath+"\\"+fileName;
+			String filePath2=uploadPath1+"\\"+_fileName+".jpg";
+			
+	        File uploadfile=new File(filePath);
+	        File uploadfile2=new File(filePath2);
+	        
+	        uploadfile.delete();
+	        uploadfile2.delete(); // 파일 삭제
+		}
 		
 		dao.user_leave(user_id,board_num);
 		

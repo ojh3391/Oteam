@@ -17,7 +17,7 @@
         		<h1>비밀번호 확인</h1>            	
                 <p>비밀번호를 정확히 입력하시오.</p>                
         		</div>
-        		<form action="Mypage.do" method="post">
+        		<form action="../Mypage.do" method="post">
 					<table align="center">
 						<tr>
 							<td><p><font color="black">아이디</font></p></td>

@@ -7,7 +7,7 @@
     		//중복체크 버튼
 	    	function checkId() {
 		    	//한글 아이디 받아오기위해 url에서도 인코딩
-		    	url = "user_checkID.jsp?user_id="+encodeURIComponent(document.userInfo.user_id.value);
+		    	url = "/CFK/user/user_checkID.jsp?user_id="+encodeURIComponent(document.userInfo.user_id.value);
 		    	//open(주소, 이름, 설정)
 		    	open(url, "check", "menubar=no, top=400,left=800,width=300,height=100");
 		    	
@@ -68,7 +68,7 @@
         		<h1>회원가입</h1>            	
                 <p>회원가입 하시면 많은 혜택을 누리실 수 있습니다.</p>                
         		</div>
-        		<form action="insert.do" method="post" name="userInfo">
+        		<form action="../insert.do" method="post" name="userInfo">
 					<table align="center">
 						<tr>
 							<td>

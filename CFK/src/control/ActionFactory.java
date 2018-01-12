@@ -36,23 +36,23 @@ public class ActionFactory {
 		if(cmd.equals("/insert.do")) {								//회원가입 액션
 			action=new InsertAction("index.jsp");
 		}else if(cmd.equals("/Mypage.do")) {						//회원페이지 비번체크 및 액션
-			action=new MypageAction("user_mypage.jsp");
+			action=new MypageAction("user/user_mypage.jsp");
 		}else if(cmd.equals("/update_page.do")) {					//회원수정 페이지 액션
-			action=new UpdatePageAction("user_update.jsp");		
+			action=new UpdatePageAction("user/user_update.jsp");		
 		}else if(cmd.equals("/update.do")) {						//회원수정 액션
-			action=new UpdateAction("user_mypage.jsp");
+			action=new UpdateAction("user/user_page_pwd.jsp");
 		}else if(cmd.equals("/login.do")) {							//로그인 액션
 			action=new LoginAction("index.jsp");
 		}else if(cmd.equals("/logout.do")) {						//로그아웃 액션
 			action=new LogoutAction("index.jsp");
-		}else if(cmd.equals("/enter.do")) {							//참가신청 액션
-			action=new BoardEnterAction("index.jsp");
+		}else if(cmd.equals("/Enter.do")) {							//참가신청 액션
+			action=new BoardEnterAction("View.do");
 		}else if(cmd.equals("/List.do")) {							//리스트 가기전 체크
 			action=new BoardListAction("board/board_list.jsp");
 		}else if(cmd.equals("/HitUpdate.do")) {						//게시글 조회수 증가
 			action=new BoardHitUpdateAction("View.do");
 		}else if(cmd.equals("/View.do")) {							//뷰 가기전 체크
-			action= new ReplyViewAction("board_view.jsp");
+			action= new ReplyViewAction("board/board_view.jsp");
 		}else if(cmd.equals("/Attend.do")) {						//방청신청 액션
 			action=new AttendAction("board_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크
@@ -79,8 +79,8 @@ public class ActionFactory {
 			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/Rank.do")){							//메인으로 가기 전 랭크체크
 			action=new BoardRankAction("board/board_main.jsp");
-		}else if(cmd.equals("/leave.do")) {							//탈퇴 액션
-			action=new LeaveAction("index.jsp");
+		}else if(cmd.equals("/Leave.do")) {							//탈퇴 액션
+			action=new LeaveAction("Rank.do");
 		}
 		
 		return action;

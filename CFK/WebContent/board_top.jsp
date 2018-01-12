@@ -97,7 +97,7 @@
                         	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
                             <li><a href="/CFK/index.jsp#service">함께하기</a></li>
-                            <li><a href="List.do#portfolio">투표하기</a></li>
+                            <li><a href="/CFK/List.do#portfolio">투표하기</a></li>
                             <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
                             <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
                             <li><a href="/CFK/board/board_fashion.jsp">패션트렌드</a></li>

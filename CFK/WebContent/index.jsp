@@ -8,6 +8,6 @@
 </head>
 <body>
 <!-- 여기서 시작 -->
-<% response.sendRedirect("Rank.do"); %>
+<jsp:forward page="/Rank.do"></jsp:forward>
 </body>
 </html>	

@@ -38,11 +38,7 @@
         <link rel="stylesheet" href="/CFK/Resources/css/jquery.popVideo.css"/>
 
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/slider/ico/apple-touch-icon-144.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/slider/ico/apple-touch-icon-114.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/slider/apple-touch-icon-72.png">
-        <link rel="apple-touch-icon-precomposed" href="images/slider/ico/apple-touch-icon-57.png">
-        <link rel="shortcut icon" href="images/slider/logo1.png">
+        <link rel="shortcut icon" href="/CFK/images/slider/logo1.png">
         
         <script type="text/javascript">
         
@@ -59,7 +55,7 @@
         
 		function Popupopen() {
 			if(cookieVal("notice")!="1") {
-		   		window.open("popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
+		   		window.open("/CFK/popup.html", "notice", "width=500, height=615, top=0, left=0, location=no, scrollbars=yes");
 			}
 		}
 			
@@ -101,7 +97,7 @@
                 
                      <!-- This is website logo -->
                     <a href="#" class="brand">
-                        <img src="./images/background/logo.png" width="120" height="40" alt="Logo" />   
+                        <img src="/CFK/images/background/logo.png" width="120" height="40" alt="Logo" />   
                     </a>
                     
                     <!-- Navigation button, visible on small resolution -->
@@ -113,13 +109,13 @@
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
                         	<li><div id="ViewTimer"></div></li>
-                            <li class="active"><a href="index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="index.jsp#service">함께하기</a></li>
-                            <li><a href="List.do#portfolio">투표하기</a></li>
-                            <li><a href="board_enter.jsp#service">참가신청</a></li>
-                            <li><a href="board_attend.jsp">방청신청</a></li>
-                            <li><a href="board_fashion.jsp">패션트렌드</a></li>
-                            <li><a href="index.jsp#contact">패션쇼</a></li>
+                            <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
+                            <li><a href="/CFK/index.jsp#service">함께하기</a></li>
+                            <li><a href="/CFK/List.do#portfolio">투표하기</a></li>
+                            <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
+                            <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
+                            <li><a href="/CFK/board/board_fashion.jsp">패션트렌드</a></li>
+                            <li><a href="/CFK/index.jsp#contact">패션쇼</a></li>
                         </ul>
                     </div>
                   

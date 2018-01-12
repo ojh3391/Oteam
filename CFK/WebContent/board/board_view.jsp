@@ -98,7 +98,7 @@
             <div align="center">
             	<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
              		<button class="message-btn" onclick="location.href='board_change_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
-               		<button class="message-btn" onclick="location.href='board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
+               		<button class="message-btn" onclick="location.href='board/board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
               		<button class="message-btn"  onclick="location.href='qList.do'">목록</button>
             	<%}else{%>
                		<button class="message-btn"  onclick="location.href='List.do'">목록</button>

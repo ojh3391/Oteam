@@ -25,7 +25,7 @@
         		<h1>참가신청</h1>
                 <p>패션킹에 도전해 보세요!!</p>        
         		</div>
-        		<form action="enter.do" method="post" enctype="multipart/form-data">
+        		<form action="Enter.do" method="post" enctype="multipart/form-data">
        			<input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
 					<table align="center">		
 						<tr>

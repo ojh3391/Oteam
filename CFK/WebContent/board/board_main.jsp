@@ -77,7 +77,7 @@
                 			</div>
                		 	</div>     
                    		 <button class="message-btn" type="submit">로그인</button>
-                   		 <button class="message-btn" type="button" onclick="location.href='user_insert.jsp'">회원 가입</button>
+                   		 <button class="message-btn" type="button" onclick="location.href='/CFK/user/user_insert.jsp'">회원 가입</button>
                    	</form>
                 </div>
         
@@ -95,7 +95,7 @@
                 		</div>
                		<div class="control-group">
                 		<div class="controls">
-                   		 	<button class="message-btn" onclick="location.href='user_page_pwd.jsp'">MY PAGE</button>
+                   		 	<button class="message-btn" onclick="location.href='/CFK/user/user_page_pwd.jsp'">MY PAGE</button>
                    		 	<button class="message-btn" onclick="location.href='logout.do'">로그 아웃</button>
                    		</div>
                		</div>
