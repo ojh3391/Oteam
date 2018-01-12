@@ -209,7 +209,7 @@ public class UserDAO {
 		}	
 		return result;
 	}
-	public int user_leave(String user_id,int board_num) {
+	public int user_leave_in(String user_id,int board_num,int reply_re_ref) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		
@@ -219,12 +219,48 @@ public class UserDAO {
 			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
 			
+			sql="delete from cfk_board where board_writer=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
 			sql="delete from cfk_reply where reply_board_num=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
 			result=pstmt.executeUpdate();
 			
-			sql="delete from cfk_board where board_writer=?";
+			pstmt=con.prepareStatement("select count(*) from cfk_reply where reply_re_ref=? and reply_re_del=0");
+			pstmt.setInt(1, reply_re_ref);
+			rs=pstmt.executeQuery();
+			int total=0;
+			if(rs.next()) {
+				total=rs.getInt(1);
+				if(total==1) {
+					sql="delete from cfk_reply where reply_re_ref=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, reply_re_ref);
+					result=pstmt.executeUpdate();
+				}else {
+					sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setString(1, user_id);
+					result=pstmt.executeUpdate();
+				}
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt);
+		}
+		return result;
+	}
+	public int user_leave(String user_id) {
+		int result=0;
+		con=JDBCUtil.getConnection();
+		
+		try {
+			String sql="delete from cfk_user where user_id=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
@@ -233,6 +269,42 @@ public class UserDAO {
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt);
+		}
+		return result;
+	}
+	public int user_leave_ref(String user_id,int reply_re_ref) {
+		int result=0;
+		con=JDBCUtil.getConnection();
+		
+		try {
+			pstmt=con.prepareStatement("select count(*) from cfk_reply where reply_re_ref=? and reply_re_del=0");
+			pstmt.setInt(1, reply_re_ref);
+			rs=pstmt.executeQuery();
+			int total=0;
+			if(rs.next()) {
+				total=rs.getInt(1);
+				if(total==1) {
+					String sql="delete from cfk_reply where reply_re_ref=?";
+					pstmt=con.prepareStatement(sql);
+					pstmt.setInt(1, reply_re_ref);
+					result=pstmt.executeUpdate();
+				}
+				String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1, user_id);
+				result=pstmt.executeUpdate();
+				
+			}
+			String sql="delete from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

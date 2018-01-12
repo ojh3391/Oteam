@@ -136,7 +136,7 @@
                 <div class="row-fluid">
                     <div class="span12">
                         <p>1.영상을 올리실때는 MP4 50MB 미만으로 가능합니다.</p>
-                        <p>2.</p>
+                        <p>2.투표는 3번만 가능합니다.</p>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
                     	<li class="span12 mix web">
                         	<div style="border-radius:50px;" class="thumbnail">
                              	<img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>">
-                             	<h3><%=vo.getBoard_readcount()%></h3>
+                             	<h3>조회=<%=vo.getBoard_readcount()%></h3>
                               	<p><%=vo.getBoard_date()%></p>
                              	<div class="mask">
                              	<h2><%=vo.getBoard_writer()%></h2>

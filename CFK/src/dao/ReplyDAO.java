@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 import control.JDBCUtil;
+import vo.BoardVO;
 import vo.ReplyVO;
 
 
@@ -125,7 +126,6 @@ public class ReplyDAO {
 	public int reply_delete(int reply_num,int reply_re_ref,int reply_re_lev,int reply_re_seq) {
 		int result=0;
 		con=JDBCUtil.getConnection();
-		pstmt=null;
 		
 		try {
 			pstmt=con.prepareStatement("select count(*) from cfk_reply where reply_re_ref=? and reply_re_del=0");
@@ -220,4 +220,27 @@ public class ReplyDAO {
 		}		
 		return result;
 	}
+	
+	public ReplyVO getRef(String reply_writer) {
+		ReplyVO vo=null;
+		con=JDBCUtil.getConnection();
+		
+		try {
+			pstmt=con.prepareStatement("select reply_re_ref from cfk_reply where reply_writer=?");
+			pstmt.setString(1, reply_writer);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				vo= new ReplyVO();
+				vo.setReply_re_ref(rs.getInt("reply_re_ref"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+			
+			
+		}
+		return vo;
+	}
+	
 }

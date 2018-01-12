@@ -11,8 +11,10 @@ import action.Action;
 import action.ActionForward;
 import board.model.BoardDeleteAction;
 import dao.BoardDAO;
+import dao.ReplyDAO;
 import dao.UserDAO;
 import vo.BoardVO;
+import vo.ReplyVO;
 
 public class LeaveAction implements Action {
 	
@@ -31,25 +33,26 @@ public class LeaveAction implements Action {
 
 		UserDAO dao=new UserDAO();
 		BoardDAO dao1=new BoardDAO();
+		ReplyDAO dao2=new ReplyDAO();
 		
 		BoardVO vo=new BoardVO();
+		ReplyVO vo1=new ReplyVO();
+		
 		vo=dao1.getBoardnum(user_id);
+		vo1=dao2.getRef(user_id);
 		int board_num=0;
-		if(vo==null) {
+		if(vo==null&&vo1==null) {
 			board_num=0;
+			dao.user_leave(user_id);
+		}else if(vo==null&&vo1!=null) {
+			board_num=0;
+			int reply_re_ref=vo1.getReply_re_ref();
+			dao.user_leave_ref(user_id, reply_re_ref);
+			
 		}else {
 			board_num=vo.getBoard_num();
+			int reply_re_ref=vo1.getReply_re_ref();
 			String fileName =vo.getBoard_file();
-		}
-		
-		
-		System.out.println(user_id);
-		System.out.println(board_num);
-		
-		
-		
-		
-		if(fileName!=null) {
 			String uploadPath=req.getServletContext().getRealPath("/boardUpload");
 			String uploadPath1=req.getServletContext().getRealPath("/thumb");
 			int idx=fileName.lastIndexOf(".");
@@ -62,11 +65,11 @@ public class LeaveAction implements Action {
 	        
 	        uploadfile.delete();
 	        uploadfile2.delete(); // 파일 삭제
+	        dao.user_leave_in(user_id,board_num,reply_re_ref);
 		}
 		
-		dao.user_leave(user_id,board_num);
 		
-	
+		
 		HttpSession session=req.getSession(false);
 		if(session.getAttribute("vo")!=null) {
 			session.invalidate();

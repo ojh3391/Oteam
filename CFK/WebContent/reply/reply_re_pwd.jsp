@@ -24,7 +24,7 @@
         		<h1>비밀번호 확인</h1>            	
                 <p>비밀번호를 정확히 입력하시오.</p>               
         		</div>
-        		<form action="reply_re_pwd.do" method="post">
+        		<form action="/CFK/reply_re_pwd.do" method="post">
         		<input type="hidden" name="reply_num" value="<%=reply_num%>">
 				<input type="hidden" name="board_num" value="<%=board_num%>">
 				<input type="hidden" name="content" value="<%=content%>">

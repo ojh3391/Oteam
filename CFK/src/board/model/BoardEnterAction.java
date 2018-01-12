@@ -79,11 +79,13 @@ public class BoardEnterAction implements Action
 					e.printStackTrace();
 				}
 				dao.board_parti(vo);
+				
 			}
 		}catch(IOException e)
 		{
 			e.printStackTrace();
 		}
+		
 		return new ActionForward(path, false);
 	}	
 }
