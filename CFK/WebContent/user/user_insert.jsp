@@ -7,7 +7,7 @@
     		//중복체크 버튼
 	    	function checkId() {
 		    	//한글 아이디 받아오기위해 url에서도 인코딩
-		    	url = "checkID.jsp?user_id="+encodeURIComponent(document.userInfo.user_id.value);
+		    	url = "user_checkID.jsp?user_id="+encodeURIComponent(document.userInfo.user_id.value);
 		    	//open(주소, 이름, 설정)
 		    	open(url, "check", "menubar=no, top=400,left=800,width=300,height=100");
 		    	
