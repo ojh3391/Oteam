@@ -51,6 +51,8 @@ public class BoardUpdateAction implements Action {
 			String _sfileName=fileName1.substring(0, idx1);
 			String filePath3=uploadPath1+"\\"+fileName1;
 			String filePath4=uploadPath2+"\\"+_sfileName+".jpg";
+
+		
 			
 	        File uploadfile=new File(filePath3);
 	        File uploadfile2=new File(filePath4);
@@ -74,7 +76,7 @@ public class BoardUpdateAction implements Action {
 			
 			String filePath=uploadPath+"\\"+fileName;
 			String filePath2=uploadPath2+"\\"+_fileName+".jpg";
-			
+
 			String thumb=_fileName+".jpg";
 			vo.setBoard_thumbnail(thumb);
 			
