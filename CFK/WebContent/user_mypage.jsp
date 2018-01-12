@@ -79,15 +79,15 @@
 					</tr>
 					<%} %>
 					<tr align="center">
-						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>전화번호</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
 					</tr>
 					<tr align="center">
-						<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>주소</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"></font></td>
 					</tr>				
 					<tr align="center">	
-						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>이메일</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
 					</tr>
 					<tr>
