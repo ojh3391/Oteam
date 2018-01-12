@@ -3,19 +3,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="assets/css/main.css" /> <!-- 김영 -->
+		<link rel="stylesheet" href="assets/css/main.css" />
     </head>
     <body>
     	<jsp:include page="board_top.jsp"></jsp:include>
-		
+
 		<div class="section secondary-section" id=protfolio">
 		<!-- <div class="page-wrap"> -->
 
 		<!-- Main -->
 		<section id="main">
-
-			<!-- Header -->
-
 			<!-- Gallery -->
 			<section id="galleries">
 
@@ -39,10 +36,7 @@
 
 					</header>
 
-					<header id="header">
-						<div></div>
-					</header>
-
+				
 
 					<div class="content" align="center">
 
