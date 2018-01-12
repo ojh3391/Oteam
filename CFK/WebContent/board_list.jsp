@@ -176,7 +176,7 @@
 					for(BoardVO vo:list){
 					%>                	
                     	<li class="span12 mix web">
-                        	<div class="thumbnail">
+                        	<div style="border-radius:50px;" class="thumbnail">
                              	<img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>">
                              	<h3><%=vo.getBoard_readcount()%></h3>
                               	<p><%=vo.getBoard_date()%></p>

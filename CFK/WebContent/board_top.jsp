@@ -131,7 +131,7 @@
                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
-                            <img style="border-radius:25px;" src="images/slider/Slider01.jpg" width="320">
+                            <img style="border-radius:25px;" src="/CFK/images/slider/Slider01.jpg" width="320">
                         </div>
                     </div>
                     

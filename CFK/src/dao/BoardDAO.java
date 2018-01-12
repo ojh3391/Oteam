@@ -213,10 +213,11 @@ public class BoardDAO {
 		}
 		return vo;
 	}
-	public int board_delete(int board_num) {
+	public int board_delete(int board_num, String board_writer) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		pstmt=null;
+		System.out.println(board_writer);
 		
 		try {
 			String sql="delete from cfk_board where board_num=?";
@@ -226,6 +227,10 @@ public class BoardDAO {
 			sql="delete from cfk_reply where reply_board_num=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, board_num);
+			result=pstmt.executeUpdate();
+			sql="update cfk_user set user_check_parti=1 where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, board_writer);
 			result=pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

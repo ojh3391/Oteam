@@ -41,8 +41,9 @@ public class BoardDeleteAction implements Action {
         uploadfile.delete();
         uploadfile2.delete(); // 파일 삭제
         
-
-		dao.board_delete(board_num);
+        String board_writer=vo.getBoard_writer();
+        System.out.println(board_writer);
+		dao.board_delete(board_num, board_writer);
 		
 		//삭제후 리스트 이동
 		return new ActionForward(path,true);
