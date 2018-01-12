@@ -59,18 +59,18 @@
 					<%if(vo.getUser_attend_date()==null){ %>
 					<tr align="center">
 						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>방청날짜</strong></font></td>
-						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue">신청 내역이 없습니다 --> <a href="cfk_attend.jsp">신청하러가기</a></font></td>
+						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue">신청 내역이 없습니다 --> <a href="board_attend.jsp">신청하러가기</a></font></td>
 					</tr>
 					<%}else{%>
 					<tr align="center">
 						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>방청날짜</strong></font></td>
-						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_attend_date() %>----> <a href="cfk_attend.jsp" >신청변경하기</a></font></td>
+						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"><%=vo.getUser_attend_date() %>----> <a href="board_attend.jsp" >신청변경하기</a></font></td>
 					</tr>
 					<%} %>
 					<%if(!(vo.getUser_check_vote()==0)){ %>
 					<tr align="center">
 						<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>남은 투표수</strong></font></td>
-						<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"><%=vo.getUser_check_vote() %>번  ----> <a href="qList.do">투표하기</a></font></td>
+						<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"><%=vo.getUser_check_vote() %>번  ----> <a href="List.do">투표하기</a></font></td>
 					</tr>
 					<%}else{%>
 					<tr align="center">
@@ -79,15 +79,15 @@
 					</tr>
 					<%} %>
 					<tr align="center">
-						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>전화번호</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
 					</tr>
 					<tr align="center">
-						<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>주소</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="beige"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="beige"><font size="5" color="blue"></font></td>
 					</tr>				
 					<tr align="center">	
-						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>이메일</strong></font></td>
+						<td valign="middle" width="350" height="50" bgcolor="#C0C0C0"><font size="5" color="black"><strong>준비중</strong></font></td>
 						<td valign="middle" width="550" height="50" bgcolor="#C0C0C0"><font size="5" color="blue"></font></td>
 					</tr>
 					<tr>
