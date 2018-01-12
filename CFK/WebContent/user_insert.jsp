@@ -3,6 +3,61 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script type="text/javascript">
+    		//중복체크 버튼
+	    	function checkId() {
+		    	//한글 아이디 받아오기위해 url에서도 인코딩
+		    	url = "checkID.jsp?user_id="+encodeURIComponent(document.userInfo.user_id.value);
+		    	//open(주소, 이름, 설정)
+		    	open(url, "check", "menubar=no, top=400,left=800,width=300,height=100");
+		    	
+		    	return true;
+	    	}
+	    	 
+	    	//비어있는 값이 있는지 체크
+	    	function checkValue() {
+		    	var form = document.userInfo;
+		    	//이메일 패턴 지정
+		    	var email=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;   
+		    	if(!form.user_id.value) {
+		    		alert("아이디를 입력하세요.");
+		    		return false;
+		    	} else if(form.idReduplication.value !="check_id"){ 	//아이디 중복체크 여부를 받아와서 처리
+		    		alert("아이디 중복체크를 해주세요.");
+		    		return false;
+		    	} else if(!form.user_passwd.value) {
+			    	alert("비밀번호를 입력하세요.");
+			    	return false;
+	    		} else if(!form.user_name.value) {
+			    	alert("이름을 입력하세요.");
+			    	return false;
+	    		} else if(!form.user_addr.value) {
+			    	alert("주소를 입력하세요.");
+			    	return false;
+	    		} else if(!form.user_tel.value) {
+			    	alert("전화번호를 입력하세요.");
+			    	return false;
+	    		} else if(!form.user_age.value) {
+			    	alert("나이를 입력하세요.");
+			    	return false;
+	    		} else if(!form.user_email.value) {
+			    	alert("이메일을 입력하세요.");
+			    	return false;
+	    		} else if(isNaN(form.user_age.value)){
+				    alert("나이는 숫자만 입력가능합니다.");
+				    return false;
+		    	} else if(email.test(form.user_email.value) == false){
+		    		alert("잘못된 이메일 형식입니다.")
+		    	} else {
+		    		form.submit();
+		    	}
+			}
+
+	    	//중복체크 후 아이디를 새로 입력하는 걸 방지
+	    	function CheckInputId() {
+	    		document.userInfo.idReduplication.value="uncheck_id";
+	    	}
+    	</script>
     </head>
     <body>
     	<jsp:include page="board_top.jsp"></jsp:include>
