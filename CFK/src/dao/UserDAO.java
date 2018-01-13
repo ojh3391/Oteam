@@ -209,7 +209,7 @@ public class UserDAO {
 		}	
 		return result;
 	}
-	public int user_leave_in(String user_id,int board_num,int reply_re_ref) {
+	public int user_leave_all(String user_id,int board_num,int reply_re_ref) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		
@@ -255,7 +255,7 @@ public class UserDAO {
 		}
 		return result;
 	}
-	public int user_leave(String user_id) {
+	/*public int user_leave_board(String user_id,int board_num) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		
@@ -265,7 +265,31 @@ public class UserDAO {
 			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
 			
-			sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+			sql="delete from cfk_board where board_writer=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt);
+		}
+		return result;
+	}*/
+	
+	public int user_leave_only(String user_id) {
+		int result=0;
+		con=JDBCUtil.getConnection();
+		
+		try {
+			String sql="delete from cfk_user where user_id=?";
+			pstmt=con.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			result=pstmt.executeUpdate();
+			
+			sql="delete from cfk_board where board_writer=?";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setString(1, user_id);
 			result=pstmt.executeUpdate();
@@ -277,7 +301,7 @@ public class UserDAO {
 		}
 		return result;
 	}
-	public int user_leave_ref(String user_id,int reply_re_ref) {
+	public int user_leave_reply(String user_id,int reply_re_ref) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		

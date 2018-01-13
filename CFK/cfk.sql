@@ -57,7 +57,7 @@ insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 select * from cfk_user;
 select * from cfk_reply;
 
-
+select reply_re_ref from cfk_reply where reply_writer=2;
 select count(reply_re_del=0) from cfk_reply where reply_re_ref=1;
 drop table cfk_reply;
 drop table cfk_board;

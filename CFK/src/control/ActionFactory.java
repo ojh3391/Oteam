@@ -54,7 +54,7 @@ public class ActionFactory {
 		}else if(cmd.equals("/View.do")) {							//뷰 가기전 체크
 			action= new ReplyViewAction("board/board_view.jsp");
 		}else if(cmd.equals("/Attend.do")) {						//방청신청 액션
-			action=new AttendAction("board_attend_confirm.jsp");
+			action=new AttendAction("board/board_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크
 			action=new ReplyPwdAction("ReplyInsert.do");
 		}else if(cmd.equals("/ReplyInsert.do")) {					//댓글 등록 액션
