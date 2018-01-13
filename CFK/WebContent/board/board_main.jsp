@@ -294,16 +294,21 @@
                 </div>
                 <div class="container">
                 	<div class="map-wrapper">
-                		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show"></div>
+                		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show">
+                	   		<video id="video" poster="/CFK/thumb/min.jpg"webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop preoad>
+                            	<source src="/CFK/boardUpload/min.mp4" >
+                        	</video>
+                        </div> 
                     	<div style="width:50%;float:left;">
                     	<iframe src="map.html" frameborder="0" width="585px" height="604px" id="" title="방청권 신청 프레임"></iframe>
-                    	</div> 
+                    	</div>
+                    	
                 	</div>    
                 </div>
                 <div class="container">
                     <div class="span9 center contact-info">
                         <p>123 Fifth Avenue, 노원</p>
-                        <p class="info-mail">CFK@OJIMA.com</p>
+                        <p class="info-mail"><font color="white">CFK@OJIMA.com</font></p>
                         <p>+11 234 567 890</p>
                         <p>+11 286 543 850</p>
                     </div>
