@@ -633,13 +633,13 @@ public class BoardDAO {
 		con=JDBCUtil.getConnection();
 		
 		try {
-			pstmt=con.prepareStatement("select board_num, board_file from cfk_board where board_writer=?");
+			pstmt=con.prepareStatement("select board_num, board_real_file from cfk_board where board_writer=?");
 			pstmt.setString(1, board_writer);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				vo= new BoardVO();
 				vo.setBoard_num(rs.getInt("board_num"));
-				vo.setBoard_file(rs.getString("board_file"));
+				vo.setBoard_real_file(rs.getString("board_real_file"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

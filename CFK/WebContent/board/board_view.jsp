@@ -192,7 +192,8 @@
 				</div>
 			</div>
 			     
-        </div> 
+        </div>
+        
  		<jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>

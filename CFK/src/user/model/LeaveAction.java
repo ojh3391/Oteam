@@ -2,6 +2,7 @@ package user.model;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,29 +37,32 @@ public class LeaveAction implements Action {
 		ReplyDAO dao2=new ReplyDAO();
 		
 		BoardVO vo=new BoardVO();
-		ReplyVO vo1=new ReplyVO();
 		
 		vo=dao1.getBoardnum(user_id);
-		vo1=dao2.getRef(user_id);
+		Vector<ReplyVO> ref=dao2.getRef(user_id);
 		
 		System.out.println(vo);
-		System.out.println(vo1);
+		System.out.println(ref);
 		int board_num=0;
-		if(vo==null&&vo1==null) {
-			
+		int reply_re_ref=0;
+		if(vo==null&&ref.isEmpty()) {
 			dao.user_leave_only(user_id);
-		}else if(vo==null&&vo1!=null) {
+		}else if(vo==null&&ref.isEmpty()==false) {
 			
-			int reply_re_ref=vo1.getReply_re_ref();
-			dao.user_leave_reply(user_id, reply_re_ref);
-			
-		}else if(vo!=null&&vo1!=null){
+			for(ReplyVO re:ref) {
+				reply_re_ref=re.getReply_re_ref();
+				dao.user_leave_reply(user_id, reply_re_ref);
+			}
+				
+		}else if(vo!=null&&ref.isEmpty()==false){
 			board_num=vo.getBoard_num();
-			String fileName =vo.getBoard_file();
-			int reply_re_ref=vo1.getReply_re_ref();
-			System.out.println(board_num);
-			System.out.println(fileName);
-			System.out.println(reply_re_ref);
+			String fileName =vo.getBoard_real_file();
+			
+			for(ReplyVO re:ref) {
+				reply_re_ref=re.getReply_re_ref();
+				dao.user_leave_all(user_id,board_num,reply_re_ref);
+			}
+			
 			String uploadPath=req.getServletContext().getRealPath("/boardUpload");
 			String uploadPath1=req.getServletContext().getRealPath("/thumb");
 			int idx=fileName.lastIndexOf(".");
@@ -71,9 +75,9 @@ public class LeaveAction implements Action {
 	        
 	        uploadfile.delete();
 	        uploadfile2.delete(); // 파일 삭제
-	        dao.user_leave_all(user_id,board_num,reply_re_ref);
-		}else if(vo!=null&&vo1==null) {
-			String fileName =vo.getBoard_file();
+	        
+		}else if(vo!=null&&ref.isEmpty()) {
+			String fileName =vo.getBoard_real_file();
 			String uploadPath=req.getServletContext().getRealPath("/boardUpload");
 			String uploadPath1=req.getServletContext().getRealPath("/thumb");
 			int idx=fileName.lastIndexOf(".");

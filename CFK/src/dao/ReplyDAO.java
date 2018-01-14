@@ -221,8 +221,8 @@ public class ReplyDAO {
 		return result;
 	}
 	
-	public ReplyVO getRef(String reply_writer) {
-		ReplyVO vo=null;
+	public Vector<ReplyVO> getRef(String reply_writer) {
+		Vector<ReplyVO> ref=new Vector<ReplyVO>();
 		con=JDBCUtil.getConnection();
 		
 		try {
@@ -230,8 +230,10 @@ public class ReplyDAO {
 			pstmt.setString(1, reply_writer);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
-				vo= new ReplyVO();
-				vo.setReply_re_ref(rs.getInt("reply_re_ref"));
+				ReplyVO vo= new ReplyVO();
+				vo.setReply_re_ref(rs.getInt(1));
+				
+				ref.add(vo);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -239,7 +241,7 @@ public class ReplyDAO {
 			JDBCUtil.close(con, pstmt, rs);
 	
 		}
-		return vo;
+		return ref;
 	}
 	
 }
