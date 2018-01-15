@@ -10,4 +10,4 @@
 <!-- 여기서 시작 -->
 <jsp:forward page="/Rank.do"></jsp:forward>
 </body>
-</html>	
+</html>
