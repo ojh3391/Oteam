@@ -99,12 +99,12 @@
 					<%if(vo.getUser_attend_date()==null){ %>
 					<tr align="center">
 						<td valign="middle" width="200" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><strong>방청날짜</strong></font></td>
-						<td valign="middle" width="500" height="40" bgcolor="#C0C0C0"><font size="3" color="black">신청 내역이 없습니다 --> <a href="/CFK/board/board_enter.jsp"><font color="red"><ins>신청하러가기</ins></font></a></font></td>
+						<td valign="middle" width="500" height="40" bgcolor="#C0C0C0"><font size="3" color="black">신청 내역이 없습니다 --> <a href="/CFK/board/board_attend.jsp"><font color="red"><ins>신청하러가기</ins></font></a></font></td>
 					</tr>
 					<%}else{%>
 					<tr align="center">
 						<td valign="middle" width="200" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><strong>방청날짜</strong></font></td>
-						<td valign="middle" width="500" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><%=vo.getUser_attend_date() %>----> <a href="/CFK/board/board_enter.jsp" ><font color="red"><ins>신청변경하기</ins></font></a></font></td>
+						<td valign="middle" width="500" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><%=vo.getUser_attend_date() %>----> <a href="/CFK/board/board_attend.jsp" ><font color="red"><ins>신청변경하기</ins></font></a></font></td>
 					</tr>
 					<%} %>
 					<%if(!(vo.getUser_check_vote()==0)){ %>
