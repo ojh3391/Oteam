@@ -73,9 +73,9 @@
             	<tr><td align="center"><font size="5"><b>방청일 선택</b></font></td></tr>
                 <tr height="30">
                     <td align="center">
-                        <a href="cfk_calendar.jsp?year=<%=year%>&month=<%=month-1%>"><font size="3" color="red"><b>◀</b></font></a>	
+                        <a href="board_attend_calendar.jsp?year=<%=year%>&month=<%=month-1%>"><font size="3" color="red"><b>◀</b></font></a>	
                         <b><font size="3"><%=year %>년 <%=month %>월</font></b>
-                        <a href="cfk_calendar.jsp?year=<%=year%>&month=<%=month+1%>"><font size="3" color="red"><b>▶</b></font></a>
+                        <a href="board_attend_calendar.jsp?year=<%=year%>&month=<%=month+1%>"><font size="3" color="red"><b>▶</b></font></a>
                     </td>
                 </tr>
             </table>
