@@ -83,6 +83,8 @@ public class ActionFactory {
 			action=new LeaveAction("Rank.do");
 		}else if(cmd.equals("/user_leave_pwd.do")) {
 			action=new LeavePwdAction("Leave.do");
+		}else if(cmd.equals("/View2.do")) {							//뷰 가기전 체크
+			action= new ReplyViewAction("board/reply_view.jsp");
 		}
 		
 		return action;
