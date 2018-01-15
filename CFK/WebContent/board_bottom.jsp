@@ -37,7 +37,7 @@
    			$('#video').on('mouseenter',function() {
         		$('#video').popVideo({
             	playOnOpen: true,
-            	title: "jQueryScript.net Demo Page",
+            	title: "2017 Challenge Fashion King",
           		closeOnEnd: true,
             	pauseOnClose: true,
         		}).open()
