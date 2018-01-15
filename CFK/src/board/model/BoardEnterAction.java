@@ -44,7 +44,7 @@ public class BoardEnterAction implements Action
 			int check=uo.getUser_check_parti();
 			if(check==0)
 			{
-				path="../error/enter_error.jsp";
+				path="/error/enter_error.jsp";
 			}else
 			{	
 				
