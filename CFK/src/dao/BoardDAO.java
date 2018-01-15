@@ -651,4 +651,36 @@ public class BoardDAO {
 		return vo;
 	}
 	
+	public BoardVO getData(String board_writer) {
+		BoardVO vo=null;
+		con=JDBCUtil.getConnection();
+		pstmt=null;
+		rs=null;
+		
+		try {
+			pstmt=con.prepareStatement("select * from cfk_board where board_writer=?");
+			pstmt.setString(1, board_writer);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				vo= new BoardVO();
+				vo.setBoard_num(rs.getInt("board_num"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_file(rs.getString("board_file"));			
+				vo.setBoard_real_file(rs.getString("board_real_file"));
+				vo.setBoard_writer(rs.getString("board_writer"));
+				vo.setBoard_vote(rs.getInt("board_vote"));
+				vo.setBoard_date(rs.getDate("board_date"));
+				vo.setBoard_readcount(rs.getInt("board_readcount"));
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+			
+			
+		}
+		return vo;
+	}
 }

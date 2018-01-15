@@ -1,11 +1,17 @@
 package user.model;
 
+import java.util.Vector;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
+import dao.BoardDAO;
+import dao.ReplyDAO;
 import dao.UserDAO;
+import vo.BoardVO;
+import vo.ReplyVO;
 import vo.UserVO;
 
 
@@ -28,12 +34,18 @@ public class MypageAction implements Action {
 		
 		
 		UserDAO dao=new UserDAO();
+		BoardDAO dao1=new BoardDAO();
+		ReplyDAO dao2=new ReplyDAO();
 		UserVO vo=dao.isLogin(user_id, user_passwd);
 		
 		if(vo!=null) {
 			
 			UserVO rs=dao.myUser(user_id);
 			req.setAttribute("rs", rs);
+			BoardVO vo1=dao1.getData(user_id);
+			req.setAttribute("vo1", vo1);
+			Vector<ReplyVO> list=dao2.myreplyList(user_id);
+			req.setAttribute("list", list);
 			
 		}else {
 			path="error/login_error.jsp";

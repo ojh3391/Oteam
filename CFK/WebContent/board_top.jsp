@@ -136,7 +136,7 @@
                         <h2>최고의 멘토 군단</h2>
                         <h4>사랑이야~♥</h4>
                         <p>2017 Season 1 우승과 준우승으로 환장의 캐미를 보여준 두사람이 이번엔 최강의 멘토가 되어 돌아 왔다. 이들에 대한 더 많은 정보를 원하시면 아래를 클릭클릭~!</p>
-                        <font color="yellow"><a href="board_mentor.jsp" class="da-link button">▶Click◀</a></font>
+                        <font color="yellow"><a href="/CFK/board/board_mentor.jsp" class="da-link button">▶Click◀</a></font>
                         <div class="da-img">
                             <img style="border-radius:25px;" src="/CFK/images/slider/Slider02.jpg" width="320">
                         </div>

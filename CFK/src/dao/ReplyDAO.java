@@ -244,4 +244,41 @@ public class ReplyDAO {
 		return ref;
 	}
 	
+public Vector<ReplyVO> myreplyList(String reply_writer){
+		
+		
+		Vector<ReplyVO> list=new Vector<ReplyVO>();
+		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
+	
+		con=JDBCUtil.getConnection();
+		pstmt=null;
+		rs=null;
+		
+		try {
+			pstmt=con.prepareStatement("select * from cfk_reply where reply_writer=? ");
+			pstmt.setString(1, reply_writer);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				int reply_num=rs.getInt(1);
+				String reply_content=rs.getString(2);
+				reply_writer=rs.getString(3);
+				Date reply_date=rs.getDate(4);
+				int reply_board_num=rs.getInt(5);
+				int reply_re_ref=rs.getInt(6);
+				int reply_re_lev=rs.getInt(7);
+				int reply_re_seq=rs.getInt(8);
+				int reply_re_del=rs.getInt(9);
+				
+				
+				ReplyVO vo=new ReplyVO(reply_num, reply_content, reply_writer, reply_date, reply_board_num, reply_re_ref, reply_re_lev, reply_re_seq, reply_re_del);
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+		}
+		return list;
+	}
+	
 }

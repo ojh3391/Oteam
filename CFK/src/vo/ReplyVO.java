@@ -18,6 +18,20 @@ public class ReplyVO {
 	
 
 
+	public ReplyVO(int reply_num, String reply_content, String reply_writer, Date reply_date, int reply_board_num,
+			int reply_re_ref, int reply_re_lev, int reply_re_seq, int board_num) {
+		super();
+		this.reply_num = reply_num;
+		this.reply_content = reply_content;
+		this.reply_writer = reply_writer;
+		this.reply_date = reply_date;
+		this.reply_board_num = reply_board_num;
+		this.reply_re_ref = reply_re_ref;
+		this.reply_re_lev = reply_re_lev;
+		this.reply_re_seq = reply_re_seq;
+		this.board_num = board_num;
+	}
+
 	public ReplyVO(int reply_num, String reply_content, String reply_writer, Date reply_date, int reply_re_ref,
 			int reply_re_lev, int reply_re_seq) {
 		super();
