@@ -152,10 +152,10 @@
 					</tr>
 					
 					<%} %>
-					<tr height="40" align="right">
+					<tr height="40" >
 						
 						<th valign="middle" width="500" bgcolor="#272b2e"><font color="black"><font color="white">내가 쓴 댓글 내용</font></font></th>
-						<th valign="middle" width="200" bgcolor="#272b2e"><font color="black"><font color="white">댓글 쓴 날짜&ensp;&ensp;&ensp;</font></font></th>
+						<th align="right" valign="middle" width="200" bgcolor="#272b2e"><font color="black"><font color="white">댓글 쓴 날짜&nbsp;&nbsp;&nbsp;&nbsp;</font></font></th>
 						
 					</tr> 
 				</table>
