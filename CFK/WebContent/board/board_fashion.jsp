@@ -85,8 +85,8 @@
 						</div>
 						<div class="media all thing">
 							<a href="/CFK/images/fulls/daewoo1/2.jpg"><img style="border-radius:25px;"
-								src="/CFK/images/thumbs/daewoo/2.jpg" alt="" title=".... " /> <body2>
-								<h3 align="center"><font face="휴먼둥근헤드라인">....</font></h3>
+								src="/CFK/images/thumbs/daewoo/2.jpg" alt="" title="" /> <body2>
+								<h3 align="center"><font face="휴먼둥근헤드라인"></font></h3>
 								</body2></a>
 						</div>
 						<div class="media all people">
@@ -133,8 +133,8 @@
 						</div>
 						<div class="media all thing">
 							<a href="/CFK/images/fulls/daewoo1/3.jpg"><img style="border-radius:25px;"
-								src="/CFK/images/thumbs/daewoo/3.jpg" alt="" title="..." /> <body2>
-								<h3 align="center"><font face="휴먼둥근헤드라인">..</font></h3>
+								src="/CFK/images/thumbs/daewoo/3.jpg" alt="" title="" /> <body2>
+								<h3 align="center"><font face="휴먼둥근헤드라인"></font></h3>
 								</body2></a>
 						</div>
 						<div class="media all people">
@@ -153,8 +153,8 @@
 						</div>
 						<div class="media all thing">
 							<a href="/CFK/images/fulls/daewoo1/1.jpg"><img style="border-radius:25px;"
-								src="/CFK/images/thumbs/daewoo/1.jpg" alt="" title="... " /> <body2>
-								<h3 align="center"><font face="휴먼둥근헤드라인">...</font></h3>
+								src="/CFK/images/thumbs/daewoo/1.jpg" alt="" title="" /> <body2>
+								<h3 align="center"><font face="휴먼둥근헤드라인"></font></h3>
 								</body2></a>
 						</div>
 						<div class="media all place">
@@ -166,8 +166,14 @@
 						</div>
 						<div class="media all thing">
 							<a href="/CFK/images/fulls/daewoo1/4.jpg"><img style="border-radius:25px;"
-								src="/CFK/images/thumbs/daewoo/4.jpg" alt="" title="..." /> <body2>
-								<h3 align="center"><font face="휴먼둥근헤드라인">...</font></h3>
+								src="/CFK/images/thumbs/daewoo/4.jpg" alt="" title="" /> <body2>
+								<h3 align="center"><font face="휴먼둥근헤드라인"></font></h3>
+								</body2></a>
+						</div>
+						<div class="media all thing">
+							<a href="/CFK/images/fulls/daewoo1/5.jpeg"><img style="border-radius:25px;"
+								src="/CFK/images/thumbs/daewoo/5.jpeg" alt="" title="" /> <body2>
+								<h3 align="center"><font face="휴먼둥근헤드라인"></font></h3>
 								</body2></a>
 						</div>
 						<div class="media all people">
