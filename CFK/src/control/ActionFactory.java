@@ -81,6 +81,8 @@ public class ActionFactory {
 			action=new BoardRankAction("board/board_main.jsp");
 		}else if(cmd.equals("/Leave.do")) {							//탈퇴 액션
 			action=new LeaveAction("Rank.do");
+		}else if(cmd.equals("/user_leave_pwd.do")) {
+			action=new LeavePwdAction("Leave.do");
 		}
 		
 		return action;

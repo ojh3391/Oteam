@@ -30,7 +30,7 @@ public class LeaveAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String user_id=req.getParameter("user_id");
+		String user_id=(String) req.getAttribute("user_id");
 
 		UserDAO dao=new UserDAO();
 		BoardDAO dao1=new BoardDAO();

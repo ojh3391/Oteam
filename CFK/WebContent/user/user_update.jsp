@@ -92,7 +92,7 @@
 						<tr>
 							<td align="center" colspan="2" class="btn_align">
 								<input class="message-btn" type="submit" value="수정하기">
-								<button class="message-btn" onclick="location.href='/CFK/Leave.do?user_id=<%=vo.getUser_id() %>'">탈퇴하기</button>
+								<button class="message-btn" onclick="location.href='/CFK/user/user_leave_pwd.jsp'">탈퇴하기</button>
 								<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 							</td>
 						</tr>								
