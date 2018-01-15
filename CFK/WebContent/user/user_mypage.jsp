@@ -85,7 +85,7 @@
 						<tr >
 							<td valign="middle" width="400" height="40" bgcolor="#272b2e" colspan="2" align="center" class="btn_align">
 								<input class="message-btn" type="submit" value="수정하기" >												
-								<input class="message-btn" type="button" value="메인으로" onclick="location.href='index.jsp'">											
+								<input class="message-btn" type="button" value="메인으로" onclick="location.href='/CFK/index.jsp'">											
 							</td>
 						</tr>
 					</table>	
