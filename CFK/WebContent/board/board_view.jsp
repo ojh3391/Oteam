@@ -117,15 +117,8 @@
                 <h3 align="left">총 댓글 수 : <%=totalRows %> 개</h3>
             </div>
         </div> 
-         
-        
-        
-        <div id="message1">
-        	
-        </div>
-        <div id="lastPostsLoader" align="center"></div>
-   	 	        
-        <%-- <div style="margin-top:-80px;" class="container">
+
+        <div style="margin-top:-80px;" class="container">
         	<%
 				for(ReplyVO vo:list){
 			%>
@@ -198,44 +191,9 @@
 					}
 					%>
 				</div>
-			</div> --%>
+			</div> 
 			     
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-        <script>
-       	var page=0;
-        	 
-       	$(document).scroll(function() {  	 
-       	if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-        	//$("div#lastPostsLoader").html("<img src='/CFK/images/loading.gif'>");
-        	page=page+1;
-        	$.ajax({
-        	    url : "/CFK/View2.do",
-                type: "post",
-                data: {"board_num":<%=vo1.getBoard_num()%>, "page":page},
-                success : function(result) {
-                $("#message1").append(result);
-                }
-        	})
-       		}
-        })
-        	  
-         
-    	/* $(document).ready(function() {
-    		
-                $.ajax({
-                    url : "/CFK/View2.do",
-                    type: "post",
-                    data: {"board_num":1, "page":1},
-                    success : function(result) {
-                        $("#message1").html(result);
-                    }
-                });
-           
-       
-    	}); */
-    	</script>
  		<jsp:include page="../board_bottom.jsp"></jsp:include>
     </body>
 </html>
