@@ -44,7 +44,7 @@
                             <img class="img-circle" src="/CFK/images/background/Service1.png">
                         </div>
                         <h3>투표하세요!</h3>
-                        <p>Please Vote for the emergence of our sensual and fashionable fashion leader.</p>
+                        <p>Please Vote for our sensual and fashionable fashion leader.</p>
                     </div>
                 </div>
                 <div class="span4">
