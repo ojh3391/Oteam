@@ -44,7 +44,7 @@
                             <img class="img-circle" src="/CFK/images/background/Service1.png">
                         </div>
                         <h3>투표하세요!</h3>
-                        <p>We Create Modern And Fantastic Fashion For Your Future.</p>
+                        <p>Please Vote for the emergence of our sensual and fashionable fashion leader.</p>
                     </div>
                 </div>
                 <div class="span4">
@@ -53,7 +53,7 @@
                         	<img class="img-circle" src="/CFK/images/background/Service2.png">
                         </div>
                         <h3>참가하세요!</h3>
-                            <p>We Create Modern And Powerful Theme With Lots Animation And Features</p>
+                            <p>We Create Modern And Fantastic Fashion For Your Future.</p>
                     </div>
                 </div>
                 
