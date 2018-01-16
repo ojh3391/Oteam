@@ -1,5 +1,8 @@
+<%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%  BoardVO vo=(BoardVO)request.getAttribute("list");%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -129,30 +132,24 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
+                               <% for(BoardVO vo: list){ %> 
                                 <tbody>
-                                    <!--<tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                    </tr> -->
 
                                     <tr class="odd gradeX">
-                                        <td>1</td>
-                                        <td>지아코</td>
-                                        <td>나다</td>
-                                        <td>내가 패션왕</td>
-                                        <td>23</td>
-                                        <td>45</td>
-                                        <td>2018-01-10</td>
+                                        <td><%=vo.getBoard_num() %></td>
+                                        <td><%=vo.getBoard_writer() %></td>
+                                        <td><%=vo.getBoard_subject() %></td>
+                                        <td><%=vo.getBoard_content() %></td>
+                                        <td><%=vo.getBoard_vote() %></td>
+                                        <td><%=vo.getBoard_readcount() %></td>
+                                        <td><%=vo.getBoard_date() %></td>
                                         <td>
                                           <button type="button" class="btn btn-danger">삭제</button>
                                         </td>
 
                                     </tr>
-
                                 </tbody>
+                                <%{%>
                             </table>
 
                         </div>

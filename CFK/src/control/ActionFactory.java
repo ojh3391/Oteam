@@ -9,6 +9,7 @@ import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
 import board.model.BoardVoteAction;
+import dash.model.DashBoardList;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
@@ -76,6 +77,8 @@ public class ActionFactory {
 			action=new LeavePwdAction("Rank.do");
 		}else if(cmd.equals("/reply_update_pwd.do")) {				//댓글 수정시 비번 체크 및 액션
 			action=new ReplyUpdatePwdAction("View.do");
+		}else if(cmd.equals("/Dashboard.do")){
+			action=new DashBoardList("dashbaord/pages/dash_board.jsp");
 		}
 		
 		return action;

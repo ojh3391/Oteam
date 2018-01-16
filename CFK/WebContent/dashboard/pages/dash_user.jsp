@@ -89,10 +89,10 @@
 
 
                         <li>
-                            <a href="dash_user.jsp"><i class="fa fa-user fa-fw"></i> 회원관리</a>
+                            <a href="Dashuser.do"><i class="fa fa-user fa-fw"></i> 회원관리</a>
                         </li>
                         <li>
-                            <a href="dash_board.jsp"><i class="fa fa-table fa-fw"></i> 게시판관리</a>
+                            <a href="Dashboard.do"><i class="fa fa-table fa-fw"></i> 게시판관리</a>
                         </li>
 
                     </ul>

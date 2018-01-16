@@ -683,4 +683,43 @@ public class BoardDAO {
 		}
 		return vo;
 	}
+	
+	public Vector<BoardVO> getDashList()
+	{
+		Vector<BoardVO> list=new Vector<BoardVO>();
+		
+		con=JDBCUtil.getConnection();
+		pstmt=null;
+		rs=null;
+				
+		try 
+		{	
+			String sql="select * from cfk_board";
+			pstmt=con.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				BoardVO vo=new BoardVO();
+								
+				vo.setBoard_num(rs.getInt("board_num"));
+				vo.setBoard_writer(rs.getString("board_writer"));
+				vo.setBoard_subject(rs.getString("board_subject"));
+				vo.setBoard_content(rs.getString("board_content"));
+				vo.setBoard_vote(rs.getInt("board_vote"));
+				vo.setBoard_readcount(rs.getInt("board_readcount"));
+				vo.setBoard_date(rs.getDate("board_date"));
+				list.add(vo);
+				
+				
+			}
+		}catch(Exception e) 
+		{
+			e.printStackTrace();
+		}finally 
+		{
+			JDBCUtil.close(con, pstmt, rs);
+		}
+		return list;
+	}
+	
 }
