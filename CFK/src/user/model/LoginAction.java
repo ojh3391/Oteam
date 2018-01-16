@@ -34,7 +34,7 @@ public class LoginAction implements Action {
 			
 			//관리자 admin 으로 접속 시 관리자 페이지로 이동
 			if(vo.getUser_id().equals("admin")) {
-				path="cfk_manage.jsp";
+				path="dashboard.html";
 			}
 				
 		}else {

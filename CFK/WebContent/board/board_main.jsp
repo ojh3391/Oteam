@@ -151,9 +151,9 @@
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 1">
                                 <h3>득표수=<%=bo.getBoard_vote() %></h3>
-                                <p>Thumbnail caption...</p>
+                                <p>ID : <%=bo.getBoard_writer() %></p>
                                 <div class="mask">
-                                <h2><%=bo.getBoard_writer() %></h2>
+                                <h2><%=bo.getBoard_subject() %></h2>
                                 <a href="HitUpdate.do?board_num=<%=bo.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                              	</div>
@@ -168,9 +168,9 @@
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo1.getBoard_thumbnail() %>" alt="project 2">
                                 <h3>득표수=<%=bo1.getBoard_vote() %></h3>
-                                <p>Thumbnail caption...</p>
+                                <p>ID : <%=bo1.getBoard_writer() %></p>
                                 <div class="mask">
-                                <h2><%=bo1.getBoard_writer() %></h2>
+                                <h2><%=bo1.getBoard_subject() %></h2>
                                 <a href="HitUpdate.do?board_num=<%=bo1.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                             	</div>
@@ -184,9 +184,9 @@
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo2.getBoard_thumbnail() %>" alt="project 3">
                                 <h3>득표수=<%=bo2.getBoard_vote() %></h3>
-                                <p>Thumbnail caption...</p>
+                                <p>ID : <%=bo2.getBoard_writer() %></p>
                                 <div class="mask">
-                                <h2><%=bo2.getBoard_writer() %></h2>
+                                <h2><%=bo2.getBoard_subject() %></h2>
                                 <a href="HitUpdate.do?board_num=<%=bo2.getBoard_num()%>&page=<%=current_page%>">
                               	<h2><i class="icon-plus"></i></h2></a>
                                 </div>
@@ -200,7 +200,7 @@
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo3.getBoard_thumbnail() %>" alt="project 4">
                                 <h3>득표수=<%=bo3.getBoard_vote() %></h3>
-                                <p>Thumbnail caption...</p>
+                                <p>ID : <%=bo3.getBoard_writer() %></p>
                                 <div class="mask">
                                 <h2><%=bo3.getBoard_writer() %></h2>
                                 <a href="HitUpdate.do?board_num=<%=bo3.getBoard_num()%>&page=<%=current_page%>">
