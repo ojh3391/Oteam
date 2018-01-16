@@ -9,11 +9,8 @@ import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
 import board.model.BoardVoteAction;
-<<<<<<< HEAD
 import dash.model.DashBoardList;
-=======
 import dash.model.DashUserAction;
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
