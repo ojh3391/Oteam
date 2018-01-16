@@ -60,7 +60,7 @@
 		}
 			
 		// 디데이 function
-		var countDown = new Date("Jan 18, 2018 23:59:59").getTime();
+		var countDown = new Date("Jan 19, 2018 23:59:59").getTime();
 
 		function msg_time() {	
 			var now = new Date().getTime();		//현재 날짜
