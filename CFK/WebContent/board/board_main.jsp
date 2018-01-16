@@ -44,7 +44,7 @@
                             <img class="img-circle" src="/CFK/images/background/Service1.png">
                         </div>
                         <h3>투표하세요!</h3>
-                        <p>We Create Modern And Clean Theme For Your Business Company.</p>
+                        <p>We Create Modern And Fantastic Fashion For Your Future.</p>
                     </div>
                 </div>
                 <div class="span4">
