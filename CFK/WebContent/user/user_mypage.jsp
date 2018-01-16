@@ -120,12 +120,12 @@
 					<%} %>
 					<%if(!(vo.getUser_check_parti()==1)){ %>
 					<tr align="center">
-						<td valign="middle" width="200" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><strong>My 게시판의 조회수</strong></font></td>
+						<td valign="middle" width="200" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><strong>My게시글의 조회수</strong></font></td>
 						<td valign="middle" width="500" height="40" bgcolor="#C0C0C0"><font size="3" color="black"><%=vo1.getBoard_readcount() %> 회</font></td>
 					</tr>
 					<tr align="center">
-						<td valign="middle" width="200" height="40" bgcolor="beige"><font size="3" color="black"><strong>My 게시판의 제목</strong></font></td>
-						<td valign="middle" width="500" height="40" bgcolor="beige"><font size="3" color="black"><%=vo1.getBoard_subject() %>----> <a href="/CFK/View.do?board_num=<%=vo1.getBoard_num() %>"><font color="red"><ins>My신청게시판</ins></font></a></font></td>
+						<td valign="middle" width="200" height="40" bgcolor="beige"><font size="3" color="black"><strong>My게시글의 제목</strong></font></td>
+						<td valign="middle" width="500" height="40" bgcolor="beige"><font size="3" color="black"><%=vo1.getBoard_subject() %>----> <a href="/CFK/View.do?board_num=<%=vo1.getBoard_num() %>"><font color="red"><ins>My신청게시글</ins></font></a></font></td>
 					</tr>
 					
 					<tr >
@@ -154,8 +154,8 @@
 					<%} %>
 					<tr height="40" >
 						
-						<th valign="middle" width="500" bgcolor="#272b2e"><font color="black"><font color="white">내가 쓴 댓글 내용</font></font></th>
-						<th align="right" valign="middle" width="200" bgcolor="#272b2e"><font color="black"><font color="white">댓글 쓴 날짜&nbsp;&nbsp;&nbsp;&nbsp;</font></font></th>
+						<th valign="middle" width="500" bgcolor="#272b2e"><font color="black"><font color="white">내가 작성한 댓글 내용</font></font></th>
+						<th align="right" valign="middle" width="200" bgcolor="#272b2e"><font color="black"><font color="white">댓글 작성 날짜&nbsp;&nbsp;&nbsp;&nbsp;</font></font></th>
 						
 					</tr> 
 				</table>
