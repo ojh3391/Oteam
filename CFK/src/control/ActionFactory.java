@@ -12,6 +12,7 @@ import board.model.BoardVoteAction;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
+import reply.model.ReplyUpdatePwdAction;
 import reply.model.ReplyDeletePwdAction;
 import reply.model.ReplyViewAction;
 import user.model.*;
@@ -73,6 +74,8 @@ public class ActionFactory {
 			action=new BoardRankAction("board/board_main.jsp");
 		}else if(cmd.equals("/user_leave_pwd.do")) {				//탈퇴시 비번 체크 및 액션
 			action=new LeavePwdAction("Rank.do");
+		}else if(cmd.equals("/reply_update_pwd.do")) {				//댓글 수정시 비번 체크 및 액션
+			action=new ReplyUpdatePwdAction("View.do");
 		}
 		
 		return action;

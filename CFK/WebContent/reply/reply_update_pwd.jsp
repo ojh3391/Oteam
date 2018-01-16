@@ -6,7 +6,7 @@
 	int board_num=Integer.parseInt(request.getParameter("board_num"));
 	String content=request.getParameter("reply_content");
 	content= new String(content.getBytes("8859_1"), "UTF-8");
-
+	
 	UserVO vo=(UserVO)session.getAttribute("vo");
 %>
 <!DOCTYPE html>

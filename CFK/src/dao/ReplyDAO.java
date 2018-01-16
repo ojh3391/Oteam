@@ -280,5 +280,22 @@ public Vector<ReplyVO> myreplyList(String reply_writer){
 		}
 		return list;
 	}
+	//댓글 수정
+	public int reply_update(int reply_num,String content) {
+	int result=0;
+	con=JDBCUtil.getConnection();
 	
+	try {
+		pstmt=con.prepareStatement("update cfk_reply set reply_content=? where reply_num=?");
+		pstmt.setString(1, content);
+		pstmt.setInt(2, reply_num);
+		result=pstmt.executeUpdate();
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}finally {
+		JDBCUtil.close(con,pstmt);
+	}
+	return result;	
+	}
 }

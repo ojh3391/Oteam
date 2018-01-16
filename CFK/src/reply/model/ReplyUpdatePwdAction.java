@@ -11,11 +11,11 @@ import dao.ReplyDAO;
 import dao.UserDAO;
 import vo.UserVO;
 
-public class ReplyDeletePwdAction implements Action {
+public class ReplyUpdatePwdAction implements Action {
 	
 	private String path;
 	
-	public ReplyDeletePwdAction(String path) {
+	public ReplyUpdatePwdAction(String path) {
 		super();
 		this.path = path;
 	}
@@ -23,23 +23,20 @@ public class ReplyDeletePwdAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String current_page=req.getParameter("page");
 		
-		int reply_num=Integer.parseInt(req.getParameter("reply_num"));
-		int reply_re_ref=Integer.parseInt(req.getParameter("reply_re_ref"));
-		int reply_re_lev=Integer.parseInt(req.getParameter("reply_re_lev"));
-		int reply_re_seq=Integer.parseInt(req.getParameter("reply_re_seq"));
 		String user_id=req.getParameter("user_id");
 		String user_passwd=req.getParameter("user_passwd");
-		
-		
+		String content=req.getParameter("content");
+		int board_num=Integer.parseInt(req.getParameter("board_num"));
+		int reply_num=Integer.parseInt(req.getParameter("reply_num"));
+	
 		// 비밀번호 맞는지 확인하기
 		UserDAO dao=new UserDAO();
 		UserVO result=dao.isLogin(user_id, user_passwd);
 		if(result!=null) {
-			int board_num=Integer.parseInt(req.getParameter("board_num"));
-			//해당 일치하는 레코드 삭제하기
+			
 			ReplyDAO dao1=new ReplyDAO();
 			
-			dao1.reply_delete(reply_num,reply_re_ref,reply_re_lev,reply_re_seq);
+			dao1.reply_update(reply_num,content);
 			
 			path+="?board_num="+board_num+"&current_page="+current_page;
 			
