@@ -8,18 +8,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	BoardVO vo1=(BoardVO)request.getAttribute("vo");
+	UserVO vo2=(UserVO)session.getAttribute("vo");
+	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
+	PageVO info=(PageVO)request.getAttribute("info");
+
 	if((UserVO)session.getAttribute("vo")==null) {
 		out.println("<script>");
 		out.println("alert('회입가입 후 이용할 수 있네! 어서 가입하게!');");
 		out.println("history.back();");
 		out.println("</script>");
-		out.close();
 	}
-	
-	BoardVO vo1=(BoardVO)request.getAttribute("vo");
-	UserVO vo2=(UserVO)session.getAttribute("vo");
-	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
-	PageVO info=(PageVO)request.getAttribute("info");
 	
 	//댓글 페이지 정보
 	int total_page=info.getTotalPage();
