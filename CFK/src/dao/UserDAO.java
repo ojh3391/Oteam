@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 import control.JDBCUtil;
 import vo.UserVO;
@@ -367,6 +368,41 @@ public class UserDAO {
 		}	
 			
 		return result;
-	}	
+	}
+	
+	public Vector<UserVO> userList(){
+		Vector<UserVO> list=new Vector<UserVO>();
+			
+		con=JDBCUtil.getConnection();
+		pstmt=null;
+		rs=null;
+		
+		try {
+			pstmt=con.prepareStatement("select * from cfk_user");
+			
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				UserVO vo=new UserVO();
+				vo.setUser_id(rs.getString(1));
+				vo.setUser_passwd(rs.getString(2));
+				vo.setUser_addr(rs.getString(3));
+				vo.setUser_area(rs.getString(4));
+				vo.setUser_tel(rs.getString(5));
+				vo.setUser_age(rs.getInt(6));
+				vo.setUser_name(rs.getString(7));
+				vo.setUser_email(rs.getString(8));
+				vo.setUser_gender(rs.getString(9));
+				vo.setUser_attend_date(rs.getString(10));
+				vo.setUser_check_vote(rs.getInt(11));
+				vo.setUser_check_parti(rs.getInt(12));
+				list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, pstmt, rs);
+		}
+		return list;
+	}
 	
 }

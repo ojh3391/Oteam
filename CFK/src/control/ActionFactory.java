@@ -9,7 +9,11 @@ import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
 import board.model.BoardVoteAction;
+<<<<<<< HEAD
 import dash.model.DashBoardList;
+=======
+import dash.model.DashUserAction;
+>>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
@@ -79,6 +83,8 @@ public class ActionFactory {
 			action=new ReplyUpdatePwdAction("View.do");
 		}else if(cmd.equals("/Dashboard.do")){
 			action=new DashBoardList("dashbaord/pages/dash_board.jsp");
+		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
+			action=new DashUserAction("dashboard/pages/dash_user.jsp");
 		}
 		
 		return action;

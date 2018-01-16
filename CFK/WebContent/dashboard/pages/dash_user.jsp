@@ -1,3 +1,5 @@
+<%@page import="vo.UserVO"%>
+<%@page import="java.util.Vector"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,25 +16,25 @@
     <title>CFK 관리자 페이지</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/CFK/dashboard/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/CFK/dashboard/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/CFK/dashboard/css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +46,9 @@
 </head>
 
 <body>
+<%
+Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
+%>
 
     <div id="wrapper">
 
@@ -140,44 +145,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
+								<%
+									for(UserVO vo:list){
+								%>
                                     <tr class="odd gradeX">
-                                        <td>지아코</td>
-                                        <td>김지코</td>
-                                        <td>서울시 여러분 엄청나게 긴 주소를 한번 써볼까 겁나게 길어봤자 이정도겠지?</td>
-                                        <td>010-3232-2323</td>
-                                        <td>23</td>
-                                        <td>jiko@naver.com</td>
-                                        <td>남</td>
-                                        <td>2018-01-19</td>
+                                        <td><%=vo.getUser_id() %></td>
+                                        <td><%=vo.getUser_name() %></td>
+                                        <td><%=vo.getUser_addr() %></td>
+                                        <td><%=vo.getUser_tel() %></td>
+                                        <td><%=vo.getUser_age() %></td>
+                                        <td><%=vo.getUser_email() %></td>
+                                        <td><%=vo.getUser_gender() %></td>
+                                        <%if(!(vo.getUser_attend_date()==null)){ %>
+                                        <td><%=vo.getUser_attend_date() %></td>
+                                        <%}else{ %>
+                                        <td>신청 내역 없음</td>
+                                        <%} %>
                                         <td>
                                           <button type="button" class="btn btn-info">메일</button>
                                           <button type="button" class="btn btn-danger">삭제</button>
                                         </td>
+                                 <%     } %>
+                                        
 
                                     </tr>
 
                                 </tbody>
 
-                                <tbody>
-
-                                    <tr class="odd gradeX">
-                                        <td>지아코</td>
-                                        <td>김지코</td>
-                                        <td>서울시 여러분 엄청나게 긴 주소를 한번 써볼까 겁나게 길어봤자 이정도겠지?</td>
-                                        <td>010-3232-2323</td>
-                                        <td>23</td>
-                                        <td>jiko@naver.com</td>
-                                        <td>남</td>
-                                        <td>2018-01-19</td>
-                                        <td>
-                                          <button type="button" class="btn btn-info">메일</button>
-                                          <button type="button" class="btn btn-danger">삭제</button>
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
+                                
                             </table>
 
                         </div>
@@ -282,21 +277,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="/CFK/dashboard/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/CFK/dashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="/CFK/dashboard/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="/CFK/dashboard/dist/js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
