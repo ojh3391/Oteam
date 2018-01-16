@@ -49,8 +49,6 @@ public class LeavePwdAction implements Action {
 			vo=dao1.getBoardnum(user_id);
 			Vector<ReplyVO> ref=dao2.getRef(user_id);
 			
-			System.out.println(vo);
-			System.out.println(ref);
 			int board_num=0;
 			int reply_re_ref=0;
 			if(vo==null&&ref.isEmpty()) {
