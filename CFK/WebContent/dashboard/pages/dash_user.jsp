@@ -6,7 +6,8 @@
 <html lang="en">
 
 <head>
-
+	
+	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -129,6 +130,7 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                        
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
@@ -144,11 +146,18 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
 
                                     </tr>
                                 </thead>
+                                
                                 <tbody>
 								<%
 									for(UserVO vo:list){
 								%>
+                                    
                                     <tr class="odd gradeX">
+                                    <form action="Leave.do" method="post" id="deport<%=vo.getUser_id() %>" >
+                                    <input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd() %>">
+                                    <input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
+                                    
+                                    
                                         <td><%=vo.getUser_id() %></td>
                                         <td><%=vo.getUser_name() %></td>
                                         <td><%=vo.getUser_addr() %></td>
@@ -161,15 +170,28 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <%}else{ %>
                                         <td>신청 내역 없음</td>
                                         <%} %>
+                                       
                                         <td>
                                           <button type="button" class="btn btn-info">메일</button>
-                                          <button type="button" class="btn btn-danger">삭제</button>
+                                          <button type="button" class="btn btn-danger" onclick="user_delete();">삭제</button>
                                         </td>
-                                 <%     } %>
+                                           </form>
+                                       </tr>
+                                    
+                                       <script type="text/javascript">
+										function user_delete() {
+    	
+    										var form = document.deport<%=vo.getUser_id()%>;
+    										if(confirm("정말로 탈퇴시키겠습니까?")) {
+    											form.submit();
+    										}
+   										 }
+										</script>
+                                 <% } %>
                                         
 
-                                    </tr>
-
+                                    
+									
                                 </tbody>
 
                                 

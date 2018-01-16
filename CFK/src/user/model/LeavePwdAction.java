@@ -34,7 +34,7 @@ public class LeavePwdAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String user_id=req.getParameter("user_id");
 		String user_passwd=req.getParameter("user_passwd");
-		
+		System.out.print(user_id); 
 		UserDAO dao3=new UserDAO();
 		UserVO result=dao3.isLogin(user_id, user_passwd);
 		

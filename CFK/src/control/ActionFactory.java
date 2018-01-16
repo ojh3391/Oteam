@@ -82,6 +82,8 @@ public class ActionFactory {
 			action=new DashBoardList("dashbaord/pages/dash_board.jsp");
 		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
+		}else if(cmd.equals("/Leave.do")) {
+			action=new LeavePwdAction("Dashuser.do");
 		}
 		
 		return action;
