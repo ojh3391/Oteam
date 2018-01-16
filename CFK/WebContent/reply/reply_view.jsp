@@ -123,6 +123,7 @@
 			%>
 				<div class="container">
 					<div class="span11">
+					
 					<%
 						if(vo.getReply_re_lev()!=0){
 							for(int j=0;j<=vo.getReply_re_lev()*1;j++){
@@ -136,7 +137,7 @@
                           <p><%=vo.getReply_content() %></p>
 						<%	
 						}		
-						%>                     
+						%>                           
                         	<div class="whopic">
                         		<div class="arrow"></div>
                             		<strong><%=vo.getReply_writer() %>

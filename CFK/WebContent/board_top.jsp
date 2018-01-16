@@ -123,8 +123,10 @@
                     <!-- Start first slide -->
                     <div class="da-slide">
                         <h2 class="fittext2">오팀장과 형님들</h2>
-                        <h4>Clean & responsive</h4>
-                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+                        <h4>대우직업능력개발원 3반(담임:박진경)</h4>
+                        <p>Master:오지훈(29세)<br>Member:김영봉(34세),김진수(35세),이준영(35세)<br>Guest:귄민귀(30세),최진호(28세),정지석(최진호 
+                        친구)</p>
+                        
                         <a href="#" class="da-link button">Read more</a>
                         <div class="da-img">
                             <img style="border-radius:25px;" src="/CFK/images/slider/Slider01.jpg" width="320">
@@ -145,9 +147,8 @@
                     <!-- Start third slide -->
                     <div class="da-slide">
                         <h2>Challenge Fashion King!!</h2>
-                        <h4>Season 2</h4>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                        <a href="#" class="da-link button">Read more</a>
+                        <h4>패션으로 전하는 단 하나의 감동</h4>
+                        <p>CFK는 각 장르를 대표하는 패션니스트들이 최고의 쇼를 통해 감동의 무대를 선보이는 프로그램으로 <font color="red">'더 넓고, 더 깊은 패션'</font>이라는 캐치 프레이즈 아래 각 장르의 매력을 보여줄 최고의 무대를 선사하고자 합니다.</p>                      
                         <div class="da-img">
                             <img style="border-radius:25px;" src="/CFK/images/slider/Slider03.jpg" width="320" alt="image03">
                         </div>
