@@ -103,7 +103,7 @@
 						</tr>
 						<tr>
 							<td><p><font color="black">주소</font></p></td>
-							<td><input class="span5" type="text" name="user_addr" maxlength="12"></td>
+							<td><input class="span5" type="text" name="user_addr" maxlength="50"></td>
 						</tr>
 						<tr>
 							<td><p><font color="black">전화번호</font></p></td>
