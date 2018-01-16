@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-
+import dao.ReplyDAO;
 import dao.UserDAO;
+import vo.ReplyVO;
 import vo.UserVO;
 
 public class ReplyPwdAction implements Action {
@@ -32,9 +33,16 @@ public class ReplyPwdAction implements Action {
 		UserDAO dao=new UserDAO();
 		UserVO result=dao.isLogin(user_id, user_passwd);
 		if(result!=null) {
-			path+="?board_num="+board_num+"&page="+current_page;
-			req.setAttribute("user_id", user_id);
-			req.setAttribute("content", content);
+			ReplyVO vo1=new ReplyVO();
+		
+			vo1.setReply_content(content);
+			vo1.setReply_board_num(board_num);
+			vo1.setReply_writer(user_id);
+			
+			ReplyDAO dao1=new ReplyDAO();
+			dao1.insert(vo1);
+			
+			path+="?board_num="+board_num+"&current_page="+current_page;
 		}else {
 			res.setContentType("text/html;charset=UTF-8");
 			PrintWriter out=res.getWriter();

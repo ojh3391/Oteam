@@ -10,14 +10,12 @@ import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
 import board.model.BoardVoteAction;
 import board.model.BoardRankAction;
-import reply.model.ReplyDeleteAction;
-import reply.model.ReplyInsertAction;
-import reply.model.ReplyReInsertAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
 import reply.model.ReplyDeletePwdAction;
 import reply.model.ReplyViewAction;
 import user.model.*;
+
 
 public class ActionFactory {
 	// 서블릿의 의뢰를 받아 각각의 cmd에 따라 액션 생성후 넘기기
@@ -52,25 +50,19 @@ public class ActionFactory {
 		}else if(cmd.equals("/HitUpdate.do")) {						//게시글 조회수 증가
 			action=new BoardHitUpdateAction("View.do");
 		}else if(cmd.equals("/View.do")) {							//뷰 가기전 체크
-			action= new ReplyViewAction("board/board_view.jsp");
+			action= new ReplyViewAction("reply/reply_view.jsp");
 		}else if(cmd.equals("/Attend.do")) {						//방청신청 액션
 			action=new AttendAction("board/board_attend_confirm.jsp");
-		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크
-			action=new ReplyPwdAction("ReplyInsert.do");
-		}else if(cmd.equals("/ReplyInsert.do")) {					//댓글 등록 액션
-			action=new ReplyInsertAction("View.do");		
+		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크 및 액션
+			action=new ReplyPwdAction("View.do");		
 		}else if(cmd.equals("/board_delete_pwd.do")) {				//게시글 삭제 시 비번체크
 			action=new BoardDeletePwdAction("BoardDelete.do");
 		}else if(cmd.equals("/BoardDelete.do")) {					//게시글 삭제 액션
 			action=new BoardDeleteAction("List.do");
-		}else if(cmd.equals("/reply_delete.do")) {					//댓글 삭제 비번체크
-			action=new ReplyDeletePwdAction("ReplyDelete.do");
-		}else if(cmd.equals("/ReplyDelete.do")) {					//댓글 삭제 액션
-			action=new ReplyDeleteAction("View.do");
-		}else if(cmd.equals("/reply_re_pwd.do")) {					//댓글에 댓글 비번체크
-			action=new ReplyRePwdAction("ReplyReInsert.do");
-		}else if(cmd.equals("/ReplyReInsert.do")) {					//댓글에 댓글 등록 액션
-			action=new ReplyReInsertAction("View.do");
+		}else if(cmd.equals("/reply_delete.do")) {					//댓글 삭제 비번체크 및 액션
+			action=new ReplyDeletePwdAction("View.do");
+		}else if(cmd.equals("/reply_re_pwd.do")) {					//댓글에 댓글 비번체크 및 액션
+			action=new ReplyRePwdAction("View.do");
 		}else if(cmd.equals("/board_change_pwd.do")) {				//게시글 변경 시 비번체크
 			action=new BoardChangePwdAction("board/board_update.jsp");	
 		}else if(cmd.equals("/board_update.do")) {					//게시글 변경 액션
@@ -79,12 +71,8 @@ public class ActionFactory {
 			action=new BoardVoteAction("View.do");
 		}else if(cmd.equals("/Rank.do")){							//메인으로 가기 전 랭크체크
 			action=new BoardRankAction("board/board_main.jsp");
-		}else if(cmd.equals("/Leave.do")) {							//탈퇴 액션
-			action=new LeaveAction("Rank.do");
-		}else if(cmd.equals("/user_leave_pwd.do")) {
-			action=new LeavePwdAction("Leave.do");
-		}else if(cmd.equals("/View2.do")) {							//뷰 가기전 체크
-			action= new ReplyViewAction("reply/reply_view.jsp");
+		}else if(cmd.equals("/user_leave_pwd.do")) {				//탈퇴시 비번 체크 및 액션
+			action=new LeavePwdAction("Rank.do");
 		}
 		
 		return action;

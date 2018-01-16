@@ -43,7 +43,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="/CFK/Resources/css/loading.css" />
     </head>
     <body>
     	<jsp:include page="../board_top.jsp"></jsp:include>
@@ -99,7 +98,7 @@
             <div align="center">
             	<%if(vo1.getBoard_writer().equals(vo2.getUser_id())) {%>
              		<button class="message-btn" onclick="location.href='/CFK/board/board_change_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">수정</button>
-               		<button class="message-btn" onclick="location.href='board/board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
+               		<button class="message-btn" onclick="location.href='/CFK/board/board_delete_pwd.jsp?board_num=<%=vo1.getBoard_num() %>'">삭제</button>
               		<button class="message-btn"  onclick="location.href='List.do'">목록</button>
             	<%}else{%>
                		<button class="message-btn"  onclick="location.href='List.do'">목록</button>
@@ -145,9 +144,12 @@
                                 	</strong>
                             	<div>
                                		<a href="" class="more show_hide" rel="#slidingDiv<%=vo.getReply_num()%>">
-                                	<font color="white"><span class="icon-plus">댓글 쓰기</span></font>
+                                	<font color="white"><span>댓글 쓰기</span></font>
                                 	</a>
                                 	<%if(vo.getReply_writer().equals(vo2.getUser_id())) {%>
+                                		<a href="" class="more show_hide" rel="#sliding<%=vo.getReply_num()%>" >
+                                        	<font color="white"><span class="icon-plus">댓글 수정</span></font>
+                                    	</a>
                                     	<a href="/CFK/reply/reply_delete.jsp?board_num=<%=vo1.getBoard_num() %>&reply_num=<%=vo.getReply_num()%>&reply_re_ref=<%=vo.getReply_re_ref()%>&reply_re_lev=<%=vo.getReply_re_lev()%>&reply_re_seq=<%=vo.getReply_re_seq()%>" >
                                         	<font color="white"><span class="icon-cancel">댓글 삭제</span></font>
                                     	</a>
@@ -158,7 +160,7 @@
                           </div>
                        </div>
                		</div>
-                    	
+                    	<!-- 댓글 등록 폼 -->
                    		<div class="container">	
                     		<div id="slidingDiv<%=vo.getReply_num()%>" class="toggleDiv row-fluid single-project" align="right">
                     			<form action="/CFK/reply/reply_re_pwd.jsp?reply_num=<%=vo.getReply_num()%>" method="post">
@@ -174,7 +176,21 @@
                         		</p>         
                     			</form> 
                    			</div>
-                  		</div>      
+                  		</div>
+                  		<!-- 댓글 수정 폼 -->
+                  		<div class="container">	
+                    		<div id="sliding<%=vo.getReply_num()%>" class="toggleDiv row-fluid single-project" align="right">
+                    			<form action="/CFK/reply/reply_update_pwd.jsp?reply_num=<%=vo.getReply_num()%>" method="post">
+                    			<input type="hidden" name="board_num" value="<%=vo1.getBoard_num()%>">      
+                        		<p>답글    
+                        		<input class="span9" type="text" value="<%=vo.getReply_content() %>" name="reply_content" required>
+                        		<button class="message-btn">수정</button>
+                        		<span class="show_hide close" style="color:red !important;">
+                        		<i class="icon-cancel"></i></span>
+                        		</p>         
+                    			</form> 
+                   			</div>
+                  		</div>            
                     <%}%>
 				</div>
                 <div align="center">					

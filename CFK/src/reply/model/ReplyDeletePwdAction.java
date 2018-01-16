@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-
+import dao.ReplyDAO;
 import dao.UserDAO;
 import vo.UserVO;
 
@@ -23,10 +23,6 @@ public class ReplyDeletePwdAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String current_page=req.getParameter("page");
 		
-		int reply_num=Integer.parseInt(req.getParameter("reply_num"));
-		int reply_re_ref=Integer.parseInt(req.getParameter("reply_re_ref"));
-		int reply_re_lev=Integer.parseInt(req.getParameter("reply_re_lev"));
-		int reply_re_seq=Integer.parseInt(req.getParameter("reply_re_seq"));
 		String user_id=req.getParameter("user_id");
 		String user_passwd=req.getParameter("user_passwd");
 		
@@ -35,11 +31,17 @@ public class ReplyDeletePwdAction implements Action {
 		UserDAO dao=new UserDAO();
 		UserVO result=dao.isLogin(user_id, user_passwd);
 		if(result!=null) {
-			path+="?reply_num="+reply_num+"&page="+current_page;
-			req.setAttribute("user_id", user_id);
-			req.setAttribute("reply_re_ref", reply_re_ref);
-			req.setAttribute("reply_re_lev", reply_re_lev);
-			req.setAttribute("reply_re_seq", reply_re_seq);
+			int board_num=Integer.parseInt(req.getParameter("board_num"));
+			int reply_num=Integer.parseInt(req.getParameter("reply_num"));
+			int reply_re_ref=Integer.parseInt(req.getParameter("reply_re_ref"));
+			int reply_re_lev=Integer.parseInt(req.getParameter("reply_re_lev"));
+			int reply_re_seq=Integer.parseInt(req.getParameter("reply_re_seq"));
+			//해당 일치하는 레코드 삭제하기
+			ReplyDAO dao1=new ReplyDAO();
+			
+			dao1.reply_delete(reply_num,reply_re_ref,reply_re_lev,reply_re_seq);
+			
+			path+="?board_num="+board_num+"&current_page="+current_page;
 			
 		}else {
 			res.setContentType("text/html;charset=UTF-8");

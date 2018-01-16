@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
-
+import dao.ReplyDAO;
 import dao.UserDAO;
+import vo.ReplyVO;
 import vo.UserVO;
 
 public class ReplyRePwdAction implements Action {
@@ -23,12 +24,6 @@ public class ReplyRePwdAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception {
 		String current_page=req.getParameter("page");
 		
-		int reply_num=Integer.parseInt(req.getParameter("reply_num"));
-		int board_num=Integer.parseInt(req.getParameter("board_num"));
-		int reply_re_ref=Integer.parseInt(req.getParameter("reply_re_ref"));
-		int reply_re_lev=Integer.parseInt(req.getParameter("reply_re_lev"));
-		int reply_re_seq=Integer.parseInt(req.getParameter("reply_re_seq"));
-		String content=req.getParameter("content");
 		String user_id=req.getParameter("user_id");
 		String user_passwd=req.getParameter("user_passwd");
 		
@@ -37,12 +32,20 @@ public class ReplyRePwdAction implements Action {
 		UserDAO dao=new UserDAO();
 		UserVO result=dao.isLogin(user_id, user_passwd);
 		if(result!=null) {
-			path+="?reply_num="+reply_num+"&board_num="+board_num+"&page="+current_page;
-			req.setAttribute("user_id", user_id);
-			req.setAttribute("reply_re_ref", reply_re_ref);
-			req.setAttribute("reply_re_lev", reply_re_lev);
-			req.setAttribute("reply_re_seq", reply_re_seq);
-			req.setAttribute("content", content);
+			ReplyVO vo=new ReplyVO();
+			vo.setReply_num(Integer.parseInt(req.getParameter("reply_num")));
+			vo.setReply_board_num(Integer.parseInt(req.getParameter("board_num")));
+			vo.setReply_re_ref(Integer.parseInt(req.getParameter("reply_re_ref")));
+			vo.setReply_re_lev(Integer.parseInt(req.getParameter("reply_re_lev")));
+			vo.setReply_re_seq(Integer.parseInt(req.getParameter("reply_re_seq")));
+			
+			vo.setReply_writer(req.getParameter("user_id"));
+			vo.setReply_content(req.getParameter("content"));
+			
+			ReplyDAO dao1=new ReplyDAO();
+			dao1.board_reply(vo);
+			path+="?board_num="+vo.getReply_board_num()+"&current_page="+current_page;
+			
 		}else {
 			res.setContentType("text/html;charset=UTF-8");
 			PrintWriter out=res.getWriter();

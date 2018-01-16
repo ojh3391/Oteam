@@ -150,7 +150,7 @@
                         <li class="span3 mix web">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo.getBoard_thumbnail() %>" alt="project 1">
-                                <h3><%=bo.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo.getBoard_writer() %></h2>
@@ -167,7 +167,7 @@
                         <li class="span3 mix photo">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo1.getBoard_thumbnail() %>" alt="project 2">
-                                <h3><%=bo1.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo1.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo1.getBoard_writer() %></h2>
@@ -183,7 +183,7 @@
                         <li class="span3 mix identity">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo2.getBoard_thumbnail() %>" alt="project 3">
-                                <h3><%=bo2.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo2.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo2.getBoard_writer() %></h2>
@@ -199,7 +199,7 @@
                         <li class="span3 mix seokyoung">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo3.getBoard_thumbnail() %>" alt="project 4">
-                                <h3><%=bo3.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo3.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo3.getBoard_writer() %></h2>
@@ -216,7 +216,7 @@
                         <li class="span3 mix kangwon">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo4.getBoard_thumbnail() %>" alt="project 5">
-                                <h3><%=bo4.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo4.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo4.getBoard_writer() %></h2>
@@ -233,7 +233,7 @@
                         <li class="span3 mix chungcheong">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo5.getBoard_thumbnail() %>" alt="project 6">
-                                <h3><%=bo5.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo5.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo5.getBoard_writer() %></h2>
@@ -250,7 +250,7 @@
                         <li class="span3 mix honam">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo6.getBoard_thumbnail() %>" alt="project 7">
-                                <h3><%=bo6.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo6.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo6.getBoard_writer() %></h2>
@@ -267,7 +267,7 @@
                         <li class="span3 mix youngnam">
                             <div class="thumbnail">
                                 <img src="/CFK/thumb/<%=bo7.getBoard_thumbnail() %>" alt="project 8">
-                                <h3><%=bo7.getBoard_vote() %></h3>
+                                <h3>득표수=<%=bo7.getBoard_vote() %></h3>
                                 <p>Thumbnail caption...</p>
                                 <div class="mask">
                                 <h2><%=bo7.getBoard_writer() %></h2>
@@ -295,7 +295,7 @@
                 <div class="container">
                 	<div class="map-wrapper">
                 		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show">
-                	   		<video id="video" poster="/CFK/thumb/min.jpg"webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop preoad>
+                	   		<video id="video" webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop autoplay>
                             	<source src="/CFK/boardUpload/min.mp4" >
                         	</video>
                         </div> 
