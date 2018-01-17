@@ -174,6 +174,9 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                            
                                             
                                                            
+                                            
+                                          </td>   
+                                          <td width="90" align="center">                  
                                           <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
                                     		<input type="hidden" name="user_passwd" value="">
                                     		<input type="hidden" name="user_id" value="">
