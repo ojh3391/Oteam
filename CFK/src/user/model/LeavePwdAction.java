@@ -49,8 +49,6 @@ public class LeavePwdAction implements Action {
 			vo=dao1.getBoardnum(user_id);
 			Vector<ReplyVO> ref=dao2.getRef(user_id);
 			
-			System.out.println(vo);
-			System.out.println(ref);
 			int board_num=0;
 			int reply_re_ref=0;
 			if(vo==null&&ref.isEmpty()) {
@@ -110,7 +108,7 @@ public class LeavePwdAction implements Action {
 				PrintWriter out=res.getWriter();
 				out.println("<script>");
 				out.println("alert('탈퇴가 완료되었습니다.이용해주셔서 감사합니다');");
-				out.println("location.href='index.jsp'");
+				out.println("location.href='Dashuser.do'");
 				out.println("</script>");
 				out.close();
 				

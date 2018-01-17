@@ -123,11 +123,8 @@
                     <!-- Start first slide -->
                     <div class="da-slide">
                         <h2 class="fittext2">오팀장과 형님들</h2>
-                        <h4>대우직업능력개발원 3반(담임:박진경)</h4>
-                        <p>Master:오지훈(29세)<br>Member:김영봉(34세),김진수(35세),이준영(35세)<br>Guest:귄민귀(30세),최진호(28세),정지석(최진호 
-                        친구)</p>
-                        
-                        <a href="#" class="da-link button">Read more</a>
+                        <h4>대우직업능력개발원 3반 (담임:박진경, 부담임:최규리)</h4>
+                        <p>Master : 오지훈(29세)<br>Member : 김영봉(34세),김진수(35세),이준영(35세)<br>Guest : 귄민귀(30세),최진호(28세),정지석(최진호 친구)</p>                        
                         <div class="da-img">
                             <img style="border-radius:25px;" src="/CFK/images/slider/Slider01.jpg" width="320">
                         </div>

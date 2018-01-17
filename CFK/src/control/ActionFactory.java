@@ -85,6 +85,8 @@ public class ActionFactory {
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
 		}else if(cmd.equals("/notify_insert.do")) {
 			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
+		}else if(cmd.equals("/Leave.do")) {
+			action=new LeavePwdAction("Dashuser.do");
 		}
 		
 		return action;
