@@ -295,7 +295,7 @@
                 <div class="container">
                 	<div class="map-wrapper">
                 		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show">
-                	   		<video id="video" webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop autoplay>
+                	   		<video id="video" poster="/CFK/images/min.jpg" webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop preload>
                             	<source src="/CFK/boardUpload/min.mp4" >
                         	</video>
                         </div> 
