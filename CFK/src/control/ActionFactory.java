@@ -81,14 +81,10 @@ public class ActionFactory {
 			action=new DashBoardAction("dashboard/pages/dash_board.jsp");
 		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
-		}else if(cmd.equals("/user_leave.do")) {					//관리자가 회원 추방
+		}else if(cmd.equals("/Leave.do")) {							//관리자가 회원 추방
 			action=new LeavePwdAction("Dashuser.do");
 		}else if(cmd.equals("/notify_insert.do")) {					//관리자가 공지사항 추가
 			action=new NotifyInsertAction("Dashboard.do");
-		}else if(cmd.equals("/Leave.do")) {
-			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
-		}else if(cmd.equals("")) {
-			action=new LeavePwdAction("Dashuser.do");
 		}else if(cmd.equals("dashboard_delete.do")) {
 			action=new BoardDeleteAction("Dashboard.do");
 		}

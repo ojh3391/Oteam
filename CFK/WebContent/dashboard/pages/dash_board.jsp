@@ -3,15 +3,17 @@
 <%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%  Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+<%  
+	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
 	Vector<NotifyVO> notiList=(Vector<NotifyVO>)request.getAttribute("notiList");
 %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
+	
+	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,20 +40,15 @@
     <!-- Custom Fonts -->
     <link href="/CFK/dashboard/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- -->
+    <link rel="stylesheet" href="/CFK/dashboard/css/style.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<script>
-		function notify_insert()
-		{
-			document.notify.submit();
-		}
-
-	</script>
 
 </head>
 
@@ -157,21 +154,19 @@
                                         <td>
                                         <form action="dashboard_delete.do" method="post" name="<%=vo.getBoard_num()%>">
                                           <input type="hidden" name="board_num">
-                                          <button type="button" class="btn btn-danger" onclick="dashboard_delete('<%=vo.getBoard_num()%>');">삭제</button>
+                                         <button type="button" class="btn btn-danger" onclick="board_delete();">삭제</button>
                                         </form>
                                         </td>
                                      </tr>
-                                   	<script>
-                                        function dashboard_delete(bnum)
-										{
-											document.<%=vo.getBoard_num()%>.board_num.value=bnum;
-											if(confirm("정말로 지우시겠습니까?"))
-											{
-												document.<%=vo.getBoard_num()%>.submit();
-											}
-											
-										}
-                                     </script>
+                                   		<script type="text/javascript">
+                                   		function board_delete() {
+    										document.<%=vo.getBoard_num() %>.user_id.value = id;
+    										
+    										if(confirm("정말로 탈퇴시키겠습니까?")) {
+    											document.<%=vo.getBoard_num() %>.submit();
+    										}
+   										 }
+                                     	</script>
                                     
                                    <%}%>
                                 </tbody>
@@ -277,6 +272,7 @@
         </div>
         <!-- /#page-wrapper -->
 
+    </div>
     </div>
     <!-- /#wrapper -->
 	
