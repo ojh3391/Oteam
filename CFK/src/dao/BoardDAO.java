@@ -672,6 +672,7 @@ public class BoardDAO {
 				vo.setBoard_vote(rs.getInt("board_vote"));
 				vo.setBoard_date(rs.getDate("board_date"));
 				vo.setBoard_readcount(rs.getInt("board_readcount"));
+				vo.setBoard_thumbnail(rs.getString("board_thumbnail"));
 				
 			}
 		}catch(Exception e) {

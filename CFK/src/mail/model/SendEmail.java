@@ -1,4 +1,4 @@
-package mail;
+package mail.model;
 
 import java.util.Properties;
 import javax.mail.Message;

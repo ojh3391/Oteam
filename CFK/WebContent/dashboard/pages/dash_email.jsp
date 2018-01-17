@@ -1,19 +1,13 @@
-<%@page import="vo.UserVO"%>
-<%@page import="java.util.Vector"%>
+<%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-
-Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
-
+	BoardVO vo=(BoardVO)request.getAttribute("vo");
 %>
 <!DOCTYPE html>
 <html>
-
 <head>
-	
-	
-    <meta charset="utf-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -50,7 +44,6 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
     <![endif]-->
 
 </head>
-
 <body>
     <div id="wrapper">
 
@@ -107,106 +100,7 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-
-
-
-
-
-
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">회원관리</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                        
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>이름</th>
-                                        <th>주소</th>
-                                        <th>전화번호</th>
-                                        <th>나이</th>
-                                        <th>Email</th>
-                                        <th>성별</th>
-                                        <th>방청일</th>
-                                        <th>메일전송</th>
-                                        <th>회원삭제</th>                                       
-                                    </tr>
-                                </thead>
-                                
-                                <tbody>
-								<%
-									for(UserVO vo:list){
-								%>
-                                    
-                                    <tr class="odd gradeX">
-
-                                        <td><%=vo.getUser_id() %></td>
-                                        <td><%=vo.getUser_name() %></td>
-                                        <td><%=vo.getUser_addr() %></td>
-                                        <td><%=vo.getUser_tel() %></td>
-                                        <td><%=vo.getUser_age() %></td>
-                                        <td><%=vo.getUser_email() %></td>
-                                        <td><%=vo.getUser_gender() %></td>
-                                        <%if(!(vo.getUser_attend_date()==null)){ %>
-                                        <td><%=vo.getUser_attend_date() %></td>
-                                        <%}else{ %>
-                                        <td>신청 내역 없음</td>
-                                        <%} %>                                    
-                                   		<td width="90" align="center">
-                                   			<form action="dash_mail.do" method="post">
-                                   			 <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">  
-                                          	                    
-                                             <input type="submit" class="btn btn-danger" value="메일">
-                                   			</form>
-                                   		</td>
-                                   			
-                                        <td width="90" align="center">
-                                          
-                                          <form action="Leave.do" method="post">
-                                          <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">  
-                                          <input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd()%>">                    
-                                          <input type="submit" class="btn btn-danger" value="삭제">
-                                          </form>                                        
-                                        </td>                                          
-                                   </tr>                                   	
-                                 <% } %>
-                                        
-
-                                    
-									
-                                </tbody>
-
-                                
-                            </table>
-
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-
-            </div>
-
-
-
-
-
-
+ 		<div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">메일전송</h1>
@@ -235,46 +129,61 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                     </div>
                     <!-- /.panel -->
                 </div>
+                
                 <!-- /.col-lg-6 -->
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Basic Table
+                            Board Table
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>ID</th>
-                                            <th>이름</th>
-                                            <th>email</th>
-                                        </tr>
-                                    </thead>
+                                    <!-- <thead> -->
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <!-- <th>#</th>
+                                            <th>ID</th>
+                                            <th>이름</th>
+                                            <th>email</th> -->
+                                            <td>ID</td>
+                                            <td><%=vo.getBoard_writer() %></td>
+                                        </tr>
+                                   <!--  </thead> -->
+                                    
+                                        <tr>
+                                            <td>Subject</td>
+                                            <td><%=vo.getBoard_subject() %></td>
+                                            <!-- <td>Otto</td>
+                                            <td>@mdo</td> -->
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
+                                            <td>Vote</td>
+                                            <td><%=vo.getBoard_vote() %>표</td>
+                                            <!-- <td>Thornton</td>
+                                            <td>@fat</td> -->
                                         </tr>
                                         <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
+                                            <td>E-mail</td>
+                                            <td><%=vo.getBoard_vote() %></td>
+                                            <!-- <td>Thornton</td>
+                                            <td>@fat</td> -->
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>Thumbnail</td>
+                                            <td><img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>"></td>
+                                         
+                                           
+                                           <!--  <td>the Bird</td>
+                                            <td>@twitter</td> -->
                                         </tr>
                                     </tbody>
                                 </table>
+                                 
                             </div>
+                            
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -283,13 +192,14 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                 </div>
                 <!-- /.col-lg-6 -->
 
-            </div>
+           
 
-
+			</div>
 
 
         </div>
         <!-- /#page-wrapper -->
+        
 
     </div>
     <!-- /#wrapper -->
@@ -319,7 +229,5 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
         });
     });
     </script>
-
 </body>
-
 </html>
