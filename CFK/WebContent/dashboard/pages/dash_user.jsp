@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 	
@@ -49,6 +49,7 @@
 <body>
 <%
 Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
+
 %>
 
     <div id="wrapper">
@@ -153,11 +154,7 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
 								%>
                                     
                                     <tr class="odd gradeX">
-                                    <form action="Leave.do" method="post" id="deport<%=vo.getUser_id() %>" >
-                                    <input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd() %>">
-                                    <input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
-                                    
-                                    
+
                                         <td><%=vo.getUser_id() %></td>
                                         <td><%=vo.getUser_name() %></td>
                                         <td><%=vo.getUser_addr() %></td>
@@ -169,21 +166,24 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <td><%=vo.getUser_attend_date() %></td>
                                         <%}else{ %>
                                         <td>신청 내역 없음</td>
-                                        <%} %>
-                                       
+                                        <%} %>                                      
+                                    
                                         <td>
                                           <button type="button" class="btn btn-info">메일</button>
+                                          <form action="Leave.do" method="post" name="deport<%=vo.getUser_id() %>" >
+                                    		<input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd() %>">
+                                    		<input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
                                           <button type="button" class="btn btn-danger" onclick="user_delete();">삭제</button>
+                                         </form> 
                                         </td>
-                                           </form>
+                                          
                                        </tr>
-                                    
-                                       <script type="text/javascript">
+                                    	
+                                       <script>
 										function user_delete() {
     	
-    										var form = document.deport<%=vo.getUser_id()%>;
     										if(confirm("정말로 탈퇴시키겠습니까?")) {
-    											form.submit();
+    											document.deport<%=vo.getUser_id()%>.submit();
     										}
    										 }
 										</script>
