@@ -1,8 +1,10 @@
+<%@page import="vo.UserVO"%>
 <%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	BoardVO vo=(BoardVO)request.getAttribute("vo");
+	UserVO vo1=(UserVO)request.getAttribute("vo1");
 %>
 <!DOCTYPE html>
 <html>
@@ -151,7 +153,12 @@
                                             <td><%=vo.getBoard_writer() %></td>
                                         </tr>
                                    <!--  </thead> -->
-                                    
+                                  	    <tr>
+                                            <td>Email</td>
+                                            <td><%=vo1.getUser_email() %></td>
+                                            <!-- <td>Thornton</td>
+                                            <td>@fat</td> -->
+                                        </tr>
                                         <tr>
                                             <td>Subject</td>
                                             <td><%=vo.getBoard_subject() %></td>
