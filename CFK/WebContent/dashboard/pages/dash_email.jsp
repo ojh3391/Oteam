@@ -5,6 +5,7 @@
 <%
 	BoardVO vo=(BoardVO)request.getAttribute("vo");
 	UserVO vo1=(UserVO)request.getAttribute("vo1");
+	String sub=vo.getBoard_subject();
 %>
 <!DOCTYPE html>
 <html>
@@ -145,26 +146,22 @@
                                     <!-- <thead> -->
                                     <tbody>
                                         <tr>
-                                            <!-- <th>#</th>
-                                            <th>ID</th>
-                                            <th>이름</th>
-                                            <th>email</th> -->
                                             <td>ID</td>
-                                            <td><%=vo.getBoard_writer() %></td>
+                                            <td><%=vo1.getUser_id() %></td>
                                         </tr>
-                                   <!--  </thead> -->
+                                   
                                   	    <tr>
                                             <td>Email</td>
                                             <td><%=vo1.getUser_email() %></td>
-                                            <!-- <td>Thornton</td>
-                                            <td>@fat</td> -->
+                                         
                                         </tr>
+                                     <%if(sub!=null){ %>  
                                         <tr>
                                             <td>Subject</td>
                                             <td><%=vo.getBoard_subject() %></td>
-                                            <!-- <td>Otto</td>
-                                            <td>@mdo</td> -->
-                                        </tr>
+                                         </tr>
+                                    
+                                
                                         <tr>
                                             <td>Vote</td>
                                             <td><%=vo.getBoard_vote() %>표</td>
@@ -175,11 +172,16 @@
                                         <tr>
                                             <td>Thumbnail</td>
                                             <td><img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>"></td>
-                                         
-                                           
+                                         </tr>
+                                     <%}else{ %> 
+                                    	<tr>
+                                            <td>Board</td>
+                                            <td>참가 내역이 없습니다.</td>
+                                         </tr>
+                                   	 <%} %>   
                                            <!--  <td>the Bird</td>
                                             <td>@twitter</td> -->
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                                  
