@@ -84,11 +84,8 @@ public class ActionFactory {
 			action=new LeavePwdAction("Rank.do");
 		}else if(cmd.equals("/notify_insert.do")) {
 			action=new NotifyInsertAction("Dashboard.do");
-<<<<<<< HEAD
-=======
 		}else if(cmd.equals("/Leave.do")) {
 			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 		}else if(cmd.equals("/Leave.do")) {
 			action=new LeavePwdAction("Dashuser.do");
 		}
