@@ -168,6 +168,10 @@
                                         </form>
                                         </td>
                                      </tr>
+                                   	                                   		                                    
+                                        
+
+ 
                                    <%}%>
                                 </tbody>
     
@@ -244,14 +248,20 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
+		
+			<div class="row">
+                <div class="col-lg-6">
+                    <h1 class="page-header">공지사항 등록</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
-                    <form action="notify_insert.do" method="post" name="notify">
+                    
                         <div class="panel-heading">
-							
+						  <form action="notify_insert.do" method="post" name="notify">	
                             <p align="right"><button type="button" class="btn btn-primary" onclick="notify_insert()">등록</button></p>
 
                         </div>
@@ -259,9 +269,9 @@
                         <div class="panel-body">
                           <textarea class="form-control" rows="15" name="notify_content" placeholder="내용" required></textarea>
                             <!-- /.table-responsive -->
-                            
+                          </form>  
                         </div>
-                   </form>
+                   
                         <!-- /.panel-body -->
                         
                  	</div>
