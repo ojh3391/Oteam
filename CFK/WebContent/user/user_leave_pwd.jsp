@@ -30,7 +30,7 @@
 						</tr>
 						<tr>
 							<td align="center" colspan="2" class="btn_align">
-								<input class="message-btn" type="submit" value="정보수정" >						
+								<input class="message-btn" type="submit" value="확인" >						
 								<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 							</td>
 						</tr>
