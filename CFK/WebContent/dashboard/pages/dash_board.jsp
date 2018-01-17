@@ -49,12 +49,7 @@
 		function notify_insert()
 		{
 			document.notify.submit();
-<<<<<<< HEAD
-=======
-			
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 		}
-		
 	</script>
 
 </head>
@@ -236,16 +231,6 @@
             </div>
 
 
-<<<<<<< HEAD
-		<form action="notify_insert.do" method="post" name="notify">
-=======
->>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">공지사항 등록</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">

@@ -11,6 +11,7 @@ import board.model.BoardVoteAction;
 import dash.model.DashBoardAction;
 import dash.model.DashUserAction;
 import dash.model.NotifyInsertAction;
+import dash.model.NotifyViewAction;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;

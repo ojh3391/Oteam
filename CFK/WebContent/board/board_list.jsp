@@ -1,3 +1,4 @@
+<%@page import="vo.NotifyVO"%>
 <%@page import="vo.PageVO"%>
 <%@page import="vo.BoardVO"%>
 <%@page import="java.util.Vector"%>
@@ -7,6 +8,7 @@
 <%
 	//리스트 정보 
 	Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	Vector<NotifyVO> notiList=(Vector<NotifyVO>)request.getAttribute("notiList");
 	//페이지나누기를 위한 정보
 	PageVO info=(PageVO)request.getAttribute("info");
 	int total_page=info.getTotalPage();
@@ -110,7 +112,7 @@
                         <ul class="nav" id="top-navigation">
                         	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="/CFK/index.jsp#service">함께하기</a></li>
+                            <li><a href="/CFK/Rank.do#service">함께하기</a></li>
                             <li><a href="/CFK/List.do#portfolio">투표하기</a></li>
                             <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
                             <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
@@ -135,8 +137,13 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-                        <p>1.영상을 올리실때는 MP4 50MB 미만으로 가능합니다.</p>
-                        <p>2.투표는 3번만 가능합니다.</p>
+                    	<%
+                    	for(NotifyVO vo : notiList){
+                    	%>
+                        <p>●<%=vo.getNotify_content() %>. 작성일:<%=vo.getNotify_date() %></p>
+                        <%
+                    	}
+                        %>
                     </div>
                 </div>
             </div>
@@ -147,7 +154,6 @@
             <div class="container">
  				<div class="title">
                     <h1><font size="10" face="휴먼둥근헤드라인">전쟁이다! 투표하시라!</font></h1>
-                    <p>매주 금요일 저녁 7시!!</p>
                 </div>
                 	<ul class="nav nav-pills">
                 
