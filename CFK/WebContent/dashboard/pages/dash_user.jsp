@@ -142,7 +142,8 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <th>Email</th>
                                         <th>성별</th>
                                         <th>방청일</th>
-                                        <th>Action</th>                                       
+                                        <th>메일전송</th>
+                                        <th>회원삭제</th>                                       
                                     </tr>
                                 </thead>
                                 
@@ -165,9 +166,9 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <%}else{ %>
                                         <td>신청 내역 없음</td>
                                         <%} %>                                    
-                                   
-                                        <td>
-                                          <button type="button" class="btn btn-info">메일</button>
+                                   		<td width="90" align="center"><button type="button" class="btn btn-info">메일</button></td>
+                                        <td width="90" align="center">
+                                          
                                           <form action="Leave.do" method="post">
                                           <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">  
                                           <input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd()%>">                    
