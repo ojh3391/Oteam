@@ -42,7 +42,7 @@ public class ReplyViewAction implements Action {
 		// 2.전체 게시물 수 가져오기
 		int total_rows=dao1.total_rows(board_num);
 		// 3.한페이지에 보여줄 갯수 정하기
-		int limit=10;
+		int limit=20;
 		// 4.화면 리스트페이지 하단에 total_page 결정
 		int total_page=(int)((double)total_rows/limit+0.95);
 		// 5.현재화면에서 보여줄 스타트페이지 구하기
@@ -68,6 +68,7 @@ public class ReplyViewAction implements Action {
 		req.setAttribute("notiList", notiList);
 		req.setAttribute("vo", vo);
 		req.setAttribute("list", list);
+		
 		req.setAttribute("info", info);
 		
 		return new ActionForward(path,false);

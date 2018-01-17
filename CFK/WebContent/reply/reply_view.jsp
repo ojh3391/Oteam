@@ -253,15 +253,15 @@
                     <input class="span9" type="text" name="reply_content" required>
                     <button class="message-btn">등록</button></p>
                 </form>
-                <h3 align="left">총 댓글 수 : <%=totalRows %> 개</h3>
+                <h3 align="left">총 댓글 수 : <font color="red"><%=totalRows %></font> 개</h3>
             </div>
         </div> 
 
-        <div style="margin-top:-80px;" class="container">
+        <div class="container">
         	<%
 				for(ReplyVO vo:list){
 			%>
-				<div class="container">
+				<div style="margin-top:-90px;" class="container">
 					<div class="span11">
 					
 					<%
@@ -269,7 +269,7 @@
 							for(int j=0;j<=vo.getReply_re_lev()*1;j++){
 								hap=30+(j*20);
 							}
-					%><div style="margin-top:-50px; margin-left:<%=hap%>px;" class="testimonial">
+					%><div style="margin-top:-30px; margin-left:<%=hap%>px;" class="testimonial">
 					  <p><strong><font color="red">└ RE :</font></strong> <%=vo.getReply_content() %></p>
 					<% 	
 						}else{ %>

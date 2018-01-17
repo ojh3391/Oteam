@@ -21,7 +21,7 @@ public class ReplyDAO {
 	
 	public Vector<ReplyVO> getList(int page,int limit,int board_num){
 		//page 값에 의해 몇번째 레코드부터 돌릴지 결정
-		int start=(page-1)*10;
+		int start=(page-1)*20;
 		//System.out.println(board_num);
 		Vector<ReplyVO> list=new Vector<ReplyVO>();
 		// 번호,제목,작성자,날짜,조회수 정보 뽑아서 vector 에 담기
