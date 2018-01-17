@@ -112,7 +112,7 @@
                 <div class="title">
                     <h1><font size="10" face="휴먼둥근헤드라인">2018년! 전 세계를 뒤흔들 <font size="11" color="red">패션</font>전쟁이 시작된다!</font></h1>
                     <div id="ViewTimer"></div>
-                    <p>매주 금요일 저녁 7시!!</p>
+                    
                     <p></p>                    
                     <img src="/CFK/Resources/images/순위1.PNG" class="centered" alt="rank">
                 </div>

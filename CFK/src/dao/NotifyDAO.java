@@ -21,7 +21,7 @@ public class NotifyDAO
 		try
 		{
 			con=JDBCUtil.getConnection();
-			pstmt=con.prepareStatement("select max(board_num) from cfk_board");
+			pstmt=con.prepareStatement("select max(notify_num) from cfk_notify");
 			con.setAutoCommit(false);
 			rs=pstmt.executeQuery();
 			if(rs.next())

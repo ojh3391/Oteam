@@ -49,6 +49,10 @@
 		function notify_insert()
 		{
 			document.notify.submit();
+<<<<<<< HEAD
+=======
+			
+>>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
 		}
 		
 	</script>
@@ -80,12 +84,10 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="Rank.do"><i class="fa fa-user fa-fw"></i> HomePage</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -234,7 +236,10 @@
             </div>
 
 
+<<<<<<< HEAD
 		<form action="notify_insert.do" method="post" name="notify">
+=======
+>>>>>>> branch 'master' of https://github.com/ojh3391/Oteam.git
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">공지사항 등록</h1>
@@ -244,31 +249,35 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
+                    <form action="notify_insert.do" method="post" name="notify">
                         <div class="panel-heading">
-
+							
                             <p align="right"><button type="button" class="btn btn-primary" onclick="notify_insert()">등록</button></p>
 
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                          <textarea class="form-control" rows="15" name="notify_content" placeholder="내용"></textarea>
+                          <textarea class="form-control" rows="15" name="notify_content" placeholder="내용" required></textarea>
                             <!-- /.table-responsive -->
+                            
                         </div>
+                   </form>
                         <!-- /.panel-body -->
-                    </div>
+                        
+                 	</div>
                     <!-- /.panel -->
-                </div>
+             	</div>
                 <!-- /.col-lg-6 -->
 
 
             </div>
-		</form>
+	
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-	</form>
+	
     <!-- jQuery -->
     <script src="/CFK/dashboard/vendor/jquery/jquery.min.js"></script>
 

@@ -21,7 +21,7 @@ public class NotifyInsertAction implements Action
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
 	{
 		String notify_content=req.getParameter("notify_content");
-		
+		System.out.println(notify_content);
 		NotifyDAO dao=new NotifyDAO();
 		dao.notify_insert(notify_content);
 		

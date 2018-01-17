@@ -76,12 +76,11 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="Rank.do"><i class="fa fa-user fa-fw"></i> HomePage</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
+                        
                         <li class="divider"></li>
-                        <li><a href="index.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="logout.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -143,7 +142,8 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <th>Email</th>
                                         <th>성별</th>
                                         <th>방청일</th>
-                                        <th>Action</th>
+                                        <th>메일전송</th>
+                                        <th>회원삭제</th>
 
                                     </tr>
                                 </thead>
@@ -168,10 +168,12 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <td>신청 내역 없음</td>
                                         <%} %>                                    
                                     
-                                        <td>
+                                        <td width="90" align="center">
                                           <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
                                           <button type="button" class="btn btn-info">메일</button>   
-                                          </form>                       
+                                          </form>  
+                                          </td>   
+                                          <td width="90" align="center">                  
                                           <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
                                     		<input type="hidden" name="user_passwd" value="">
                                     		<input type="hidden" name="user_id" value="">
