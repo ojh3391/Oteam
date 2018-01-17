@@ -63,7 +63,7 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dash_user.jsp">CFK 관리자 페이지</a>
+                <a class="navbar-brand" href="Dashuser.do">CFK 관리자 페이지</a>
             </div>
             <!-- /.navbar-header -->
 

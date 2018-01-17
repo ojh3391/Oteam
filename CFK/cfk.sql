@@ -47,6 +47,14 @@ create table cfk_reply(
 	reply_re_del int
 );	
 
+create table cfk_notify(
+	notify_num int primary key,
+	notify_content varchar(2000) not null,
+	notify_date date
+);
+
+select * from cfk_notify;
+insert into cfk_notify values(1,'공지사항뭐라어쩌구',now());
 
 insert into cfk_reply values(1,'11','김진수',now(),1,1,0,0);
 --원글 번호

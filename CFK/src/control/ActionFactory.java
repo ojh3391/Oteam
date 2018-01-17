@@ -9,8 +9,9 @@ import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
 import board.model.BoardVoteAction;
-import dash.model.DashBoardList;
+import dash.model.DashBoardAction;
 import dash.model.DashUserAction;
+import dash.model.NotifyInsertAction;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
@@ -78,11 +79,15 @@ public class ActionFactory {
 			action=new LeavePwdAction("Rank.do");
 		}else if(cmd.equals("/reply_update_pwd.do")) {				//댓글 수정시 비번 체크 및 액션
 			action=new ReplyUpdatePwdAction("View.do");
-		}else if(cmd.equals("/Dashboard.do")){
-			action=new DashBoardList("dashbaord/pages/dash_board.jsp");
+		}else if(cmd.equals("/Dashboard.do")){						//관리자 페이지 게시판관리 액션
+			action=new DashBoardAction("dashboard/pages/dash_board.jsp");
 		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
 		}else if(cmd.equals("/Leave.do")) {							//관리자가 회원 추방
+
+		}else if(cmd.equals("/notify_insert.do")) {
+			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
+		}else if(cmd.equals("/Leave.do")) {
 			action=new LeavePwdAction("Dashuser.do");
 		}
 		

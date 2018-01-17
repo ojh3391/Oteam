@@ -1,7 +1,11 @@
+<%@page import="vo.NotifyVO"%>
+<%@page import="java.util.Vector"%>
 <%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%  BoardVO vo=(BoardVO)request.getAttribute("list");%>
+<%  Vector<BoardVO> list=(Vector<BoardVO>)request.getAttribute("list");
+	Vector<NotifyVO> notiList=(Vector<NotifyVO>)request.getAttribute("notiList");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,22 +21,22 @@
     <title>CFK 관리자 페이지</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="/CFK/dashboard/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/CFK/dashboard/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/CFK/dashboard/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +44,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	
+	<script>
+		function notify_insert()
+		{
+			location.href="notify.do";
+		}
+		
+	</script>
 
 </head>
 
@@ -57,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dash_user.jsp">CFK 관리자 페이지</a>
+                <a class="navbar-brand" href="Dashuser.do">CFK 관리자 페이지</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -89,10 +100,10 @@
 
 
                         <li>
-                            <a href="dash_user.jsp"><i class="fa fa-user fa-fw"></i> 회원관리</a>
+                            <a href="Dashuser.do"><i class="fa fa-user fa-fw"></i> 회원관리</a>
                         </li>
                         <li>
-                            <a href="dash_board.jsp"><i class="fa fa-table fa-fw"></i> 게시판관리</a>
+                            <a href="Dashboard.do"><i class="fa fa-table fa-fw"></i> 게시판관리</a>
                         </li>
 
 
@@ -102,7 +113,9 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+	
+	
+	
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -132,9 +145,9 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                               <% for(BoardVO vo: list){ %> 
+                                
                                 <tbody>
-
+								<% for(BoardVO vo: list ){ %>
                                     <tr class="odd gradeX">
                                         <td><%=vo.getBoard_num() %></td>
                                         <td><%=vo.getBoard_writer() %></td>
@@ -146,10 +159,11 @@
                                         <td>
                                           <button type="button" class="btn btn-danger">삭제</button>
                                         </td>
-
+                                   
                                     </tr>
+                                   <%}%>
                                 </tbody>
-                                <%}%>
+    
                             </table>
 
                         </div>
@@ -187,33 +201,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <%for(NotifyVO vo: notiList) {%>    
                                         <tr>
-                                            <td>1</td>
-                                            <td>어쩌구저쩌구</td>
-                                            <td>2018-01-01</td>
+                                            <td><%=vo.getNotify_num() %></td>
+                                            <td><%=vo.getNotify_content()%></td>
+                                            <td><%=vo.getNotify_date() %></td>
                                             <td>
-                                              <button type="button" class="btn btn-info">수정</button>
                                               <button type="button" class="btn btn-danger">삭제</button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>어쩌구저쩌구</td>
-                                            <td>2018-01-01</td>
-                                            <td>
-                                              <button type="button" class="btn btn-info">수정</button>
-                                              <button type="button" class="btn btn-danger">삭제</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>어쩌구저쩌구</td>
-                                            <td>2018-01-01</td>
-                                            <td>
-                                              <button type="button" class="btn btn-info">수정</button>
-                                              <button type="button" class="btn btn-danger">삭제</button>
-                                            </td>
-                                        </tr>
+                                     <%} %> 
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -236,7 +234,7 @@
             </div>
 
 
-
+		<form action="notify_insert.do" method="post">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">공지사항 등록</h1>
@@ -248,12 +246,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <p align="right"><button type="button" class="btn btn-primary">등록</button></p>
+                            <p align="right"><button type="button" class="btn btn-primary" onclick="notify_insert()">등록</button></p>
 
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                          <textarea class="form-control" rows="15" placeholder="내용"></textarea>
+                          <textarea class="form-control" rows="15" name="notify_content" placeholder="내용"></textarea>
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
@@ -264,29 +262,29 @@
 
 
             </div>
-
+		</form>
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-
+	</form>
     <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="/CFK/dashboard/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/CFK/dashboard/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="/CFK/dashboard/vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="/CFK/dashboard/vendor/datatables-responsive/dataTables.responsive.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="/CFK/dashboard/dist/js/sb-admin-2.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
