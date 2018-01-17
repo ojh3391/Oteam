@@ -166,10 +166,12 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <td><%=vo.getUser_attend_date() %></td>
                                         <%}else{ %>
                                         <td>신청 내역 없음</td>
-                                        <%} %>                                      
+                                        <%} %>                                    
                                     
                                         <td>
-                                          <button type="button" class="btn btn-info">메일</button>
+                                          <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
+                                          <button type="button" class="btn btn-info">메일</button>   
+                                          </form>                       
                                           <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
                                     		<input type="hidden" name="user_passwd" value="">
                                     		<input type="hidden" name="user_id" value="">
