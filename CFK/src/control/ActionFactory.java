@@ -91,6 +91,8 @@ public class ActionFactory {
 			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
 		}else if(cmd.equals("/Leave.do")) {
 			action=new LeavePwdAction("Dashuser.do");
+		}else if(cmd.equals("dashboard_delete.do")) {
+			action=new BoardDeleteAction("Dashboard.do");
 		}
 		
 		return action;

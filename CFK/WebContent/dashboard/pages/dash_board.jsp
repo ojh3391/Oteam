@@ -52,6 +52,7 @@
 			
 		}
 		
+		
 	</script>
 
 </head>
@@ -156,10 +157,24 @@
                                         <td><%=vo.getBoard_readcount() %></td>
                                         <td><%=vo.getBoard_date() %></td>
                                         <td>
-                                          <button type="button" class="btn btn-danger">삭제</button>
+                                        <form action="dashboard_delete.do" method="post" name="<%=vo.getBoard_num()%>">
+                                          <input type="hidden" name="board_num">
+                                          <button type="button" class="btn btn-danger" onclick="dashboard_delete('<%=vo.getBoard_num()%>');">삭제</button>
+                                        </form>
                                         </td>
-                                   
-                                    </tr>
+                                     </tr>
+                                   	<script>
+                                        function dashboard_delete(bnum)
+										{
+											document.<%=vo.getBoard_num()%>.board_num.value=bnum;
+											if(confirm("정말로 지우시겠습니까?"))
+											{
+												document.<%=vo.getBoard_num()%>.submit();
+											}
+											
+										}
+                                     </script>
+                                    
                                    <%}%>
                                 </tbody>
     
@@ -209,6 +224,8 @@
                                               <button type="button" class="btn btn-danger">삭제</button>
                                             </td>
                                         </tr>
+                                        
+                                        
                                      <%} %> 
                                         
                                     </tbody>
