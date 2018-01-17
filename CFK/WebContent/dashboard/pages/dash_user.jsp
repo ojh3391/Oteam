@@ -169,11 +169,11 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <%} %>                                    
                                     
                                         <td width="90" align="center">
-                                          <form action="user_leave.do" method="post" name="<%=vo.getUser_id() %>" >
+                                          
                                           <button type="button" class="btn btn-info">메일</button>   
-                                          </form>  
-                                          </td>   
-                                          <td width="90" align="center">                  
+                                           
+                                            
+                                                           
                                           <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
                                     		<input type="hidden" name="user_passwd" value="">
                                     		<input type="hidden" name="user_id" value="">

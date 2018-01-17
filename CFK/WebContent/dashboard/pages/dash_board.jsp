@@ -155,23 +155,13 @@
                                         <td><%=vo.getBoard_readcount() %></td>
                                         <td><%=vo.getBoard_date() %></td>
                                         <td>
-                                        <form action="dashboard_delete.do" method="post" name="<%=vo.getBoard_num()%>">
+                                        <form action="dashboard_delete.do" method="post" >
                                           <input type="hidden" name="board_num">
-                                          <button type="button" class="btn btn-danger" onclick="dashboard_delete('<%=vo.getBoard_num()%>');">삭제</button>
+                                          <input type="submit" class="btn btn-danger" value="삭제">
                                         </form>
                                         </td>
                                      </tr>
-                                   	<script>
-                                        function dashboard_delete(bnum)
-										{
-											document.<%=vo.getBoard_num()%>.board_num.value=bnum;
-											if(confirm("정말로 지우시겠습니까?"))
-											{
-												document.<%=vo.getBoard_num()%>.submit();
-											}
-											
-										}
-                                     </script>
+                                   	
                                     
                                    <%}%>
                                 </tbody>
@@ -279,7 +269,7 @@
 
     </div>
     <!-- /#wrapper -->
-	
+	</div>
     <!-- jQuery -->
     <script src="/CFK/dashboard/vendor/jquery/jquery.min.js"></script>
 
