@@ -289,7 +289,7 @@
                     <div class="title">
                         <h1>THE FIRST SHOW</h1><br>
                         <font size="10" color="white" face="휴먼둥근헤드라인">2018년 1월 19일 금요일 저녁 8시<br><br>지상 최강의<font size="11" color="red">패션쇼</font>가 열린다!</font>
-                        <p>오라~ 패션의 메카로~ !</p>
+                        <p>가즈아~ 패션의 메카로~ !</p>
                     </div>
                 </div>
                 <div class="container">

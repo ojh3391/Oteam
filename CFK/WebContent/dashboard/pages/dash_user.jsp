@@ -108,12 +108,6 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
             <!-- /.navbar-static-side -->
         </nav>
 
-
-
-
-
-
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -177,13 +171,8 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         </td>                                          
                                    </tr>                                   	
                                  <% } %>
-                                        
-
-                                    
-									
-                                </tbody>
-
-                                
+                                        	
+                                </tbody>                      
                             </table>
 
                         </div>
@@ -194,93 +183,6 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                 <!-- /.col-lg-12 -->
 
             </div>
-
-
-
-
-
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">메일전송</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-
-            <!--메일박스-->
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <table>
-                            <tr>
-                              <td><input size=100 class="form-control" type="email" placeholder="제목"></td><td><button type="button" class="btn btn-success">전송</button></td>
-                            <tr>
-                          </table>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                          <textarea class="form-control" rows="15" placeholder="내용"></textarea>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Table
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>ID</th>
-                                            <th>이름</th>
-                                            <th>email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-
-            </div>
-
-
-
-
         </div>
         <!-- /#page-wrapper -->
 

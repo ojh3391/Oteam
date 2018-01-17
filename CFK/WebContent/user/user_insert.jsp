@@ -76,7 +76,7 @@
 							</td>
 							<td>
 								<!-- 중복체크 후 아이디 다시 입력 방지를 위해 user_id는 onkeydown, idReduplication은 hidden으로  -->
-								<input type="text" name="user_id" size="10" maxlength="12" onkeydown="CheckInputId()">
+								<input type="text" name="user_id" size="10" maxlength="12" onkeydown="CheckInputId()" required>
 								<input type="button" value="중복확인" onClick="checkId(); "/>
 								<input type="hidden" name="idReduplication" value="uncheck_id" >
 							</td>
