@@ -5,7 +5,7 @@
 <%
 	BoardVO vo=(BoardVO)request.getAttribute("vo");
 	UserVO vo1=(UserVO)request.getAttribute("vo1");
-	String sub=vo.getBoard_subject();
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -144,7 +144,7 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <!-- <thead> -->
-                                    <tbody>
+                                   <!--  <tbody> -->
                                         <tr>
                                             <td>ID</td>
                                             <td><%=vo1.getUser_id() %></td>
@@ -155,34 +155,35 @@
                                             <td><%=vo1.getUser_email() %></td>
                                          
                                         </tr>
-                                     <%if(sub!=null){ %>  
+                                     <%if(vo1.getUser_check_parti()==1){ %> 
+                                     
+                                     	<tr>
+                                            <td>Board</td>
+                                            <td>참가 내역이 없습니다.</td>
+                                         </tr>
+                                       <%}else{ %>   
                                         <tr>
                                             <td>Subject</td>
                                             <td><%=vo.getBoard_subject() %></td>
                                          </tr>
-                                    
-                                
-                                        <tr>
+                                   
+                                    	<tr>
                                             <td>Vote</td>
                                             <td><%=vo.getBoard_vote() %>표</td>
                                             <!-- <td>Thornton</td>
                                             <td>@fat</td> -->
                                         </tr>
-                                       
-                                        <tr>
+                                   
+                                     	<tr>
                                             <td>Thumbnail</td>
                                             <td><img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>"></td>
                                          </tr>
-                                     <%}else{ %> 
-                                    	<tr>
-                                            <td>Board</td>
-                                            <td>참가 내역이 없습니다.</td>
-                                         </tr>
+                                    	
                                    	 <%} %>   
                                            <!--  <td>the Bird</td>
                                             <td>@twitter</td> -->
                                         
-                                    </tbody>
+                                   <!--  </tbody> -->
                                 </table>
                                  
                             </div>
