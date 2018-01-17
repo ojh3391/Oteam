@@ -8,13 +8,15 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.ActionForward;
 import dao.BoardDAO;
+import dao.NotifyDAO;
 import vo.BoardVO;
+import vo.NotifyVO;
 
-public class DashBoardList implements Action
+public class DashBoardAction implements Action
 {
 	private String path;
 	
-	public DashBoardList(String path)
+	public DashBoardAction(String path)
 	{
 		super();
 		this.path=path;
@@ -26,8 +28,11 @@ public class DashBoardList implements Action
 		BoardDAO dao=new BoardDAO();
 		Vector<BoardVO> list=dao.getDashList();
 		
-		req.setAttribute("list", list);
+		NotifyDAO nao=new NotifyDAO();
+		Vector<NotifyVO> notiList=nao.getNotifyList();
 		
+		req.setAttribute("list", list);
+		req.setAttribute("notiList", notiList);
 		
 		return new ActionForward(path, false);
 	}
