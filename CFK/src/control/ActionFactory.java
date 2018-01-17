@@ -83,6 +83,8 @@ public class ActionFactory {
 			action=new DashBoardAction("dashboard/pages/dash_board.jsp");
 		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
+		}else if(cmd.equals("/Leave.do")) {							//관리자가 회원 추방
+			action=new LeavePwdAction("Rank.do");
 		}else if(cmd.equals("/notify_insert.do")) {
 			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
 		}else if(cmd.equals("/Leave.do")) {
