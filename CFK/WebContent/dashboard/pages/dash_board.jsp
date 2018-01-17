@@ -152,9 +152,13 @@
                                         <td><%=vo.getBoard_readcount() %></td>
                                         <td><%=vo.getBoard_date() %></td>
                                         <td>
-                                        
+                                        <form action="dashboard_delete.do" method="post">
+                                        <input type="hidden" name="board_num" value="<%=vo.getBoard_num()%>">
+                                        <input type="submit" class="btn btn-danger" value="삭제">
+                                        </form>
+                                        </td>
+                                   </tr>     
 
- 
                                    <%}%>
                                 </tbody>
     
