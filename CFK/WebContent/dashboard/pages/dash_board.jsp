@@ -154,13 +154,13 @@
                                         <td>
                                         <form action="dashboard_delete.do" method="post" name="<%=vo.getBoard_num()%>">
                                           <input type="hidden" name="board_num">
-                                         <button type="button" class="btn btn-danger" onclick="board_delete();">삭제</button>
+                                         <button type="button" class="btn btn-danger" onclick="board_delete('<%=vo.getBoard_num()%>');">삭제</button>
                                         </form>
                                         </td>
                                      </tr>
-                                   		<script type="text/javascript">
-                                   		function board_delete() {
-    										document.<%=vo.getBoard_num() %>.user_id.value = id;
+                                   		<script>
+                                   		function board_delete(id) {
+    										document.<%=vo.getBoard_num() %>.board_num.value = id;
     										
     										if(confirm("정말로 탈퇴시키겠습니까?")) {
     											document.<%=vo.getBoard_num() %>.submit();
