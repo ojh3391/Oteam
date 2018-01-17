@@ -11,6 +11,7 @@ import board.model.BoardDeleteAction;
 import board.model.BoardVoteAction;
 import dash.model.DashBoardAction;
 import dash.model.DashUserAction;
+import dash.model.NotifyDeleteAction;
 import dash.model.NotifyInsertAction;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
@@ -85,8 +86,10 @@ public class ActionFactory {
 			action=new LeavePwdAction("Dashuser.do");
 		}else if(cmd.equals("/notify_insert.do")) {					//관리자가 공지사항 추가
 			action=new NotifyInsertAction("Dashboard.do");
-		}else if(cmd.equals("dashboard_delete.do")) {
+		}else if(cmd.equals("/dashboard_delete.do")) {
 			action=new BoardDeleteAction("Dashboard.do");
+		}else if(cmd.equals("/notify_delete.do")) {
+			action=new NotifyDeleteAction("Dashboard.do");
 		}
 		
 		return action;

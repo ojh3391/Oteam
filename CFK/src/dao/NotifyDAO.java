@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Vector;
 
 import control.JDBCUtil;
@@ -80,4 +81,30 @@ public class NotifyDAO
 		}
 		return list;
 	}
+	
+		public int notify_delete(int notify_num)
+		{
+			int result=0;
+			con=JDBCUtil.getConnection();
+			try {
+				String sql="delete from cfk_notify where notify_num=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setInt(1, notify_num);
+				result=pstmt.executeUpdate();
+				
+				
+				
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}finally {
+				JDBCUtil.close(con,pstmt);
+			}
+			
+			
+			return result;
+					
+		}
+		
+	
 }

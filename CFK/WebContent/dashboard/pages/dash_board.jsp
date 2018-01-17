@@ -49,6 +49,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script>
+  		function notify_insert()
+  		{
+ 			location.href="notify.do";
+ 			document.notify.submit();
+ 			
+  		}
+  		
+  	</script>
 
 </head>
 
@@ -153,23 +163,12 @@
                                         <td><%=vo.getBoard_date() %></td>
                                         <td>
                                         <form action="dashboard_delete.do" method="post" >
-                                          <input type="hidden" name="board_num">
+                                          <input type="hidden" name="board_num" value="<%=vo.getBoard_num() %>">
                                           <input type="submit" class="btn btn-danger" value="삭제">
-                                         <button type="button" class="btn btn-danger" onclick="board_delete();">삭제</button>
                                         </form>
                                         </td>
                                      </tr>
-                                   	
-                                   		<script type="text/javascript">
-                                   		function board_delete() {
-    										document.<%=vo.getBoard_num() %>.user_id.value = id;
-    										
-    										if(confirm("정말로 탈퇴시키겠습니까?")) {
-    											document.<%=vo.getBoard_num() %>.submit();
-    										}
-   										 }
-                                     	</script>
-                                    
+                                   	                                   		                                    
                                    <%}%>
                                 </tbody>
     
@@ -216,7 +215,10 @@
                                             <td><%=vo.getNotify_content()%></td>
                                             <td><%=vo.getNotify_date() %></td>
                                             <td>
-                                              <button type="button" class="btn btn-danger">삭제</button>
+                                            <form action="notify_delete.do" method="post" >
+                                              <input type="hidden" name="notify_num" value="<%=vo.getNotify_num() %>">
+                                          	  <input type="submit" class="btn btn-danger" value="삭제">
+                                            </form>  
                                             </td>
                                         </tr>
                                         
@@ -275,7 +277,7 @@
         <!-- /#page-wrapper -->
 
     </div>
-    </div>
+    
     <!-- /#wrapper -->
 	</div>
     <!-- jQuery -->
