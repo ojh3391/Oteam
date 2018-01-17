@@ -170,20 +170,21 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                     
                                         <td>
                                           <button type="button" class="btn btn-info">메일</button>
-                                          <form action="Leave.do" method="post" name="deport<%=vo.getUser_id() %>" >
-                                    		<input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd() %>">
-                                    		<input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
-                                          <button type="button" class="btn btn-danger" onclick="user_delete();">삭제</button>
+                                          <form action="Leave.do" method="post" name="<%=vo.getUser_id() %>" >
+                                    		<input type="hidden" name="user_passwd" value="">
+                                    		<input type="hidden" name="user_id" value="">
+                                          <button type="button" class="btn btn-danger" onclick="user_delete('<%=vo.getUser_id() %>','<%=vo.getUser_passwd() %>');">삭제</button>
                                          </form> 
                                         </td>
                                           
                                        </tr>
                                     	
                                        <script>
-										function user_delete() {
-    	
+										function user_delete(id,pwd) {
+    										document.<%=vo.getUser_id() %>.user_id.value = id;
+    										document.<%=vo.getUser_id() %>.user_passwd.value = pwd;
     										if(confirm("정말로 탈퇴시키겠습니까?")) {
-    											document.deport<%=vo.getUser_id()%>.submit();
+    											document.<%=vo.getUser_id() %>.submit();
     										}
    										 }
 										</script>
