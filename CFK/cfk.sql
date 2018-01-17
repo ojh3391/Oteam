@@ -30,7 +30,7 @@ create table cfk_board(
 );	
 drop table cfk_board;
 select * from cfk_board;
-update cfk_reply set reply_re_del="0" where reply_num="1";
+update cfk_board set board_vote="99" where board_num="1";
 update cfk_reply set reply_content="아아" where reply_num="1";
 
 insert into cfk_board values(11,'11','11','11',NULL,NULL,'11',0,0,now());

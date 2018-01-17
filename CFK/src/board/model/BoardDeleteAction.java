@@ -25,7 +25,7 @@ public class BoardDeleteAction implements Action {
 		
 		
 		int board_num=Integer.parseInt(req.getParameter("board_num"));
-		
+		System.out.println(board_num);
 	
 		//해당 일치하는 레코드 삭제하기
 		BoardDAO dao1=new BoardDAO();

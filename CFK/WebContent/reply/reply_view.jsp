@@ -204,21 +204,34 @@
                         	</div>
                     	</div>
                			<div class="span5">
-                       		<ul class="skills">
-                           		<li>
-                               		<span class="bar" data-width="<%=vo1.getBoard_vote()%>%"></span>
-                               		<h3>득표수 <%=vo1.getBoard_vote()%>%</h3>
-                           		</li>
-                       		</ul>
-                       		<form action="Vote.do" method="post">
-                       		<input type="hidden" name="user_id" value="<%=vo2.getUser_id() %>">	
-                       		<input type="hidden" name="board_num" value="<%=vo1.getBoard_num() %>">	
-                       		<input type="hidden" name="page" value="<%=current_page %>">
-                       			<div align="center">
-                       				<button class="button button-sp" >투표</button>
-                       			</div>		
-                       		</form>
-                    	</div>
+                       			
+                               		<%
+                               		if(vo1.getBoard_vote()>=100){
+                               		%>	
+                               			<div align="center">
+                               			<img style="border-radius:35px;" src="/CFK/images/pass.png" width="280">
+                               			</div>	
+                               		<%	
+                               		}else{
+                               		%>
+                               			<ul class="skills">
+                           				<li>
+                               			<span class="bar" data-width="<%=vo1.getBoard_vote()%>%"></span>
+                               			<h3>득표수 <%=vo1.getBoard_vote()%>표</h3>
+                               			</li>
+                               			</ul>
+                       					<form action="Vote.do" method="post">
+                       					<input type="hidden" name="user_id" value="<%=vo2.getUser_id() %>">	
+                       					<input type="hidden" name="board_num" value="<%=vo1.getBoard_num() %>">	
+                       					<input type="hidden" name="page" value="<%=current_page %>">
+                       					<div align="center">
+                       						<button class="button button-sp" >투표</button>
+                       					</div>		
+                       					</form>
+                               		<%
+                               		}
+                               		%>
+                       		</div>
                 	</td>
 				</div>
 			</ul>                       

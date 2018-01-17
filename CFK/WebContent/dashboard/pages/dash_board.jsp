@@ -49,6 +49,16 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script>
+  		function notify_insert()
+  		{
+ 			location.href="notify.do";
+ 			document.notify.submit();
+ 			
+  		}
+  		
+  	</script>
 
 </head>
 
@@ -152,6 +162,13 @@
                                         <td><%=vo.getBoard_readcount() %></td>
                                         <td><%=vo.getBoard_date() %></td>
                                         <td>
+                                        <form action="dashboard_delete.do" method="post" >
+                                          <input type="hidden" name="board_num" value="<%=vo.getBoard_num() %>">
+                                          <input type="submit" class="btn btn-danger" value="삭제">
+                                        </form>
+                                        </td>
+                                     </tr>
+                                   	                                   		                                    
                                         
 
  
@@ -201,7 +218,10 @@
                                             <td><%=vo.getNotify_content()%></td>
                                             <td><%=vo.getNotify_date() %></td>
                                             <td>
-                                              <button type="button" class="btn btn-danger">삭제</button>
+                                            <form action="notify_delete.do" method="post" >
+                                              <input type="hidden" name="notify_num" value="<%=vo.getNotify_num() %>">
+                                          	  <input type="submit" class="btn btn-danger" value="삭제">
+                                            </form>  
                                             </td>
                                         </tr>
                                         
@@ -228,14 +248,20 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
+		
+			<div class="row">
+                <div class="col-lg-6">
+                    <h1 class="page-header">공지사항 등록</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
-                    <form action="notify_insert.do" method="post" name="notify">
+                    
                         <div class="panel-heading">
-							
+						  <form action="notify_insert.do" method="post" name="notify">	
                             <p align="right"><button type="button" class="btn btn-primary" onclick="notify_insert()">등록</button></p>
 
                         </div>
@@ -243,9 +269,9 @@
                         <div class="panel-body">
                           <textarea class="form-control" rows="15" name="notify_content" placeholder="내용" required></textarea>
                             <!-- /.table-responsive -->
-                            
+                          </form>  
                         </div>
-                   </form>
+                   
                         <!-- /.panel-body -->
                         
                  	</div>
@@ -260,7 +286,7 @@
         <!-- /#page-wrapper -->
 
     </div>
-    </div>
+    
     <!-- /#wrapper -->
 	</div>
     <!-- jQuery -->
