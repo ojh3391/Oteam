@@ -48,7 +48,8 @@
 	<script>
 		function notify_insert()
 		{
-			location.href="notify.do";
+			document.notify.submit();
+			
 		}
 		
 	</script>
@@ -234,7 +235,6 @@
             </div>
 
 
-		<form action="notify_insert.do" method="post">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">공지사항 등록</h1>
@@ -244,31 +244,35 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
+                    <form action="notify_insert.do" method="post" name="notify">
                         <div class="panel-heading">
-
+							
                             <p align="right"><button type="button" class="btn btn-primary" onclick="notify_insert()">등록</button></p>
 
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                          <textarea class="form-control" rows="15" name="notify_content" placeholder="내용"></textarea>
+                          <textarea class="form-control" rows="15" name="notify_content" placeholder="내용" required></textarea>
                             <!-- /.table-responsive -->
+                            
                         </div>
+                   </form>
                         <!-- /.panel-body -->
-                    </div>
+                        
+                 	</div>
                     <!-- /.panel -->
-                </div>
+             	</div>
                 <!-- /.col-lg-6 -->
 
 
             </div>
-		</form>
+	
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
-	</form>
+	
     <!-- jQuery -->
     <script src="/CFK/dashboard/vendor/jquery/jquery.min.js"></script>
 

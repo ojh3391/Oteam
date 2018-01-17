@@ -53,6 +53,8 @@ create table cfk_notify(
 	notify_date date
 );
 
+delete from cfk_notify where notify_num=3;
+
 select * from cfk_notify;
 insert into cfk_notify values(1,'공지사항뭐라어쩌구',now());
 
@@ -70,6 +72,7 @@ select count(reply_re_del=0) from cfk_reply where reply_re_ref=1;
 drop table cfk_reply;
 drop table cfk_board;
 drop table cfk_user;
+drop table cfk_notify;
 select * from cfk_reply;
 select count(*) from cfk_reply where reply_re_ref=1 and reply_re_del=0;
 update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_num=1;
