@@ -164,13 +164,7 @@
                                             <!-- <td>Thornton</td>
                                             <td>@fat</td> -->
                                         </tr>
-                                        <tr>
-                                            <td>E-mail</td>
-                                            <td><%=vo.getBoard_vote() %></td>
-                                            <!-- <td>Thornton</td>
-                                            <td>@fat</td> -->
-                                        </tr>
-                                        
+                                       
                                         <tr>
                                             <td>Thumbnail</td>
                                             <td><img src="/CFK/thumb/<%=vo.getBoard_thumbnail() %>"></td>
