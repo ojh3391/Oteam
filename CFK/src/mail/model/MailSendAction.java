@@ -28,7 +28,7 @@ public class MailSendAction implements Action {
 		UserDAO dao1=new UserDAO();
 		BoardDAO dao=new BoardDAO();
 		
-		UserVO vo1=dao1.getUser(user_id);
+		UserVO vo1=dao1.myUser(user_id);
 		BoardVO vo=dao.getData(user_id);
 		req.setAttribute("vo1", vo1);
 		req.setAttribute("vo", vo);
