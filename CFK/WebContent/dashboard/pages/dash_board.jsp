@@ -49,10 +49,8 @@
 		function notify_insert()
 		{
 			document.notify.submit();
-			
 		}
-		
-		
+
 	</script>
 
 </head>
@@ -250,12 +248,6 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">공지사항 등록</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="panel panel-default">

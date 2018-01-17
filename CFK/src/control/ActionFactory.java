@@ -1,13 +1,13 @@
 package control;
 
 import action.Action;
-import board.model.BoardDeleteAction;
 import board.model.BoardEnterAction;
 import board.model.BoardHitUpdateAction;
 import board.model.BoardListAction;
 import board.model.BoardDeletePwdAction;
 import board.model.BoardUpdateAction;
 import board.model.BoardChangePwdAction;
+import board.model.BoardDeleteAction;
 import board.model.BoardVoteAction;
 import dash.model.DashBoardAction;
 import dash.model.DashUserAction;
@@ -59,10 +59,8 @@ public class ActionFactory {
 			action=new AttendAction("board/board_attend_confirm.jsp");
 		}else if(cmd.equals("/reply_pwd.do")) {						//댓글 등록시 비번체크 및 액션
 			action=new ReplyPwdAction("View.do");		
-		}else if(cmd.equals("/board_delete_pwd.do")) {				//게시글 삭제 시 비번체크
-			action=new BoardDeletePwdAction("BoardDelete.do");
-		}else if(cmd.equals("/BoardDelete.do")) {					//게시글 삭제 액션
-			action=new BoardDeleteAction("List.do");
+		}else if(cmd.equals("/board_delete_pwd.do")) {				//게시글 삭제 시 비번체크 및 액션
+			action=new BoardDeletePwdAction("List.do");	
 		}else if(cmd.equals("/reply_delete.do")) {					//댓글 삭제 비번체크 및 액션
 			action=new ReplyDeletePwdAction("View.do");
 		}else if(cmd.equals("/reply_re_pwd.do")) {					//댓글에 댓글 비번체크 및 액션
@@ -83,13 +81,13 @@ public class ActionFactory {
 			action=new DashBoardAction("dashboard/pages/dash_board.jsp");
 		}else if(cmd.equals("/Dashuser.do")) {                      //관리자 페이지 회원관리 액션
 			action=new DashUserAction("dashboard/pages/dash_user.jsp");
-		}else if(cmd.equals("/Leave.do")) {							//관리자가 회원 추방
-			action=new LeavePwdAction("Rank.do");
-		}else if(cmd.equals("/notify_insert.do")) {
+		}else if(cmd.equals("/user_leave.do")) {					//관리자가 회원 추방
+			action=new LeavePwdAction("Dashuser.do");
+		}else if(cmd.equals("/notify_insert.do")) {					//관리자가 공지사항 추가
 			action=new NotifyInsertAction("Dashboard.do");
 		}else if(cmd.equals("/Leave.do")) {
 			action=new NotifyInsertAction("dashboard/pages/dash_user.jsp");
-		}else if(cmd.equals("/Leave.do")) {
+		}else if(cmd.equals("")) {
 			action=new LeavePwdAction("Dashuser.do");
 		}else if(cmd.equals("dashboard_delete.do")) {
 			action=new BoardDeleteAction("Dashboard.do");

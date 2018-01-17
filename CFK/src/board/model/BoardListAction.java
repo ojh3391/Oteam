@@ -61,10 +61,14 @@ public class BoardListAction implements Action
 		
 		//페이지 변수값에 따른 목록가져오기
 		Vector<BoardVO> list=dao.getList(page,limit);
+		NotifyDAO dao1=new NotifyDAO();
+		Vector<NotifyVO> notiList=dao1.getNotifyList();
+		req.setAttribute("notiList", notiList);
 		//가져온 목록을 request에 담고 페이지 이동
 		if(list!=null) {
 			req.setAttribute("list", list);
 			req.setAttribute("info", info);
+			
 		}
 		
 		return new ActionForward(path, false);

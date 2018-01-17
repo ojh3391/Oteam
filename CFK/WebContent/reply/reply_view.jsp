@@ -1,3 +1,4 @@
+<%@page import="vo.NotifyVO"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="vo.PageVO"%>
 <%@page import="vo.UserVO"%>
@@ -19,6 +20,7 @@
 
 	BoardVO vo1=(BoardVO)request.getAttribute("vo");
 	Vector<ReplyVO> list=(Vector<ReplyVO>)request.getAttribute("list");
+	Vector<NotifyVO> notiList=(Vector<NotifyVO>)request.getAttribute("notiList");
 	PageVO info=(PageVO)request.getAttribute("info");
 	
 	//댓글 페이지 정보
@@ -136,7 +138,7 @@
                         <ul class="nav" id="top-navigation">
                         	<li><div id="ViewTimer"></div></li>
                             <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
-                            <li><a href="/CFK/index.jsp#service">함께하기</a></li>
+                            <li><a href="/CFK/Rank.do#service">함께하기</a></li>
                             <li><a href="/CFK/List.do#portfolio">투표하기</a></li>
                             <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
                             <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
@@ -161,8 +163,13 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-                        <p>1.영상을 올리실때는 MP4 50MB 미만으로 가능합니다.</p>
-                        <p>2.투표는 3번만 가능합니다.</p>
+                    	<%
+                    	for(NotifyVO vo : notiList){
+                    	%>
+                        <p>●<%=vo.getNotify_content() %>. 작성일:<%=vo.getNotify_date() %></p>
+                        <%
+                    	}
+                        %>
                     </div>
                 </div>
             </div>

@@ -8,9 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.ActionForward;
 import dao.BoardDAO;
+import dao.NotifyDAO;
 import dao.ReplyDAO;
 import vo.ReplyVO;
 import vo.BoardVO;
+import vo.NotifyVO;
 import vo.PageVO;
 
 public class ReplyViewAction implements Action {
@@ -60,10 +62,12 @@ public class ReplyViewAction implements Action {
 		BoardVO vo=dao.getRow(board_num);
 		Vector<ReplyVO> list=dao1.getList(page,limit,board_num);
 		//가져온 내용 담고 페이지 이동
+		NotifyDAO dao2=new NotifyDAO();
+		Vector<NotifyVO> notiList=dao2.getNotifyList();
 		
+		req.setAttribute("notiList", notiList);
 		req.setAttribute("vo", vo);
 		req.setAttribute("list", list);
-		//req.setAttribute("page", current_page);
 		req.setAttribute("info", info);
 		
 		return new ActionForward(path,false);

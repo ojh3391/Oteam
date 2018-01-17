@@ -1,17 +1,20 @@
 package dash.model;
 
+import java.util.Vector;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.ActionForward;
 import dao.NotifyDAO;
+import vo.NotifyVO;
 
-public class NotifyInsertAction implements Action
+public class NotifyViewAction implements Action
 {
 	private String path;
 	
-	public NotifyInsertAction(String path)
+	public NotifyViewAction(String path)
 	{
 		super();
 		this.path = path;
@@ -20,10 +23,11 @@ public class NotifyInsertAction implements Action
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
 	{
-		String notify_content=req.getParameter("notify_content");
-		
 		NotifyDAO dao=new NotifyDAO();
-		dao.notify_insert(notify_content);
+		Vector<NotifyVO> notiList=dao.getNotifyList();
+		
+		
+		req.setAttribute("notiList", notiList);
 		
 		
 		return new ActionForward(path, true);
