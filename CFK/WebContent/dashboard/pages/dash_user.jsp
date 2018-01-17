@@ -164,7 +164,7 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                    			<form action="dash_mail.do" method="post">
                                    			 <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">  
                                           	                    
-                                             <input type="submit" class="btn btn-danger" value="메일">
+                                             <input type="submit" class="btn btn-info" value="메일">
                                    			</form>
                                    		</td>
                                    			
