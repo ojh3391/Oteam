@@ -29,7 +29,7 @@ public class NotifyDAO
 			else
 				num=1;
 			
-			String sql="insert into notify_board values(?,?,now())";
+			String sql="insert into cfk_notify values(?,?,now())";
 			pstmt=con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.setString(2, content);

@@ -48,7 +48,7 @@
 	<script>
 		function notify_insert()
 		{
-			location.href="notify.do";
+			document.notify.submit();
 		}
 		
 	</script>
@@ -234,7 +234,7 @@
             </div>
 
 
-		<form action="notify_insert.do" method="post">
+		<form action="notify_insert.do" method="post" name="notify">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">공지사항 등록</h1>
