@@ -7,6 +7,7 @@ import java.util.Vector;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import action.Action;
 import action.ActionForward;
@@ -102,8 +103,9 @@ public class LeavePwdAction implements Action {
 			
 			
 			HttpSession session=req.getSession(false);
-			if(session.getAttribute("vo")!=null) {
-				session.invalidate();
+			UserVO vo1=(UserVO)session.getAttribute("vo");
+			if(vo1.getUser_id().equals("admin")) {
+				
 				res.setContentType("text/html;charset=UTF-8");
 				PrintWriter out=res.getWriter();
 				out.println("<script>");
@@ -112,6 +114,15 @@ public class LeavePwdAction implements Action {
 				out.println("</script>");
 				out.close();
 				
+			}else {
+				session.invalidate();
+				res.setContentType("text/html;charset=UTF-8");
+				PrintWriter out=res.getWriter();
+				out.println("<script>");
+				out.println("alert('탈퇴가 완료되었습니다.이용해주셔서 감사합니다');");
+				out.println("location.href='Rank.do'");
+				out.println("</script>");
+				out.close();
 			}
 			
 		}else {
