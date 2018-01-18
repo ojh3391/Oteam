@@ -17,7 +17,7 @@
 <html>
 	<head>
 		<script>
-			//파일 dㅓ	
+			//파일 업로드시 50Mb 이상일 경우	
 			function sizecheck(file)
 			{
 				var maxSize=50*1024*1024
