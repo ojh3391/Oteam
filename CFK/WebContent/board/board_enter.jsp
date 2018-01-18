@@ -18,6 +18,7 @@
 	<head>
 		<script>
 			//파일 업로드시 50Mb이상일 경우 경고창
+			//파일 업로드시 50Mb 이상일 경우	
 			function sizecheck(file)
 			{
 				var form=document.upload;
