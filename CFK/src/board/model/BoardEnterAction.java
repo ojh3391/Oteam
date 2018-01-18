@@ -1,6 +1,8 @@
 package board.model;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,6 +29,8 @@ public class BoardEnterAction implements Action
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) throws Exception
 	{
 		
+		res.setContentType("text/html;charset=UTF-8");
+		PrintWriter out=res.getWriter();
 		String uploadPath=req.getServletContext().getRealPath("/boardUpload");
 		String uploadPath2=req.getServletContext().getRealPath("/thumb");
 		
@@ -59,31 +63,44 @@ public class BoardEnterAction implements Action
 				String fileName=multi.getFilesystemName((String) multi.getFileNames().nextElement());
 				int idx=fileName.lastIndexOf(".");
 				String _fileName=fileName.substring(0, idx);
-			
+				String tmp=fileName.substring(idx+1);
+				
 				String filePath=uploadPath+"\\"+fileName;
 				String filePath2=uploadPath2+"\\"+_fileName+".jpg";
-			
+				
 				String thumb=_fileName+".jpg";
 				vo.setBoard_thumbnail(thumb);
+				
+				
 			
 			
 				String[] cmd=new String[] {"/ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
 				
-				dao.parti_minus(user_id);
-				try
+				if(!tmp.equalsIgnoreCase("mp4"))
 				{
-					Process p=new ProcessBuilder(cmd).start();
-					p.waitFor();
-				}catch(Exception e)
-				{
-					e.printStackTrace();
+					
+					out.println("<script>");
+					out.println("alert('mp4 파일로 올리시오');");
+					out.println("history.go(-1);");
+					out.println("</script>");
+					out.close();
+				}else
+				{	
+					dao.parti_minus(user_id);
+					try
+					{
+						Process p=new ProcessBuilder(cmd).start();
+						p.waitFor();
+					}catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					dao.board_parti(vo);
 				}
-				dao.board_parti(vo);
-				
 			}
 		}catch(IOException e)
 		{
-			e.printStackTrace();
+			
 		}
 		
 		return new ActionForward(path, false);

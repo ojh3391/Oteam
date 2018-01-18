@@ -16,6 +16,23 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script>
+			function sizecheck(file)
+			{
+				var maxSize=50*1024*1024
+				var fileSize=0;
+				
+				fileSize=file.files[0].size;
+				if(fileSize>maxSize)
+				{
+					alert("50MB 이하 파일로 올리시오")
+					return;
+				}
+				document.upload.submit();
+							}
+			
+		</script>
+	
     </head>
     <body>
     	<jsp:include page="../board_top.jsp"></jsp:include>
@@ -25,7 +42,7 @@
         		<h1>참가신청</h1>
                 <p>패션킹에 도전해 보세요!!</p>        
         		</div>
-        		<form action="/CFK/Enter.do" method="post" enctype="multipart/form-data">
+        		<form action="/CFK/Enter.do" method="post" enctype="multipart/form-data" name="upload">
        			<input type="hidden" name="user_id" value="<%=vo.getUser_id() %>">
 					<table align="center">		
 						<tr>
@@ -42,7 +59,7 @@
 						</tr>
 						<tr>
 							<td align="center" colspan="2" class="btn_align">
-								<input class="message-btn" type="submit" value="신청하기" >
+								<input class="message-btn" type="button" onclick="sizecheck(this.form.board_file)" value="신청하기" >
 								<input class="message-btn" type="reset" value="새로입력">
 								<input class="message-btn" type="button" value="취소" onclick="javascript:history.back();">
 							</td>
