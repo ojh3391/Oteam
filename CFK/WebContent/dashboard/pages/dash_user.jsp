@@ -160,10 +160,23 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                         <%}else{ %>
                                         <td>신청 내역 없음</td>
                                         <%} %>                                    
+                                   		<%
+                                   		if(vo.getUser_id().equals("admin")) {
+                                   		%>
                                    		<td width="90" align="center">
                                    			<form action="dash_mail.do" method="post">
-                                   			 <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">  
-                                          	                    
+                                   			 <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">                                            	                    
+                                             <input type="submit" class="btn btn-info" value="메일">
+                                   			</form>
+                                   		</td>
+                                   		<td>
+                                   		</td>	
+                                   		<%
+                                   		}else{
+                                   		%>
+                                   		<td width="90" align="center">
+                                   			<form action="dash_mail.do" method="post">
+                                   			 <input type="hidden" name="user_id" value="<%=vo.getUser_id()%>">                                            	                    
                                              <input type="submit" class="btn btn-info" value="메일">
                                    			</form>
                                    		</td>
@@ -175,7 +188,10 @@ Vector<UserVO> list=(Vector<UserVO>)request.getAttribute("list");
                                           <input type="hidden" name="user_passwd" value="<%=vo.getUser_passwd()%>">                    
                                           <input type="submit" class="btn btn-danger" value="삭제">
                                           </form>                                        
-                                        </td>                                          
+                                        </td>
+                                        <%
+                                   		}
+                                        %>                                          
                                    </tr>                                   	
                                  <% } %>
                                         	
