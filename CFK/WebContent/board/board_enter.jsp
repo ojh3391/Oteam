@@ -17,19 +17,36 @@
 <html>
 	<head>
 		<script>
+			//파일 업로드시 50Mb이상일 경우 경고창
 			function sizecheck(file)
 			{
-				var maxSize=50*1024*1024
-				var fileSize=0;
-				
-				fileSize=file.files[0].size;
-				if(fileSize>maxSize)
+				var form=document.upload;
+				if(!form.board_subject.value)
 				{
-					alert("50MB 이하 파일로 올리시오")
-					return;
+					alert("제목을 입력하세요");
+					return false;
+				}else if(!form.board_content.value)
+				{
+					alert("내용을 입력하세요");
+					return false;
+				}else if(!form.board_file.value)
+				{
+					alert("파일을 선택하세요");
+					return false;
+				}else
+				{
+					var maxSize=50*1024*1024
+					var fileSize=0;
+				
+					fileSize=file.files[0].size;
+					if(fileSize>maxSize)
+					{
+						alert("50MB 이하 파일로 올리시오")
+						return;
+					}
+					document.upload.submit();
 				}
-				document.upload.submit();
-							}
+			}
 			
 		</script>
 	

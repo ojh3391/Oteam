@@ -51,7 +51,6 @@ public class BoardEnterAction implements Action
 				path="/error/enter_error.jsp";
 			}else
 			{	
-				
 				BoardVO vo=new BoardVO();
 				vo.setBoard_subject(multi.getParameter("board_subject"));
 				vo.setBoard_content(multi.getParameter("board_content"));
@@ -59,7 +58,7 @@ public class BoardEnterAction implements Action
 				vo.setBoard_real_file(multi.getFilesystemName((String) multi.getFileNames().nextElement()));
 				vo.setBoard_writer(multi.getParameter("user_id"));
 			
-				//동영상 썸네일 이미지 추출
+				//동영상 썸네일 이미지  저장경로, 파일명, 확장자 추출
 				String fileName=multi.getFilesystemName((String) multi.getFileNames().nextElement());
 				int idx=fileName.lastIndexOf(".");
 				String _fileName=fileName.substring(0, idx);
@@ -71,14 +70,11 @@ public class BoardEnterAction implements Action
 				String thumb=_fileName+".jpg";
 				vo.setBoard_thumbnail(thumb);
 				
-				
-			
-			
+				//리눅스 서버에서 프로그램 실행해서 동영상 썸네일 생성
 				String[] cmd=new String[] {"/ffmpeg.exe","-i",filePath,"-ss","00:00:05","-vframes","1","-an","-s","300*200",filePath2};
 				
 				if(!tmp.equalsIgnoreCase("mp4"))
 				{
-					
 					out.println("<script>");
 					out.println("alert('mp4 파일로 올리시오');");
 					out.println("history.go(-1);");
@@ -100,7 +96,7 @@ public class BoardEnterAction implements Action
 			}
 		}catch(IOException e)
 		{
-			
+			e.printStackTrace();
 		}
 		
 		return new ActionForward(path, false);
