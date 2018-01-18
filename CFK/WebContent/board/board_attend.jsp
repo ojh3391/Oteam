@@ -15,6 +15,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+	<style type="text/css">
+            *{padding: 0px; margin: 0px;}  /* 브라우저별 기본 여백 차이가 있기에 작성한다. */
+            body{font-size: 9pt;}
+            td{font-size: 9pt;}
+            a{cusor: pointer; color: #000000; text-decoration: none; font-size: 9pt; line-height: 150%;}
+            a:HOVER, a:ACTIVE{font-size: 9pt; color: #F28011; text-decoration: underline;}
+        </style>
+        
+        <script language="javascript" type="text/javascript">
+        //달력의 선택한 변수 i를 받아와서 값을 request로 넘기고 submit
+        function select_day(day) {
+        	var select_day = day;
+        	document.select.select_day.value=select_day;
+        	var form1 = document.select;
+        	if(confirm("기존의 신청내역은 취소됩니다. 새로 신청하시겠습니까?")) {
+        		form1.submit();
+        	}
+        }
+       
+        </script>
     </head>
     <body>
     	<jsp:include page="../board_top.jsp"></jsp:include>
@@ -27,7 +47,7 @@
 					<table align="center">
 						<tr>
 							<td>
-								<iframe src="board_attend_calendar.jsp" frameborder="0" width="590" height="700" id="iframeTicket" title="방청권 신청 프레임"></iframe>
+								<iframe class="container" src="board_attend_calendar.jsp" frameborder="0" width="590" height="700" id="iframeTicket" title="방청권 신청 프레임"></iframe>
 							</td>
 						</tr>
 					</table>

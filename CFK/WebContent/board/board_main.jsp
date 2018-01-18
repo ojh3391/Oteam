@@ -293,18 +293,21 @@
                     </div>
                 </div>
                 <div class="container">
-                	<div class="map-wrapper">
-                		<div style="width:50%;float:left;"><img src="/CFK/images/background/show.PNG" width="500" alt="show">
-                	   		<video id="video" poster="/CFK/images/min.jpg" webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4" style="margin-top:50px;" width="500" height="300" loop preload>
-                            	<source src="/CFK/boardUpload/min.mp4" >
-                        	</video>
-                        </div> 
-                    	<div style="width:50%;float:left;">
-                    	<iframe src="map.html" frameborder="0" width="585px" height="604px" id="" title="방청권 신청 프레임"></iframe>
-                    	</div>
-                    	
-                	</div>    
+                	
+                		
+                		<video class="container" style="float: left; width: 50%;" id="video" poster="/CFK/images/min.jpg" webkit-playsline playsline data-video="/CFK/boardUpload/min.mp4"  width="500" height="300" loop preload>
+                        <source src="/CFK/boardUpload/min.mp4" >
+                        </video>
+                   	
+                   	
+                		<img class="container" style="float: left; width: 50%;" src="/CFK/images/background/show.PNG" width="1000" alt="show">
+                	     	
+              
+                </div>		
+                <div align="center">
+                    <iframe class="container" src="map.html" frameborder="0" width="720" height="320" title="map"></iframe>
                 </div>
+  
                 <div class="container">
                     <div class="span9 center contact-info">
                         <p>123 Fifth Avenue, 노원</p>
