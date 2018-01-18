@@ -17,6 +17,7 @@
 <html>
 	<head>
 		<script>
+			//파일 dㅓ	
 			function sizecheck(file)
 			{
 				var maxSize=50*1024*1024
