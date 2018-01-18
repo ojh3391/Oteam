@@ -162,11 +162,11 @@
 					for(int i=startPage;i<=endPage;i++){
 						if(i==current_page){
 						%><li class="filter">
-              	          <a href="qList.do?page=<%=i %>"><%=i %></a>
+              	          <a href="List.do?page=<%=i %>"><%=i %></a>
              	 	      </li><%
 						}else{
 						%><li class="filter">
-          	              <a href="qList.do?page=<%=i %>"><%=i %></a>
+          	              <a href="List.do?page=<%=i %>"><%=i %></a>
            		          </li><%
 						}
 					}
@@ -185,7 +185,7 @@
                               	<p><%=vo.getBoard_date()%></p>
                              	<div class="mask">
                              	<h2><%=vo.getBoard_writer()%></h2>
-                              	<a href="HitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=<%=current_page%>">
+                              	<a href="HitUpdate.do?board_num=<%=vo.getBoard_num()%>&page=1">
                              	<h2><i class="icon-plus"></i></h2></a>
                              	</div>
                         	</div>

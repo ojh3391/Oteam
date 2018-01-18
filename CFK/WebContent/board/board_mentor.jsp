@@ -59,7 +59,11 @@
                 <div class="container">
                     <div class="title">
                         <h1>작년 우승자와의 만남</h1>
-                        
+                        	<div>
+                        		<video width="600" height="400" controls autoplay>
+                            			<source src="/CFK/boardUpload/min.mp4">
+                            	</video>
+                        	</div>
                         <p>인터뷰</p>
                     </div>
            
