@@ -10,12 +10,12 @@ import dao.UserDAO;
 import vo.BoardVO;
 import vo.UserVO;
 
-public class MailSendAction implements Action {
+public class MailViewAction implements Action {
 
 	private String path;
 	
 	
-	public MailSendAction(String path) {
+	public MailViewAction(String path) {
 		super();
 		this.path = path;
 	}

@@ -13,7 +13,8 @@ import dash.model.DashBoardAction;
 import dash.model.DashUserAction;
 import dash.model.NotifyDeleteAction;
 import dash.model.NotifyInsertAction;
-import mail.model.MailSendAction;
+import mail.model.MailViewAction;
+import mail.model.SendEmailAction;
 import board.model.BoardRankAction;
 import reply.model.ReplyPwdAction;
 import reply.model.ReplyRePwdAction;
@@ -90,10 +91,11 @@ public class ActionFactory {
 		}else if(cmd.equals("/dashboard_delete.do")) {              //관리자 게시글 삭제
 			action=new BoardDeleteAction("Dashboard.do");
 		}else if(cmd.equals("/dash_mail.do")) {                     //관리자가 이메일 이동
-			action=new MailSendAction("dashboard/pages/dash_email.jsp");
+			action=new MailViewAction("dashboard/pages/dash_email.jsp");
 		}else if(cmd.equals("/notify_delete.do")) {                 //공지사항 삭제
 			action=new NotifyDeleteAction("Dashboard.do");
-
+		}else if(cmd.equals("/sendemail.do")) {                      //관리자작 이메일 전송으로 이동
+			action=new SendEmailAction("Dashuser.do");
 		}
 		
 		return action;

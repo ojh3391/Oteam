@@ -1,3 +1,4 @@
+<%@page import="mail.model.SendEmail"%>
 <%@page import="vo.UserVO"%>
 <%@page import="vo.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -114,25 +115,40 @@
             <!--메일박스-->
             <!-- /.row -->
             <div class="row">
+            <form action="sendemail.do" method="post">
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                         
                           <table>
+                         
                             <tr>
-                              <td><input size=100 class="form-control" type="email" placeholder="제목"></td><td><button type="button" class="btn btn-success">전송</button></td>
+                              <td>
+                              	<input size=100 class="form-control" type="email" name="address" value="<%=vo1.getUser_email()%>">
+                              </td>
+                              <td>
+                           
+                              		<input type="submit" class="btn btn-success"  value="전송">
+                     
+                              </td>
                             <tr>
+                            <tr>
+                              <td><input size=100 class="form-control" type="text" name="user_name" value="<%=vo1.getUser_name()%>"></td>
+                            <tr>
+                            
                           </table>
+                         
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                          <textarea class="form-control" rows="15" placeholder="내용"></textarea>
+                          <textarea class="form-control" rows="15" name="mail_content" placeholder="내용"></textarea>
                             <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                
+                 </form>
                 <!-- /.col-lg-6 -->
                 <div class="col-lg-6">
                     <div class="panel panel-default">
