@@ -53,13 +53,15 @@ public class LeavePwdAction implements Action {
 			
 			int board_num=0;
 			int reply_re_ref=0;
+			int reply_num=0;
 			if(vo==null&&ref.isEmpty()) {
 				dao.user_leave_only(user_id);
 			}else if(vo==null&&ref.isEmpty()==false) {
 				
 				for(ReplyVO re:ref) {
+					reply_num=re.getReply_num();
 					reply_re_ref=re.getReply_re_ref();
-					dao.user_leave_reply(user_id, reply_re_ref);
+					dao.user_leave_reply(user_id, reply_re_ref, reply_num);
 				}
 					
 			}else if(vo!=null&&ref.isEmpty()==false){
@@ -68,7 +70,9 @@ public class LeavePwdAction implements Action {
 				
 				for(ReplyVO re:ref) {
 					reply_re_ref=re.getReply_re_ref();
-					dao.user_leave_all(user_id,board_num,reply_re_ref);
+					reply_num=re.getReply_num();
+					reply_re_ref=re.getReply_re_ref();
+					dao.user_leave_all(user_id,board_num,reply_re_ref,reply_num);
 				}
 				
 				String uploadPath=req.getServletContext().getRealPath("/boardUpload");

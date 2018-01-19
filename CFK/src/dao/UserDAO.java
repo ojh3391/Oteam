@@ -209,7 +209,7 @@ public class UserDAO {
 		}	
 		return result;
 	}
-	public int user_leave_all(String user_id,int board_num,int reply_re_ref) {
+	public int user_leave_all(String user_id,int board_num,int reply_re_ref,int reply_num) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		
@@ -227,9 +227,10 @@ public class UserDAO {
 					pstmt.setInt(1, reply_re_ref);
 					result=pstmt.executeUpdate();
 				}else {
-					String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+					String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=? and reply_num=?";
 					pstmt=con.prepareStatement(sql);
 					pstmt.setString(1, user_id);
+					pstmt.setInt(2, reply_num);
 					result=pstmt.executeUpdate();
 				}
 			}
@@ -278,7 +279,7 @@ public class UserDAO {
 		}
 		return result;
 	}
-	public int user_leave_reply(String user_id,int reply_re_ref) {
+	public int user_leave_reply(String user_id,int reply_re_ref,int reply_num) {
 		int result=0;
 		con=JDBCUtil.getConnection();
 		
@@ -293,11 +294,17 @@ public class UserDAO {
 					String sql="delete from cfk_reply where reply_re_ref=?";
 					pstmt=con.prepareStatement(sql);
 					pstmt.setInt(1, reply_re_ref);
+					System.out.println(reply_re_ref);
+					
 					result=pstmt.executeUpdate();
 				}else {
-					String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=?";
+					String sql="update cfk_reply set reply_content='삭제된 댓글', reply_writer='없음', reply_date=null, reply_re_del=1 where reply_writer=? and reply_num=?";
 					pstmt=con.prepareStatement(sql);
 					pstmt.setString(1, user_id);
+					pstmt.setInt(2, reply_num);
+					
+					System.out.println(user_id);
+					System.out.println(reply_num);
 					result=pstmt.executeUpdate();
 				}
 			}

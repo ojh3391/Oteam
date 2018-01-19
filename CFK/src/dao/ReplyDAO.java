@@ -226,12 +226,13 @@ public class ReplyDAO {
 		con=JDBCUtil.getConnection();
 		
 		try {
-			pstmt=con.prepareStatement("select reply_re_ref from cfk_reply where reply_writer=?");
+			pstmt=con.prepareStatement("select reply_re_ref, reply_num from cfk_reply where reply_writer=?");
 			pstmt.setString(1, reply_writer);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				ReplyVO vo= new ReplyVO();
-				vo.setReply_re_ref(rs.getInt(1));
+				vo.setReply_re_ref(rs.getInt("reply_re_ref"));
+				vo.setReply_num(rs.getInt("reply_num"));
 				
 				ref.add(vo);
 			}
