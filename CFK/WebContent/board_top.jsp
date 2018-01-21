@@ -1,5 +1,9 @@
+<%@page import="vo.UserVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	UserVO vo=(UserVO)session.getAttribute("vo");
+%>    
 <!DOCTYPE html>
 <html>
 
@@ -46,7 +50,7 @@
 		}
 			
 		// 디데이 function
-		var countDown = new Date("Jan 19, 2018 23:59:59").getTime();
+		var countDown = new Date("Jan 26, 2018 23:59:59").getTime();
 
 		function msg_time() {	
 			var now = new Date().getTime();		//현재 날짜
@@ -94,14 +98,21 @@
                     <!-- Main navigation -->
                     <div class="nav-collapse collapse pull-right">
                         <ul class="nav" id="top-navigation">
-                        	<li><div id="ViewTimer"></div></li>
-                            <li class="active"><a href="/CFK/index.jsp">Challenge Fashion King!!</a></li>
+                        	<li style="margin-top: 15px;"><div id="ViewTimer"></div></li>                            
                             <li><a href="/CFK/Rank.do#service">함께하기</a></li>
                             <li><a href="/CFK/List.do#portfolio">투표하기</a></li>
                             <li><a href="/CFK/board/board_enter.jsp#service">참가신청</a></li>
                             <li><a href="/CFK/board/board_attend.jsp">방청신청</a></li>
                             <li><a href="/CFK/board/board_fashion.jsp">패션트렌드</a></li>
                             <li><a href="/CFK/index.jsp#contact">패션쇼</a></li>
+                            <%
+                            if(vo!=null){
+                            %>	
+                            	<li><a href="/CFK/Rank.do#service"><font color="yellow"><%=vo.getUser_name() %></font>님 로그인중</a></li>
+                            	<li style="margin-top: 16px;"><button style="border-radius:50px;" onclick="location.href='logout.do'">logout</button></li>
+                            <%	
+                            }
+							%>
                         </ul>
                     </div>
                   
