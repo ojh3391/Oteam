@@ -33,7 +33,7 @@
         		form1.submit();
         	}
         }
-       
+       s
         </script>
     </head>
     <body>
@@ -47,7 +47,7 @@
 					<table align="center">
 						<tr>
 							<td>
-								<iframe class="container" src="board_attend_calendar.jsp" frameborder="0" width="590" height="700" id="iframeTicket" title="방청권 신청 프레임"></iframe>
+								<iframe class="container" src="board_attend_calendar.jsp" frameborder="0" width="590" height="700" id="iframeTicket" title="방청권 신청 프레임"/>
 							</td>
 						</tr>
 					</table>
